@@ -17,8 +17,8 @@ export const metadata = {
 export default async function AdminPage() {
   const result = await getAdminProjects();
 
-  // If unauthorized and Supabase URL is set, redirect to login
-  if (!result.authorized && process.env.NEXT_PUBLIC_SUPABASE_URL) {
+  // Defense in depth: strictly redirect to login if unauthorized
+  if (!result.authorized) {
     redirect('/admin/login');
   }
 

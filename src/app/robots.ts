@@ -1,12 +1,14 @@
 import { MetadataRoute } from 'next';
+import { getSiteUrl } from '@/lib/site';
 
 export default function robots(): MetadataRoute.Robots {
+  const siteUrl = getSiteUrl();
   return {
     rules: {
       userAgent: '*',
       allow: '/',
       disallow: ['/admin/', '/admin'],
     },
-    sitemap: 'https://tendercrafthq.com/sitemap.xml',
+    sitemap: `${siteUrl}/sitemap.xml`,
   };
 }

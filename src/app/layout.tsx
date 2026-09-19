@@ -3,6 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { getSiteUrl } from "@/lib/site";
+
+const siteUrl = getSiteUrl();
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,8 +17,34 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Tendercraft",
+  url: siteUrl,
+  logo: `${siteUrl}/brand/tendercraft-logo-light.svg`,
+  image: `${siteUrl}/brand/tendercraft-og.png`,
+  description:
+    "Tendercraft builds focused software that turns difficult workflows into useful products. Business software, browser tools, and continuous automation.",
+  email: "hello@tendercrafthq.com",
+  founder: {
+    "@type": "Person",
+    name: "Yahaya Yautama",
+    email: "yyautama@tendercrafthq.com",
+  },
+  sameAs: ["https://github.com/yahayayautama-eng/tendercraft-website"],
+  knowsAbout: [
+    "Business Software",
+    "Workflow Tools",
+    "Browser Extensions",
+    "Process Automation",
+    "Desktop Applications",
+  ],
+  areaServed: "Global",
+};
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://tendercrafthq.com"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Tendercraft — Product Studio for Business Software & Tools",
     template: "%s | Tendercraft",
@@ -71,6 +100,12 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-white text-[#0B101D] dark:bg-[#0B0F19] dark:text-[#F8FAFC]">
         <Header />
         <main className="flex-1 w-full">{children}</main>

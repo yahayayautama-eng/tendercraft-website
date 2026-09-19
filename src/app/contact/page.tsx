@@ -1,19 +1,23 @@
 import React from 'react';
 import { SectionWrapper } from '@/components/SectionWrapper';
+import { ContactForm } from '@/components/ContactForm';
+import { getSiteUrl } from '@/lib/site';
 import { Mail, ArrowUpRight, Clock, ShieldCheck, MessageSquare } from 'lucide-react';
+
+const siteUrl = getSiteUrl();
 
 export const metadata = {
   title: 'Contact',
   description:
     'Direct enquiry and project scoping contact options for Tendercraft.',
   alternates: {
-    canonical: 'https://tendercrafthq.com/contact',
+    canonical: `${siteUrl}/contact`,
   },
   openGraph: {
     title: 'Contact — Tendercraft',
     description:
       'Direct enquiry and project scoping contact options for Tendercraft.',
-    url: 'https://tendercrafthq.com/contact',
+    url: `${siteUrl}/contact`,
     siteName: 'Tendercraft',
     type: 'website',
     images: [
@@ -43,8 +47,13 @@ export default function ContactPage() {
           </p>
         </div>
 
-        {/* Contact Cards Grid */}
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Contact Form Section */}
+        <div className="mt-12 max-w-4xl">
+          <ContactForm />
+        </div>
+
+        {/* Direct Email Cards Grid */}
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
           {/* Card 1: General Studio */}
           <div className="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#111726] border border-black/[0.08] dark:border-white/[0.08] shadow-sm flex flex-col justify-between gap-8">
             <div className="space-y-4">
@@ -80,10 +89,10 @@ export default function ContactPage() {
                 <Mail className="w-6 h-6" />
               </div>
               <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100">
-                Founder & Partnerships
+                Founder & Direct Line
               </h2>
               <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                For strategic engagements, enterprise architecture inquiries, or direct confidential discussions.
+                For strategic engagements, architecture inquiries, or direct confidential discussions.
               </p>
             </div>
 
@@ -103,7 +112,7 @@ export default function ContactPage() {
         </div>
 
         {/* What to Expect Callout */}
-        <div className="mt-14 p-8 rounded-3xl bg-zinc-50 dark:bg-[#111726] border border-black/[0.06] dark:border-white/[0.08] grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <div className="mt-14 p-8 rounded-3xl bg-zinc-50 dark:bg-[#111726] border border-black/[0.06] dark:border-white/[0.08] grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl">
           <div className="flex items-start gap-4">
             <Clock className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
             <div className="space-y-1">
@@ -111,7 +120,7 @@ export default function ContactPage() {
                 Rapid Response
               </h3>
               <p className="text-xs text-zinc-500 leading-relaxed">
-                We review all emails personally and respond within 24 to 48 business hours.
+                We review all enquiries personally and respond within 1 to 2 business days.
               </p>
             </div>
           </div>
@@ -135,7 +144,7 @@ export default function ContactPage() {
                 Direct Communication
               </h3>
               <p className="text-xs text-zinc-500 leading-relaxed">
-                No intermediaries. Every conversation is with the software engineers building the tools.
+                No intermediaries. Every conversation is with the founder and engineer designing and building your tools.
               </p>
             </div>
           </div>

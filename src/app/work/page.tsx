@@ -2,19 +2,22 @@ import React from 'react';
 import { getPublicProjects } from '@/lib/projects';
 import { SectionWrapper } from '@/components/SectionWrapper';
 import { ProjectCard } from '@/components/ProjectCard';
+import { getSiteUrl } from '@/lib/site';
+
+const siteUrl = getSiteUrl();
 
 export const metadata = {
   title: 'Work',
   description:
     'Verified software builds, operational platforms, and browser workflow tools created by Tendercraft.',
   alternates: {
-    canonical: 'https://tendercrafthq.com/work',
+    canonical: `${siteUrl}/work`,
   },
   openGraph: {
     title: 'Work — Tendercraft',
     description:
       'Verified software builds, operational platforms, and browser workflow tools created by Tendercraft.',
-    url: 'https://tendercrafthq.com/work',
+    url: `${siteUrl}/work`,
     siteName: 'Tendercraft',
     type: 'website',
     images: [

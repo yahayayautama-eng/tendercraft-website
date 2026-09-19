@@ -1,5 +1,5 @@
 import React from 'react';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { getAdminProjects } from '@/lib/projects';
 import { ProjectForm } from '../../ProjectForm';
 import { SectionWrapper } from '@/components/SectionWrapper';
@@ -19,6 +19,11 @@ export const metadata = {
 export default async function EditProjectPage({ params }: EditProjectPageProps) {
   const { id } = await params;
   const result = await getAdminProjects();
+
+  if (!result.authorized) {
+    redirect('/admin/login');
+  }
+
   const project = result.projects.find((p) => p.id === id);
 
   if (!project) {

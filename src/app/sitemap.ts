@@ -1,9 +1,11 @@
 import { MetadataRoute } from 'next';
 import { getPublicProjects } from '@/lib/projects';
+import { getSiteUrl } from '@/lib/site';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://tendercrafthq.com';
-  const projects = await getPublicProjects();
+  const baseUrl = getSiteUrl();
+  const allProjects = await getPublicProjects();
+  const projects = allProjects.filter((p) => p.published);
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {

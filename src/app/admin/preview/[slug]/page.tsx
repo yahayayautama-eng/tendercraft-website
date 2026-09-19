@@ -22,7 +22,7 @@ export default async function AdminPreviewPage({ params }: PreviewPageProps) {
   const { slug } = await params;
   const { authorized, project } = await getPreviewProject(slug);
 
-  if (!authorized && process.env.NEXT_PUBLIC_SUPABASE_URL) {
+  if (!authorized) {
     redirect('/admin/login');
   }
 

@@ -72,23 +72,16 @@ export async function getAdminProjects(): Promise<{
 }> {
   const auth = await verifyAdminUser();
   if (!auth.authorized) {
-    // In local dev without live Supabase credentials, return local verified projects marked for inspection
-    if (!process.env.NEXT_PUBLIC_SUPABASE_URL) {
-      return {
-        authorized: true,
-        projects: VERIFIED_PROJECTS,
-      };
-    }
     return {
       authorized: false,
       projects: [],
-      error: auth.error,
+      error: auth.error || 'Unauthorized',
     };
   }
 
   const supabase = await createServerSupabaseClient();
   if (!supabase) {
-    return { authorized: true, projects: VERIFIED_PROJECTS };
+    return { authorized: false, projects: [], error: 'Backend unconfigured' };
   }
 
   const { data, error } = await supabase
@@ -106,7 +99,7 @@ export async function getAdminProjects(): Promise<{
     .order('sort_order', { ascending: true });
 
   if (error) {
-    return { authorized: true, projects: VERIFIED_PROJECTS, error: error.message };
+    return { authorized: false, projects: [], error: error.message };
   }
 
   return {
@@ -121,8 +114,8 @@ export async function getPreviewProject(slug: string): Promise<{
   error?: string;
 }> {
   const auth = await verifyAdminUser();
-  if (!auth.authorized && process.env.NEXT_PUBLIC_SUPABASE_URL) {
-    return { authorized: false, project: null, error: 'Unauthorized' };
+  if (!auth.authorized) {
+    return { authorized: false, project: null, error: auth.error || 'Unauthorized' };
   }
 
   const supabase = await createServerSupabaseClient();

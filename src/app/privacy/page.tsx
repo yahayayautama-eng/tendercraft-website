@@ -1,16 +1,19 @@
 import React from 'react';
 import { SectionWrapper } from '@/components/SectionWrapper';
+import { getSiteUrl } from '@/lib/site';
+
+const siteUrl = getSiteUrl();
 
 export const metadata = {
   title: 'Privacy Notice',
   description: 'Tendercraft privacy and data handling practices.',
   alternates: {
-    canonical: 'https://tendercrafthq.com/privacy',
+    canonical: `${siteUrl}/privacy`,
   },
   openGraph: {
     title: 'Privacy Notice — Tendercraft',
     description: 'Tendercraft privacy and data handling practices.',
-    url: 'https://tendercrafthq.com/privacy',
+    url: `${siteUrl}/privacy`,
     siteName: 'Tendercraft',
     type: 'website',
     images: [
@@ -53,10 +56,18 @@ export default function PrivacyPage() {
 
             <section className="space-y-3">
               <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-100">
-                2. Information We Receive
+                2. Project Enquiries and Contact Information
               </h2>
               <p>
-                When you contact us directly via email at <code className="text-blue-600 font-mono">hello@tendercrafthq.com</code> or <code className="text-blue-600 font-mono">yyautama@tendercrafthq.com</code>, we receive your email address, name, and whatever project context you choose to share. We use this information solely to review your inquiry and respond to your message.
+                When you submit a project enquiry through our contact form or contact us directly via email at <code className="text-blue-600 font-mono">hello@tendercrafthq.com</code> or <code className="text-blue-600 font-mono">yyautama@tendercrafthq.com</code>, we collect:
+              </p>
+              <ul className="list-disc list-inside space-y-1 pl-2 text-zinc-600 dark:text-zinc-400">
+                <li>Your name and business email address</li>
+                <li>Project description, technical scope, and requirements you provide</li>
+                <li>Anticipated budget range and target delivery timeline</li>
+              </ul>
+              <p>
+                We use this information solely to evaluate project feasibility, prepare initial architecture and scoping notes, and correspond directly with you. We retain project enquiry records in our secured studio database only as long as necessary to manage our active correspondence and professional engagements. We never sell, rent, or distribute your enquiry data to third parties.
               </p>
             </section>
 
@@ -65,7 +76,7 @@ export default function PrivacyPage() {
                 3. Cookies and Session Storage
               </h2>
               <p>
-                Public visitors to <code className="font-mono">tendercrafthq.com</code> receive no tracking cookies. Cookies are strictly utilized for authenticated sessions in the private studio administration portal (<code className="font-mono">/admin</code>).
+                Public visitors to <code className="font-mono">tendercrafthq.com</code> receive no tracking cookies or cross-site fingerprinting tokens. Cookies are strictly utilized for authenticated administrative sessions in the private studio portal (<code className="font-mono">/admin</code>).
               </p>
             </section>
 
@@ -74,7 +85,7 @@ export default function PrivacyPage() {
                 4. Third-Party Hosting and Infrastructure
               </h2>
               <p>
-                This website is hosted on Vercel and secured with Cloudflare DNS and routing. These infrastructure providers may log standard network requests (e.g. IP address, user agent) to maintain uptime, protect against DDoS attacks, and provision secure HTTPS connections.
+                This website is hosted on Vercel and secured with Cloudflare DNS and routing. These infrastructure providers may log standard network requests (e.g., client IP address, request method, user agent) to maintain uptime, protect against DDoS attacks, and enforce secure HTTPS connections.
               </p>
             </section>
 
@@ -83,7 +94,7 @@ export default function PrivacyPage() {
                 5. Questions and Contact
               </h2>
               <p>
-                For questions regarding this privacy notice, contact us directly at <a href="mailto:hello@tendercrafthq.com" className="text-blue-600 hover:underline">hello@tendercrafthq.com</a>.
+                For any questions regarding this privacy notice or to request the deletion of past correspondence, please contact us directly at <a href="mailto:hello@tendercrafthq.com" className="text-blue-600 hover:underline font-medium">hello@tendercrafthq.com</a>.
               </p>
             </section>
           </div>

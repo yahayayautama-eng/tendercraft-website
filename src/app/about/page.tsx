@@ -1,20 +1,23 @@
 import React from 'react';
 import Link from 'next/link';
 import { SectionWrapper } from '@/components/SectionWrapper';
+import { getSiteUrl } from '@/lib/site';
 import { Mail, MapPin, ArrowRight, ShieldCheck, Zap, Layers, Sparkles } from 'lucide-react';
+
+const siteUrl = getSiteUrl();
 
 export const metadata = {
   title: 'About',
   description:
     'Tendercraft is an independent product studio building business software, workflow tools, browser products, and automation.',
   alternates: {
-    canonical: 'https://tendercrafthq.com/about',
+    canonical: `${siteUrl}/about`,
   },
   openGraph: {
     title: 'About — Tendercraft',
     description:
       'Tendercraft is an independent product studio building business software, workflow tools, browser products, and automation.',
-    url: 'https://tendercrafthq.com/about',
+    url: `${siteUrl}/about`,
     siteName: 'Tendercraft',
     type: 'website',
     images: [
@@ -115,7 +118,7 @@ export default function AboutPage() {
                 Direct builder access from day one.
               </h2>
               <p className="text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                When you partner with Tendercraft, you don&apos;t talk to account managers or junior contractors. You collaborate directly with experienced software engineers who design, implement, and verify every system.
+                When you partner with Tendercraft, you don&apos;t talk to account managers or junior contractors. You collaborate directly with the founder and engineer who designs, implements, and verifies every system.
               </p>
               <div className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 pt-2 font-medium">
                 <MapPin className="w-4 h-4 text-blue-600" />

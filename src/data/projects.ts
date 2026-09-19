@@ -46,7 +46,7 @@ export const VERIFIED_PROJECTS: Project[] = [
     solution:
       'Tendercraft designed and engineered Beadle as an on-premise Windows mass-alert system. Alerts bypass email, rendering directly over running applications with verifiable delivery and acknowledgement logging tied to Active Directory identities.',
     capabilities: [
-      'Topmost Windows desktop agent (.NET 8 + WPF) that commands immediate attention without dismiss bypass.',
+      'Topmost Windows desktop agent (.NET 8 + WPF) that commands immediate attention and requires deliberate user acknowledgement.',
       'Active Directory & LDAP targeting across security groups, departments, or entire domain networks.',
       'Persistent real-time SignalR push with offline queuing and catch-up delivery on reconnect.',
       'Server-side PPTX-to-PDF conversion and local PDF rendering via PdfiumViewer and WebView2.',

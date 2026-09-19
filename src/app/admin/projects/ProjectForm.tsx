@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Project, ProjectAsset } from '@/data/projects';
 import { ArrowLeft, Save, Plus, Trash2, AlertCircle, CheckCircle } from 'lucide-react';
+import { saveProjectAction } from '../actions';
 
 interface ProjectFormProps {
   initialData?: Project;
@@ -108,12 +109,37 @@ export function ProjectForm({ initialData, isNew = false }: ProjectFormProps) {
     setSaving(true);
 
     try {
-      // Simulate/Execute save
-      setSuccess('Project changes saved successfully.');
-      setTimeout(() => {
-        router.push('/admin');
-        router.refresh();
-      }, 1000);
+      const res = await saveProjectAction({
+        id: initialData?.id,
+        name,
+        slug,
+        tagline,
+        status: status as Project['status'],
+        statusLabel,
+        coverImagePath,
+        summary,
+        problem,
+        solution,
+        capabilities,
+        technology,
+        liveUrl,
+        storeUrl,
+        repositoryUrl,
+        featured,
+        published,
+        sortOrder: initialData?.sortOrder || 0,
+        gallery,
+      });
+
+      if (res.success) {
+        setSuccess('Project saved successfully.');
+        setTimeout(() => {
+          router.push('/admin');
+          router.refresh();
+        }, 800);
+      } else {
+        setError(res.error || 'Failed to save project.');
+      }
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : 'Failed to save project.';
       setError(msg);

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Metadata } from 'next';
 import { getPublicProjects, getPublicProjectBySlug } from '@/lib/projects';
 import { SectionWrapper } from '@/components/SectionWrapper';
+import { getSiteUrl } from '@/lib/site';
 import {
   ArrowLeft,
   CheckCircle2,
@@ -16,6 +17,8 @@ import {
 interface CaseStudyPageProps {
   params: Promise<{ slug: string }>;
 }
+
+export const dynamicParams = true;
 
 export async function generateStaticParams() {
   const projects = await getPublicProjects();
@@ -36,16 +39,18 @@ export async function generateMetadata({
     };
   }
 
+  const siteUrl = getSiteUrl();
+
   return {
     title: project.name,
     description: project.tagline,
     alternates: {
-      canonical: `https://tendercrafthq.com/work/${slug}`,
+      canonical: `${siteUrl}/work/${slug}`,
     },
     openGraph: {
       title: `${project.name} — Tendercraft Case Study`,
       description: project.tagline,
-      url: `https://tendercrafthq.com/work/${slug}`,
+      url: `${siteUrl}/work/${slug}`,
       siteName: 'Tendercraft',
       type: 'article',
       images: [
