@@ -199,7 +199,7 @@ GRANT SELECT ON public.projects TO anon, authenticated;
 GRANT SELECT ON public.project_assets TO anon, authenticated;
 GRANT ALL ON public.projects TO authenticated;
 GRANT ALL ON public.project_assets TO authenticated;
-GRANT ALL ON public.admin_users TO authenticated;
+GRANT ALL ON public.admin_users TO authenticated, service_role;
 
 -- 12. Verified Initial Seed Data
 INSERT INTO public.projects (
