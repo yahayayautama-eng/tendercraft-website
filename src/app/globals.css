@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+:root {
+  /* Tendercraft Design Tokens (Light First) */
+  --background: #FFFFFF;
+  --foreground: #0B101D;
+  
+  --accent-blue: #0052FF;
+  --accent-blue-hover: #0042D9;
+  --accent-blue-active: #0036B3;
+  --accent-blue-tint: rgba(0, 82, 255, 0.08);
+
+  --surface-primary: #FFFFFF;
+  --surface-secondary: #F8FAFC;
+  --surface-tertiary: #F1F5F9;
+
+  --text-primary: #0B101D;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+
+  --border-primary: rgba(11, 16, 29, 0.1);
+  --border-secondary: rgba(11, 16, 29, 0.05);
+
+  --status-error: #EF4444;
+  --status-success: #10B981;
+  --status-warning: #F59E0B;
+
+  --transition-apple: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0B0F19;
+    --foreground: #F8FAFC;
+
+    --accent-blue: #0052FF;
+    --accent-blue-hover: #1A65FF;
+    --accent-blue-active: #0042D9;
+    --accent-blue-tint: rgba(0, 82, 255, 0.15);
+
+    --surface-primary: #111726;
+    --surface-secondary: #172033;
+    --surface-tertiary: #1E293B;
+
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+
+    --border-primary: rgba(248, 250, 252, 0.1);
+    --border-secondary: rgba(248, 250, 252, 0.06);
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-blue-hover: var(--accent-blue-hover);
+  --color-accent-blue-active: var(--accent-blue-active);
+  --color-accent-blue-tint: var(--accent-blue-tint);
+
+  --color-surface-primary: var(--surface-primary);
+  --color-surface-secondary: var(--surface-secondary);
+  --color-surface-tertiary: var(--surface-tertiary);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  --color-border-primary: var(--border-primary);
+  --color-border-secondary: var(--border-secondary);
+
+  --color-status-error: var(--status-error);
+  --color-status-success: var(--status-success);
+  --color-status-warning: var(--status-warning);
+
+  --font-sans: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Glass and subtle Apple-inspired surface treatment */
+.glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+@media (prefers-color-scheme: dark) {
+  .glass {
+    background: rgba(11, 15, 25, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+}
+
+.transition-apple {
+  transition: var(--transition-apple);
+}
+
+/* Accessible focus ring */
+:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+/* Reduced motion preference respect */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tendercraft OG</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1200px;
+      height: 630px;
+      background: #0B0F19;
+      color: #FFFFFF;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 80px 100px;
+      position: relative;
+      overflow: hidden;
+    }
+    .grid {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+      pointer-events: none;
+    }
+    .glow {
+      position: absolute;
+      top: -120px;
+      right: -80px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(0, 85, 255, 0.25) 0%, rgba(0, 85, 255, 0) 70%);
+      pointer-events: none;
+    }
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      z-index: 10;
+    }
+    .logo-img {
+      height: 64px;
+    }
+    .content {
+      z-index: 10;
+      max-width: 860px;
+    }
+    .eyebrow {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0066FF;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 48px;
+      line-height: 1.15;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #F8FAFC;
+      margin-bottom: 24px;
+    }
+    p {
+      font-size: 22px;
+      line-height: 1.5;
+      color: #94A3B8;
+    }
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 28px;
+      z-index: 10;
+      font-size: 16px;
+      color: #64748B;
+    }
+    .domain {
+      font-weight: 600;
+      color: #F8FAFC;
+      letter-spacing: 0.05em;
+    }
+    .tags {
+      display: flex;
+      gap: 16px;
+    }
+    .tag {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 14px;
+      color: #CBD5E1;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="glow"></div>
+  
+  <div class="logo-wrap">
+    <img class="logo-img" src="../public/brand/tendercraft-logo-dark.svg" alt="Tendercraft">
+  </div>
+
+  <div class="content">
+    <div class="eyebrow">Product Studio</div>
+    <h1>Focused software turning difficult workflows into useful products.</h1>
+    <p>Business systems, operational software, browser tools, and continuous automation.</p>
+  </div>
+
+  <div class="footer">
+    <div class="domain">tendercrafthq.com</div>
+    <div class="tags">
+      <div class="tag">Beadle</div>
+      <div class="tag">CompoundOS</div>
+      <div class="tag">Risk Register</div>
+      <div class="tag">FreightHUD</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,281 @@
+import React from 'react';
+import { notFound } from 'next/navigation';
+import Link from 'next/link';
+import Image from 'next/image';
+import { Metadata } from 'next';
+import { getPublicProjects, getPublicProjectBySlug } from '@/lib/projects';
+import { SectionWrapper } from '@/components/SectionWrapper';
+import {
+  ArrowLeft,
+  CheckCircle2,
+  ExternalLink,
+  Mail,
+  ArrowRight,
+} from 'lucide-react';
+
+interface CaseStudyPageProps {
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateStaticParams() {
+  const projects = await getPublicProjects();
+  return projects.map((p) => ({
+    slug: p.slug,
+  }));
+}
+
+export async function generateMetadata({
+  params,
+}: CaseStudyPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const project = await getPublicProjectBySlug(slug);
+
+  if (!project) {
+    return {
+      title: 'Project Not Found',
+    };
+  }
+
+  return {
+    title: project.name,
+    description: project.tagline,
+    alternates: {
+      canonical: `https://tendercrafthq.com/work/${slug}`,
+    },
+    openGraph: {
+      title: `${project.name} — Tendercraft Case Study`,
+      description: project.tagline,
+      url: `https://tendercrafthq.com/work/${slug}`,
+      siteName: 'Tendercraft',
+      type: 'article',
+      images: [
+        {
+          url: project.coverImagePath,
+          alt: project.name,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${project.name} — Tendercraft Case Study`,
+      description: project.tagline,
+      images: [project.coverImagePath],
+    },
+  };
+}
+
+export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
+  const { slug } = await params;
+  const project = await getPublicProjectBySlug(slug);
+
+  if (!project) {
+    notFound();
+  }
+
+  return (
+    <div className="pb-24 sm:pb-32 space-y-16 sm:space-y-24">
+      {/* Top Breadcrumb & Hero */}
+      <section className="pt-12 sm:pt-20">
+        <SectionWrapper size="lg">
+          <div className="space-y-6">
+            <Link
+              href="/work"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors group"
+            >
+              <ArrowLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-0.5" />
+              <span>Back to All Work</span>
+            </Link>
+
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-900/40">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-600 dark:bg-blue-400" />
+                {project.statusLabel}
+              </span>
+            </div>
+
+            <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-100 max-w-4xl leading-[1.08]">
+              {project.name}
+            </h1>
+
+            <p className="text-xl sm:text-2xl text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed font-normal">
+              {project.tagline}
+            </p>
+          </div>
+
+          {/* Large Hero Visual */}
+          <div className="mt-12 relative aspect-[16/10] w-full rounded-3xl overflow-hidden bg-zinc-100 dark:bg-[#111726] border border-black/[0.08] dark:border-white/[0.08] shadow-2xl">
+            <Image
+              src={project.coverImagePath}
+              alt={`Primary screenshot of ${project.name}`}
+              fill
+              priority
+              sizes="(max-width: 1200px) 100vw, 1100px"
+              className="object-cover object-top"
+            />
+          </div>
+        </SectionWrapper>
+      </section>
+
+      {/* Case Study Narrative */}
+      <section>
+        <SectionWrapper size="lg">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+            {/* Main Narrative Column */}
+            <div className="lg:col-span-8 space-y-12">
+              <div className="space-y-4">
+                <h2 className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 font-mono">
+                  The Problem
+                </h2>
+                <p className="text-base sm:text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed font-normal">
+                  {project.problem}
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <h2 className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 font-mono">
+                  What Tendercraft Built
+                </h2>
+                <p className="text-base sm:text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed font-normal">
+                  {project.solution}
+                </p>
+              </div>
+
+              {/* Verified Capabilities */}
+              <div className="space-y-6 pt-4 border-t border-black/[0.06] dark:border-white/[0.06]">
+                <h2 className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 font-mono">
+                  Verified Capabilities
+                </h2>
+                <ul className="space-y-4">
+                  {project.capabilities.map((cap, i) => (
+                    <li key={i} className="flex items-start gap-3.5">
+                      <CheckCircle2 className="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
+                      <span className="text-sm sm:text-base text-zinc-700 dark:text-zinc-300 leading-relaxed">
+                        {cap}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Sidebar Specifications */}
+            <div className="lg:col-span-4 space-y-8">
+              <div className="p-6 sm:p-7 rounded-2xl bg-zinc-50 dark:bg-[#111726] border border-black/[0.06] dark:border-white/[0.08] space-y-6">
+                <div>
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-zinc-400 dark:text-zinc-400 font-mono mb-3">
+                    Technology & Stack
+                  </h3>
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.technology.map((tech, i) => (
+                      <span
+                        key={i}
+                        className="text-xs font-medium px-2.5 py-1 rounded-md bg-white dark:bg-white/5 border border-black/[0.04] dark:border-white/[0.06] text-zinc-800 dark:text-zinc-200"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="pt-4 border-t border-black/[0.06] dark:border-white/[0.06]">
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-zinc-400 dark:text-zinc-400 font-mono mb-2">
+                    Current Delivery State
+                  </h3>
+                  <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+                    {project.statusLabel}
+                  </p>
+                </div>
+
+                {project.liveUrl && (
+                  <div className="pt-4 border-t border-black/[0.06] dark:border-white/[0.06]">
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-600 hover:text-blue-700 dark:hover:text-blue-400 transition-colors"
+                    >
+                      <span>Visit Live Application</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </SectionWrapper>
+      </section>
+
+      {/* Screenshot Gallery */}
+      {project.gallery && project.gallery.length > 0 && (
+        <section className="space-y-8">
+          <SectionWrapper size="lg">
+            <div className="space-y-2 mb-8">
+              <p className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 font-mono">
+                Visual Evidence
+              </p>
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+                Interface & Workflow Gallery
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {project.gallery.map((asset) => (
+                <div
+                  key={asset.id}
+                  className="rounded-2xl overflow-hidden border border-black/[0.08] dark:border-white/[0.08] bg-zinc-50 dark:bg-[#111726] p-3 space-y-3 shadow-sm"
+                >
+                  <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-zinc-200 dark:bg-zinc-800">
+                    <Image
+                      src={asset.storagePath}
+                      alt={asset.altText}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover object-top"
+                    />
+                  </div>
+                  {asset.caption && (
+                    <p className="text-xs text-zinc-500 dark:text-zinc-400 px-2 pb-1 leading-relaxed">
+                      {asset.caption}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </SectionWrapper>
+        </section>
+      )}
+
+      {/* CTA Box */}
+      <section>
+        <SectionWrapper size="lg">
+          <div className="p-8 sm:p-12 rounded-3xl bg-zinc-50 dark:bg-[#111726] border border-black/[0.06] dark:border-white/[0.08] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+            <div className="space-y-2 max-w-xl">
+              <h3 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+                Discuss a Similar Product
+              </h3>
+              <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                Need a focused system, custom browser extension, or enterprise workflow tool? Let&apos;s scope it directly.
+              </p>
+            </div>
+            <div className="flex items-center gap-3 shrink-0">
+              <a
+                href="mailto:hello@tendercrafthq.com"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors shadow-sm"
+              >
+                <Mail className="w-4 h-4" />
+                <span>hello@tendercrafthq.com</span>
+              </a>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-1.5 px-5 py-3 rounded-full border border-black/[0.1] dark:border-white/[0.15] text-sm font-semibold text-zinc-800 dark:text-zinc-200 hover:bg-black/[0.03] transition-colors"
+              >
+                <span>Contact Page</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </SectionWrapper>
+      </section>
+    </div>
+  );
+}

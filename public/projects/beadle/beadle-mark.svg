@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Beadle — primary app mark. Staff of office (a beadle's mace): domed head,
+  collar, shaft.
+
+  Geometry is laid out on a 256 grid ON PURPOSE. The smallest target is a
+  16x16 Windows tray icon, and 256/16 = 16, so every coordinate below that is
+  a multiple of 16 lands exactly on a device-pixel boundary at tray size —
+  which is what stops the silhouette turning to mush when it is scaled down.
+
+  Element widths in device pixels at 16x16:
+      head   80/16 = 5px wide, 4px tall
+      collar 48/16 = 3px wide, 1px tall
+      shaft  32/16 = 2px wide, 5px tall
+  Nothing is thinner than 2px, which is the floor for surviving 16x16.
+
+  Two colours only, per CLAUDE.md section 8: the forest-green accent and the
+  warm off-white. No gradients, no strokes, no shadows.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <title>Beadle</title>
+
+  <!-- Tile. A filled tile rather than a bare glyph is deliberate: it carries its
+       own contrast, so the icon reads on both light and dark Windows taskbars
+       without needing two separate colourways. -->
+  <rect x="0" y="0" width="256" height="256" rx="56" ry="56" fill="#1F4B3F"/>
+
+  <!-- Staff of office, drawn as one colour so it reads as a single silhouette. -->
+  <g fill="#F7F6F3">
+    <!-- Domed head: 88..168 wide, 48..112 tall, top corners fully rounded. -->
+    <path d="M 88 112
+             L 88 88
+             A 40 40 0 0 1 168 88
+             L 168 112
+             Z"/>
+    <!-- Collar -->
+    <rect x="104" y="112" width="48" height="16"/>
+    <!-- Shaft -->
+    <rect x="112" y="128" width="32" height="80"/>
+  </g>
+</svg>
