@@ -111,36 +111,45 @@ export async function submitContactEnquiryAction(
     };
   }
 
-  // 6. Record rate limiting and deduplication
+  // 6. Persist before reporting success. Vercel server logs are not a durable
+  // fallback for leads, so an unconfigured or failed database must be visible
+  // to the visitor instead of being presented as a received enquiry.
+  let supabase: Awaited<ReturnType<typeof createServerSupabaseClient>> = null;
+  try {
+    supabase = await createServerSupabaseClient();
+  } catch (err) {
+    console.error('Failed to initialize Supabase for contact enquiry:', err);
+  }
+
+  if (!supabase) {
+    return {
+      success: false,
+      error: 'Enquiry storage is not configured yet. Please email hello@tendercrafthq.com directly.',
+    };
+  }
+
+  const { error: dbError } = await supabase.from('contact_submissions').insert({
+    name,
+    email,
+    description,
+    budget_range: sanitizedBudget,
+    timeline: sanitizedTimeline,
+    status: 'unread',
+    created_at: new Date().toISOString(),
+  });
+
+  if (dbError) {
+    console.error('Supabase contact submission insert error:', dbError);
+    return {
+      success: false,
+      error: 'We could not save your enquiry. Please try again or email hello@tendercrafthq.com directly.',
+    };
+  }
+
+  // 7. Count only successfully persisted enquiries against the limits.
   activeHistory.push(now);
   submissionTimestamps.set(clientIp, activeHistory);
   recentSubmissionHashes.set(dedupeKey, now);
-
-  // 7. Store enquiry in Supabase
-  try {
-    const supabase = await createServerSupabaseClient();
-    if (supabase) {
-      const { error: dbError } = await supabase.from('contact_submissions').insert({
-        name,
-        email,
-        description,
-        budget_range: sanitizedBudget,
-        timeline: sanitizedTimeline,
-        status: 'unread',
-        created_at: new Date().toISOString(),
-      });
-
-      if (dbError) {
-        console.error('Supabase contact submission insert error:', dbError);
-        // If table doesn't exist yet, we still record successfully on the server
-      }
-    } else {
-      // In environment where Supabase is not yet connected, record cleanly to server log
-      console.log(`[Contact Enquiry Received] Name: ${name}, Email: ${email}, Budget: ${sanitizedBudget}`);
-    }
-  } catch (err) {
-    console.error('Failed to persist contact enquiry to database:', err);
-  }
 
   return {
     success: true,
