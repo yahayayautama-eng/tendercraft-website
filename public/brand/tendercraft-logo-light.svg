@@ -1,23 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 100" fill="none" aria-label="Tendercraft">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 76" fill="none" aria-label="Tendercraft">
   <defs>
     <linearGradient id="tc-blue-l" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0055FF" />
-      <stop offset="100%" stop-color="#0042D9" />
-    </linearGradient>
-    <linearGradient id="tc-dark-l" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#141B2D" />
-      <stop offset="100%" stop-color="#0B101D" />
+      <stop offset="0%" stop-color="#0052FF" />
+      <stop offset="100%" stop-color="#003ECC" />
     </linearGradient>
   </defs>
 
-  <!-- Mark (Scaled to 100x100 box at left) -->
-  <g transform="translate(0, 0)">
-    <path d="M 16 34 L 36 14 L 84 14 C 94 14 102 20 105 30 L 86 30 C 84 26 80 24 76 24 L 38 24 L 28 34 Z" fill="url(#tc-blue-l)" />
-    <path d="M 84 14 C 97 14 106 23 106 36 L 106 48 C 106 50 103 51 101 49 L 91 38 C 90 31 86 24 76 24 L 84 14 Z" fill="url(#tc-dark-l)" />
-    <path d="M 36 34 L 54 34 L 54 62 C 54 68 58 72 65 72 L 68 72 L 68 86 L 62 86 C 47 86 36 76 36 62 Z" fill="#0B101D" />
-    <path d="M 54 62 C 54 68 58 72 65 72 L 104 72 C 105.5 72 106 73 106 74.5 L 106 83.5 C 106 85 105.5 86 104 86 L 62 86 C 56 86 52 82 50 78 C 53 70 54 64 54 62 Z" fill="url(#tc-blue-l)" />
+  <!-- Mark (Scaled to 52x52 box at left) -->
+  <g transform="translate(6, 12) scale(0.52)">
+    <!-- T Crossbar -->
+    <path
+      d="M 16 30 C 16 23.37 21.37 18 28 18 L 72 18 C 78.63 18 84 23.37 84 30 L 84 32 C 84 35.31 81.31 38 78 38 L 22 38 C 18.69 38 16 35.31 16 32 Z"
+      fill="url(#tc-blue-l)"
+    />
+    <!-- Vertical Spine -->
+    <rect x="42" y="34" width="16" height="48" rx="5" fill="url(#tc-blue-l)" />
+    <!-- Interlocking C Ribbon in Dark Graphite -->
+    <path
+      d="M 84 66 C 84 63.8 82.2 62 80 62 L 56 62 C 53.8 62 52 63.8 52 66 C 52 70.4 48.4 74 44 74 C 39.6 74 36 70.4 36 66 L 36 46 C 36 43.8 34.2 42 32 42 L 24 42 C 21.8 42 20 43.8 20 46 L 20 66 C 20 79.25 30.75 90 44 90 L 80 90 C 82.2 90 84 88.2 84 86 Z"
+      fill="#0B101D"
+    />
+    <!-- Accent Point -->
+    <circle cx="76" cy="28" r="3.5" fill="#0052FF" />
   </g>
 
-  <!-- Exact Wordmark: TENDERCRAFT -->
-  <text x="126" y="63" fill="#0B101D" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', 'Segoe UI', system-ui, sans-serif" font-size="39" font-weight="800" letter-spacing="2.8">TENDERCRAFT</text>
+  <!-- Crisp Wordmark -->
+  <text
+    x="74"
+    y="47"
+    fill="#0B101D"
+    font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Geist', 'Inter', system-ui, sans-serif"
+    font-size="27"
+    font-weight="700"
+    letter-spacing="2.2"
+  >TENDERCRAFT</text>
 </svg>

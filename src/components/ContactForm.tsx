@@ -102,15 +102,19 @@ export function ContactForm() {
 
   if (isSubmitted) {
     return (
-      <div className="p-8 sm:p-12 rounded-3xl bg-white dark:bg-[#111726] border border-emerald-500/20 dark:border-emerald-500/30 shadow-sm text-center space-y-6">
+      <div
+        className="p-8 sm:p-12 rounded-3xl bg-white dark:bg-[#111726] border border-emerald-500/20 dark:border-emerald-500/30 shadow-sm text-center space-y-6"
+        role="region"
+        aria-live="polite"
+      >
         <div className="w-16 h-16 mx-auto rounded-full bg-emerald-50 dark:bg-emerald-950/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
-          <CheckCircle2 className="w-8 h-8" />
+          <CheckCircle2 className="w-8 h-8" aria-hidden="true" />
         </div>
         <div className="space-y-2 max-w-lg mx-auto">
           <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
             Enquiry Received
           </h2>
-          <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
+          <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed">
             {successMessage}
           </p>
         </div>
@@ -118,9 +122,9 @@ export function ContactForm() {
           <button
             type="button"
             onClick={handleReset}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-zinc-700 dark:text-zinc-300 bg-zinc-100 dark:bg-white/5 hover:bg-zinc-200 dark:hover:bg-white/10 transition-colors"
+            className="inline-flex items-center gap-2 min-h-[44px] px-6 py-2.5 rounded-full text-sm font-semibold text-zinc-700 dark:text-zinc-200 bg-zinc-100 dark:bg-white/10 hover:bg-zinc-200 dark:hover:bg-white/15 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
           >
-            <RefreshCw className="w-4 h-4" />
+            <RefreshCw className="w-4 h-4" aria-hidden="true" />
             <span>Send another enquiry</span>
           </button>
         </div>
@@ -132,20 +136,25 @@ export function ContactForm() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="p-8 sm:p-12 rounded-3xl bg-white dark:bg-[#111726] border border-black/[0.08] dark:border-white/[0.08] shadow-sm space-y-8"
+      className="p-6 sm:p-12 rounded-3xl bg-white dark:bg-[#111726] border border-black/[0.08] dark:border-white/[0.08] shadow-sm space-y-8"
+      aria-label="Project enquiry form"
     >
       <div className="space-y-2">
-        <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
           Send a Project Enquiry
         </h2>
-        <p className="text-sm text-zinc-600 dark:text-zinc-400">
-          Fill in your project context below. We review every brief directly and respond within 1 to 2 business days.
+        <p className="text-sm text-zinc-600 dark:text-zinc-300">
+          Fill in your project context below. Every brief is reviewed directly by the founder and engineer, with responses provided within 1 to 2 business days.
         </p>
       </div>
 
       {serverError && (
-        <div className="p-4 rounded-2xl bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-900/50 flex items-start gap-3 text-red-700 dark:text-red-400 text-sm">
-          <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
+        <div
+          role="alert"
+          aria-live="assertive"
+          className="p-4 rounded-2xl bg-red-50 dark:bg-red-950/50 border border-red-200 dark:border-red-900/60 flex items-start gap-3 text-red-700 dark:text-red-300 text-sm"
+        >
+          <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" aria-hidden="true" />
           <div className="space-y-1">
             <p className="font-semibold">Submission failed</p>
             <p>{serverError}</p>
@@ -191,6 +200,9 @@ export function ContactForm() {
             type="text"
             required
             placeholder="Ada Lovelace"
+            aria-required="true"
+            aria-invalid={Boolean(fieldErrors.name)}
+            aria-describedby={fieldErrors.name ? 'name-error' : undefined}
             value={formData.name}
             onChange={(e) => {
               setFormData((prev) => ({ ...prev, name: e.target.value }));
@@ -198,14 +210,16 @@ export function ContactForm() {
                 setFieldErrors((prev) => ({ ...prev, name: '' }));
               }
             }}
-            className={`w-full px-4 py-3 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 border ${
+            className={`w-full min-h-[44px] px-4 py-3 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 border ${
               fieldErrors.name
                 ? 'border-red-500 focus:ring-red-500'
                 : 'border-black/[0.1] dark:border-white/[0.1] focus:ring-blue-500'
             } text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 text-sm focus:outline-none focus:ring-2 transition`}
           />
           {fieldErrors.name && (
-            <p className="text-xs text-red-600 dark:text-red-400">{fieldErrors.name}</p>
+            <p id="name-error" className="text-xs text-red-600 dark:text-red-400 font-medium" role="alert">
+              {fieldErrors.name}
+            </p>
           )}
         </div>
 
@@ -220,6 +234,9 @@ export function ContactForm() {
             type="email"
             required
             placeholder="ada@company.com"
+            aria-required="true"
+            aria-invalid={Boolean(fieldErrors.email)}
+            aria-describedby={fieldErrors.email ? 'email-error' : undefined}
             value={formData.email}
             onChange={(e) => {
               setFormData((prev) => ({ ...prev, email: e.target.value }));
@@ -227,14 +244,16 @@ export function ContactForm() {
                 setFieldErrors((prev) => ({ ...prev, email: '' }));
               }
             }}
-            className={`w-full px-4 py-3 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 border ${
+            className={`w-full min-h-[44px] px-4 py-3 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 border ${
               fieldErrors.email
                 ? 'border-red-500 focus:ring-red-500'
                 : 'border-black/[0.1] dark:border-white/[0.1] focus:ring-blue-500'
             } text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 text-sm focus:outline-none focus:ring-2 transition`}
           />
           {fieldErrors.email && (
-            <p className="text-xs text-red-600 dark:text-red-400">{fieldErrors.email}</p>
+            <p id="email-error" className="text-xs text-red-600 dark:text-red-400 font-medium" role="alert">
+              {fieldErrors.email}
+            </p>
           )}
         </div>
       </div>
@@ -249,6 +268,9 @@ export function ContactForm() {
           name="description"
           rows={5}
           required
+          aria-required="true"
+          aria-invalid={Boolean(fieldErrors.description)}
+          aria-describedby={fieldErrors.description ? 'description-error' : 'description-hint'}
           placeholder="Briefly describe what you're looking to build, the key workflows or problems to solve, and any existing technical requirements or stack preferences..."
           value={formData.description}
           onChange={(e) => {
@@ -263,29 +285,35 @@ export function ContactForm() {
               : 'border-black/[0.1] dark:border-white/[0.1] focus:ring-blue-500'
           } text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 text-sm focus:outline-none focus:ring-2 transition leading-relaxed`}
         />
-        <div className="flex justify-between items-center text-xs text-zinc-400">
-          <span>{fieldErrors.description ? <span className="text-red-600 dark:text-red-400">{fieldErrors.description}</span> : 'Provide minimum 10 characters'}</span>
+        <div id="description-hint" className="flex justify-between items-center text-xs text-zinc-500 dark:text-zinc-400">
+          <span>{fieldErrors.description ? <span id="description-error" className="text-red-600 dark:text-red-400 font-medium" role="alert">{fieldErrors.description}</span> : 'Provide minimum 10 characters'}</span>
           <span>{formData.description.length} / 3000</span>
         </div>
       </div>
 
-      {/* Budget Range */}
+      {/* Budget Range (Radiogroup with >= 44x44px touch targets) */}
       <div className="space-y-3">
-        <label className="block text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-300 font-mono">
+        <span id="budget-label" className="block text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-300 font-mono">
           Anticipated Budget Range
-        </label>
-        <div className="flex flex-wrap gap-2.5">
+        </span>
+        <div
+          role="radiogroup"
+          aria-labelledby="budget-label"
+          className="flex flex-wrap gap-2.5"
+        >
           {BUDGET_OPTIONS.map((option) => {
             const isSelected = formData.budgetRange === option;
             return (
               <button
                 key={option}
                 type="button"
+                role="radio"
+                aria-checked={isSelected}
                 onClick={() => setFormData((prev) => ({ ...prev, budgetRange: option }))}
-                className={`px-4 py-2 rounded-xl text-xs font-semibold tracking-tight transition-all ${
+                className={`min-h-[44px] px-4 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all duration-200 inline-flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#111726] ${
                   isSelected
-                    ? 'bg-blue-600 text-white shadow-sm'
-                    : 'bg-zinc-100 dark:bg-white/5 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-white/10'
+                    ? 'bg-blue-600 text-white shadow-sm ring-1 ring-blue-600'
+                    : 'bg-zinc-100 dark:bg-white/10 text-zinc-700 dark:text-zinc-200 hover:bg-zinc-200 dark:hover:bg-white/15'
                 }`}
               >
                 {option}
@@ -295,23 +323,29 @@ export function ContactForm() {
         </div>
       </div>
 
-      {/* Desired Timeline */}
+      {/* Desired Timeline (Radiogroup with >= 44x44px touch targets) */}
       <div className="space-y-3">
-        <label className="block text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-300 font-mono">
+        <span id="timeline-label" className="block text-xs font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-300 font-mono">
           Target Timeline
-        </label>
-        <div className="flex flex-wrap gap-2.5">
+        </span>
+        <div
+          role="radiogroup"
+          aria-labelledby="timeline-label"
+          className="flex flex-wrap gap-2.5"
+        >
           {TIMELINE_OPTIONS.map((option) => {
             const isSelected = formData.timeline === option;
             return (
               <button
                 key={option}
                 type="button"
+                role="radio"
+                aria-checked={isSelected}
                 onClick={() => setFormData((prev) => ({ ...prev, timeline: option }))}
-                className={`px-4 py-2 rounded-xl text-xs font-semibold tracking-tight transition-all ${
+                className={`min-h-[44px] px-4 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all duration-200 inline-flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#111726] ${
                   isSelected
-                    ? 'bg-blue-600 text-white shadow-sm'
-                    : 'bg-zinc-100 dark:bg-white/5 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-white/10'
+                    ? 'bg-blue-600 text-white shadow-sm ring-1 ring-blue-600'
+                    : 'bg-zinc-100 dark:bg-white/10 text-zinc-700 dark:text-zinc-200 hover:bg-zinc-200 dark:hover:bg-white/15'
                 }`}
               >
                 {option}
@@ -322,10 +356,10 @@ export function ContactForm() {
       </div>
 
       {/* Submit Button & Privacy Note */}
-      <div className="pt-4 border-t border-black/[0.06] dark:border-white/[0.06] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <p className="text-xs text-zinc-500 max-w-sm">
+      <div className="pt-4 border-t border-black/[0.06] dark:border-white/[0.08] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <p className="text-xs text-zinc-500 dark:text-zinc-400 max-w-sm">
           By submitting this form, you agree to our standard enquiry review under our{' '}
-          <a href="/privacy" className="text-blue-600 hover:underline">
+          <a href="/privacy" className="text-blue-600 dark:text-blue-400 hover:underline">
             Privacy Notice
           </a>
           . We never share or sell contact details.
@@ -334,16 +368,16 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={isPending}
-          className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#0B101D] text-white hover:bg-blue-600 dark:bg-white dark:text-[#0B101D] dark:hover:bg-blue-500 dark:hover:text-white text-sm font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-sm shrink-0 w-full sm:w-auto"
+          className="inline-flex items-center justify-center gap-2 min-h-[44px] px-8 py-3 rounded-full bg-[#0B101D] text-white hover:bg-blue-600 dark:bg-white dark:text-[#0B101D] dark:hover:bg-blue-500 dark:hover:text-white text-sm font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-sm shrink-0 w-full sm:w-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#111726]"
         >
           {isPending ? (
             <>
-              <RefreshCw className="w-4 h-4 animate-spin" />
+              <RefreshCw className="w-4 h-4 animate-spin" aria-hidden="true" />
               <span>Sending enquiry...</span>
             </>
           ) : (
             <>
-              <Send className="w-4 h-4" />
+              <Send className="w-4 h-4" aria-hidden="true" />
               <span>Submit Project Enquiry</span>
             </>
           )}

@@ -42,14 +42,14 @@ export default async function HomePage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
               <Link
                 href="/work"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#0B101D] text-white hover:bg-blue-600 dark:bg-white dark:text-[#0B101D] dark:hover:bg-blue-500 dark:hover:text-white font-semibold text-sm transition-all shadow-md hover:shadow-lg"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-[44px] px-7 py-3 rounded-full bg-[#0B101D] text-white hover:bg-blue-600 dark:bg-white dark:text-[#0B101D] dark:hover:bg-blue-500 dark:hover:text-white font-semibold text-sm transition-all shadow-md hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#0B0F19]"
               >
                 <span>View our work</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-black/[0.12] dark:border-white/[0.15] hover:bg-black/[0.04] dark:hover:bg-white/[0.05] text-zinc-900 dark:text-zinc-100 font-semibold text-sm transition-colors"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-[44px] px-7 py-3 rounded-full border border-black/[0.12] dark:border-white/[0.15] hover:bg-black/[0.04] dark:hover:bg-white/[0.05] text-zinc-900 dark:text-zinc-100 font-semibold text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#0B0F19]"
               >
                 <span>Start a project</span>
               </Link>
@@ -275,14 +275,14 @@ export default async function HomePage() {
             <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-2">
               <a
                 href="mailto:hello@tendercrafthq.com"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-600 text-white font-semibold text-sm hover:bg-blue-500 transition-colors shadow-sm"
+                className="inline-flex items-center gap-2 min-h-[44px] px-6 py-2.5 rounded-full bg-blue-600 text-white font-semibold text-sm hover:bg-blue-500 transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
                 <Mail className="w-4 h-4" />
                 <span>hello@tendercrafthq.com</span>
               </a>
               <a
                 href="mailto:yyautama@tendercrafthq.com"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/15 text-white font-medium text-sm transition-colors border border-white/10"
+                className="inline-flex items-center gap-2 min-h-[44px] px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/15 text-white font-medium text-sm transition-colors border border-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
                 <span>Direct Founder Line</span>
                 <ArrowRight className="w-4 h-4" />

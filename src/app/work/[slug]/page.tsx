@@ -85,7 +85,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           <div className="space-y-6">
             <Link
               href="/work"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors group"
+              className="inline-flex items-center gap-2 min-h-[44px] text-xs font-semibold uppercase tracking-wider text-zinc-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md px-1"
             >
               <ArrowLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-0.5" />
               <span>Back to All Work</span>
@@ -102,7 +102,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               {project.name}
             </h1>
 
-            <p className="text-xl sm:text-2xl text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed font-normal">
+            <p className="text-xl sm:text-2xl text-zinc-600 dark:text-zinc-300 max-w-3xl leading-relaxed font-normal">
               {project.tagline}
             </p>
           </div>
@@ -197,7 +197,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-600 hover:text-blue-700 dark:hover:text-blue-400 transition-colors"
+                      className="inline-flex items-center gap-1.5 min-h-[44px] text-xs font-semibold text-blue-600 hover:text-blue-700 dark:hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md"
                     >
                       <span>Visit Live Application</span>
                       <ExternalLink className="w-3.5 h-3.5" />
@@ -262,17 +262,17 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                 Need a focused system, custom browser extension, or enterprise workflow tool? Let&apos;s scope it directly.
               </p>
             </div>
-            <div className="flex items-center gap-3 shrink-0">
+            <div className="flex flex-wrap items-center gap-3 shrink-0">
               <a
                 href="mailto:hello@tendercrafthq.com"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors shadow-sm"
+                className="inline-flex items-center gap-2 min-h-[44px] px-6 py-2.5 rounded-full bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
               >
                 <Mail className="w-4 h-4" />
                 <span>hello@tendercrafthq.com</span>
               </a>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-1.5 px-5 py-3 rounded-full border border-black/[0.1] dark:border-white/[0.15] text-sm font-semibold text-zinc-800 dark:text-zinc-200 hover:bg-black/[0.03] transition-colors"
+                className="inline-flex items-center gap-1.5 min-h-[44px] px-5 py-2.5 rounded-full border border-black/[0.1] dark:border-white/[0.15] text-sm font-semibold text-zinc-800 dark:text-zinc-200 hover:bg-black/[0.03] dark:hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
               >
                 <span>Contact Page</span>
                 <ArrowRight className="w-4 h-4" />

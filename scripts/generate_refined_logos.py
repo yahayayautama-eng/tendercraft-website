@@ -1,0 +1,200 @@
+import os
+
+def generate_logos():
+    os.makedirs('public/brand', exist_ok=True)
+    os.makedirs('src/app', exist_ok=True)
+
+    # 1. Standalone Mark (100x100 ViewBox)
+    # A continuous-curvature geometric architectural T & C monogram.
+    # Primary Cobalt "T" bar + vertical spine.
+    # Interlocking Luminous "C" contour hugging the base and left flank.
+    
+    mark_svg = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" aria-label="Tendercraft symbol">
+  <defs>
+    <linearGradient id="tc-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0062FF" />
+      <stop offset="100%" stop-color="#003ECC" />
+    </linearGradient>
+    <linearGradient id="tc-steel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+  </defs>
+
+  <!-- Architectural "T" Crossbar -->
+  <path
+    d="M 16 30 C 16 23.37 21.37 18 28 18 L 72 18 C 78.63 18 84 23.37 84 30 L 84 32 C 84 35.31 81.31 38 78 38 L 22 38 C 18.69 38 16 35.31 16 32 Z"
+    fill="url(#tc-blue)"
+  />
+
+  <!-- Vertical "T" Spine -->
+  <rect
+    x="42"
+    y="34"
+    width="16"
+    height="48"
+    rx="5"
+    fill="url(#tc-blue)"
+  />
+
+  <!-- Interlocking "C" Ribbon (Embraces the base and left flank) -->
+  <path
+    d="M 84 66 C 84 63.8 82.2 62 80 62 L 56 62 C 53.8 62 52 63.8 52 66 C 52 70.4 48.4 74 44 74 C 39.6 74 36 70.4 36 66 L 36 46 C 36 43.8 34.2 42 32 42 L 24 42 C 21.8 42 20 43.8 20 46 L 20 66 C 20 79.25 30.75 90 44 90 L 80 90 C 82.2 90 84 88.2 84 86 Z"
+    fill="url(#tc-steel)"
+  />
+
+  <!-- Precision Focal Accent -->
+  <circle cx="76" cy="28" r="3.5" fill="#FFFFFF" opacity="0.9" />
+</svg>'''
+
+    with open('public/brand/tendercraft-mark.svg', 'w') as f:
+        f.write(mark_svg)
+    with open('src/app/icon.svg', 'w') as f:
+        f.write(mark_svg)
+
+    # 2. Dark Background Logo Lockup (Wordmark in Pure White #FFFFFF)
+    # Mark uses Cobalt Blue + Luminous White/Silver C-bracket
+    dark_logo_svg = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 76" fill="none" aria-label="Tendercraft">
+  <defs>
+    <linearGradient id="tc-blue-d" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2575FC" />
+      <stop offset="100%" stop-color="#0052FF" />
+    </linearGradient>
+  </defs>
+
+  <!-- Mark (Scaled to 52x52 box at left) -->
+  <g transform="translate(6, 12) scale(0.52)">
+    <!-- T Crossbar -->
+    <path
+      d="M 16 30 C 16 23.37 21.37 18 28 18 L 72 18 C 78.63 18 84 23.37 84 30 L 84 32 C 84 35.31 81.31 38 78 38 L 22 38 C 18.69 38 16 35.31 16 32 Z"
+      fill="url(#tc-blue-d)"
+    />
+    <!-- Vertical Spine -->
+    <rect x="42" y="34" width="16" height="48" rx="5" fill="url(#tc-blue-d)" />
+    <!-- Interlocking C Ribbon in Luminous Clean Slate -->
+    <path
+      d="M 84 66 C 84 63.8 82.2 62 80 62 L 56 62 C 53.8 62 52 63.8 52 66 C 52 70.4 48.4 74 44 74 C 39.6 74 36 70.4 36 66 L 36 46 C 36 43.8 34.2 42 32 42 L 24 42 C 21.8 42 20 43.8 20 46 L 20 66 C 20 79.25 30.75 90 44 90 L 80 90 C 82.2 90 84 88.2 84 86 Z"
+      fill="#F1F5F9"
+    />
+    <!-- Accent Point -->
+    <circle cx="76" cy="28" r="3.5" fill="#FFFFFF" />
+  </g>
+
+  <!-- Crisp Wordmark -->
+  <text
+    x="74"
+    y="47"
+    fill="#FFFFFF"
+    font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Geist', 'Inter', system-ui, sans-serif"
+    font-size="27"
+    font-weight="700"
+    letter-spacing="2.2"
+  >TENDERCRAFT</text>
+</svg>'''
+
+    with open('public/brand/tendercraft-logo-dark.svg', 'w') as f:
+        f.write(dark_logo_svg)
+
+    # 3. Light Background Logo Lockup (Wordmark in Dark Slate #0B101D)
+    # Mark uses Cobalt Blue + Dark Graphite C-bracket
+    light_logo_svg = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 76" fill="none" aria-label="Tendercraft">
+  <defs>
+    <linearGradient id="tc-blue-l" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0052FF" />
+      <stop offset="100%" stop-color="#003ECC" />
+    </linearGradient>
+  </defs>
+
+  <!-- Mark (Scaled to 52x52 box at left) -->
+  <g transform="translate(6, 12) scale(0.52)">
+    <!-- T Crossbar -->
+    <path
+      d="M 16 30 C 16 23.37 21.37 18 28 18 L 72 18 C 78.63 18 84 23.37 84 30 L 84 32 C 84 35.31 81.31 38 78 38 L 22 38 C 18.69 38 16 35.31 16 32 Z"
+      fill="url(#tc-blue-l)"
+    />
+    <!-- Vertical Spine -->
+    <rect x="42" y="34" width="16" height="48" rx="5" fill="url(#tc-blue-l)" />
+    <!-- Interlocking C Ribbon in Dark Graphite -->
+    <path
+      d="M 84 66 C 84 63.8 82.2 62 80 62 L 56 62 C 53.8 62 52 63.8 52 66 C 52 70.4 48.4 74 44 74 C 39.6 74 36 70.4 36 66 L 36 46 C 36 43.8 34.2 42 32 42 L 24 42 C 21.8 42 20 43.8 20 46 L 20 66 C 20 79.25 30.75 90 44 90 L 80 90 C 82.2 90 84 88.2 84 86 Z"
+      fill="#0B101D"
+    />
+    <!-- Accent Point -->
+    <circle cx="76" cy="28" r="3.5" fill="#0052FF" />
+  </g>
+
+  <!-- Crisp Wordmark -->
+  <text
+    x="74"
+    y="47"
+    fill="#0B101D"
+    font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Geist', 'Inter', system-ui, sans-serif"
+    font-size="27"
+    font-weight="700"
+    letter-spacing="2.2"
+  >TENDERCRAFT</text>
+</svg>'''
+
+    with open('public/brand/tendercraft-logo-light.svg', 'w') as f:
+        f.write(light_logo_svg)
+
+    # 4. Monochrome Black Lockup
+    mono_black_svg = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 76" fill="none" aria-label="Tendercraft">
+  <g transform="translate(6, 12) scale(0.52)">
+    <path
+      d="M 16 30 C 16 23.37 21.37 18 28 18 L 72 18 C 78.63 18 84 23.37 84 30 L 84 32 C 84 35.31 81.31 38 78 38 L 22 38 C 18.69 38 16 35.31 16 32 Z"
+      fill="#000000"
+    />
+    <rect x="42" y="34" width="16" height="48" rx="5" fill="#000000" />
+    <path
+      d="M 84 66 C 84 63.8 82.2 62 80 62 L 56 62 C 53.8 62 52 63.8 52 66 C 52 70.4 48.4 74 44 74 C 39.6 74 36 70.4 36 66 L 36 46 C 36 43.8 34.2 42 32 42 L 24 42 C 21.8 42 20 43.8 20 46 L 20 66 C 20 79.25 30.75 90 44 90 L 80 90 C 82.2 90 84 88.2 84 86 Z"
+      fill="#000000"
+      opacity="0.8"
+    />
+  </g>
+  <text
+    x="74"
+    y="47"
+    fill="#000000"
+    font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Geist', 'Inter', system-ui, sans-serif"
+    font-size="27"
+    font-weight="700"
+    letter-spacing="2.2"
+  >TENDERCRAFT</text>
+</svg>'''
+
+    with open('public/brand/tendercraft-logo-mono-black.svg', 'w') as f:
+        f.write(mono_black_svg)
+
+    # 5. Monochrome White Lockup
+    mono_white_svg = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 76" fill="none" aria-label="Tendercraft">
+  <g transform="translate(6, 12) scale(0.52)">
+    <path
+      d="M 16 30 C 16 23.37 21.37 18 28 18 L 72 18 C 78.63 18 84 23.37 84 30 L 84 32 C 84 35.31 81.31 38 78 38 L 22 38 C 18.69 38 16 35.31 16 32 Z"
+      fill="#FFFFFF"
+    />
+    <rect x="42" y="34" width="16" height="48" rx="5" fill="#FFFFFF" />
+    <path
+      d="M 84 66 C 84 63.8 82.2 62 80 62 L 56 62 C 53.8 62 52 63.8 52 66 C 52 70.4 48.4 74 44 74 C 39.6 74 36 70.4 36 66 L 36 46 C 36 43.8 34.2 42 32 42 L 24 42 C 21.8 42 20 43.8 20 46 L 20 66 C 20 79.25 30.75 90 44 90 L 80 90 C 82.2 90 84 88.2 84 86 Z"
+      fill="#FFFFFF"
+      opacity="0.8"
+    />
+  </g>
+  <text
+    x="74"
+    y="47"
+    fill="#FFFFFF"
+    font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Geist', 'Inter', system-ui, sans-serif"
+    font-size="27"
+    font-weight="700"
+    letter-spacing="2.2"
+  >TENDERCRAFT</text>
+</svg>'''
+
+    with open('public/brand/tendercraft-logo-mono-white.svg', 'w') as f:
+        f.write(mono_white_svg)
+
+    print("Refined SVG logo suite created successfully.")
+
+if __name__ == '__main__':
+    generate_logos()

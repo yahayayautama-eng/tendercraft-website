@@ -8,11 +8,15 @@ export function Footer() {
 
   return (
     <footer className="w-full border-t border-black/[0.08] dark:border-white/[0.08] bg-zinc-50 dark:bg-[#070A11] transition-colors overflow-hidden">
-      <div className="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-8 py-16 sm:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 sm:gap-12 lg:gap-16">
           {/* Brand & Mission */}
           <div className="lg:col-span-5 space-y-6">
-            <Link href="/" className="inline-block relative h-7 w-40" aria-label="Tendercraft Home">
+            <Link
+              href="/"
+              className="inline-flex items-center relative h-8 w-44 min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-lg"
+              aria-label="Tendercraft Home"
+            >
               <Image
                 src="/brand/tendercraft-logo-light.svg"
                 alt="Tendercraft"
@@ -26,7 +30,7 @@ export function Footer() {
                 className="object-contain object-left hidden dark:block"
               />
             </Link>
-            <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 max-w-sm leading-relaxed">
+            <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 max-w-sm leading-relaxed">
               Tendercraft builds focused software that turns difficult workflows into useful products. Business tools, browser extensions, and continuous automation.
             </p>
             <div className="flex items-center gap-2 text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 font-medium">
@@ -40,11 +44,11 @@ export function Footer() {
             <h3 className="text-xs font-bold uppercase tracking-wider text-zinc-900 dark:text-zinc-200">
               Studio
             </h3>
-            <ul className="space-y-3 text-sm font-medium">
+            <ul className="space-y-1 text-sm font-medium">
               <li>
                 <Link
                   href="/work"
-                  className="text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className="inline-flex items-center min-h-[44px] text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md px-1"
                 >
                   Featured Work
                 </Link>
@@ -52,7 +56,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/about"
-                  className="text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className="inline-flex items-center min-h-[44px] text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md px-1"
                 >
                   About & Approach
                 </Link>
@@ -60,7 +64,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className="inline-flex items-center min-h-[44px] text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md px-1"
                 >
                   Start a Project
                 </Link>
@@ -68,7 +72,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/privacy"
-                  className="text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className="inline-flex items-center min-h-[44px] text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md px-1"
                 >
                   Privacy Notice
                 </Link>
@@ -88,20 +92,20 @@ export function Footer() {
                 </span>
                 <a
                   href="mailto:hello@tendercrafthq.com"
-                  className="inline-flex items-center gap-1.5 font-medium text-zinc-900 dark:text-zinc-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors group break-all"
+                  className="inline-flex items-center gap-1.5 min-h-[44px] font-medium text-zinc-900 dark:text-zinc-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors group break-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md px-1"
                 >
                   <Mail className="w-3.5 h-3.5 text-blue-600 shrink-0" />
                   <span>hello@tendercrafthq.com</span>
                   <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
                 </a>
               </div>
-              <div className="pt-2">
+              <div className="pt-1">
                 <span className="block text-xs text-zinc-400 uppercase font-mono mb-1">
                   Founder & Business
                 </span>
                 <a
                   href="mailto:yyautama@tendercrafthq.com"
-                  className="inline-flex items-center gap-1.5 font-medium text-zinc-900 dark:text-zinc-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors group break-all"
+                  className="inline-flex items-center gap-1.5 min-h-[44px] font-medium text-zinc-900 dark:text-zinc-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors group break-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md px-1"
                 >
                   <Mail className="w-3.5 h-3.5 text-blue-600 shrink-0" />
                   <span>yyautama@tendercrafthq.com</span>
@@ -117,7 +121,10 @@ export function Footer() {
           <p>© {currentYear} Tendercraft. All rights reserved.</p>
           <p className="flex items-center gap-4">
             <span>Built with precision & restraint.</span>
-            <Link href="/privacy" className="hover:underline">
+            <Link
+              href="/privacy"
+              className="hover:underline min-h-[44px] inline-flex items-center"
+            >
               Privacy
             </Link>
           </p>

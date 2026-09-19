@@ -90,6 +90,15 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#FFFFFF' },
+    { media: '(prefers-color-scheme: dark)', color: '#0B0F19' },
+  ],
+  width: 'device-width',
+  initialScale: 1,
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -107,8 +116,13 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-white text-[#0B101D] dark:bg-[#0B0F19] dark:text-[#F8FAFC]">
+        <a href="#main-content" className="skip-to-content">
+          Skip to main content
+        </a>
         <Header />
-        <main className="flex-1 w-full">{children}</main>
+        <main id="main-content" tabIndex={-1} className="flex-1 w-full outline-none">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
