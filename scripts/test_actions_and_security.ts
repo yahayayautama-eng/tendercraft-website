@@ -58,8 +58,8 @@ async function runTests() {
     'Field validations failed to flag invalid fields'
   );
 
-  // 3. Test Contact Action: Valid Submission
-  console.log('\nTesting Valid Contact Enquiry Submission...');
+  // 3. Test Contact Action: Durable Storage Guard
+  console.log('\nTesting Contact Enquiry Storage Guard...');
   const validFormData = new FormData();
   const testEmail = `lead-${Date.now()}@acme-corp.com`;
   validFormData.set('name', 'Ada Lovelace');
@@ -70,19 +70,20 @@ async function runTests() {
 
   const validResult = await submitContactEnquiryAction(validFormData);
   assert(
-    validResult.success === true && typeof validResult.message === 'string',
-    'Valid enquiry submission succeeds with confirmation message',
-    'Valid enquiry submission failed'
+    validResult.success === false &&
+      Boolean(validResult.error?.includes('Enquiry storage is not configured yet')),
+    'Unconfigured storage never reports a false success',
+    'Unconfigured storage incorrectly reported a received enquiry'
   );
 
-  // 4. Test Contact Action: Deduplication
-  console.log('\nTesting Contact Enquiry Deduplication Protection...');
+  // 4. Test Contact Action: Failed Persistence Is Retryable
+  console.log('\nTesting Contact Enquiry Failed-Persistence Recovery...');
   const duplicateResult = await submitContactEnquiryAction(validFormData);
   assert(
     duplicateResult.success === false &&
-      Boolean(duplicateResult.error?.includes('duplicate enquiry was recently submitted')),
-    'Duplicate submission within dedupe window blocked with friendly notice',
-    'Duplicate submission was not blocked'
+      Boolean(duplicateResult.error?.includes('Enquiry storage is not configured yet')),
+    'Failed persistence remains retryable without recording a duplicate',
+    'Failed persistence created an inconsistent duplicate state'
   );
 
   // 5. Test Admin Mutations: Anonymous Execution Blocked
