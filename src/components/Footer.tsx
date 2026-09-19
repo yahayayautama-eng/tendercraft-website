@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Mail, MapPin, ArrowUpRight } from 'lucide-react';
+import { Mail, Globe, ArrowUpRight } from 'lucide-react';
 
 export function Footer() {
   const currentYear = 2026;
@@ -34,8 +34,8 @@ export function Footer() {
               Tendercraft builds focused software that turns difficult workflows into useful products. Business tools, browser extensions, and continuous automation.
             </p>
             <div className="flex items-center gap-2 text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 font-medium">
-              <MapPin className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0" />
-              <span>Nigeria / Remote</span>
+              <Globe className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0" />
+              <span>Remote Worldwide</span>
             </div>
           </div>
 

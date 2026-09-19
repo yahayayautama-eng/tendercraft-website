@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { SectionWrapper } from '@/components/SectionWrapper';
 import { getSiteUrl } from '@/lib/site';
-import { Mail, MapPin, ArrowRight, ShieldCheck, Zap, Layers, Sparkles, ArrowUpRight } from 'lucide-react';
+import { Mail, Globe, ArrowRight, ShieldCheck, Zap, Layers, Sparkles, ArrowUpRight } from 'lucide-react';
 
 const siteUrl = getSiteUrl();
 
@@ -166,8 +166,8 @@ export default function AboutPage() {
                 </p>
 
                 <div className="flex items-center gap-2 text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 pt-1 font-medium">
-                  <MapPin className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0" aria-hidden="true" />
-                  <span>Operating from Nigeria / Serving remote clients globally</span>
+                  <Globe className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0" aria-hidden="true" />
+                  <span>Independent Product Studio · Remote Worldwide</span>
                 </div>
               </div>
             </div>

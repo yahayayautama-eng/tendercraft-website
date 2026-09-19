@@ -121,4 +121,4 @@ To maintain identity integrity, never:
 
 - **General Enquiries:** `hello@tendercrafthq.com`
 - **Founder / Direct Business:** `yyautama@tendercrafthq.com`
-- **Studio Location:** Nigeria / Remote
+- **Studio Location:** Remote Worldwide

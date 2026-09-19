@@ -83,7 +83,7 @@ The final wordmark must spell `TENDERCRAFT` exactly. Keep the identity original 
 5. Working approach: Discover, Build, Verify, Launch.
 6. Selected proof: only facts verified from repositories, live URLs, packages, or marketplace pages.
 7. Contact banner using `hello@tendercrafthq.com`.
-8. Footer with `yyautama@tendercrafthq.com`, location `Nigeria / Remote`, and verified social links only.
+8. Footer with `yyautama@tendercrafthq.com`, location `Remote Worldwide`, and verified social links only.
 
 ## Initial project asset inventory
 
