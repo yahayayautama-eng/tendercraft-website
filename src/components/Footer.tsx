@@ -1,7 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Mail, Globe, ArrowUpRight } from 'lucide-react';
+import { Globe } from 'lucide-react';
+import { MotionEmailBadge } from '@/components/MotionEmailBadge';
 
 export function Footer() {
   const currentYear = 2026;
@@ -85,32 +86,18 @@ export function Footer() {
             <h3 className="text-xs font-bold uppercase tracking-wider text-zinc-900 dark:text-zinc-200">
               Direct Contact
             </h3>
-            <div className="space-y-3 text-sm">
+            <div className="space-y-4 text-sm">
               <div>
-                <span className="block text-xs text-zinc-400 uppercase font-mono mb-1">
+                <span className="block text-xs text-zinc-400 uppercase font-mono mb-1.5">
                   General Enquiries
                 </span>
-                <a
-                  href="mailto:hello@tendercrafthq.com"
-                  className="inline-flex items-center gap-1.5 min-h-[44px] font-medium text-zinc-900 dark:text-zinc-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors group break-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md px-1"
-                >
-                  <Mail className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-                  <span>hello@tendercrafthq.com</span>
-                  <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
-                </a>
+                <MotionEmailBadge email="hello@tendercrafthq.com" size="sm" />
               </div>
-              <div className="pt-1">
-                <span className="block text-xs text-zinc-400 uppercase font-mono mb-1">
+              <div>
+                <span className="block text-xs text-zinc-400 uppercase font-mono mb-1.5">
                   Founder & Business
                 </span>
-                <a
-                  href="mailto:yyautama@tendercrafthq.com"
-                  className="inline-flex items-center gap-1.5 min-h-[44px] font-medium text-zinc-900 dark:text-zinc-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors group break-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md px-1"
-                >
-                  <Mail className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-                  <span>yyautama@tendercrafthq.com</span>
-                  <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
-                </a>
+                <MotionEmailBadge email="yyautama@tendercrafthq.com" size="sm" />
               </div>
             </div>
           </div>

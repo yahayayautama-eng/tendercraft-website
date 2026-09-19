@@ -1,8 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 import { SectionWrapper } from '@/components/SectionWrapper';
+import { MotionEmailBadge } from '@/components/MotionEmailBadge';
 import { getSiteUrl } from '@/lib/site';
-import { Mail, Globe, ArrowRight, ShieldCheck, Zap, Layers, Sparkles, ArrowUpRight } from 'lucide-react';
+import { Globe, ArrowRight, ShieldCheck, Zap, Layers, Sparkles, ArrowUpRight } from 'lucide-react';
 
 const siteUrl = getSiteUrl();
 
@@ -174,13 +175,7 @@ export default function AboutPage() {
 
             {/* Direct Connect Actions & Links (All >= 44x44px touch targets) */}
             <div className="pt-6 border-t border-black/[0.06] dark:border-white/[0.08] flex flex-wrap items-center gap-3">
-              <a
-                href="mailto:yyautama@tendercrafthq.com"
-                className="min-h-[44px] inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#0B101D] text-white hover:bg-blue-600 dark:bg-white dark:text-[#0B101D] dark:hover:bg-blue-500 dark:hover:text-white text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 shadow-xs"
-              >
-                <Mail className="w-4 h-4" aria-hidden="true" />
-                <span>yyautama@tendercrafthq.com</span>
-              </a>
+              <MotionEmailBadge email="yyautama@tendercrafthq.com" size="md" />
 
               <a
                 href="https://github.com/yahayayautama-eng"

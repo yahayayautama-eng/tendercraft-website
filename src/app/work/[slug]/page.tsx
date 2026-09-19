@@ -5,12 +5,12 @@ import Image from 'next/image';
 import { Metadata } from 'next';
 import { getPublicProjects, getPublicProjectBySlug } from '@/lib/projects';
 import { SectionWrapper } from '@/components/SectionWrapper';
+import { MotionEmailBadge } from '@/components/MotionEmailBadge';
 import { getSiteUrl } from '@/lib/site';
 import {
   ArrowLeft,
   CheckCircle2,
   ExternalLink,
-  Mail,
   ArrowRight,
 } from 'lucide-react';
 
@@ -321,13 +321,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-3 shrink-0">
-              <a
-                href="mailto:hello@tendercrafthq.com"
-                className="inline-flex items-center gap-2 min-h-[44px] px-6 py-2.5 rounded-full bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-              >
-                <Mail className="w-4 h-4" />
-                <span>hello@tendercrafthq.com</span>
-              </a>
+              <MotionEmailBadge email="hello@tendercrafthq.com" size="md" />
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-1.5 min-h-[44px] px-5 py-2.5 rounded-full border border-black/[0.1] dark:border-white/[0.15] text-sm font-semibold text-zinc-800 dark:text-zinc-200 hover:bg-black/[0.03] dark:hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"

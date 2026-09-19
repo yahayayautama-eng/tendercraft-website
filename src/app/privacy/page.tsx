@@ -94,7 +94,7 @@ export default function PrivacyPage() {
                 5. Questions and Contact
               </h2>
               <p>
-                For any questions regarding this privacy notice or to request the deletion of past correspondence, please contact us directly at <a href="mailto:hello@tendercrafthq.com" className="text-blue-600 hover:underline font-medium">hello@tendercrafthq.com</a>.
+                For any questions regarding this privacy notice or to request the deletion of past correspondence, please contact us directly at <a href="mailto:hello@tendercrafthq.com" className="text-blue-600 hover:underline font-mono tracking-tight font-semibold">hello@tendercrafthq.com</a>.
               </p>
             </section>
           </div>

@@ -1,8 +1,9 @@
 import React from 'react';
 import { SectionWrapper } from '@/components/SectionWrapper';
 import { ContactForm } from '@/components/ContactForm';
+import { MotionEmailBadge } from '@/components/MotionEmailBadge';
 import { getSiteUrl } from '@/lib/site';
-import { Mail, ArrowUpRight, Clock, ShieldCheck, MessageSquare } from 'lucide-react';
+import { Mail, Clock, ShieldCheck, MessageSquare } from 'lucide-react';
 
 const siteUrl = getSiteUrl();
 
@@ -72,13 +73,9 @@ export default function ContactPage() {
               <span className="block text-xs uppercase font-mono text-zinc-400">
                 Studio Inbox
               </span>
-              <a
-                href="mailto:hello@tendercrafthq.com"
-                className="inline-flex items-center gap-2 text-lg sm:text-xl font-bold text-blue-600 dark:text-blue-400 hover:underline group"
-              >
-                <span>hello@tendercrafthq.com</span>
-                <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </a>
+              <div>
+                <MotionEmailBadge email="hello@tendercrafthq.com" size="lg" />
+              </div>
             </div>
           </div>
 
@@ -100,13 +97,9 @@ export default function ContactPage() {
               <span className="block text-xs uppercase font-mono text-zinc-400">
                 Direct Line
               </span>
-              <a
-                href="mailto:yyautama@tendercrafthq.com"
-                className="inline-flex items-center gap-2 text-lg sm:text-xl font-bold text-blue-600 dark:text-blue-400 hover:underline group"
-              >
-                <span>yyautama@tendercrafthq.com</span>
-                <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </a>
+              <div>
+                <MotionEmailBadge email="yyautama@tendercrafthq.com" size="lg" />
+              </div>
             </div>
           </div>
         </div>
