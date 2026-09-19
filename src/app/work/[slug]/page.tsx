@@ -105,6 +105,50 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             <p className="text-xl sm:text-2xl text-zinc-600 dark:text-zinc-300 max-w-3xl leading-relaxed font-normal">
               {project.tagline}
             </p>
+
+            {(project.storeUrl || project.liveUrl) && (
+              <div className="flex flex-wrap items-center gap-3 pt-2">
+                {project.storeUrl && (
+                  <a
+                    href={project.storeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 min-h-[44px] px-6 py-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold transition-all shadow-sm hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#0B0F19]"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="16"
+                      height="16"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <circle cx="12" cy="12" r="4" />
+                      <line x1="21.17" y1="8" x2="12" y2="8" />
+                      <line x1="3.95" y1="6.06" x2="8.54" y2="14" />
+                      <line x1="10.88" y1="21.94" x2="15.46" y2="14" />
+                    </svg>
+                    <span>Install from Chrome Web Store</span>
+                    <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+                  </a>
+                )}
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 min-h-[44px] px-6 py-2.5 rounded-full border border-black/[0.12] dark:border-white/[0.15] hover:bg-black/[0.04] dark:hover:bg-white/[0.05] text-zinc-900 dark:text-zinc-100 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#0B0F19]"
+                  >
+                    <span>Visit Product Site</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                )}
+              </div>
+            )}
           </div>
 
           {/* Large Hero Visual */}
@@ -191,6 +235,20 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                   </p>
                 </div>
 
+                {project.storeUrl && (
+                  <div className="pt-4 border-t border-black/[0.06] dark:border-white/[0.06]">
+                    <a
+                      href={project.storeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 min-h-[44px] text-xs font-semibold text-blue-600 hover:text-blue-700 dark:hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md"
+                    >
+                      <span>Google Chrome Web Store</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                )}
+
                 {project.liveUrl && (
                   <div className="pt-4 border-t border-black/[0.06] dark:border-white/[0.06]">
                     <a
@@ -199,7 +257,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 min-h-[44px] text-xs font-semibold text-blue-600 hover:text-blue-700 dark:hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md"
                     >
-                      <span>Visit Live Application</span>
+                      <span>Visit Product Website</span>
                       <ExternalLink className="w-3.5 h-3.5" />
                     </a>
                   </div>

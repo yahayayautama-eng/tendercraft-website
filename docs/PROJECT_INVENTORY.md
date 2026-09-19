@@ -80,15 +80,18 @@ Operating principle: **Never invent customers, testimonials, revenue, metrics, r
 
 ---
 
-## 2. Secondary Verified Business Projects
+## 2. Completed & Live Chrome Extensions
 
 ### 2.1 FreightHUD
 - **Category:** Logistics / Browser Workflow Extension
 - **Repository / Source Path:** `C:\Users\Yayis\Desktop\Antigravity projects\Freight`
-- **Core Value Proposition:** Real-time spot rate calculation and load intelligence HUD injected directly into freight broker load boards (DAT One, Truckstop).
+- **Verified Chrome Web Store URL:** `https://chromewebstore.google.com/detail/obcpknlcbnkceaommkckjdnoclmgemic`
+- **Verified Live Product Site:** `https://freighthud.vercel.app`
+- **Core Value Proposition:** Real-time spot rate calculation, deadhead analysis, and FMCSA broker credibility HUD injected directly into freight broker load boards (DAT One, Truckstop).
 - **Problem Solved:** Freight dispatchers lose crucial seconds switching between load boards, rate estimators, and mileage calculators while negotiating spot loads.
 - **Key Capabilities (Verified):**
   - Contextual rate-per-mile calculation and deadhead analysis directly within load board DOM.
+  - Live FMCSA broker verification states embedded alongside load listings.
   - Rapid margin calculation and carrier negotiation benchmarks.
 - **Verified Assets:**
   - `assets\campaign\freighthud_hero_banner.jpg`
@@ -96,25 +99,30 @@ Operating principle: **Never invent customers, testimonials, revenue, metrics, r
   - `store\assets\screenshot_2_1280x800.png`
   - `store\assets\marquee_promo_1400x560.png`
   - `store\assets\icon128.png`
-- **Current Delivery Status:** Extension codebase packaged; Chrome Web Store promotional materials created.
-- **Commercial Status:** Package ready for Chrome Web Store distribution.
+- **Current Delivery Status:** Completed & Live on the Google Chrome Web Store.
+- **Commercial Status:** Active in production on Google Chrome Web Store (`obcpknlcbnkceaommkckjdnoclmgemic`).
 
 ---
 
 ### 2.2 CartItemizer
 - **Category:** E-Commerce Accounting / Chrome Extension
 - **Repository / Source Path:** `C:\Users\Yayis\Desktop\Antigravity projects\Amazon`
-- **Core Value Proposition:** Automates cart itemization, expense categorization, and multi-store split exports for Amazon Business and Home Depot receipts into QuickBooks / CSV.
+- **Verified Chrome Web Store URL:** `https://chromewebstore.google.com/detail/cartitemizer-receipt-item/lemeifejbhckhopkcgljjoonhckdoclk`
+- **Verified Live Product Site:** `https://cartitemizer.vercel.app`
+- **Core Value Proposition:** Automates cart itemization, expense categorization, and multi-store split exports for Amazon Business, Home Depot, AliExpress, and Temu receipts into QuickBooks batch CSV / IIF.
+- **Problem Solved:** Bookkeepers and project managers spend hours manually splitting lump-sum procurement orders across client jobs, cost codes, and tax categories from printed receipts and complex invoices.
 - **Key Capabilities (Verified):**
-  - Automatic receipt item extraction and GL account splitting.
-  - Direct export formats tailored for business expense bookkeeping.
+  - Automated receipt line-item extraction and tax/shipping splits across Amazon, Home Depot, AliExpress, and Temu.
+  - GL code and job expense allocation across individual cart items.
+  - Direct export formats tailored for QuickBooks batch CSV and IIF bookkeeping ingestion.
 - **Verified Assets:**
   - `assets\cartitemizer_cover.jpg`
   - `assets\store\screenshot-1-amazon-split.jpg`
   - `assets\store\screenshot-2-homedepot.jpg`
   - `assets\store\screenshot-3-formats.jpg`
   - `assets\store\promo-marquee-1400x560.jpg`
-- **Current Delivery Status:** Chrome extension v1.3.1 packaged zip built.
+- **Current Delivery Status:** Completed & Live on the Google Chrome Web Store (v1.3.1).
+- **Commercial Status:** Active in production on Google Chrome Web Store (`lemeifejbhckhopkcgljjoonhckdoclk`).
 
 ---
 
@@ -132,7 +140,7 @@ Operating principle: **Never invent customers, testimonials, revenue, metrics, r
 | **Beadle** | YES | YES | YES (Prototype / On-prem preview) | **Priority Case Study** |
 | **CompoundOS** | YES | YES | YES (Working software build) | **Priority Case Study** |
 | **Automated Risk Register** | YES | YES | YES (Deployed web application) | **Priority Case Study** |
-| **FreightHUD** | YES | YES | YES (Packaged extension) | **Secondary Case Study** |
-| **CartItemizer** | YES | YES | YES (Packaged extension v1.3.1) | **Secondary Case Study** |
+| **FreightHUD** | YES | YES | YES (Completed Chrome Extension) | **Featured Portfolio Case Study** |
+| **CartItemizer** | YES | YES | YES (Completed Chrome Extension v1.3.1) | **Featured Portfolio Case Study** |
 | **Texas Permit Radar** | YES | NO | `UNVERIFIED` for portfolio | EXCLUDED from v1 |
 | **Games** | N/A | N/A | N/A | STRICTLY EXCLUDED |

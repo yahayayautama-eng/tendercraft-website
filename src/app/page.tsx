@@ -16,7 +16,7 @@ import {
 
 export default async function HomePage() {
   const allProjects = await getPublicProjects();
-  const featuredProjects = allProjects.filter((p) => p.featured).slice(0, 3);
+  const featuredProjects = allProjects.filter((p) => p.featured);
 
   return (
     <div className="space-y-24 sm:space-y-32 pb-24">
@@ -101,23 +101,34 @@ export default async function HomePage() {
             </Link>
           </div>
 
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-            {featuredProjects.map((project, idx) => (
-              <ProjectCard
-                key={project.id}
-                project={{
-                  slug: project.slug,
-                  name: project.name,
-                  tagline: project.tagline,
-                  summary: project.summary,
-                  statusLabel: project.statusLabel,
-                  category: project.status === 'prototype' ? 'Enterprise Systems' : project.status === 'deployed' ? 'Web Platforms' : 'Operations Tooling',
-                  coverImage: project.coverImagePath,
-                  capabilities: project.capabilities,
-                }}
-                priority={idx === 0}
-              />
-            ))}
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {featuredProjects.map((project, idx) => {
+              const category =
+                project.slug === 'freighthud' || project.slug === 'cartitemizer'
+                  ? 'Chrome Extension'
+                  : project.status === 'prototype'
+                  ? 'Enterprise Systems'
+                  : project.status === 'deployed'
+                  ? 'Web Platforms'
+                  : 'Operations Platforms';
+
+              return (
+                <ProjectCard
+                  key={project.id}
+                  project={{
+                    slug: project.slug,
+                    name: project.name,
+                    tagline: project.tagline,
+                    summary: project.summary,
+                    statusLabel: project.statusLabel,
+                    category,
+                    coverImage: project.coverImagePath,
+                    capabilities: project.capabilities,
+                  }}
+                  priority={idx < 2}
+                />
+              );
+            })}
           </div>
         </SectionWrapper>
       </section>
