@@ -4,7 +4,7 @@
  * image provenance, robots.txt, sitemap.xml, and strict brand constraints.
  */
 
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = process.env.AUDIT_URL || 'http://localhost:3000';
 
 const ROUTES_TO_TEST = [
   '/',
