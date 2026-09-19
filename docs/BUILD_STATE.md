@@ -1,7 +1,7 @@
 # Tendercraft Website — Build State & Execution Log
 
 **Current Timestamp:** 2026-09-19 12:10 UTC  
-**Active Phase:** Production deployment complete; Supabase database and Vercel production variables are active; first admin user onboarding remains  
+**Active Phase:** Production deployment complete; Supabase database, Vercel production variables, and first admin allowlist entry are active  
 **Production Domain:** `https://www.tendercrafthq.com` (verified live); apex DNS record configured and awaiting edge/network confirmation  
 **Current Live Deployment:** [https://tendercraft-website-66hepakrc-yytarfa.vercel.app](https://tendercraft-website-66hepakrc-yytarfa.vercel.app)  
 **GitHub Repository:** [https://github.com/yahayayautama-eng/tendercraft-website](https://github.com/yahayayautama-eng/tendercraft-website)  
@@ -105,4 +105,4 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY
 SUPABASE_SERVICE_ROLE_KEY
 ```
 
-No Supabase values are committed to GitHub or printed in this log. The remaining operational step is to create or invite the first Supabase Auth user, then insert that user's UUID into `public.admin_users`; until that happens, `/admin` correctly redirects unauthorized visitors to `/admin/login`.
+No Supabase values are committed to GitHub or printed in this log. The first Supabase Auth user is confirmed and allowlisted in `public.admin_users`; authenticated visitors can now use `/admin`, while anonymous visitors continue to redirect to `/admin/login`.
