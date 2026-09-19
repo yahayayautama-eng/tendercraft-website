@@ -1,9 +1,9 @@
 # Tendercraft Website — Build State & Execution Log
 
-**Current Timestamp:** 2026-09-19 11:35 UTC  
-**Active Phase:** All 7 Production Hardening Phases Completed & Verified  
-**Production Domain:** `https://tendercrafthq.com`  
-**Current Live Deployment:** [https://tendercraft-website.vercel.app](https://tendercraft-website.vercel.app)  
+**Current Timestamp:** 2026-09-19 12:10 UTC  
+**Active Phase:** Production deployment complete; Supabase activation remains external  
+**Production Domain:** `https://www.tendercrafthq.com` (verified live); apex DNS record configured and awaiting edge/network confirmation  
+**Current Live Deployment:** [https://tendercraft-website-66hepakrc-yytarfa.vercel.app](https://tendercraft-website-66hepakrc-yytarfa.vercel.app)  
 **GitHub Repository:** [https://github.com/yahayayautama-eng/tendercraft-website](https://github.com/yahayayautama-eng/tendercraft-website)  
 
 ---
@@ -20,7 +20,7 @@
   - *Session Invalidation:* `logoutAdminAction` calls `supabase.auth.signOut({ scope: 'local' })` and revalidates paths.
 
 - [x] **Phase 2 — Supabase Database & Storage Hardening**
-  - *Status:* **COMPLETED & VERIFIED**.
+  - *Status:* **Migrations and policies committed; production activation pending Supabase credentials**.
   - *Migrations Added:* `supabase/migrations/20260919000002_create_contact_submissions_and_harden_security.sql`.
   - *Contact Submissions Table:* `public.contact_submissions` table created with RLS enabled.
   - *RLS Policies:*
@@ -47,13 +47,13 @@
   - *Dynamic Params:* Explicit `export const dynamicParams = true;` on `/work/[slug]`.
 
 - [x] **Phase 5 — Reliable Contact Enquiries & Storage**
-  - *Status:* **COMPLETED & VERIFIED**.
+  - *Status:* **Implemented; production storage activates when Supabase is configured**.
   - *Server Action:* `src/app/contact/actions.ts` (`submitContactEnquiryAction`):
     - Hidden honeypot `company_hp` silently absorbs bot spam.
     - Server-side rate limiter: max 5 requests per 15-minute window per IP.
     - Strict field validation (Name, Business Email, Project Description, Budget Range, Target Timeline).
     - Deduplication window: blocks repeated identical submissions within 10 minutes.
-    - Storage in Supabase `contact_submissions` table with fallback server logging.
+    - Storage in Supabase `contact_submissions` table; unconfigured or failed storage returns an explicit error instead of falsely confirming receipt.
   - *Client Form:* `src/components/ContactForm.tsx` with responsive, Apple-inspired layout, interactive budget/timeline pill selectors, real-time field error messaging, pending spinners, and confirmation state.
   - *Direct Email Preservation:* Direct contact cards for `hello@tendercrafthq.com` and `yyautama@tendercrafthq.com` preserved.
   - *Privacy Policy Update:* `src/app/privacy/page.tsx` updated with explicit disclosures regarding enquiry data handling, purpose, retention, and deletion rights.
@@ -67,12 +67,13 @@
     - `src/data/projects.ts` (Beadle capability 1): Updated "without dismiss bypass" to "commands immediate attention and requires deliberate user acknowledgement".
 
 - [x] **Phase 7 — Comprehensive Automated Verification**
-  - *Status:* **ALL PASSED (41/41 Automated Tests)**.
+  - *Status:* **ALL PASSED (41/41 repository checks)**.
   - *Production Audit Suite (`scripts/audit_security_and_production.ts`):* 33 passed, 0 failed.
   - *Server Actions & Security Suite (`scripts/test_actions_and_security.ts`):* 8 passed, 0 failed.
   - *ESLint (`pnpm run lint`):* 0 errors, 0 warnings.
   - *TypeScript (`npx tsc --noEmit`):* 0 errors.
   - *Turbopack Production Build (`pnpm run build`):* 19 routes successfully generated.
+  - *Verification tooling:* `tsx` is declared in `devDependencies` so both TypeScript suites run from a clean checkout.
 
 ---
 
@@ -87,13 +88,21 @@ Cloudflare handles DNS and active Email Routing for `tendercrafthq.com`. The fol
 | **MX** | `@` (`tendercrafthq.com`) | `route3.mx.cloudflare.net` | 93 | Active (Required) |
 | **TXT** | `@` (`tendercrafthq.com`) | `v=spf1 include:_spf.mx.cloudflare.net ~all` | - | Active (Required) |
 
-### Steps to Connect Domain to Vercel:
-In Cloudflare Dashboard > DNS > Records for `tendercrafthq.com`:
-1. Add CNAME record: Name `@`, Target `56e9ab447020a3cc.vercel-dns-017.com`, Proxy status **DNS only (Grey Cloud)**.
-2. Add CNAME record: Name `www`, Target `56e9ab447020a3cc.vercel-dns-017.com`, Proxy status **DNS only (Grey Cloud)**.
-*(Or add A record for `@` pointing to `76.76.21.21`).*
-3. Verify in Vercel:
-   ```bash
-   npx vercel domains verify tendercrafthq.com
-   npx vercel domains verify www.tendercrafthq.com
-   ```
+### Current Vercel DNS records:
+In Cloudflare DNS for `tendercrafthq.com`, the following records are active:
+1. `A @ 76.76.21.21`, DNS only.
+2. `CNAME www cname.vercel-dns.com`, DNS only.
+3. Existing MX, SPF, and DKIM records remain unchanged.
+
+Vercel reports both domains as configured and has issued certificates. The `www` hostname is verified live. The apex A record resolves correctly but direct HTTPS probing from the deployment workstation currently times out; keep the Vercel-recommended A record and recheck from another network if the apex remains unavailable.
+
+### Remaining external activation:
+Add these values to Vercel Production only after obtaining them from the intended Supabase project:
+
+```text
+NEXT_PUBLIC_SUPABASE_URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY
+SUPABASE_SERVICE_ROLE_KEY
+```
+
+Until then, `/admin` intentionally redirects to `/admin/login?error=unconfigured`, and the enquiry form explains that storage is not configured. No Supabase values are committed to GitHub or printed in this log.
