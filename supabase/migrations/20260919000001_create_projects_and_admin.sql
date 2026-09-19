@@ -368,7 +368,7 @@ VALUES
 ),
 (
   'e1a00002-0002-4000-8000-000000000003',
-  'c0a7e000-0002-4000-8000-000000000003',
+  'c0a7e000-0002-4000-8000-000000000002',
   '/projects/compoundos/gatepasses.png',
   'Visitor access authorization ledger with pass codes and check-in times',
   'Real-time visitor access ledger showing authorized arrival windows and entry timestamps.',
@@ -376,7 +376,7 @@ VALUES
 ),
 (
   'e1a00002-0002-4000-8000-000000000004',
-  'c0a7e000-0002-4000-8000-000000000004',
+  'c0a7e000-0002-4000-8000-000000000002',
   '/projects/compoundos/payments.png',
   'Service charge payment tracking and receipt log',
   'Estate dues ledger tracking payment verification, recurring service charges, and receipts.',
@@ -432,7 +432,7 @@ VALUES
 ),
 (
   'e1a00005-0005-4000-8000-000000000003',
-  'c4a7e110-0005-4000-8000-000000000003',
+  'c4a7e110-0005-4000-8000-000000000005',
   '/projects/cartitemizer/screenshot-3.jpg',
   'Export formatting options for accounting and bookkeeping',
   'Export interface generating formatted splits for QuickBooks and CSV ledgers.',

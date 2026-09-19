@@ -1,7 +1,7 @@
 # Tendercraft Website — Build State & Execution Log
 
 **Current Timestamp:** 2026-09-19 12:10 UTC  
-**Active Phase:** Production deployment complete; Supabase activation remains external  
+**Active Phase:** Production deployment complete; Supabase database and Vercel production variables are active; first admin user onboarding remains  
 **Production Domain:** `https://www.tendercrafthq.com` (verified live); apex DNS record configured and awaiting edge/network confirmation  
 **Current Live Deployment:** [https://tendercraft-website-66hepakrc-yytarfa.vercel.app](https://tendercraft-website-66hepakrc-yytarfa.vercel.app)  
 **GitHub Repository:** [https://github.com/yahayayautama-eng/tendercraft-website](https://github.com/yahayayautama-eng/tendercraft-website)  
@@ -20,7 +20,7 @@
   - *Session Invalidation:* `logoutAdminAction` calls `supabase.auth.signOut({ scope: 'local' })` and revalidates paths.
 
 - [x] **Phase 2 — Supabase Database & Storage Hardening**
-  - *Status:* **Migrations and policies committed; production activation pending Supabase credentials**.
+  - *Status:* **COMPLETED & VERIFIED in Supabase project `lhmqxssfqptqqtdymuzz`**.
   - *Migrations Added:* `supabase/migrations/20260919000002_create_contact_submissions_and_harden_security.sql`.
   - *Contact Submissions Table:* `public.contact_submissions` table created with RLS enabled.
   - *RLS Policies:*
@@ -47,7 +47,7 @@
   - *Dynamic Params:* Explicit `export const dynamicParams = true;` on `/work/[slug]`.
 
 - [x] **Phase 5 — Reliable Contact Enquiries & Storage**
-  - *Status:* **Implemented; production storage activates when Supabase is configured**.
+  - *Status:* **COMPLETED; production storage is configured through Vercel Production variables**.
   - *Server Action:* `src/app/contact/actions.ts` (`submitContactEnquiryAction`):
     - Hidden honeypot `company_hp` silently absorbs bot spam.
     - Server-side rate limiter: max 5 requests per 15-minute window per IP.
@@ -97,7 +97,7 @@ In Cloudflare DNS for `tendercrafthq.com`, the following records are active:
 Vercel reports both domains as configured and has issued certificates. The `www` hostname is verified live. The apex A record resolves correctly but direct HTTPS probing from the deployment workstation currently times out; keep the Vercel-recommended A record and recheck from another network if the apex remains unavailable.
 
 ### Remaining external activation:
-Add these values to Vercel Production only after obtaining them from the intended Supabase project:
+The Supabase project is provisioned, migrations are applied, and these variables are saved in Vercel Production:
 
 ```text
 NEXT_PUBLIC_SUPABASE_URL
@@ -105,4 +105,4 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY
 SUPABASE_SERVICE_ROLE_KEY
 ```
 
-Until then, `/admin` intentionally redirects to `/admin/login?error=unconfigured`, and the enquiry form explains that storage is not configured. No Supabase values are committed to GitHub or printed in this log.
+No Supabase values are committed to GitHub or printed in this log. The remaining operational step is to create or invite the first Supabase Auth user, then insert that user's UUID into `public.admin_users`; until that happens, `/admin` correctly redirects unauthorized visitors to `/admin/login`.
