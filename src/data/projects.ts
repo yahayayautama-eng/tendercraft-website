@@ -56,9 +56,9 @@ export const VERIFIED_PROJECTS: Project[] = [
     ],
     technology: ['.NET 8', 'WPF', 'ASP.NET Core', 'SignalR', 'PostgreSQL 16', 'Next.js 16.3.1', 'WiX Toolset'],
     status: 'prototype',
-    statusLabel: 'Functional Prototype · Interactive Demo',
+    statusLabel: 'Working Product Build · Self-Hosted Pilot Ready',
     evidenceNote:
-      'The visuals below come from Beadle\'s interactive simulation harness. The figures are illustrative; no messages are sent from this showcase.',
+      'The current Beadle build includes the Windows agent, server, admin console, installers, scheduling, audit trail, delivery statistics, and automated tests. The visuals below are illustrative simulation captures; controlled customer pilot validation is still required before claiming production deployments.',
     coverImagePath: '/projects/beadle/beadle-hero.webp',
     liveUrl: null,
     storeUrl: null,

@@ -166,11 +166,11 @@ function mapDatabaseRowToProject(row: any): Project {
     status: row.status,
     statusLabel:
       row.slug === 'beadle'
-        ? 'Functional Prototype · Interactive Demo'
+        ? 'Working Product Build · Self-Hosted Pilot Ready'
         : row.status_label,
     evidenceNote:
       row.slug === 'beadle'
-        ? 'The visuals below come from Beadle\'s interactive simulation harness. The figures are illustrative; no messages are sent from this showcase.'
+        ? 'The current Beadle build includes the Windows agent, server, admin console, installers, scheduling, audit trail, delivery statistics, and automated tests. The visuals below are illustrative simulation captures; controlled customer pilot validation is still required before claiming production deployments.'
         : undefined,
     coverImagePath: isBeadle && verifiedProject ? verifiedProject.coverImagePath : row.cover_image_path,
     liveUrl: row.live_url || null,
