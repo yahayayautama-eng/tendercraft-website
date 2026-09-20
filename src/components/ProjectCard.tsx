@@ -23,11 +23,25 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, priority = false, className }: ProjectCardProps) {
+  const isBeadle = project.slug === 'beadle';
+  const projectStyle = isBeadle
+    ? ({
+        '--project-accent': '#1F4B3F',
+        '--project-accent-hover': '#16362D',
+        '--project-accent-fg-dark': '#A9C7BC',
+        '--project-accent-tint': '#E8F0ED',
+        '--project-accent-tint-dark': 'rgba(31, 75, 63, 0.4)',
+        '--project-accent-border': '#C7D9D1',
+        '--project-accent-border-dark': '#376B5D',
+      } as React.CSSProperties)
+    : undefined;
+
   return (
     <Link
       href={`/work/${project.slug}`}
+      style={projectStyle}
       className={cn(
-        'group relative flex flex-col rounded-2xl bg-white dark:bg-[#111726] border border-black/[0.08] dark:border-white/[0.1] overflow-hidden transition-all duration-200 ease-out hover:shadow-xl hover:border-black/[0.18] dark:hover:border-white/[0.22] hover:-translate-y-0.5 motion-reduce:hover:translate-y-0 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#0B0F19]',
+        'group relative flex flex-col rounded-2xl bg-white dark:bg-[#111726] border border-black/[0.08] dark:border-white/[0.1] overflow-hidden transition-all duration-200 ease-out hover:shadow-xl hover:border-black/[0.18] dark:hover:border-white/[0.22] hover:-translate-y-0.5 motion-reduce:hover:translate-y-0 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--project-accent)] focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#0B0F19]',
         className
       )}
     >
@@ -46,7 +60,7 @@ export function ProjectCard({ project, priority = false, className }: ProjectCar
         {/* Status Chip */}
         <div className="absolute top-3.5 left-3.5 sm:top-4 sm:left-4">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wide bg-white/95 dark:bg-[#0B0F19]/95 text-zinc-900 dark:text-zinc-100 backdrop-blur-md shadow-xs border border-black/[0.08] dark:border-white/[0.15]">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-600 dark:bg-blue-400 shrink-0" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[var(--project-accent)] dark:bg-[var(--project-accent-fg-dark)] shrink-0" />
             <span>{project.statusLabel}</span>
           </span>
         </div>
@@ -56,14 +70,14 @@ export function ProjectCard({ project, priority = false, className }: ProjectCar
       <div className="p-6 sm:p-7 flex flex-col flex-1 justify-between gap-5">
         <div className="space-y-2">
           <div className="flex items-center justify-between gap-2">
-            <span className="text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400 font-mono">
+            <span className="text-xs font-semibold uppercase tracking-wider text-[var(--project-accent)] dark:text-[var(--project-accent-fg-dark)] font-mono">
               {project.category}
             </span>
-            <div className="w-7 h-7 rounded-full flex items-center justify-center bg-zinc-100 dark:bg-white/10 text-zinc-700 dark:text-zinc-300 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-200 shrink-0">
+            <div className="w-7 h-7 rounded-full flex items-center justify-center bg-zinc-100 dark:bg-white/10 text-zinc-700 dark:text-zinc-300 group-hover:bg-[var(--project-accent)] group-hover:text-white transition-colors duration-200 shrink-0">
               <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transform-none" />
             </div>
           </div>
-          <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
+          <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 group-hover:text-[var(--project-accent)] dark:group-hover:text-[var(--project-accent-fg-dark)] transition-colors duration-200">
             {project.name}
           </h3>
           <p className="text-sm text-zinc-600 dark:text-zinc-300 line-clamp-2 leading-relaxed">

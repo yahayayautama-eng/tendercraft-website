@@ -77,23 +77,35 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
     notFound();
   }
 
+  const projectStyle = project.slug === 'beadle'
+    ? ({
+        '--project-accent': '#1F4B3F',
+        '--project-accent-hover': '#16362D',
+        '--project-accent-fg-dark': '#A9C7BC',
+        '--project-accent-tint': '#E8F0ED',
+        '--project-accent-tint-dark': 'rgba(31, 75, 63, 0.4)',
+        '--project-accent-border': '#C7D9D1',
+        '--project-accent-border-dark': '#376B5D',
+      } as React.CSSProperties)
+    : undefined;
+
   return (
-    <div className="pb-24 sm:pb-32 space-y-16 sm:space-y-24">
+    <div style={projectStyle} className="pb-24 sm:pb-32 space-y-16 sm:space-y-24">
       {/* Top Breadcrumb & Hero */}
       <section className="pt-12 sm:pt-20">
         <SectionWrapper size="lg">
           <div className="space-y-6">
             <Link
               href="/work"
-              className="inline-flex items-center gap-2 min-h-[44px] text-xs font-semibold uppercase tracking-wider text-zinc-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md px-1"
+              className="inline-flex items-center gap-2 min-h-[44px] text-xs font-semibold uppercase tracking-wider text-zinc-500 hover:text-[var(--project-accent)] dark:hover:text-[var(--project-accent-fg-dark)] transition-colors group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--project-accent)] rounded-md px-1"
             >
               <ArrowLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-0.5" />
               <span>Back to All Work</span>
             </Link>
 
             <div className="flex flex-wrap items-center gap-3">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-900/40">
-                <span className="w-1.5 h-1.5 rounded-full bg-blue-600 dark:bg-blue-400" />
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[var(--project-accent-tint)] dark:bg-[var(--project-accent-tint-dark)] text-[var(--project-accent)] dark:text-[var(--project-accent-fg-dark)] border border-[var(--project-accent-border)] dark:border-[var(--project-accent-border-dark)]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--project-accent)] dark:bg-[var(--project-accent-fg-dark)]" />
                 {project.statusLabel}
               </span>
             </div>
@@ -113,7 +125,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                     href={project.storeUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 min-h-[44px] px-6 py-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold transition-all shadow-sm hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#0B0F19]"
+                    className="inline-flex items-center gap-2 min-h-[44px] px-6 py-2.5 rounded-full bg-[var(--project-accent)] hover:bg-[var(--project-accent-hover)] text-white text-sm font-semibold transition-all shadow-sm hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--project-accent)] focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#0B0F19]"
                   >
                     <svg
                       viewBox="0 0 24 24"
@@ -141,7 +153,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 min-h-[44px] px-6 py-2.5 rounded-full border border-black/[0.12] dark:border-white/[0.15] hover:bg-black/[0.04] dark:hover:bg-white/[0.05] text-zinc-900 dark:text-zinc-100 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#0B0F19]"
+                    className="inline-flex items-center gap-2 min-h-[44px] px-6 py-2.5 rounded-full border border-black/[0.12] dark:border-white/[0.15] hover:bg-black/[0.04] dark:hover:bg-white/[0.05] text-zinc-900 dark:text-zinc-100 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--project-accent)] focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#0B0F19]"
                   >
                     <span>Visit Product Site</span>
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -172,7 +184,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             {/* Main Narrative Column */}
             <div className="lg:col-span-8 space-y-12">
               <div className="space-y-4">
-                <h2 className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 font-mono">
+                <h2 className="text-xs font-bold uppercase tracking-wider text-[var(--project-accent)] dark:text-[var(--project-accent-fg-dark)] font-mono">
                   The Problem
                 </h2>
                 <p className="text-base sm:text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed font-normal">
@@ -181,7 +193,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               </div>
 
               <div className="space-y-4">
-                <h2 className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 font-mono">
+                <h2 className="text-xs font-bold uppercase tracking-wider text-[var(--project-accent)] dark:text-[var(--project-accent-fg-dark)] font-mono">
                   What Tendercraft Built
                 </h2>
                 <p className="text-base sm:text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed font-normal">
@@ -191,13 +203,13 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
 
               {/* Verified Capabilities */}
               <div className="space-y-6 pt-4 border-t border-black/[0.06] dark:border-white/[0.06]">
-                <h2 className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 font-mono">
+                <h2 className="text-xs font-bold uppercase tracking-wider text-[var(--project-accent)] dark:text-[var(--project-accent-fg-dark)] font-mono">
                   Verified Capabilities
                 </h2>
                 <ul className="space-y-4">
                   {project.capabilities.map((cap, i) => (
                     <li key={i} className="flex items-start gap-3.5">
-                      <CheckCircle2 className="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-[var(--project-accent)] dark:text-[var(--project-accent-fg-dark)] shrink-0 mt-0.5" />
                       <span className="text-sm sm:text-base text-zinc-700 dark:text-zinc-300 leading-relaxed">
                         {cap}
                       </span>
@@ -241,7 +253,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                       href={project.storeUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 min-h-[44px] text-xs font-semibold text-blue-600 hover:text-blue-700 dark:hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md"
+                      className="inline-flex items-center gap-1.5 min-h-[44px] text-xs font-semibold text-[var(--project-accent)] hover:text-[var(--project-accent-hover)] dark:hover:text-[var(--project-accent-fg-dark)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--project-accent)] rounded-md"
                     >
                       <span>Google Chrome Web Store</span>
                       <ExternalLink className="w-3.5 h-3.5" />
@@ -255,7 +267,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 min-h-[44px] text-xs font-semibold text-blue-600 hover:text-blue-700 dark:hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md"
+                      className="inline-flex items-center gap-1.5 min-h-[44px] text-xs font-semibold text-[var(--project-accent)] hover:text-[var(--project-accent-hover)] dark:hover:text-[var(--project-accent-fg-dark)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--project-accent)] rounded-md"
                     >
                       <span>Visit Product Website</span>
                       <ExternalLink className="w-3.5 h-3.5" />
@@ -273,7 +285,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         <section className="space-y-8">
           <SectionWrapper size="lg">
             <div className="space-y-2 mb-8">
-              <p className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 font-mono">
+              <p className="text-xs font-bold uppercase tracking-wider text-[var(--project-accent)] dark:text-[var(--project-accent-fg-dark)] font-mono">
                 Visual Evidence
               </p>
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
@@ -324,7 +336,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               <MotionEmailBadge email="hello@tendercrafthq.com" size="md" />
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-1.5 min-h-[44px] px-5 py-2.5 rounded-full border border-black/[0.1] dark:border-white/[0.15] text-sm font-semibold text-zinc-800 dark:text-zinc-200 hover:bg-black/[0.03] dark:hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+                className="inline-flex items-center gap-1.5 min-h-[44px] px-5 py-2.5 rounded-full border border-black/[0.1] dark:border-white/[0.15] text-sm font-semibold text-zinc-800 dark:text-zinc-200 hover:bg-black/[0.03] dark:hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--project-accent)]"
               >
                 <span>Contact Page</span>
                 <ArrowRight className="w-4 h-4" />

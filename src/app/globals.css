@@ -10,6 +10,15 @@
   --accent-blue-active: #0036B3;
   --accent-blue-tint: rgba(0, 82, 255, 0.08);
 
+  /* Product pages inherit the studio blue unless a product overrides these. */
+  --project-accent: #2563EB;
+  --project-accent-hover: #1D4ED8;
+  --project-accent-fg-dark: #60A5FA;
+  --project-accent-tint: #EFF6FF;
+  --project-accent-tint-dark: rgba(30, 58, 138, 0.4);
+  --project-accent-border: #BFDBFE;
+  --project-accent-border-dark: #1E3A8A;
+
   --surface-primary: #FFFFFF;
   --surface-secondary: #F8FAFC;
   --surface-tertiary: #F1F5F9;
