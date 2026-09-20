@@ -1,9 +1,10 @@
 # Tendercraft Website — Build State & Execution Log
 
-**Current Timestamp:** 2026-09-19 12:10 UTC  
-**Active Phase:** Production deployment complete; Supabase database, Vercel production variables, and first admin allowlist entry are active  
-**Production Domain:** `https://www.tendercrafthq.com` (verified live); apex DNS record configured and awaiting edge/network confirmation  
-**Current Live Deployment:** [https://tendercraft-website-66hepakrc-yytarfa.vercel.app](https://tendercraft-website-66hepakrc-yytarfa.vercel.app)  
+**Current Timestamp:** 2026-09-20 01:30 UTC  
+**Active Phase:** Production deployment complete; Supabase database, Vercel production variables, first admin allowlist entry, and Beadle evidence refresh are active  
+**Production Domain:** `https://tendercrafthq.com` and `https://www.tendercrafthq.com` (both verified live with active TLS)  
+**Current Live Deployment:** [https://tendercraft-website-1q8amncpj-yytarfa.vercel.app](https://tendercraft-website-1q8amncpj-yytarfa.vercel.app)  
+**Latest Website Commit:** `5f6acf0` — Beadle mapper now prefers verified current assets over stale database rows  
 **GitHub Repository:** [https://github.com/yahayayautama-eng/tendercraft-website](https://github.com/yahayayautama-eng/tendercraft-website)  
 
 ---
@@ -96,7 +97,7 @@ In Cloudflare DNS for `tendercrafthq.com`, the following records are active:
 
 Vercel reports both domains as configured and has issued certificates. The `www` hostname is verified live. The apex A record resolves correctly but direct HTTPS probing from the deployment workstation currently times out; keep the Vercel-recommended A record and recheck from another network if the apex remains unavailable.
 
-### Remaining external activation:
+### Current external configuration:
 The Supabase project is provisioned, migrations are applied, and these variables are saved in Vercel Production:
 
 ```text
