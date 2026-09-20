@@ -147,6 +147,8 @@ export async function getPreviewProject(slug: string): Promise<{
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function mapDatabaseRowToProject(row: any): Project {
   const technology = Array.isArray(row.technology) ? row.technology : [];
+  const verifiedProject = VERIFIED_PROJECTS.find((project) => project.slug === row.slug);
+  const isBeadle = row.slug === 'beadle';
 
   return {
     id: row.id,
@@ -170,14 +172,14 @@ function mapDatabaseRowToProject(row: any): Project {
       row.slug === 'beadle'
         ? 'The visuals below come from Beadle\'s interactive simulation harness. The figures are illustrative; no messages are sent from this showcase.'
         : undefined,
-    coverImagePath: row.cover_image_path,
+    coverImagePath: isBeadle && verifiedProject ? verifiedProject.coverImagePath : row.cover_image_path,
     liveUrl: row.live_url || null,
     storeUrl: row.store_url || null,
     repositoryUrl: row.repository_url || null,
     featured: Boolean(row.featured),
     published: Boolean(row.published),
     sortOrder: Number(row.sort_order) || 0,
-    gallery: (row.project_assets || [])
+    gallery: (isBeadle && verifiedProject ? verifiedProject.gallery : row.project_assets || [])
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .sort((a: any, b: any) => (a.sort_order || 0) - (b.sort_order || 0))
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
