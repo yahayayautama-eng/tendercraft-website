@@ -112,7 +112,7 @@ export function HeroMotion() {
         >
           <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden bg-zinc-950">
             <Image
-              src="/projects/beadle/beadle-hero.png"
+              src="/projects/beadle/beadle-hero.webp"
               alt="Beadle alert engine console preview"
               fill
               priority

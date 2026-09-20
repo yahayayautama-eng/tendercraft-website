@@ -290,7 +290,7 @@ export function ProjectForm({ initialData, isNew = false }: ProjectFormProps) {
             required
             value={coverImagePath}
             onChange={(e) => setCoverImagePath(e.target.value)}
-            placeholder="/projects/beadle/beadle-hero.png"
+            placeholder="/projects/beadle/beadle-hero.webp"
             className="w-full px-3.5 py-2.5 rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-[#161F33] text-sm text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-600 font-mono"
           />
         </div>
