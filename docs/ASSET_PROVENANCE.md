@@ -38,6 +38,7 @@ Every visual asset published on `tendercrafthq.com` must trace back to an authen
   - Source: Rendered from `outputs\Beadle-Interactive-Demo-v1\demo.html`
   - High-res Capture 1: `raw-captures\beadle-alert-active.png` (Standard popup alert with priority badge and active acknowledge action)
   - High-res Capture 2: `raw-captures\beadle-demo-full.png` (Complete workflow view with live delivery and receipt rate table)
+  - Published derivatives: the three website captures are palette-corrected to Beadle's verified forest-green brand (`#1F4B3F`) while retaining the simulation content. They are explicitly labelled as illustrative interactive-demo evidence on the public case study.
   - Target:
     - `public/projects/beadle/beadle-hero.webp`
     - `public/projects/beadle/beadle-alert-active.webp`

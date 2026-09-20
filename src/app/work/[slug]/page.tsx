@@ -291,6 +291,12 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
                 Interface & Workflow Gallery
               </h2>
+              {project.evidenceNote && (
+                <p className="max-w-3xl text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                  <span className="font-semibold text-[var(--project-accent)] dark:text-[var(--project-accent-fg-dark)]">Evidence note: </span>
+                  {project.evidenceNote}
+                </p>
+              )}
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

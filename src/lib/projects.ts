@@ -162,7 +162,14 @@ function mapDatabaseRowToProject(row: any): Project {
         ? technology.map((item: string) => (item === 'Next.js 14' ? 'Next.js 16.3.1' : item))
         : technology,
     status: row.status,
-    statusLabel: row.status_label,
+    statusLabel:
+      row.slug === 'beadle'
+        ? 'Functional Prototype · Interactive Demo'
+        : row.status_label,
+    evidenceNote:
+      row.slug === 'beadle'
+        ? 'The visuals below come from Beadle\'s interactive simulation harness. The figures are illustrative; no messages are sent from this showcase.'
+        : undefined,
     coverImagePath: row.cover_image_path,
     liveUrl: row.live_url || null,
     storeUrl: row.store_url || null,

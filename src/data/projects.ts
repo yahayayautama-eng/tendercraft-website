@@ -21,6 +21,7 @@ export interface Project {
   technology: string[];
   status: ProjectStatus;
   statusLabel: string;
+  evidenceNote?: string;
   coverImagePath: string;
   liveUrl: string | null;
   storeUrl: string | null;
@@ -55,8 +56,10 @@ export const VERIFIED_PROJECTS: Project[] = [
     ],
     technology: ['.NET 8', 'WPF', 'ASP.NET Core', 'SignalR', 'PostgreSQL 16', 'Next.js 16.3.1', 'WiX Toolset'],
     status: 'prototype',
-    statusLabel: 'On-Premise Build',
-    coverImagePath: '/projects/beadle/beadle-hero.png',
+    statusLabel: 'Functional Prototype · Interactive Demo',
+    evidenceNote:
+      'The visuals below come from Beadle\'s interactive simulation harness. The figures are illustrative; no messages are sent from this showcase.',
+    coverImagePath: '/projects/beadle/beadle-hero.webp',
     liveUrl: null,
     storeUrl: null,
     repositoryUrl: null,
@@ -66,16 +69,16 @@ export const VERIFIED_PROJECTS: Project[] = [
     gallery: [
       {
         id: 'asset-beadle-1',
-        storagePath: '/projects/beadle/beadle-alert-active.png',
+        storagePath: '/projects/beadle/beadle-alert-active.webp',
         altText: 'Beadle high-priority alert popup with acknowledgement action button',
-        caption: 'High-priority desktop popup alert rendered directly on a workstation with force-on-top positioning.',
+        caption: 'Interactive simulation capture showing a high-priority desktop popup with a deliberate acknowledgement action.',
         sortOrder: 1
       },
       {
         id: 'asset-beadle-2',
-        storagePath: '/projects/beadle/beadle-delivery-report.png',
+        storagePath: '/projects/beadle/beadle-delivery-report.webp',
         altText: 'Delivery evidence report table showing displayed and acknowledged rates',
-        caption: 'Real-time delivery verification console displaying recipient delivery rates and explicit acknowledgement counts.',
+        caption: 'Illustrative delivery evidence view showing the distinction between displayed and acknowledged states.',
         sortOrder: 2
       }
     ],

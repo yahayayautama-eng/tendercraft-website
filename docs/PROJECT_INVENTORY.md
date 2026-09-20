@@ -29,7 +29,8 @@ Operating principle: **Never invent customers, testimonials, revenue, metrics, r
   - `brand\beadle-mark.svg` (Official brand symbol)
   - `outputs\Beadle-Interactive-Demo-v1\demo.html` (Interactive simulation console)
   - Raw captures: `beadle-alert-active.png`, `beadle-demo-initial.png`, `beadle-demo-full.png`
-- **Current Delivery Status:** Functional prototype & architecture build; interactive demonstration harness available.
+- **Current Delivery Status:** Functional prototype and architecture build; interactive demonstration harness available.
+- **Public evidence note:** Website screenshots are illustrative captures from the simulation harness. They do not represent live customer delivery data or messages sent to real recipients.
 - **Commercial Status:** Lemon Squeezy store is in Test mode / pending provider review. **DO NOT** claim live payment processing or commercial production customers.
 - **Public URL / Demo:** Interactive simulation available locally; public showcase as an on-premise enterprise architectural case study.
 
