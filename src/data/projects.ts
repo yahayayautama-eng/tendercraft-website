@@ -55,8 +55,8 @@ export const VERIFIED_PROJECTS: Project[] = [
       'Silent enterprise deployment via WiX-authored MSI installers pushable through Group Policy (GPO).'
     ],
     technology: ['.NET 8', 'WPF', 'ASP.NET Core', 'SignalR', 'PostgreSQL 16', 'Next.js 16.3.1', 'WiX Toolset'],
-    status: 'prototype',
-    statusLabel: 'Working Product Build · Self-Hosted Pilot Ready',
+    status: 'packaged',
+    statusLabel: 'Completed Working Software · Self-Hosted',
     evidenceNote:
       'The current Beadle build includes the Windows agent, server, admin console, installers, scheduling, audit trail, delivery statistics, and automated tests. The visuals below are illustrative simulation captures; controlled customer pilot validation is still required before claiming production deployments.',
     coverImagePath: '/projects/beadle/beadle-hero.webp',

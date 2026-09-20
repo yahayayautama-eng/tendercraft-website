@@ -29,7 +29,7 @@ Operating principle: **Never invent customers, testimonials, revenue, metrics, r
   - `brand\beadle-mark.svg` (Official brand symbol)
   - `outputs\Beadle-Interactive-Demo-v1\demo.html` (Interactive simulation console)
   - Raw captures: `beadle-alert-active.png`, `beadle-demo-initial.png`, `beadle-demo-full.png`
-- **Current Delivery Status:** Working product build; self-hosted pilot ready. The Windows agent, server, admin console, installers, scheduling, audit trail, delivery statistics, and automated test coverage are present in the current repository.
+- **Current Delivery Status:** Completed working software with a self-hosted deployment package. The Windows agent, server, admin console, installers, scheduling, audit trail, delivery statistics, and automated test coverage are present in the current repository.
 - **Public evidence note:** Website screenshots are illustrative captures from the simulation harness. They do not represent live customer delivery data or messages sent to real recipients. A controlled customer pilot is still required before claiming production deployments.
 - **Commercial Status:** Lemon Squeezy store is in Test mode / pending provider review. **DO NOT** claim live payment processing or commercial production customers.
 - **Public URL / Demo:** Interactive simulation available locally; public showcase as an on-premise enterprise architectural case study.

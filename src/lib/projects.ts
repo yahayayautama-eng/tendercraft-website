@@ -163,10 +163,10 @@ function mapDatabaseRowToProject(row: any): Project {
       row.slug === 'beadle'
         ? technology.map((item: string) => (item === 'Next.js 14' ? 'Next.js 16.3.1' : item))
         : technology,
-    status: row.status,
+    status: row.slug === 'beadle' ? 'packaged' : row.status,
     statusLabel:
       row.slug === 'beadle'
-        ? 'Working Product Build · Self-Hosted Pilot Ready'
+        ? 'Completed Working Software · Self-Hosted'
         : row.status_label,
     evidenceNote:
       row.slug === 'beadle'
