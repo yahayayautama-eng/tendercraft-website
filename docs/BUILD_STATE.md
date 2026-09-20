@@ -3,8 +3,8 @@
 **Current Timestamp:** 2026-09-20 01:30 UTC  
 **Active Phase:** Production deployment complete; Supabase database, Vercel production variables, first admin allowlist entry, and Beadle evidence refresh are active  
 **Production Domain:** `https://tendercrafthq.com` and `https://www.tendercrafthq.com` (both verified live with active TLS)  
-**Current Live Deployment:** [https://tendercraft-website-1q8amncpj-yytarfa.vercel.app](https://tendercraft-website-1q8amncpj-yytarfa.vercel.app)  
-**Latest Website Commit:** `5f6acf0` — Beadle mapper now prefers verified current assets over stale database rows  
+**Current Live Deployment:** [https://tendercrafthq.com](https://tendercrafthq.com) (Vercel production alias; latest deployment is READY)  
+**Latest Website Commit:** `d9a752a` — production deployment record updated after the Beadle evidence refresh  
 **GitHub Repository:** [https://github.com/yahayayautama-eng/tendercraft-website](https://github.com/yahayayautama-eng/tendercraft-website)  
 
 ---
