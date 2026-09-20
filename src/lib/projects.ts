@@ -146,6 +146,8 @@ export async function getPreviewProject(slug: string): Promise<{
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function mapDatabaseRowToProject(row: any): Project {
+  const technology = Array.isArray(row.technology) ? row.technology : [];
+
   return {
     id: row.id,
     slug: row.slug,
@@ -155,7 +157,10 @@ function mapDatabaseRowToProject(row: any): Project {
     problem: row.problem,
     solution: row.solution,
     capabilities: Array.isArray(row.capabilities) ? row.capabilities : [],
-    technology: Array.isArray(row.technology) ? row.technology : [],
+    technology:
+      row.slug === 'beadle'
+        ? technology.map((item: string) => (item === 'Next.js 14' ? 'Next.js 16.3.1' : item))
+        : technology,
     status: row.status,
     statusLabel: row.status_label,
     coverImagePath: row.cover_image_path,

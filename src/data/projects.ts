@@ -53,7 +53,7 @@ export const VERIFIED_PROJECTS: Project[] = [
       'Explicit delivery receipts: distinctly logging display confirmation versus deliberate user acknowledgement.',
       'Silent enterprise deployment via WiX-authored MSI installers pushable through Group Policy (GPO).'
     ],
-    technology: ['.NET 8', 'WPF', 'ASP.NET Core', 'SignalR', 'PostgreSQL 16', 'Next.js 14', 'WiX Toolset'],
+    technology: ['.NET 8', 'WPF', 'ASP.NET Core', 'SignalR', 'PostgreSQL 16', 'Next.js 16.3.1', 'WiX Toolset'],
     status: 'prototype',
     statusLabel: 'On-Premise Build',
     coverImagePath: '/projects/beadle/beadle-hero.png',
