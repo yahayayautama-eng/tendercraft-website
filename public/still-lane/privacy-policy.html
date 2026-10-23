@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Still-Lane privacy policy"><title>Still-Lane privacy policy</title><style>
+:root{color-scheme:light dark;font-family:"Segoe UI",system-ui,sans-serif;line-height:1.7;color:#19243d;background:#f4f6fb}
+*{box-sizing:border-box}body{margin:0}header,main,footer{max-width:850px;margin:auto;padding:24px}header{display:flex;gap:24px;flex-wrap:wrap;align-items:center;border-bottom:1px solid #ccd4e5}
+main{padding-top:32px}h1{font-size:2.2rem;line-height:1.2}h2{font-size:1.35rem;margin-top:2.2em}a{color:#2855dd;text-underline-offset:3px}a:focus-visible{outline:3px solid currentColor;outline-offset:5px}li{margin-bottom:10px}code{overflow-wrap:anywhere}footer{border-top:1px solid #ccd4e5;font-size:.9rem}.skip{position:absolute;top:-100px}.skip:focus{top:12px;background:white;color:#2855dd;padding:12px}
+@media(prefers-color-scheme:dark){:root{background:#181e2b;color:#edf0ff}a{color:#b5c5ff}header,footer{border-color:#465370}}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style></head>
+<body><a class="skip" href="#main">Skip to content</a><header><strong>Still-Lane</strong><nav aria-label="Help pages"><a href="privacy-policy.html">Privacy</a> · <a href="support.html">Support</a></nav></header>
+<main id="main"><h1>Still-Lane privacy policy</h1>
+<p>Updated 21 October 2026. This policy describes the current Windows app and background tracker.</p>
+<h2>Local collection and storage</h2>
+<p>Recording begins after you choose <strong>Start tracking</strong>. Still-Lane stores its records on your PC in a local SQLite database, <code>focus-tracker.db</code>. The installed Store package uses its own Windows package <code>LocalState</code> folder. The Status tab shows the database path.</p>
+<p>Still-Lane has no accounts, analytics, advertising or telemetry code. Its app and agent do not make network requests or upload your records. They communicate through a local Windows named pipe. Windows, the Microsoft Store and separately installed platform software operate under their own policies; this policy describes Still-Lane&#x27;s collection.</p>
+<p>The database contains:</p>
+<ul>
+<li>Application program paths and display names, with the category, exclusion, daily and weekday limits, passive-use exemption and focus-reminder choices you set for each app.</li>
+<li>Foreground interval start and end times, the recorded time-zone offset, active or idle state, and the reason an interval ended, such as switching apps, inactivity, lock, sleep or pause.</li>
+<li>A recovery record for the current interval, including its last-seen time, to handle an unexpected shutdown.</li>
+<li>Category names, optional category colours and category daily limits.</li>
+<li>Focus session start, planned end, actual end when available, and end reason.</li>
+<li>Scheduled focus days, local start times, lengths and enabled states, with a date marker to prevent duplicate starts.</li>
+<li>Reminder allowances and their expiry times, saved across tracker restarts.</li>
+<li>Settings, including the time you consented to recording, whether tracking is paused, your appearance choice, your retention period, and if you use the optional water break, its on/off choice, interval and today&#x27;s glass count. Windows manages the start-at-sign-in preference separately, your water break preference and today&#x27;s glass count.</li>
+<li>Small program icons, copied from the program files of apps you use and saved as pictures in an <code>icons</code> folder beside the database, so lists can show them. They contain no usage information and are removed by <strong>Delete all data</strong>.</li>
+</ul>
+<p>Still-Lane does not read or record window titles, document names, web addresses or URLs, keystrokes, screenshots or screen contents. It checks the time since the last input to estimate inactivity, without reading what you type. Only a playing Windows media session matching the app in front suppresses inactivity. You can choose “Count time as active even without keyboard or mouse” for an app you watch or read. Media titles and content are not saved. App paths can contain your Windows user name or other names you have chosen for folders and program files.</p>
+<h2>Diagnostic log</h2>
+<p>The agent writes <code>agent.log</code> beside the database. It holds dated operational events, including lock, power, pause and focus-session times, recovery events, reminder choices, retention counts and errors. Normal log messages do not include tracked app names or program paths. Before writing any message, the agent replaces your Windows user profile path with <code>%USERPROFILE%</code>, regardless of letter case. Other text is unchanged, so errors may still contain app names, paths outside that profile, or other diagnostic details.</p>
+<p>After each successful write, the log is at most 1 MiB (1,048,576 bytes). The agent clears the existing log before writing an entry that would cross that limit. A single entry larger than the limit is shortened to fit, keeping valid UTF-8 text and a line ending. The log is not subject to the history retention setting. <strong>Delete all data</strong> attempts to remove the log and stops further logging by that agent; if Windows prevents deletion, a log may remain.</p>
+<p>The Status page offers <strong>Copy diagnostic info</strong>. It copies version/platform information, tracker state, schema, record counts, retention days and up to 50 sanitized log entries to your clipboard. Log timestamps and variable details are removed; app names, paths, window titles and usage times are omitted. Nothing is sent automatically. Review the text before sharing it.</p>
+<h2>Retention and your controls</h2>
+<p>The default retention period is <strong>90 days</strong>, configurable in Data controls. The app deletes usage intervals that ended before the cutoff when the tracker starts, hourly while it runs, and when you change retention in the window. This retention rule applies to usage intervals only. Focus sessions, app identities, categories, rules, settings and the recovery record are not removed by that rule.</p>
+<p>You can:</p>
+<ul>
+<li>Pause and resume recording from the window or tray menu. Closing the window leaves the background tracker running; <strong>Quit</strong> in the tray stops it.</li>
+<li>Exclude an app in Apps &amp; limits. This deletes that app&#x27;s saved intervals and recovery record and prevents future recording until you enable it again. Its identity and exclusion choice remain so the tracker can recognize it.</li>
+<li>Delete one app&#x27;s history. This removes its saved intervals and recovery record, while keeping its identity and rules. Tracking continues from that point unless you also exclude it.</li>
+<li>Export saved usage intervals and focus sessions as JSON or CSV in Data controls. JSON contains <code>intervals</code>, <code>focusSessions</code> and <code>focusSchedules</code>; CSV writes a usage file and a second <code>-focus-sessions.csv</code> file. These exports do not include the diagnostic log or a separate inventory of all settings, exclusions, app rules and category limits. Choose an export location carefully; exported files are independent copies.</li>
+<li>Choose <strong>Delete all data</strong> to stop the tracker, remove all database records (including consent, settings and focus sessions), compact the database, and attempt to remove the log. The window returns to setup. The empty database file may remain. Copies you exported or backed up are not deleted.</li>
+</ul>
+<p>Removing the installed Store package normally removes its package-local database and log with the package data. Keeping app data through Windows or an uninstall tool, or making external copies, can preserve those copies.</p>
+<p>Records use the normal Windows per-user storage permissions. For help with data controls, see <a href="support.html">Support</a>.</p>
+<h2>Contact</h2>
+<p>Email <a href="mailto:hello@tendercrafthq.com">hello@tendercrafthq.com</a> and mention <strong>Still-Lane</strong>. Built and supported by <a href="https://tendercrafthq.com/">Tendercraft</a>. Please do not send your activity database or exports by default.</p></main><footer>Built and supported by <a href="https://tendercrafthq.com/">Tendercraft</a>. <a href="mailto:hello@tendercrafthq.com">Contact support</a>.</footer></body></html>
