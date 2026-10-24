@@ -380,6 +380,20 @@ export default function CropmarkPage() {
         </div>
       </section>
 
+      {/* Guides & Resources */}
+      <section className="p-6 rounded-2xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 space-y-3">
+        <h3 className="font-bold text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+          Related Guides & In-Depth Walkthroughs
+        </h3>
+        <Link
+          href="/apps/cropmark/how-to-permanently-redact-screenshots"
+          className="flex items-center justify-between p-3.5 rounded-xl bg-white dark:bg-zinc-800/70 border border-zinc-200 dark:border-zinc-700/60 hover:border-rose-500 transition-colors text-xs font-semibold text-zinc-900 dark:text-zinc-100"
+        >
+          <span>How to Permanently Redact Screenshots on Windows (Acropalypse-Safe) →</span>
+          <ChevronRight className="w-4 h-4 text-zinc-400" />
+        </Link>
+      </section>
+
       {/* Technical Metadata & Directory Info */}
       <section className="p-6 rounded-2xl bg-zinc-100/70 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 text-xs text-zinc-500 dark:text-zinc-400 space-y-3">
         <div className="flex flex-wrap items-center justify-between gap-2">

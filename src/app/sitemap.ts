@@ -72,16 +72,34 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/apps/vox-reader/listen-to-books-offline-windows`,
+      lastModified: new Date('2026-10-25T00:00:00Z'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/apps/cropmark`,
       lastModified: new Date('2026-10-25T00:00:00Z'),
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/apps/cropmark/how-to-permanently-redact-screenshots`,
+      lastModified: new Date('2026-10-25T00:00:00Z'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/apps/still-lane`,
       lastModified: new Date('2026-10-25T00:00:00Z'),
       changeFrequency: 'weekly',
       priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/apps/still-lane/private-screen-time-tracking-guide`,
+      lastModified: new Date('2026-10-25T00:00:00Z'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
     },
     {
       url: baseUrl,
