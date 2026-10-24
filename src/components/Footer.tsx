@@ -12,7 +12,7 @@ export function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-8 py-16 sm:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 sm:gap-12 lg:gap-16">
           {/* Brand & Mission */}
-          <div className="lg:col-span-5 space-y-6">
+          <div className="lg:col-span-4 space-y-6">
             <Link
               href="/"
               className="inline-flex items-center relative h-8 w-44 min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-lg"
@@ -32,7 +32,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 max-w-sm leading-relaxed">
-              Tendercraft builds focused software that turns difficult workflows into useful products. Business tools, browser extensions, and continuous automation.
+              Tendercraft builds focused software that turns difficult workflows into useful products. Native desktop tools, browser extensions, and continuous automation.
             </p>
             <div className="flex items-center gap-2 text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 font-medium">
               <Globe className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0" />
@@ -40,64 +40,71 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Navigation Links */}
+          {/* Windows Desktop Apps */}
           <div className="lg:col-span-3 space-y-4">
             <h3 className="text-xs font-bold uppercase tracking-wider text-zinc-900 dark:text-zinc-200">
-              Studio
+              Windows Apps
             </h3>
             <ul className="space-y-1 text-sm font-medium">
               <li>
-                <Link href="/apps/windows" className="inline-flex items-center min-h-[44px] text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md px-1 font-semibold">
-                  Windows Apps Suite
+                <Link href="/apps/windows" className="inline-flex items-center min-h-[38px] text-zinc-700 dark:text-zinc-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md px-1 font-semibold">
+                  Windows Suite Hub
                 </Link>
               </li>
               <li>
-                <Link href="/apps/recipe-box" className="inline-flex items-center min-h-[44px] text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md px-1">
+                <Link href="/apps/vox-reader" className="inline-flex items-center min-h-[38px] text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md px-1">
+                  Vox Reader (Neural TTS)
+                </Link>
+              </li>
+              <li>
+                <Link href="/apps/cropmark" className="inline-flex items-center min-h-[38px] text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md px-1">
+                  Cropmark (Redaction)
+                </Link>
+              </li>
+              <li>
+                <Link href="/apps/still-lane" className="inline-flex items-center min-h-[38px] text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md px-1">
+                  Still-Lane (Screen Time)
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Studio & Other Apps */}
+          <div className="lg:col-span-2 space-y-4">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-zinc-900 dark:text-zinc-200">
+              Studio & Fire Apps
+            </h3>
+            <ul className="space-y-1 text-sm font-medium">
+              <li>
+                <Link href="/apps/recipe-box" className="inline-flex items-center min-h-[38px] text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md px-1">
                   Recipe Box
                 </Link>
               </li>
               <li>
-                <Link href="/apps/large-print-crosswords" className="inline-flex items-center min-h-[44px] text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md px-1">
-                  Large Print Crosswords
+                <Link href="/apps/large-print-crosswords" className="inline-flex items-center min-h-[38px] text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md px-1">
+                  Crosswords
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/work"
-                  className="inline-flex items-center min-h-[44px] text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md px-1"
-                >
+                <Link href="/work" className="inline-flex items-center min-h-[38px] text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md px-1">
                   Featured Work
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/about"
-                  className="inline-flex items-center min-h-[44px] text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md px-1"
-                >
-                  About & Approach
+                <Link href="/about" className="inline-flex items-center min-h-[38px] text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md px-1">
+                  About
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center min-h-[44px] text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md px-1"
-                >
-                  Start a Project
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/privacy"
-                  className="inline-flex items-center min-h-[44px] text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md px-1"
-                >
-                  Privacy Notice
+                <Link href="/privacy" className="inline-flex items-center min-h-[38px] text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md px-1">
+                  Privacy
                 </Link>
               </li>
             </ul>
           </div>
 
           {/* Contact Direct */}
-          <div className="md:col-span-2 lg:col-span-4 space-y-4">
+          <div className="md:col-span-2 lg:col-span-3 space-y-4">
             <h3 className="text-xs font-bold uppercase tracking-wider text-zinc-900 dark:text-zinc-200">
               Direct Contact
             </h3>

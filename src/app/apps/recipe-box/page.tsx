@@ -142,6 +142,19 @@ export default function RecipeBoxPage() {
             <a href={recipeBoxContactUrl()} className="underline underline-offset-4">Email support</a>
           </div>
         </section>
+
+        <section className="rounded-3xl border border-[#e6dccf] dark:border-white/10 p-8 sm:p-10 space-y-3">
+          <h2 className="text-xl font-bold">Also from Tendercraft</h2>
+          <p className="text-sm text-zinc-600 dark:text-zinc-400">
+            Discover our native, privacy-first desktop utilities for Windows 11 & 10.
+          </p>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 font-semibold text-sm pt-1">
+            <Link href="/apps/windows" className="text-blue-600 dark:text-blue-400 hover:underline">Windows Suite Hub →</Link>
+            <Link href="/apps/vox-reader" className="hover:underline">Vox Reader (Offline TTS)</Link>
+            <Link href="/apps/cropmark" className="hover:underline">Cropmark (Screenshot Redaction)</Link>
+            <Link href="/apps/still-lane" className="hover:underline">Still-Lane (Private Screen Time)</Link>
+          </div>
+        </section>
       </div>
     </article>
   );
