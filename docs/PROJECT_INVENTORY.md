@@ -1,6 +1,6 @@
 # Tendercraft Project Inventory & Truth Matrix
 
-Last updated: September 19, 2026
+Last updated: October 24, 2026
 Status: Phase 0 Verified
 
 ## Purpose
@@ -8,6 +8,17 @@ Status: Phase 0 Verified
 This document serves as the authoritative truth matrix for all products, case studies, claims, and links displayed on the official Tendercraft website (`tendercrafthq.com`).
 
 Operating principle: **Never invent customers, testimonials, revenue, metrics, reviews, marketplace approval, production readiness, or live links.** Uncertain or unverified claims are recorded as `UNVERIFIED` and excluded from public marketing pages.
+
+### Large Print Crosswords — consumer app entry (October 24, 2026)
+
+- **Source:** `C:\Users\Yayis\Desktop\large-print-crossword`.
+- **Positioning:** A readable, offline crossword app being prepared for compatible Fire tablets.
+- **Verified app content:** 150 original compact crosswords total: 120 library puzzles plus 30 puzzles in a repeating daily rotation. The daily set repeats after 30 days. Three in-app text sizes (Large, Larger, Largest); Warm Parchment and Deep Charcoal themes; Check, Reveal letter and Reveal word; saved local progress; no timer or account.
+- **Release evidence:** `ACCEPTANCE.md` records a signed release APK without INTERNET permission and no analytics/ad SDKs. Review-app screenshots on a Xiaomi tablet and emulator evidence exist. The signed APK has not been installed on a real Fire tablet; Fire-specific model compatibility and VoiceView behavior remain unverified.
+- **Commercial state:** The last recorded Amazon console state (October 12) was a paid $2.99 draft, with no public ASIN or live purchase link confirmed. Display “Coming soon” and an enquiry CTA until the public listing is verified. No sales, ratings or reviews claimed.
+- **Public page:** `/apps/large-print-crosswords` in this website source. The product page uses actual review-build captures and a corrected prelaunch preview. It must not be described as publicly deployed until the production URL is checked.
+- **Support:** `hello@tendercrafthq.com` receives mail, observed in the connected mailbox October 24; support response workflow is not independently validated. App privacy page and draft listing were aligned to this address.
+- **Excluded claims:** unlimited new puzzles, medical benefits, universal Fire compatibility, Kindle e-reader support, verified accessibility certification and Appstore publication.
 
 ---
 
