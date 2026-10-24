@@ -1,0 +1,13 @@
+{
+  "host": "tendercrafthq.com",
+  "keyFile": "18e4f0a8de244b3ba131e9b2dc64ec5d.txt",
+  "paths": [
+    "/apps/windows",
+    "/apps/vox-reader",
+    "/apps/vox-reader/listen-to-books-offline-windows",
+    "/apps/cropmark",
+    "/apps/cropmark/how-to-permanently-redact-screenshots",
+    "/apps/still-lane",
+    "/apps/still-lane/private-screen-time-tracking-guide"
+  ]
+}

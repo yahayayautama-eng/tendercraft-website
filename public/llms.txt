@@ -13,7 +13,7 @@
 
 - [Visual Schedule Board](https://tendercrafthq.com/apps/visual-schedule-board): An offline picture-routine app for Amazon Fire tablets. Parents and teachers build step-by-step visual schedules from 74 built-in pictures or their own photos, and children follow them one step at a time. Includes a First / Then view, optional quiet timers and a parent gate. Free to start with a one-time unlock, no subscription.
 - [Recipe Box for Fire tablets](https://tendercrafthq.com/apps/recipe-box): An offline recipe organizer for Amazon Fire tablets. Import recipes from most cooking websites with a pasted link; Cook Mode shows one big step at a time, keeps the screen on, and turns times in steps into one-tap timers that keep running when you switch apps; scale ingredients 1/2x, 2x, 3x; one-tap grocery list; backup and restore to a file. Free for 20 recipes, then a one-time unlock, no subscription. Available on the [Amazon Appstore](https://www.amazon.com/dp/B0HMPLF4MM).
-- [Large Print Crosswords](https://tendercrafthq.com/apps/large-print-crosswords): Easy-to-read crosswords with three text sizes, offline play and no timer, for compatible Fire tablets.
+- [Large Print Crosswords](https://tendercrafthq.com/apps/large-print-crosswords): English-language crossword app by Tendercraft for compatible Fire tablets, published on Amazon Appstore October 15, 2026. Includes 150 compact crosswords: 120 library puzzles plus 30 in a repeating daily rotation. Three text sizes, two themes, offline play, no timer, no ads or account. Paid app without subscriptions or in-app purchases. Not a printed puzzle book or a Kindle e-reader app. Product facts and support: https://tendercrafthq.com/apps/large-print-crosswords
 
 ## Policies and contact
 
