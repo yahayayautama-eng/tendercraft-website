@@ -53,6 +53,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+    ...['printable-morning-routine-chart', 'first-then-board-guide'].map((slug) => ({
+      url: `${baseUrl}${visualScheduleBoard.path}/${slug}`,
+      lastModified: new Date(`${visualScheduleBoard.updatedAt}T00:00:00Z`),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
     {
       url: baseUrl,
       lastModified: new Date(),
