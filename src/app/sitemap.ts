@@ -3,7 +3,7 @@ import { getPublicProjects } from '@/lib/projects';
 import { getSiteUrl } from '@/lib/site';
 import { largePrintCrosswords } from '@/lib/large-print-crosswords';
 import { visualScheduleBoard } from '@/lib/visual-schedule-board';
-import { recipeBox } from '@/lib/recipe-box';
+import { recipeBox, recipeBoxGuides } from '@/lib/recipe-box';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = getSiteUrl();
@@ -35,18 +35,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
-    {
-      url: `${baseUrl}${recipeBox.path}/save-recipes-from-websites`,
+    ...recipeBoxGuides.map((g) => ({
+      url: `${baseUrl}${recipeBox.path}/${g.slug}`,
       lastModified: new Date(`${recipeBox.updatedAt}T00:00:00Z`),
-      changeFrequency: 'monthly',
+      changeFrequency: 'monthly' as const,
       priority: 0.6,
-    },
-    {
-      url: `${baseUrl}${recipeBox.path}/keep-screen-on-while-cooking`,
-      lastModified: new Date(`${recipeBox.updatedAt}T00:00:00Z`),
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
+    })),
     {
       url: `${baseUrl}${visualScheduleBoard.path}`,
       lastModified: new Date(`${visualScheduleBoard.updatedAt}T00:00:00Z`),

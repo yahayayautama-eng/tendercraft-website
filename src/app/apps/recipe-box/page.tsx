@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { recipeBox, recipeBoxContactUrl, recipeBoxFaq } from '@/lib/recipe-box';
+import { recipeBox, recipeBoxContactUrl, recipeBoxFaq, recipeBoxGuides } from '@/lib/recipe-box';
 import { getSiteUrl } from '@/lib/site';
 
 const baseUrl = getSiteUrl();
@@ -136,8 +136,9 @@ export default function RecipeBoxPage() {
         <section className="rounded-3xl bg-[#faf6f0] dark:bg-[#28241f] p-8 sm:p-10" aria-labelledby="more-heading">
           <h2 id="more-heading" className="text-2xl sm:text-3xl font-bold">Guides and support</h2>
           <div className="mt-5 flex flex-wrap gap-x-7 gap-y-3 font-semibold">
-            <Link href="/apps/recipe-box/save-recipes-from-websites" className="underline underline-offset-4">Save recipes from websites on a Fire tablet</Link>
-            <Link href="/apps/recipe-box/keep-screen-on-while-cooking" className="underline underline-offset-4">Keep your Fire tablet screen on while cooking</Link>
+            {recipeBoxGuides.map((g) => (
+              <Link key={g.slug} href={`/apps/recipe-box/${g.slug}`} className="underline underline-offset-4">{g.title}</Link>
+            ))}
             <a href={recipeBox.privacyUrl} className="underline underline-offset-4">Privacy policy</a>
             <a href={recipeBoxContactUrl()} className="underline underline-offset-4">Email support</a>
           </div>

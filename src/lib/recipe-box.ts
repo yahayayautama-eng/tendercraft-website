@@ -11,6 +11,16 @@ export const recipeBox = {
   freeRecipeLimit: 20,
 } as const;
 
+/** Every guide under /apps/recipe-box, used for the sitemap, the product page links and "more guides" lists. */
+export const recipeBoxGuides = [
+  { slug: 'save-recipes-from-websites', title: 'Save recipes from websites on a Fire tablet' },
+  { slug: 'keep-screen-on-while-cooking', title: 'Keep your Fire tablet screen on while cooking' },
+  { slug: 'best-recipe-app-for-fire-tablet', title: 'The best recipe app for a Fire tablet' },
+  { slug: 'offline-recipe-app', title: 'An offline recipe app that works without Wi-Fi' },
+  { slug: 'grocery-list-from-recipes', title: 'Turn recipes into a grocery list on a Fire tablet' },
+  { slug: 'recipe-box-vs-paprika-pinterest-notes', title: 'Recipe Box vs Paprika, Pinterest and a notes app' },
+] as const;
+
 export function recipeBoxContactUrl(subject = 'Recipe Box question') {
   return `mailto:${recipeBox.supportEmail}?subject=${encodeURIComponent(subject)}`;
 }
