@@ -3,11 +3,11 @@ import path from "path";
 
 const cspHeader = `
   default-src 'self';
-  script-src 'self' 'unsafe-inline';
+  script-src 'self' 'unsafe-inline' https://www.clarity.ms https://*.clarity.ms;
   style-src 'self' 'unsafe-inline';
-  img-src 'self' blob: data: https://*.supabase.co https://tendercrafthq.com https://tendercraft-website.vercel.app;
+  img-src 'self' blob: data: https://*.supabase.co https://tendercrafthq.com https://tendercraft-website.vercel.app https://*.clarity.ms https://c.bing.com;
   font-src 'self' data:;
-  connect-src 'self' https://*.supabase.co wss://*.supabase.co https://tendercraft-website.vercel.app https://tendercrafthq.com;
+  connect-src 'self' https://*.supabase.co wss://*.supabase.co https://tendercraft-website.vercel.app https://tendercrafthq.com https://*.clarity.ms https://c.bing.com;
   frame-ancestors 'none';
   form-action 'self';
   base-uri 'self';
