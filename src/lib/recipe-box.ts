@@ -3,11 +3,11 @@ export const recipeBox = {
   name: 'Recipe Box',
   fullName: 'Recipe Box for Fire tablets',
   path: '/apps/recipe-box',
-  availability: 'coming-soon' as 'coming-soon' | 'available',
-  amazonUrl: null as string | null,
+  availability: 'available' as 'coming-soon' | 'available',
+  amazonUrl: 'https://www.amazon.com/dp/B0HMPLF4MM' as string | null,
   supportEmail: 'info@tendercrafthq.com',
   privacyUrl: '/recipe-box/privacy.html',
-  updatedAt: '2026-10-24',
+  updatedAt: '2026-10-25',
   freeRecipeLimit: 20,
 } as const;
 
