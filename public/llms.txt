@@ -1,0 +1,13 @@
+# Tendercraft
+
+> Tendercraft builds small, private, offline apps for Amazon Fire tablets. No ads, no accounts, no analytics.
+
+## Apps
+
+- [Visual Schedule Board](https://tendercrafthq.com/apps/visual-schedule-board): An offline picture-routine app for Amazon Fire tablets. Parents and teachers build step-by-step visual schedules from 74 built-in pictures or their own photos, and children follow them one step at a time. Includes a First / Then view, optional quiet timers and a parent gate. Free to start with a one-time unlock, no subscription.
+- [Large Print Crosswords](https://tendercrafthq.com/apps/large-print-crosswords): Easy-to-read crosswords with three text sizes, offline play and no timer, for compatible Fire tablets.
+
+## Policies and contact
+
+- [Visual Schedule Board privacy policy](https://tendercrafthq.com/visual-schedule-board/privacy.html)
+- Contact: info@tendercrafthq.com

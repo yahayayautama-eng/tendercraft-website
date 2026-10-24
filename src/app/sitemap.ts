@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 import { getPublicProjects } from '@/lib/projects';
 import { getSiteUrl } from '@/lib/site';
 import { largePrintCrosswords } from '@/lib/large-print-crosswords';
+import { visualScheduleBoard } from '@/lib/visual-schedule-board';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = getSiteUrl();
@@ -26,6 +27,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(`${largePrintCrosswords.updatedAt}T00:00:00Z`),
       changeFrequency: 'monthly',
       priority: 0.6,
+    },
+    {
+      url: `${baseUrl}${visualScheduleBoard.path}`,
+      lastModified: new Date(`${visualScheduleBoard.updatedAt}T00:00:00Z`),
+      changeFrequency: 'monthly',
+      priority: 0.8,
     },
     {
       url: baseUrl,
