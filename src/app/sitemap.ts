@@ -60,6 +60,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
     })),
     {
+      url: `${baseUrl}/apps/windows`,
+      lastModified: new Date('2026-10-25T00:00:00Z'),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
       url: baseUrl,
       lastModified: new Date(),
       changeFrequency: 'weekly',

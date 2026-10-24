@@ -9,6 +9,7 @@ import { Menu, X, ArrowRight } from 'lucide-react';
 
 const NAV_ITEMS = [
   { href: '/work', label: 'Work' },
+  { href: '/apps/windows', label: 'Windows Apps' },
   { href: '/apps/recipe-box', label: 'Recipe Box' },
   { href: '/apps/large-print-crosswords', label: 'Crosswords' },
   { href: '/about', label: 'About' },
