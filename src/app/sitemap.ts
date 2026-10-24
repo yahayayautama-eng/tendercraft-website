@@ -66,6 +66,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/apps/vox-reader`,
+      lastModified: new Date('2026-10-25T00:00:00Z'),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/apps/cropmark`,
+      lastModified: new Date('2026-10-25T00:00:00Z'),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/apps/still-lane`,
+      lastModified: new Date('2026-10-25T00:00:00Z'),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
       url: baseUrl,
       lastModified: new Date(),
       changeFrequency: 'weekly',

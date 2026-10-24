@@ -3,27 +3,30 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getSiteUrl } from '@/lib/site';
 import { WINDOWS_APPS } from '@/lib/windows-apps';
-import { ShieldCheck, Cpu, HardDrive, ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import { ShieldCheck, Cpu, HardDrive, ArrowUpRight, CheckCircle2, ChevronRight } from 'lucide-react';
 
 const baseUrl = getSiteUrl();
 const pageUrl = `${baseUrl}/apps/windows`;
+const ogImageUrl = `${baseUrl}/brand/tendercraft-og.png`;
 const description =
   'Discover native Windows 11 & 10 desktop utilities built for privacy and performance. Featuring Vox Reader (offline neural text-to-speech), Cropmark (secure screenshot redaction), and Still-Lane (private screen time & gentle focus).';
 
 export const metadata: Metadata = {
-  title: 'Native Windows Apps for Privacy & Focus | Tendercraft',
+  title: 'Native Windows Apps for Privacy & Focus',
   description,
   alternates: { canonical: pageUrl },
   openGraph: {
-    title: 'Native Windows Apps for Privacy & Focus | Tendercraft',
+    title: 'Native Windows Apps for Privacy & Focus',
     description,
     url: pageUrl,
     type: 'website',
+    images: [{ url: ogImageUrl, width: 1200, height: 630, alt: 'Tendercraft Native Windows Suite' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Native Windows Apps | Tendercraft',
     description,
+    images: [ogImageUrl],
   },
 };
 
@@ -131,7 +134,14 @@ export default function WindowsAppsPage() {
               </div>
             </div>
 
-            <div className="mt-8 pt-6 border-t border-zinc-100 dark:border-zinc-800">
+            <div className="mt-8 pt-6 border-t border-zinc-100 dark:border-zinc-800 space-y-2.5">
+              <Link
+                href={`/apps/${app.id}`}
+                className="inline-flex items-center justify-center w-full gap-2 px-5 py-2.5 rounded-xl font-medium text-xs border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800/80 hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-800 dark:text-zinc-200 transition-colors"
+              >
+                <span>Read Feature Specs & Comparisons</span>
+                <ChevronRight className="w-3.5 h-3.5" />
+              </Link>
               <a
                 href={app.storeUrl}
                 target="_blank"
