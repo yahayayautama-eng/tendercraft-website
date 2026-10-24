@@ -47,6 +47,11 @@ export function Footer() {
             </h3>
             <ul className="space-y-1 text-sm font-medium">
               <li>
+                <Link href="/apps/recipe-box" className="inline-flex items-center min-h-[44px] text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md px-1">
+                  Recipe Box
+                </Link>
+              </li>
+              <li>
                 <Link href="/apps/large-print-crosswords" className="inline-flex items-center min-h-[44px] text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md px-1">
                   Large Print Crosswords
                 </Link>
