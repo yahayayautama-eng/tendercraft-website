@@ -134,6 +134,14 @@ export default function VoxReaderPage() {
           acceptedAnswer: { '@type': 'Answer', text: f.answer },
         })),
       },
+      {
+        '@type': 'VideoObject',
+        name: 'Vox Reader — Offline Text-to-Speech Demonstration',
+        description: 'Watch offline neural text-to-speech reading on Windows with synchronized sentence tracking.',
+        thumbnailUrl: `${baseUrl}/vox-reader/screenshot.png`,
+        uploadDate: '2026-10-24T00:00:00Z',
+        contentUrl: `${baseUrl}/vox-reader/preview.mp4`,
+      },
     ],
   };
 
@@ -219,6 +227,31 @@ export default function VoxReaderPage() {
         <p className="text-center text-xs text-zinc-500 dark:text-zinc-400">
           Dark mode reader view with real-time sentence illumination, audio waveform, and precision playback controls.
         </p>
+      </section>
+
+      {/* Video Demonstration */}
+      <section className="space-y-4">
+        <div className="space-y-1">
+          <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+            Watch Vox Reader in Action
+          </h2>
+          <p className="text-sm text-zinc-600 dark:text-zinc-400">
+            See synchronized sentence tracking and neural voice playback in a real reading session.
+          </p>
+        </div>
+        <div className="rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-md bg-zinc-950">
+          <video
+            className="w-full h-auto aspect-video"
+            controls
+            preload="metadata"
+            poster="/vox-reader/screenshot.png"
+            playsInline
+            aria-label="Vox Reader offline neural text-to-speech demonstration"
+          >
+            <source src="/vox-reader/preview.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </section>
 
       {/* Why Vox Reader — Problem vs Solution */}

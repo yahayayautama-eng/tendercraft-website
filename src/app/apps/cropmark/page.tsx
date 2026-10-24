@@ -128,6 +128,14 @@ export default function CropmarkPage() {
           acceptedAnswer: { '@type': 'Answer', text: f.answer },
         })),
       },
+      {
+        '@type': 'VideoObject',
+        name: 'Cropmark — Windows Screenshot Markup & Redaction Demonstration',
+        description: 'See verified destructive pixel redaction, numbered step badges, and instant export in action.',
+        thumbnailUrl: `${baseUrl}/cropmark/screenshot.png`,
+        uploadDate: '2026-10-24T00:00:00Z',
+        contentUrl: `${baseUrl}/cropmark/preview.mp4`,
+      },
     ],
   };
 
@@ -213,6 +221,31 @@ export default function CropmarkPage() {
         <p className="text-center text-xs text-zinc-500 dark:text-zinc-400">
           Coral markup palette: auto-incrementing step badges, true redaction, and drop-shadow styling.
         </p>
+      </section>
+
+      {/* Video Demonstration */}
+      <section className="space-y-4">
+        <div className="space-y-1">
+          <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+            Watch Cropmark in Action
+          </h2>
+          <p className="text-sm text-zinc-600 dark:text-zinc-400">
+            See verified destructive pixel redaction, numbered step badges, and instant export in action.
+          </p>
+        </div>
+        <div className="rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-md bg-zinc-950">
+          <video
+            className="w-full h-auto aspect-video"
+            controls
+            preload="metadata"
+            poster="/cropmark/screenshot.png"
+            playsInline
+            aria-label="Cropmark screenshot tool demonstration"
+          >
+            <source src="/cropmark/preview.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </section>
 
       {/* The Acropalypse Problem vs. Cropmark Solution */}

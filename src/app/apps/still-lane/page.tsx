@@ -128,6 +128,14 @@ export default function StillLanePage() {
           acceptedAnswer: { '@type': 'Answer', text: f.answer },
         })),
       },
+      {
+        '@type': 'VideoObject',
+        name: 'Still-Lane — Private Windows Screen Time Tracker Demonstration',
+        description: 'See 100% local SQLite screen time tracking, daily timeline insights, and gentle overridable budgets.',
+        thumbnailUrl: `${baseUrl}/still-lane/screenshot.png`,
+        uploadDate: '2026-10-24T00:00:00Z',
+        contentUrl: `${baseUrl}/still-lane/preview.mp4`,
+      },
     ],
   };
 
@@ -213,6 +221,31 @@ export default function StillLanePage() {
         <p className="text-center text-xs text-zinc-500 dark:text-zinc-400">
           Daily active timeline, application category summaries, and customizable overridable budget controls.
         </p>
+      </section>
+
+      {/* Video Demonstration */}
+      <section className="space-y-4">
+        <div className="space-y-1">
+          <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+            Watch Still-Lane in Action
+          </h2>
+          <p className="text-sm text-zinc-600 dark:text-zinc-400">
+            See 100% local SQLite screen time tracking, daily timeline insights, and gentle overridable budgets.
+          </p>
+        </div>
+        <div className="rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-md bg-zinc-950">
+          <video
+            className="w-full h-auto aspect-video"
+            controls
+            preload="metadata"
+            poster="/still-lane/screenshot.png"
+            playsInline
+            aria-label="Still-Lane private screen time tracker demonstration"
+          >
+            <source src="/still-lane/preview.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </section>
 
       {/* Why Still-Lane — Problem vs Solution */}
