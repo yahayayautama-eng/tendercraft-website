@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XML_DIZ_INFO>
+  <MASTER_PAD_VERSION_INFO>
+    <MASTER_PAD_VERSION>3.11</MASTER_PAD_VERSION>
+    <MASTER_PAD_EDITOR_VERSION>PADGen 3.1.1.51</MASTER_PAD_EDITOR_VERSION>
+    <MASTER_PAD_INFO>Portable Application Description by Association of Shareware Professionals</MASTER_PAD_INFO>
+  </MASTER_PAD_VERSION_INFO>
+  <Company_Info>
+    <Company_Name>Tendercraft</Company_Name>
+    <Address_1>Tendercraft HQ</Address_1>
+    <City_Town>San Francisco</City_Town>
+    <State_Province>CA</State_Province>
+    <Zip_Postal_Code>94107</Zip_Postal_Code>
+    <Country>United States</Country>
+    <Company_WebSite_URL>https://tendercrafthq.com</Company_WebSite_URL>
+    <Contact_Info>
+      <Author_First_Name>Yahaya</Author_First_Name>
+      <Author_Last_Name>Yautama</Author_Last_Name>
+      <Author_Email>info@tendercrafthq.com</Author_Email>
+      <Contact_Email>info@tendercrafthq.com</Contact_Email>
+    </Contact_Info>
+    <Support_Info>
+      <Sales_Email>info@tendercrafthq.com</Sales_Email>
+      <Support_Email>info@tendercrafthq.com</Support_Email>
+      <General_Email>info@tendercrafthq.com</General_Email>
+      <Sales_Phone />
+      <Support_Phone />
+      <General_Phone />
+      <Fax_Phone />
+    </Support_Info>
+  </Company_Info>
+  <Program_Info>
+    <Program_Name>Cropmark</Program_Name>
+    <Program_Version>0.1.0.0</Program_Version>
+    <Program_Release_Month>10</Program_Release_Month>
+    <Program_Release_Day>24</Program_Release_Day>
+    <Program_Release_Year>2026</Program_Release_Year>
+    <Program_Cost_Dollars>18.99</Program_Cost_Dollars>
+    <Program_Cost_Other_Code>USD</Program_Cost_Other_Code>
+    <Program_Cost_Other />
+    <Program_Type>Freemium</Program_Type>
+    <Program_Release_Status>New Release</Program_Release_Status>
+    <Program_Install_Support>Install and Uninstall</Program_Install_Support>
+    <Program_OS_Support>Win10, Win11, Win64</Program_OS_Support>
+    <Program_Language>English</Program_Language>
+    <Program_Change_Info>Modern WinUI 3 screen capture, true pixel redaction, and multi-page PDF export.</Program_Change_Info>
+    <Program_Specific_Category>Graphic Apps::Screen Capture</Program_Specific_Category>
+    <Program_Category_Class>Graphic Apps::Screen Capture</Program_Category_Class>
+    <Program_System_Requirements>Windows 10 version 2004 or later (64-bit)</Program_System_Requirements>
+    <File_Info>
+      <File_Size_Bytes>45000000</File_Size_Bytes>
+      <File_Size_K>43945</File_Size_K>
+      <File_Size_MB>42.91</File_Size_MB>
+    </File_Info>
+    <Expire_Info>
+      <Has_Expire_Info>N</Has_Expire_Info>
+      <Expire_Count />
+      <Expire_Based_On />
+      <Expire_Other_Info />
+      <Expire_Month />
+      <Expire_Day />
+      <Expire_Year />
+    </Expire_Info>
+  </Program_Info>
+  <Program_Descriptions>
+    <English>
+      <Keywords>screenshot, screen capture, snip tool, redact image, annotate screenshot, screenshot to pdf, markup tool</Keywords>
+      <Char_Desc_45>Native Windows screenshot tool with redaction</Char_Desc_45>
+      <Char_Desc_80>Native Windows screenshot capture and markup tool with permanent pixel redaction.</Char_Desc_80>
+      <Char_Desc_250>Cropmark is a modern, lightweight screen capture and markup tool built natively with WinUI 3 for Windows 11 and 10. Designed for developers and privacy-conscious workers, Cropmark focuses on fast workflows and verifiable data security.</Char_Desc_250>
+      <Char_Desc_450>Cropmark is a modern screen capture and markup tool built with WinUI 3 for Windows 11/10. Designed for developers, privacy-conscious workers, and documentation creators, Cropmark focuses on fast workflows and security. Unlike basic screenshot tools that place dark boxes over sensitive info, Cropmark performs true pixel redaction—permanently erasing sensitive bitmap data before saving. Export to clipboard, PNG, JPEG, or paginated multi-page PDF.</Char_Desc_450>
+      <Char_Desc_2000>Cropmark is a modern, lightweight screen capture and markup tool built natively with WinUI 3 for Windows 11 and 10. Designed for developers, privacy-conscious workers, and documentation creators, Cropmark focuses on fast workflows and verifiable data security.
+
+Unlike basic screenshot tools that merely place a dark rectangle over sensitive information (which can inadvertently leak data), Cropmark performs true pixel redaction—permanently erasing and zeroing out sensitive bitmap data before saving.
+
+Key Features:
+- True Security Redaction: Destructively removes covered pixels to prevent data leaks.
+- Markup &amp; Annotation: Vector arrows, bounding boxes, text callouts, and auto-incrementing numbered step badges (1, 2, 3...).
+- Clean Canvas Styling: Add shadows, rounded corners, padding, and neutral backdrops for documentation.
+- Multi-Format Export: Export to clipboard, PNG, JPEG, or paginated multi-page PDF files without watermarks.
+- Fast &amp; Native: Native .NET 8 / WinUI 3 architecture with instant global hotkey access.
+- Private &amp; Local: Zero analytics, zero cloud telemetry, with local encrypted autosave protection.</Char_Desc_2000>
+    </English>
+  </Program_Descriptions>
+  <Web_Info>
+    <Application_URLs>
+      <Application_Info_URL>https://tendercrafthq.com/apps/windows#cropmark</Application_Info_URL>
+      <Application_Order_URL>https://apps.microsoft.com/detail/9NZR4D24CMM6</Application_Order_URL>
+      <Application_Screenshot_URL>https://tendercrafthq.com/cropmark/icon.png</Application_Screenshot_URL>
+      <Application_Icon_URL>https://tendercrafthq.com/cropmark/icon.png</Application_Icon_URL>
+      <Application_XML_File_URL>https://tendercrafthq.com/cropmark/pad.xml</Application_XML_File_URL>
+    </Application_URLs>
+    <Download_URLs>
+      <Primary_Download_URL>https://apps.microsoft.com/detail/9NZR4D24CMM6</Primary_Download_URL>
+      <Secondary_Download_URL>https://tendercrafthq.com/apps/windows</Secondary_Download_URL>
+    </Download_URLs>
+  </Web_Info>
+</XML_DIZ_INFO>

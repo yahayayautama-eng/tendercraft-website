@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XML_DIZ_INFO>
+  <MASTER_PAD_VERSION_INFO>
+    <MASTER_PAD_VERSION>3.11</MASTER_PAD_VERSION>
+    <MASTER_PAD_EDITOR_VERSION>PADGen 3.1.1.51</MASTER_PAD_EDITOR_VERSION>
+    <MASTER_PAD_INFO>Portable Application Description by Association of Shareware Professionals</MASTER_PAD_INFO>
+  </MASTER_PAD_VERSION_INFO>
+  <Company_Info>
+    <Company_Name>Tendercraft</Company_Name>
+    <Address_1>Tendercraft HQ</Address_1>
+    <City_Town>San Francisco</City_Town>
+    <State_Province>CA</State_Province>
+    <Zip_Postal_Code>94107</Zip_Postal_Code>
+    <Country>United States</Country>
+    <Company_WebSite_URL>https://tendercrafthq.com</Company_WebSite_URL>
+    <Contact_Info>
+      <Author_First_Name>Yahaya</Author_First_Name>
+      <Author_Last_Name>Yautama</Author_Last_Name>
+      <Author_Email>info@tendercrafthq.com</Author_Email>
+      <Contact_Email>info@tendercrafthq.com</Contact_Email>
+    </Contact_Info>
+    <Support_Info>
+      <Sales_Email>info@tendercrafthq.com</Sales_Email>
+      <Support_Email>info@tendercrafthq.com</Support_Email>
+      <General_Email>info@tendercrafthq.com</General_Email>
+      <Sales_Phone />
+      <Support_Phone />
+      <General_Phone />
+      <Fax_Phone />
+    </Support_Info>
+  </Company_Info>
+  <Program_Info>
+    <Program_Name>Still-Lane</Program_Name>
+    <Program_Version>1.0.0.0</Program_Version>
+    <Program_Release_Month>10</Program_Release_Month>
+    <Program_Release_Day>24</Program_Release_Day>
+    <Program_Release_Year>2026</Program_Release_Year>
+    <Program_Cost_Dollars>14.99</Program_Cost_Dollars>
+    <Program_Cost_Other_Code>USD</Program_Cost_Other_Code>
+    <Program_Cost_Other />
+    <Program_Type>Commercial</Program_Type>
+    <Program_Release_Status>New Release</Program_Release_Status>
+    <Program_Install_Support>Install and Uninstall</Program_Install_Support>
+    <Program_OS_Support>Win10, Win11, Win64</Program_OS_Support>
+    <Program_Language>English</Program_Language>
+    <Program_Change_Info>Initial release of local-first screen time and application focus tracking with gentle limits.</Program_Change_Info>
+    <Program_Specific_Category>Desktop Enhancements::Time &amp; Clock</Program_Specific_Category>
+    <Program_Category_Class>Desktop Enhancements::Time &amp; Clock</Program_Category_Class>
+    <Program_System_Requirements>Windows 10 version 2004 or later (64-bit)</Program_System_Requirements>
+    <File_Info>
+      <File_Size_Bytes>35000000</File_Size_Bytes>
+      <File_Size_K>34179</File_Size_K>
+      <File_Size_MB>33.38</File_Size_MB>
+    </File_Info>
+    <Expire_Info>
+      <Has_Expire_Info>Y</Has_Expire_Info>
+      <Expire_Count>15</Expire_Count>
+      <Expire_Based_On>Days</Expire_Based_On>
+      <Expire_Other_Info>15-day full free trial, then $14.99 lifetime purchase</Expire_Other_Info>
+      <Expire_Month />
+      <Expire_Day />
+      <Expire_Year />
+    </Expire_Info>
+  </Program_Info>
+  <Program_Descriptions>
+    <English>
+      <Keywords>screen time, app tracker, focus timer, time tracker, digital wellbeing, app usage, distraction blocker</Keywords>
+      <Char_Desc_45>Private Windows screen time and focus tracker</Char_Desc_45>
+      <Char_Desc_80>Private Windows screen time and computer usage tracker with gentle limits.</Char_Desc_80>
+      <Char_Desc_250>Still-Lane brings gentle, private digital wellbeing and screen time tracking to Windows. Designed for adults managing personal attention, Still-Lane avoids punitive lockouts and stores all activity strictly in a local SQLite database.</Char_Desc_250>
+      <Char_Desc_450>Still-Lane brings gentle, private digital wellbeing and screen time tracking to Windows. Designed specifically for adults managing personal attention, Still-Lane avoids the punitive lockouts of aggressive site blockers and the surveillance architecture of corporate monitors. All tracking data is stored strictly in a local SQLite database on your device and never uploaded to any remote server or employer portal.</Char_Desc_450>
+      <Char_Desc_2000>Still-Lane brings gentle, private digital wellbeing and screen time tracking to Windows. Designed specifically for adults managing personal attention, Still-Lane avoids the punitive lockouts of aggressive site blockers and the surveillance architecture of corporate activity monitors.
+
+All tracking data is stored strictly in a local SQLite database on your device and never uploaded to any remote server or employer portal.
+
+Key Features:
+- Automatic Local Usage Tracking: Accurate timeline of active window focus and application duration.
+- Gentle, Overridable Limits: Daily time budgets for demanding apps that politely remind you without risking lost unsaved work.
+- Deep Focus Mode: Dedicated focus blocks with distraction dampening.
+- Smart Idle Filtering: Distinguishes between active desk work and stepping away.
+- 100% Private &amp; Autonomous: No employee monitoring, no cloud sync, and one-click data purge/export.</Char_Desc_2000>
+    </English>
+  </Program_Descriptions>
+  <Web_Info>
+    <Application_URLs>
+      <Application_Info_URL>https://tendercrafthq.com/apps/windows#still-lane</Application_Info_URL>
+      <Application_Order_URL>https://apps.microsoft.com/detail/9NP26W128KX9</Application_Order_URL>
+      <Application_Screenshot_URL>https://tendercrafthq.com/still-lane/icon.png</Application_Screenshot_URL>
+      <Application_Icon_URL>https://tendercrafthq.com/still-lane/icon.png</Application_Icon_URL>
+      <Application_XML_File_URL>https://tendercrafthq.com/still-lane/pad.xml</Application_XML_File_URL>
+    </Application_URLs>
+    <Download_URLs>
+      <Primary_Download_URL>https://apps.microsoft.com/detail/9NP26W128KX9</Primary_Download_URL>
+      <Secondary_Download_URL>https://tendercrafthq.com/apps/windows</Secondary_Download_URL>
+    </Download_URLs>
+  </Web_Info>
+</XML_DIZ_INFO>
