@@ -7,7 +7,7 @@ import { recipeBox } from '@/lib/recipe-box';
 const url = `${getSiteUrl()}${recipeBox.path}/save-recipes-from-websites`;
 export const metadata: Metadata = {
   title: 'How to Save Recipes from Websites on a Fire Tablet',
-  description: 'Keep recipes from cooking websites on your Fire tablet without bookmarks or screenshots. Paste a link into Recipe Box and the ingredients, steps and photo are saved for offline use.',
+  description: 'Save recipes from cooking websites on your Fire tablet without bookmarks. Paste a link into Recipe Box and the ingredients, steps and photo are saved offline.',
   alternates: { canonical: url },
 };
 

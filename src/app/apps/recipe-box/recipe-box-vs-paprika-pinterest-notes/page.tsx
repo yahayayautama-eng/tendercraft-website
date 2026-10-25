@@ -4,7 +4,7 @@ import { recipeBox } from '@/lib/recipe-box';
 const slug = 'recipe-box-vs-paprika-pinterest-notes';
 const title = 'Recipe Box vs Paprika, Pinterest and a Notes App';
 const description =
-  'An honest comparison of Recipe Box with Paprika, Pinterest boards and a plain notes app for keeping recipes on a Fire tablet: price, offline use, cooking tools and privacy.';
+  'An honest comparison of Recipe Box, Paprika, Pinterest boards and a notes app for keeping recipes on a Fire tablet: price, offline use, cooking tools.';
 
 export const metadata = guideMetadata(slug, title, description);
 

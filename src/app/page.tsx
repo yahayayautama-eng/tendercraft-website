@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import React from 'react';
 import Link from 'next/link';
 import { getPublicProjects } from '@/lib/projects';
@@ -244,3 +245,5 @@ export default async function HomePage() {
     </div>
   );
 }
+
+export const metadata: Metadata = { alternates: { canonical: '/' } };

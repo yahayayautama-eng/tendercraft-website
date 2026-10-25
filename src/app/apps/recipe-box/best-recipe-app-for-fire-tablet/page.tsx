@@ -4,7 +4,7 @@ import { RecipeBoxGuide, guideMetadata } from '@/components/RecipeBoxGuide';
 const slug = 'best-recipe-app-for-fire-tablet';
 const title = 'Best Recipe App for a Fire Tablet';
 const description =
-  'What to look for in a recipe app on a Fire tablet: it must come from the Amazon Appstore, import recipes, keep the screen on and work offline. A checklist and the options compared.';
+  'What to look for in a Fire tablet recipe app: Amazon Appstore, recipe import, screen kept on, offline use. A checklist and the options compared.';
 
 export const metadata = guideMetadata(slug, title, description);
 

@@ -7,10 +7,10 @@ import { getSiteUrl } from '@/lib/site';
 const baseUrl = getSiteUrl();
 const pageUrl = `${baseUrl}${recipeBox.path}`;
 const description =
-  'Recipe Box for Fire tablets keeps every recipe in one place. Import from cooking websites, cook one big step at a time with one-tap timers, and build a grocery list. Works offline, no ads.';
+  'Recipe Box for Fire tablets: import recipes from websites, cook one big step at a time with one-tap timers, make a grocery list. Works offline, no ads.';
 
 export const metadata: Metadata = {
-  title: 'Recipe Box for Fire Tablets: Offline Recipe Organizer',
+  title: 'Recipe Box: Offline Recipe App for Fire Tablets',
   description,
   alternates: { canonical: pageUrl },
   openGraph: {
