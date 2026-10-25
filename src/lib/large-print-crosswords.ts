@@ -1,11 +1,12 @@
-/** Console publication verified October 24; package links follow Amazon's documented deep-link format.
- * Retail pages returned HTTP 503 during verification. Replace with a verified ASIN URL when available.
+/** US product identity and ASIN verified in the public Amazon listing October 25, 2026.
+ * UK package link follows Amazon's documented format; regional availability may differ.
  */
 export const largePrintCrosswords = {
   name: 'Large Print Crosswords',
   path: '/apps/large-print-crosswords',
   availability: 'published' as 'coming-soon' | 'published',
-  amazonUrl: 'https://www.amazon.com/gp/mas/dl/android?p=com.largeprintcrosswords' as string | null,
+  amazonUrl: 'https://www.amazon.com/dp/B0HMRD2PNV' as string | null,
+  asin: 'B0HMRD2PNV',
   amazonUkUrl: 'https://www.amazon.co.uk/gp/mas/dl/android?p=com.largeprintcrosswords',
   publishedAt: '2026-10-15',
   supportEmail: 'hello@tendercrafthq.com',
