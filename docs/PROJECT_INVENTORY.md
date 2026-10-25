@@ -12,13 +12,13 @@ Operating principle: **Never invent customers, testimonials, revenue, metrics, r
 ### Large Print Crosswords — consumer app entry (October 24, 2026)
 
 - **Source:** `C:\Users\Yayis\Desktop\large-print-crossword`.
-- **Positioning:** A readable, offline crossword app being prepared for compatible Fire tablets.
+- **Positioning:** A readable, offline crossword app for compatible Fire tablets.
 - **Verified app content:** 150 original compact crosswords total: 120 library puzzles plus 30 puzzles in a repeating daily rotation. The daily set repeats after 30 days. Three in-app text sizes (Large, Larger, Largest); Warm Parchment and Deep Charcoal themes; Check, Reveal letter and Reveal word; saved local progress; no timer or account.
 - **Release evidence:** `ACCEPTANCE.md` records a signed release APK without INTERNET permission and no analytics/ad SDKs. Review-app screenshots on a Xiaomi tablet and emulator evidence exist. The signed APK has not been installed on a real Fire tablet; Fire-specific model compatibility and VoiceView behavior remain unverified.
-- **Commercial state:** The last recorded Amazon console state (October 12) was a paid $2.99 draft, with no public ASIN or live purchase link confirmed. Display “Coming soon” and an enquiry CTA until the public listing is verified. No sales, ratings or reviews claimed.
-- **Public page:** `/apps/large-print-crosswords` in this website source. The product page uses actual review-build captures and a corrected prelaunch preview. It must not be described as publicly deployed until the production URL is checked.
+- **Commercial state:** Amazon Developer Console was inspected October 24 and shows LIVE ON APPSTORE, live since October 15, 2026, submission 44517448. App ID: amzn1.devportal.mobileapp.6545870f71194196966e4048a2dc182a. Release ID: amzn1.devportal.apprelease.0790f1ff936d45b49670373d66f9dd8d. The earlier draft record is superseded. Public ASIN/link and current marketplace price still require verification; USD 2.99 is the last recorded price. No sales, ratings or reviews claimed.
+- **Public page:** `/apps/large-print-crosswords` was deployed and verified HTTP 200 on October 24, along with two guides and sitemap entries. Updated source replaces the obsolete prelaunch ending with a 19.8-second gameplay demonstration and adds factual product details for search and AI retrieval.
 - **Support:** `hello@tendercrafthq.com` receives mail, observed in the connected mailbox October 24; support response workflow is not independently validated. App privacy page and draft listing were aligned to this address.
-- **Excluded claims:** unlimited new puzzles, medical benefits, universal Fire compatibility, Kindle e-reader support, verified accessibility certification and Appstore publication.
+- **Excluded claims:** unlimited new puzzles, medical benefits, universal Fire compatibility, Kindle e-reader support, verified accessibility certification, customer traction and guaranteed search placement.
 
 ---
 

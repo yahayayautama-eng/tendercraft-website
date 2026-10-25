@@ -1,0 +1,9 @@
+{
+  "host": "tendercrafthq.com",
+  "keyFile": "18e4f0a8de244b3ba131e9b2dc64ec5d.txt",
+  "paths": [
+    "/apps/large-print-crosswords",
+    "/apps/large-print-crosswords/choosing-a-readable-crossword-app",
+    "/apps/large-print-crosswords/offline-play-guide"
+  ]
+}
