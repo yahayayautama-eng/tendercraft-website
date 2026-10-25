@@ -81,6 +81,23 @@ export default function WindowsAppsPage() {
         <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
           High-performance desktop utilities that run entirely on your PC. No mandatory cloud accounts, no subscription fatigue, and zero telemetry.
         </p>
+
+        {/* 1-Month Launch Special (10 Users per app) */}
+        <div className="pt-2">
+          <div className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium bg-amber-50 dark:bg-amber-950/40 text-amber-900 dark:text-amber-200 border border-amber-200 dark:border-amber-800/60 shadow-xs text-left">
+            <span className="text-base">🎁</span>
+            <span>
+              <strong>1-Month Launch Special:</strong> First 10 users per app can claim a free lifetime Pro license for early feedback. Email{' '}
+              <a
+                href="mailto:support@tendercrafthq.com?subject=Early%20Adopter%20Pro%20License%20Request"
+                className="underline font-semibold hover:text-amber-700 dark:hover:text-amber-100"
+              >
+                support@tendercrafthq.com
+              </a>{' '}
+              with your app of choice.
+            </span>
+          </div>
+        </div>
       </header>
 
       {/* App Cards Grid */}

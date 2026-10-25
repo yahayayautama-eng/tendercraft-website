@@ -208,9 +208,21 @@ export default function VoxReaderPage() {
         </div>
 
         {/* Winget quick install */}
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-xs font-mono text-zinc-700 dark:text-zinc-300">
-          <Download className="w-3.5 h-3.5 text-zinc-400" />
-          <span>winget install 9PCVQB5H684W</span>
+        <div className="flex flex-wrap items-center gap-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-xs font-mono text-zinc-700 dark:text-zinc-300">
+            <Download className="w-3.5 h-3.5 text-zinc-400" />
+            <span>winget install 9PCVQB5H684W</span>
+          </div>
+
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-amber-50 dark:bg-amber-950/40 text-amber-900 dark:text-amber-200 border border-amber-200 dark:border-amber-800/60 text-xs font-medium">
+            <span>🎁</span>
+            <span>
+              <strong>1-Month Launch Special:</strong> First 10 users get a free lifetime Pro code. Email{' '}
+              <a href="mailto:support@tendercrafthq.com?subject=Vox%20Reader%20Pro%20Free%20License%20Request" className="underline font-semibold">
+                support@tendercrafthq.com
+              </a>
+            </span>
+          </div>
         </div>
       </header>
 
