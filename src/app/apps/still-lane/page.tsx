@@ -18,6 +18,7 @@ import {
   PieChart,
   Coffee,
 } from 'lucide-react';
+import { MobileReminderCard } from '@/components/MobileReminderCard';
 
 const baseUrl = getSiteUrl();
 const pageUrl = `${baseUrl}/apps/still-lane`;
@@ -444,6 +445,14 @@ export default function StillLanePage() {
           Native Windows desktop utility with local SQLite persistence. Requires no administrator elevation to run.
         </p>
       </section>
+
+      {/* Mobile Reminder */}
+      <MobileReminderCard
+        appName="Still-Lane"
+        url="https://tendercrafthq.com/apps/still-lane"
+        wingetCommand="winget install 9NP26W128KX9"
+        tagline="Still-Lane is a native Windows 11 & 10 focus and time tracking app."
+      />
 
       {/* Bottom CTA Card */}
       <section className="p-8 sm:p-12 rounded-3xl bg-linear-to-br from-violet-600 to-purple-800 text-white text-center space-y-4">

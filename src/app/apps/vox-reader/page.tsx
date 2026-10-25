@@ -19,6 +19,7 @@ import {
   FileText,
   FileCode,
 } from 'lucide-react';
+import { MobileReminderCard } from '@/components/MobileReminderCard';
 
 const baseUrl = getSiteUrl();
 const pageUrl = `${baseUrl}/apps/vox-reader`;
@@ -441,6 +442,14 @@ export default function VoxReaderPage() {
           Offline voice synthesis models are bundled with the software and execute on-device. No network connectivity is initiated during voice generation.
         </p>
       </section>
+
+      {/* Mobile Reminder */}
+      <MobileReminderCard
+        appName="Vox Reader"
+        url="https://tendercrafthq.com/apps/vox-reader"
+        wingetCommand="winget install 9PCVQB5H684W"
+        tagline="Vox Reader runs on Windows 11 & 10 desktop."
+      />
 
       {/* Bottom CTA Card */}
       <section className="p-8 sm:p-12 rounded-3xl bg-linear-to-br from-blue-600 to-indigo-700 text-white text-center space-y-4">

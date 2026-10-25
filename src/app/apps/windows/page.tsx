@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { getSiteUrl } from '@/lib/site';
 import { WINDOWS_APPS } from '@/lib/windows-apps';
 import { ShieldCheck, Cpu, HardDrive, ArrowUpRight, CheckCircle2, ChevronRight } from 'lucide-react';
+import { MobileReminderCard } from '@/components/MobileReminderCard';
 
 const baseUrl = getSiteUrl();
 const pageUrl = `${baseUrl}/apps/windows`;
@@ -165,6 +166,13 @@ export default function WindowsAppsPage() {
           </div>
         ))}
       </section>
+
+      {/* Mobile Reminder */}
+      <MobileReminderCard
+        appName="Tendercraft Windows Suite"
+        url="https://tendercrafthq.com/apps/windows"
+        tagline="Tendercraft apps (Vox Reader, Cropmark, and Still-Lane) run natively on Windows 11 & 10."
+      />
 
       {/* Philosophy Banner */}
       <section className="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50/80 dark:bg-zinc-900/30 p-8 sm:p-12">

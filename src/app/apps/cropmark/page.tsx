@@ -18,6 +18,7 @@ import {
   Sparkles,
   EyeOff,
 } from 'lucide-react';
+import { MobileReminderCard } from '@/components/MobileReminderCard';
 
 const baseUrl = getSiteUrl();
 const pageUrl = `${baseUrl}/apps/cropmark`;
@@ -443,6 +444,14 @@ export default function CropmarkPage() {
           Native Windows app built with WinUI 3 and .NET 8. Exports clean PNG, JPEG, and PDF files directly to your storage without telemetry.
         </p>
       </section>
+
+      {/* Mobile Reminder */}
+      <MobileReminderCard
+        appName="Cropmark"
+        url="https://tendercrafthq.com/apps/cropmark"
+        wingetCommand="winget install 9NZR4D24CMM6"
+        tagline="Cropmark is a native Windows 11 & 10 desktop application."
+      />
 
       {/* Bottom CTA Card */}
       <section className="p-8 sm:p-12 rounded-3xl bg-linear-to-br from-rose-600 to-red-700 text-white text-center space-y-4">
