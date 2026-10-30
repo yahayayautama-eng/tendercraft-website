@@ -5,7 +5,7 @@ import { windowsComparisons, type WindowsComparison as Comparison } from '@/lib/
 
 export function comparisonMetadata(comparison: Comparison): Metadata {
   return {
-    title: comparison.title, description: comparison.description,
+    title: { absolute: comparison.metaTitle }, description: comparison.description,
     alternates: { canonical: `${getSiteUrl()}${comparison.path}` },
     openGraph: { title: comparison.title, description: comparison.description, type: 'article', url: `${getSiteUrl()}${comparison.path}` },
   };

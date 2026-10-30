@@ -10,14 +10,14 @@ const baseUrl = getSiteUrl();
 const pageUrl = `${baseUrl}/apps/still-lane`;
 const ogImageUrl = `${baseUrl}/still-lane/screenshot.png`;
 const description =
-  'Private, local-first Windows 11 & 10 computer usage tracker with gentle overridable limits and deep focus sessions. 100% local SQLite storage with zero cloud surveillance.';
+  'Track app time privately on Windows. Review daily reports and use focus reminders you can override. Records stay on your PC. Try free for 15 days.';
 
 export const metadata: Metadata = {
-  title: 'Still-Lane — Private Screen Time & App Usage Tracker for Windows',
+  title: { absolute: 'Still-Lane: Private Screen Time Tracker for Windows' },
   description,
   alternates: { canonical: pageUrl },
   openGraph: {
-    title: 'Still-Lane — Private Screen Time & App Usage Tracker for Windows',
+    title: 'Still-Lane: Private Screen Time Tracker for Windows',
     description,
     url: pageUrl,
     type: 'website',

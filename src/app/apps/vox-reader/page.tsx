@@ -13,11 +13,11 @@ const description =
   'Read EPUB and TXT aloud offline on Windows. Vox Reader Pro adds PDF and Word import, unlimited listening, and more English voices with a one-time purchase.';
 
 export const metadata: Metadata = {
-  title: 'Vox Reader — Offline Text to Speech for Windows',
+  title: { absolute: 'Vox Reader: Offline Text to Speech for Windows' },
   description,
   alternates: { canonical: pageUrl },
   openGraph: {
-    title: 'Vox Reader — Offline Text to Speech for Windows',
+    title: 'Vox Reader: Offline Text to Speech for Windows',
     description,
     url: pageUrl,
     type: 'website',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Vox Reader — Offline Text to Speech for Windows',
+    title: 'Vox Reader: Offline Text to Speech for Windows',
     description,
     images: [ogImageUrl],
   },

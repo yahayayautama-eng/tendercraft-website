@@ -10,14 +10,14 @@ const baseUrl = getSiteUrl();
 const pageUrl = `${baseUrl}/apps/cropmark`;
 const ogImageUrl = `${baseUrl}/cropmark/screenshot.png`;
 const description =
-  'Capture and annotate screenshots on Windows. Replace covered pixels with solid redaction, add numbered steps, and export without watermarks. Pro adds batch export.';
+  'Capture and annotate screenshots on Windows 11. Add solid redaction and numbered steps, then export PNG, JPEG or PDF. Free exports have no watermark.';
 
 export const metadata: Metadata = {
-  title: 'Cropmark — Screenshot Redaction & PDF Export for Windows',
+  title: { absolute: 'Cropmark: Screenshot Redaction for Windows 11' },
   description,
   alternates: { canonical: pageUrl },
   openGraph: {
-    title: 'Cropmark — Screenshot Redaction & PDF Export for Windows',
+    title: 'Cropmark: Screenshot Redaction for Windows 11',
     description,
     url: pageUrl,
     type: 'website',

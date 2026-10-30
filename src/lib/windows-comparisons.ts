@@ -1,5 +1,5 @@
 export type WindowsComparison = {
-  app: string; name: string; path: string; title: string; description: string;
+  app: string; name: string; path: string; title: string; metaTitle: string; description: string;
   intro: string; columns: { name: string; url: string }[];
   rows: { label: string; cells: string[] }[];
   sections: { title: string; text: string }[];
@@ -7,7 +7,7 @@ export type WindowsComparison = {
 
 export const windowsComparisons: WindowsComparison[] = [
   {
-    app: 'vox-reader', name: 'Vox Reader',
+    metaTitle: 'Windows Text to Speech: Vox Reader vs Speechify vs Balabolka', app: 'vox-reader', name: 'Vox Reader',
     path: '/apps/vox-reader/offline-text-to-speech-comparison',
     title: 'Text to speech on Windows: Vox Reader, Speechify and Balabolka',
     description: 'Compare Windows text-to-speech readers by offline listening, document formats, free allowances and purchase model.',
@@ -29,7 +29,7 @@ export const windowsComparisons: WindowsComparison[] = [
     ],
   },
   {
-    app: 'cropmark', name: 'Cropmark',
+    metaTitle: 'Snagit Alternatives: Cropmark vs ShareX', app: 'cropmark', name: 'Cropmark',
     path: '/apps/cropmark/snagit-alternative-without-subscription',
     title: 'A Snagit alternative without a subscription: Cropmark and ShareX',
     description: 'Compare Cropmark, ShareX and Snagit for screenshot markup, export, screen recording and purchase model on Windows.',
@@ -51,7 +51,7 @@ export const windowsComparisons: WindowsComparison[] = [
     ],
   },
   {
-    app: 'still-lane', name: 'Still-Lane',
+    metaTitle: 'Screen Time: Still-Lane vs StayFree vs ActivityWatch', app: 'still-lane', name: 'Still-Lane',
     path: '/apps/still-lane/screen-time-tracker-comparison',
     title: 'Windows screen time: Still-Lane, StayFree and ActivityWatch',
     description: 'Compare app-level screen time, website detail, focus reminders and local storage in three Windows tracking tools.',
