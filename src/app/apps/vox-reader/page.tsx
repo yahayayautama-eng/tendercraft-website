@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { getSiteUrl } from '@/lib/site';
 import { Cpu, Volume2, Sparkles, BookOpen, Sliders, CheckCircle2, XCircle, ArrowUpRight, ChevronRight, Lock, Download, FileCode } from 'lucide-react';
 import { MobileReminderCard } from '@/components/MobileReminderCard';
+import { WindowsComparisonLinks } from '@/components/WindowsComparison';
 
 const baseUrl = getSiteUrl();
 const pageUrl = `${baseUrl}/apps/vox-reader`;
@@ -388,6 +389,8 @@ export default function VoxReaderPage() {
           Offline voice synthesis models are bundled with the software and execute on-device. No network connectivity is initiated during voice generation.
         </p>
       </section>
+
+      <WindowsComparisonLinks app="vox-reader" />
 
       {/* Mobile Reminder */}
       <MobileReminderCard

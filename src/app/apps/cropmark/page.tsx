@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { getSiteUrl } from '@/lib/site';
 import { ShieldCheck, Layers, FileText, Palette, CheckCircle2, XCircle, ArrowUpRight, ChevronRight, Lock, Download, FileCode, Sparkles, EyeOff } from 'lucide-react';
 import { MobileReminderCard } from '@/components/MobileReminderCard';
+import { WindowsComparisonLinks } from '@/components/WindowsComparison';
 
 const baseUrl = getSiteUrl();
 const pageUrl = `${baseUrl}/apps/cropmark`;
@@ -383,6 +384,8 @@ export default function CropmarkPage() {
           Native Windows app built with WinUI 3 and .NET 8. Exports clean PNG, JPEG, and PDF files directly to your storage without telemetry.
         </p>
       </section>
+
+      <WindowsComparisonLinks app="cropmark" />
 
       {/* Mobile Reminder */}
       <MobileReminderCard

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { getSiteUrl } from '@/lib/site';
 import { Clock, Database, Sliders, Sparkles, CheckCircle2, XCircle, ArrowUpRight, ChevronRight, Download, FileCode, PieChart, Coffee } from 'lucide-react';
 import { MobileReminderCard } from '@/components/MobileReminderCard';
+import { WindowsComparisonLinks } from '@/components/WindowsComparison';
 
 const baseUrl = getSiteUrl();
 const pageUrl = `${baseUrl}/apps/still-lane`;
@@ -380,6 +381,8 @@ export default function StillLanePage() {
           Native Windows desktop utility with local SQLite persistence. Requires no administrator elevation to run.
         </p>
       </section>
+
+      <WindowsComparisonLinks app="still-lane" />
 
       {/* Mobile Reminder */}
       <MobileReminderCard

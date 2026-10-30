@@ -1,3 +1,4 @@
+import { windowsComparisons } from '@/lib/windows-comparisons';
 import { MetadataRoute } from 'next';
 import { getPublicProjects } from '@/lib/projects';
 import { getSiteUrl } from '@/lib/site';
@@ -11,6 +12,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const projects = allProjects.filter((p) => p.published);
 
   const staticRoutes: MetadataRoute.Sitemap = [
+    ...windowsComparisons.map(c => ({ url: `${baseUrl}${c.path}`, lastModified: new Date('2026-10-30T00:00:00Z'), changeFrequency: 'monthly' as const, priority: 0.7 })),
     {
       url: `${baseUrl}${largePrintCrosswords.path}`,
       lastModified: new Date(`${largePrintCrosswords.updatedAt}T00:00:00Z`),

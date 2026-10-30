@@ -34,3 +34,9 @@
 - [Visual Schedule Board privacy policy](https://tendercrafthq.com/visual-schedule-board/privacy.html)
 - Windows app support: hello@tendercrafthq.com
 - Contact: info@tendercrafthq.com
+
+## Windows app comparisons
+
+- [Offline text-to-speech comparison](https://tendercrafthq.com/apps/vox-reader/offline-text-to-speech-comparison): Vendor-sourced comparison, published by Tendercraft, checked 30 October 2026.
+- [Snagit alternatives without a subscription](https://tendercrafthq.com/apps/cropmark/snagit-alternative-without-subscription): Vendor-sourced comparison, published by Tendercraft, checked 30 October 2026.
+- [Windows screen-time tracker comparison](https://tendercrafthq.com/apps/still-lane/screen-time-tracker-comparison): Vendor-sourced comparison, published by Tendercraft, checked 30 October 2026.

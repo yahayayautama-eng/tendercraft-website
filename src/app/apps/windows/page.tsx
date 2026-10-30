@@ -1,3 +1,4 @@
+import { WindowsComparisonLinks } from '@/components/WindowsComparison';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -221,11 +222,13 @@ export default function WindowsAppsPage() {
             </div>
             <h4 className="font-bold text-zinc-900 dark:text-zinc-100">Permanent Ownership</h4>
             <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              Generous permanent free versions paired with honest, one-time lifetime licenses. No $15/month subscriptions for simple desktop tools.
+              Cropmark and Vox Reader include permanent Free tiers and optional one-time Pro purchases. Still-Lane offers a 15-day trial before an optional one-time purchase.
             </p>
           </div>
         </div>
       </section>
+
+      <WindowsComparisonLinks />
 
       {/* Frequently Asked Questions */}
       <section className="space-y-8 max-w-4xl mx-auto">
