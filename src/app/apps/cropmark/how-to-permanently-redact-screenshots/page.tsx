@@ -2,19 +2,19 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getSiteUrl } from '@/lib/site';
-import { ChevronRight, ArrowUpRight, ShieldCheck, EyeOff, AlertTriangle, CheckCircle2 } from 'lucide-react';
+import { ChevronRight, ArrowUpRight, EyeOff } from 'lucide-react';
 
 const baseUrl = getSiteUrl();
 const pageUrl = `${baseUrl}/apps/cropmark/how-to-permanently-redact-screenshots`;
 const description =
-  'Learn why drawing black bars on screenshots often leaks sensitive passwords and PII (Acropalypse flaw), and how to safely destroy underlying bitmap pixels on Windows.';
+  'Redact screenshots on Windows with solid pixel replacement. Learn when overlays can expose content, review the exported file, and keep sensitive originals private.';
 
 export const metadata: Metadata = {
-  title: 'How to Permanently Redact Screenshots on Windows (Acropalypse-Safe)',
+  title: 'How to Permanently Redact Screenshots on Windows',
   description,
   alternates: { canonical: pageUrl },
   openGraph: {
-    title: 'How to Permanently Redact Screenshots on Windows (Acropalypse-Safe)',
+    title: 'How to Permanently Redact Screenshots on Windows',
     description,
     url: pageUrl,
     type: 'article',
@@ -32,7 +32,7 @@ export default function HowToRedactScreenshotsGuide() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: 'How to Permanently Redact Screenshots on Windows (Acropalypse-Safe)',
+    headline: 'How to Permanently Redact Screenshots on Windows',
     description,
     author: { '@type': 'Organization', name: 'Tendercraft', url: baseUrl },
     publisher: { '@type': 'Organization', name: 'Tendercraft', url: baseUrl },
@@ -68,7 +68,7 @@ export default function HowToRedactScreenshotsGuide() {
           How to Permanently Redact Screenshots on Windows
         </h1>
         <p className="text-lg text-zinc-600 dark:text-zinc-300 leading-relaxed">
-          Drawing black rectangles or using blur tools often fails to erase sensitive text. Here is how modern image formats leak confidential data, and how to verify that pixels are truly destroyed before export.
+          Use solid redaction to replace sensitive pixels, then review the exported image. Translucent markers and editable overlays can leave content accessible; a fully opaque, flattened replacement does not have that same overlay risk.
         </p>
       </header>
 
@@ -76,30 +76,30 @@ export default function HowToRedactScreenshotsGuide() {
       <div className="space-y-10 text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
         <section className="space-y-4">
           <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
-            Why Drawing Black Bars Isn't Safe
+            When Markup Leaves Sensitive Content Accessible
           </h2>
           <p>
             When sharing bug reports, API documentation, or customer receipts, team members routinely hide API tokens, email addresses, and credit card numbers. However, traditional methods frequently leave data vulnerable:
           </p>
           <ul className="list-disc pl-6 space-y-2 text-sm">
             <li>
-              <strong>Alpha Transparency & Soft Edges:</strong> Markers and highlighter tools in standard markup software often use semi-transparent brushes. Anyone adjusting the exposure, contrast, or levels in an image viewer can easily read the text beneath.
+              <strong>Alpha Transparency & Soft Edges:</strong> A semi-transparent brush can leave text visible beneath the mark. Use a solid, opaque replacement and cover the full area, including edges.
             </li>
             <li>
-              <strong>Recoverable PNG Buffers (Acropalypse):</strong> In CVE-2023-28303, cropped or edited PNGs saved by built-in operating system snipping tools left trailing uncompressed data at the end of the file. Attackers developed automated tools to reconstruct the cropped-out areas.
+              <strong>Keep capture tools updated:</strong> Export behavior depends on the tool and file format. Use a current version and inspect the exported result rather than assuming an editable project is safe to share.
             </li>
             <li>
-              <strong>Layered PDF Retaining Hidden Elements:</strong> Merging screenshots into PDFs often stores the black box as an editable vector shape floating over the raster image. Deleting the box in any PDF editor reveals the text below.
+              <strong>Editable layers:</strong> An overlay in an editable image or PDF may be removable. Share an export where the sensitive image pixels have been replaced, and keep the editable source private.
             </li>
           </ul>
         </section>
 
         <section className="space-y-4">
           <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
-            True Destructive Redaction: Zeroing the Pixels
+            Replace Pixels in the Exported Image
           </h2>
           <p>
-            To be mathematically secure, an application must perform <strong>destructive in-memory pixel eradication</strong>. This means modifying the raw raster array in RAM by setting the red, green, blue, and alpha bytes of the covered coordinates to pure solid color (or 0x00) before any encoding, compression, or file writing takes place.
+            A redaction export should replace the covered image pixels with a solid color before encoding the output. <strong>Cropmark replaces the covered pixels and checks the result before saving.</strong> This does not remove information from separate originals, backups, or editable project files.
           </p>
           <p>
             <strong>Cropmark</strong> was built specifically to solve this problem for developers, engineers, and support teams.
@@ -115,7 +115,7 @@ export default function HowToRedactScreenshotsGuide() {
             />
           </div>
           <p className="text-xs text-center text-zinc-500">
-            Cropmark solid redaction blocks: pixels are permanently erased from memory before file output.
+            Cropmark solid redaction blocks replace covered pixels in the exported image.
           </p>
         </section>
 
@@ -125,13 +125,13 @@ export default function HowToRedactScreenshotsGuide() {
           </h2>
           <ol className="list-decimal pl-6 space-y-3 text-sm">
             <li>
-              <strong>Capture Any Window or Screen:</strong> Use your global keyboard shortcut or click the floating capture widget to select the desired region.
+              <strong>Capture a Region or Full Screen:</strong> Use your global keyboard shortcut or click the floating capture widget to select the desired region.
             </li>
             <li>
               <strong>Select the Redact Tool:</strong> Click the Redaction tool on the toolbar. Drag a box across the sensitive text, password field, or credentials.
             </li>
             <li>
-              <strong>Export with Confidence:</strong> Save to PNG, JPEG, or multi-page PDF, or copy to your clipboard. Cropmark inspects the memory buffer prior to saving to guarantee zero pixel recovery.
+              <strong>Review the Export:</strong> Export PNG, JPEG, or a single-image PDF; Pro can merge multiple images into a PDF. Open the exported file, zoom in, and check that every sensitive area is covered. Share this output rather than the editable project or original capture.
             </li>
           </ol>
         </section>
@@ -141,7 +141,7 @@ export default function HowToRedactScreenshotsGuide() {
             Zero Watermarks on Free & Pro
           </h2>
           <p>
-            Unlike commercial tools that slap obnoxious trial watermarks across your images, Cropmark exports completely clean graphics on both the Free tier and Pro unlock.
+            Cropmark exports images without watermarks in both Free and Pro.
           </p>
         </section>
       </div>
@@ -152,7 +152,7 @@ export default function HowToRedactScreenshotsGuide() {
           Protect confidential data in every screenshot
         </h3>
         <p className="text-sm text-zinc-600 dark:text-zinc-400">
-          Download Cropmark free on the Microsoft Store and create safe, documentation-ready markup without data leaks.
+          Download Cropmark free on the Microsoft Store to capture, annotate, and redact screenshots on your PC.
         </p>
         <div className="flex flex-wrap items-center gap-4 pt-2">
           <a

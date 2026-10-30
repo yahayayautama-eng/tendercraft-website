@@ -2,36 +2,21 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getSiteUrl } from '@/lib/site';
-import {
-  ShieldCheck,
-  Scissors,
-  Layers,
-  FileText,
-  Palette,
-  CheckCircle2,
-  XCircle,
-  ArrowUpRight,
-  ChevronRight,
-  Lock,
-  Download,
-  FileCode,
-  Sparkles,
-  EyeOff,
-} from 'lucide-react';
+import { ShieldCheck, Layers, FileText, Palette, CheckCircle2, XCircle, ArrowUpRight, ChevronRight, Lock, Download, FileCode, Sparkles, EyeOff } from 'lucide-react';
 import { MobileReminderCard } from '@/components/MobileReminderCard';
 
 const baseUrl = getSiteUrl();
 const pageUrl = `${baseUrl}/apps/cropmark`;
 const ogImageUrl = `${baseUrl}/cropmark/screenshot.png`;
 const description =
-  'Native Windows 11 & 10 screenshot tool with verified destructive redaction (Acropalypse-safe), numbered step callouts, and multi-page PDF export. Free tier with zero watermarks.';
+  'Capture and annotate screenshots on Windows. Replace covered pixels with solid redaction, add numbered steps, and export without watermarks. Pro adds batch export.';
 
 export const metadata: Metadata = {
-  title: 'Cropmark — Screenshot Tool with Secure Redaction & PDF Export for Windows',
+  title: 'Cropmark — Screenshot Redaction & PDF Export for Windows',
   description,
   alternates: { canonical: pageUrl },
   openGraph: {
-    title: 'Cropmark — Screenshot Tool with Secure Redaction & PDF Export for Windows',
+    title: 'Cropmark — Screenshot Redaction & PDF Export for Windows',
     description,
     url: pageUrl,
     type: 'website',
@@ -45,22 +30,12 @@ export const metadata: Metadata = {
   },
 };
 
-const comparisonData = [
-  { feature: 'True Destructive Redaction (Zeroed Pixels)', cropmark: true, snippingTool: false, snagit: 'Partial', sharex: false, greenshot: false },
-  { feature: 'Acropalypse-Safe Memory Buffer Wiping', cropmark: true, snippingTool: false, snagit: false, sharex: false, greenshot: false },
-  { feature: 'Auto-Incrementing Numbered Step Badges (1, 2, 3...)', cropmark: true, snippingTool: false, snagit: true, sharex: true, greenshot: true },
-  { feature: 'Merge Screenshots into Multi-Page PDF', cropmark: true, snippingTool: false, snagit: true, sharex: false, greenshot: false },
-  { feature: 'Zero Watermarks on Exports (Free & Pro)', cropmark: true, snippingTool: true, snagit: 'Watermarks on trial', sharex: true, greenshot: true },
-  { feature: 'Annual / Lifetime Price', cropmark: '$0 (or $18.99 once)', snippingTool: 'Free with Windows', snagit: '$39.00 / yr or $79', sharex: 'Free (Donation)', greenshot: 'Free (Donation)' },
-  { feature: 'Native Modern WinUI 3 Architecture', cropmark: true, snippingTool: true, snagit: false, sharex: false, greenshot: false },
-  { feature: 'Zero Analytics, Cloud Accounts or Telemetry', cropmark: true, snippingTool: false, snagit: false, sharex: true, greenshot: true },
-];
 
 const faqs = [
   {
     question: 'How is Cropmark redaction different from standard screenshot markup tools?',
     answer:
-      'Standard screenshot tools often draw a black or blurred rectangle directly over sensitive image pixels as an overlay layer. In many cases, or when adjusted with contrast and brightness filters, the underlying data remains accessible (such as in the well-documented Acropalypse vulnerability). Cropmark permanently zeroes out and overwrites the covered bitmap pixels in memory before file export, ensuring data recovery is mathematically impossible.',
+      'Cropmark replaces the covered pixels with a solid color in exported images and checks the result before saving. Use the solid redaction tool, cover the entire sensitive area, and review the exported file before sharing. Original captures and editable projects may still contain the original content; share the redacted export.',
   },
   {
     question: 'Are exported screenshots watermarked?',
@@ -70,7 +45,7 @@ const faqs = [
   {
     question: 'What additional capabilities does Cropmark Pro provide?',
     answer:
-      'Cropmark Free includes full region and window capture, annotations, arrows, numbered steps, destructive redaction, and single-image PDF export. Pro ($18.99 one-time or $9.99/year) adds multi-image project management, batch export across multiple captures, and merging several screenshots into a single paginated PDF document.',
+      'Cropmark Free includes region and full-screen capture, arrows, text, numbered steps, solid redaction, and single-image PDF export. Pro adds multi-image projects, batch export, saved styles, and merging screenshots into one PDF. One-time and yearly Pro options are available; the Microsoft Store shows the current price for your region.',
   },
   {
     question: 'Does Cropmark require an internet connection or user account?',
@@ -80,7 +55,7 @@ const faqs = [
   {
     question: 'What are the system requirements?',
     answer:
-      'Cropmark requires a 64-bit PC running Windows 10 (version 2004 or higher) or Windows 11. It natively supports multi-monitor setups and dynamic high-DPI scaling.',
+      'The current Microsoft Store package requires a 64-bit PC running Windows 11 (build 22000 or later). It natively supports multi-monitor setups and dynamic high-DPI scaling.',
   },
 ];
 
@@ -93,7 +68,7 @@ export default function CropmarkPage() {
         name: 'Cropmark',
         alternateName: 'Cropmark – Screenshot Tool, Annotation & Secure Redaction',
         applicationCategory: 'UtilitiesApplication',
-        operatingSystem: 'Windows 10, Windows 11',
+        operatingSystem: 'Windows 11',
         description,
         url: 'https://apps.microsoft.com/detail/9NZR4D24CMM6',
         image: `${baseUrl}/cropmark/icon.png`,
@@ -106,7 +81,7 @@ export default function CropmarkPage() {
           description: 'Free tier with zero watermarks + $18.99 one-time lifetime Pro upgrade',
         },
         featureList: [
-          'Acropalypse-safe destructive pixel redaction',
+          'Solid pixel-replacing redaction on export',
           'Auto-incrementing numbered step badges',
           'Professional canvas padding and drop shadows',
           'Multi-page PDF export and batch processing',
@@ -161,7 +136,7 @@ export default function CropmarkPage() {
         <div className="flex flex-wrap items-center gap-3">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-rose-50 dark:bg-rose-950/60 text-rose-700 dark:text-rose-400 border border-rose-200 dark:border-rose-900/50">
             <EyeOff className="w-3.5 h-3.5" />
-            <span>Acropalypse-Safe Destructive Redaction</span>
+            <span>Solid Screenshot Redaction</span>
           </div>
           <span className="text-xs text-zinc-500 dark:text-zinc-400">Native WinUI 3 Architecture</span>
         </div>
@@ -177,7 +152,7 @@ export default function CropmarkPage() {
           />
           <div className="space-y-2">
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-100">
-              Cropmark
+              Cropmark — Screenshot, Annotate & Redact on Windows 11
             </h1>
             <p className="text-lg text-zinc-600 dark:text-zinc-300 max-w-2xl font-medium">
               The modern Windows screenshot tool built for technical writers, engineers, and privacy-conscious professionals.
@@ -211,9 +186,9 @@ export default function CropmarkPage() {
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-amber-50 dark:bg-amber-950/40 text-amber-900 dark:text-amber-200 border border-amber-200 dark:border-amber-800/60 text-xs font-medium">
             <span>🎁</span>
             <span>
-              <strong>1-Month Launch Special:</strong> First 10 users get a free lifetime Pro code. Email{' '}
-              <a href="mailto:support@tendercrafthq.com?subject=Cropmark%20Pro%20Free%20License%20Request" className="underline font-semibold">
-                support@tendercrafthq.com
+              <strong>Launch offer until 25 November 2026:</strong> the first 10 people who ask get a free Cropmark Pro code, redeemed in the Microsoft Store. Email{' '}
+              <a href="mailto:hello@tendercrafthq.com?subject=Cropmark%20Pro%20Free%20License%20Request" className="underline font-semibold">
+                hello@tendercrafthq.com
               </a>
             </span>
           </div>
@@ -273,7 +248,7 @@ export default function CropmarkPage() {
               <span>The Insecure Overlay Risk</span>
             </h3>
             <p className="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
-              Standard capture tools frequently leave original image data intact behind black rectangles, transparent alpha channels, or recoverable crop buffers (CVE-2023-28303 / Acropalypse). Adjusting exposure or reading raw bytes can expose confidential API keys, customer PII, and passwords.
+              A translucent marker or editable overlay can leave the original content visible or accessible. A solid, flattened replacement of the covered pixels serves a different purpose. Review the exported file and avoid sharing editable projects containing sensitive originals.
             </p>
           </div>
           <div className="p-6 rounded-2xl bg-emerald-50/50 dark:bg-emerald-950/20 border border-emerald-200/60 dark:border-emerald-900/40 space-y-3">
@@ -282,7 +257,7 @@ export default function CropmarkPage() {
               <span>True Bitmap Pixel Erasing</span>
             </h3>
             <p className="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
-              Cropmark applies true destructive redaction. Covered pixels are zeroed out directly in the underlying memory bitmap buffer before compression or export. No tool, filter, or binary inspection can ever recover what was erased.
+              Cropmark replaces pixels within the redaction area before export and checks the output before saving. This applies to the exported result, not to separate original files, backups, or editable projects.
             </p>
           </div>
         </div>
@@ -339,70 +314,22 @@ export default function CropmarkPage() {
         </div>
       </section>
 
-      {/* Comparison Matrix Table */}
+      {/* Free and Pro capabilities */}
       <section className="space-y-6">
-        <div>
-          <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
-            Cropmark vs. Common Windows Screenshot Tools
-          </h2>
-          <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-1">
-            Compare Cropmark against Snipping Tool, Snagit, ShareX, and Greenshot.
-          </p>
-        </div>
-
-        <div className="overflow-x-auto rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-xs">
+        <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">Cropmark Free and Pro</h2>
+        <div className="overflow-x-auto rounded-2xl border border-zinc-200 dark:border-zinc-800">
           <table className="w-full text-left text-sm">
-            <thead className="bg-zinc-50 dark:bg-zinc-900/80 border-b border-zinc-200 dark:border-zinc-800 text-xs text-zinc-500 uppercase tracking-wider">
-              <tr>
-                <th className="p-4 font-semibold">Capability</th>
-                <th className="p-4 font-bold text-rose-600 dark:text-rose-400">Cropmark</th>
-                <th className="p-4 font-medium text-zinc-600 dark:text-zinc-400">Snipping Tool</th>
-                <th className="p-4 font-medium text-zinc-600 dark:text-zinc-400">Snagit</th>
-                <th className="p-4 font-medium text-zinc-600 dark:text-zinc-400">ShareX</th>
-                <th className="p-4 font-medium text-zinc-600 dark:text-zinc-400">Greenshot</th>
-              </tr>
+            <caption className="sr-only">Features available in Cropmark Free and Pro</caption>
+            <thead className="bg-zinc-50 dark:bg-zinc-900/80">
+              <tr><th scope="col" className="p-4">Feature</th><th scope="col" className="p-4">Free</th><th scope="col" className="p-4 text-rose-600 dark:text-rose-400">Pro</th></tr>
             </thead>
             <tbody className="divide-y divide-zinc-200 dark:divide-zinc-800">
-              {comparisonData.map((row, i) => (
-                <tr key={i} className="hover:bg-zinc-50/50 dark:hover:bg-zinc-900/40">
-                  <td className="p-4 font-medium text-zinc-900 dark:text-zinc-100">{row.feature}</td>
-                  <td className="p-4 font-bold text-rose-600 dark:text-rose-400">
-                    {typeof row.cropmark === 'boolean' ? (
-                      row.cropmark ? <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" /> : <XCircle className="w-4 h-4 text-red-500" />
-                    ) : (
-                      row.cropmark
-                    )}
-                  </td>
-                  <td className="p-4 text-zinc-600 dark:text-zinc-400">
-                    {typeof row.snippingTool === 'boolean' ? (
-                      row.snippingTool ? <CheckCircle2 className="w-4 h-4 text-emerald-600" /> : <XCircle className="w-4 h-4 text-red-500" />
-                    ) : (
-                      row.snippingTool
-                    )}
-                  </td>
-                  <td className="p-4 text-zinc-600 dark:text-zinc-400">
-                    {typeof row.snagit === 'boolean' ? (
-                      row.snagit ? <CheckCircle2 className="w-4 h-4 text-emerald-600" /> : <XCircle className="w-4 h-4 text-red-500" />
-                    ) : (
-                      row.snagit
-                    )}
-                  </td>
-                  <td className="p-4 text-zinc-600 dark:text-zinc-400">
-                    {typeof row.sharex === 'boolean' ? (
-                      row.sharex ? <CheckCircle2 className="w-4 h-4 text-emerald-600" /> : <XCircle className="w-4 h-4 text-red-500" />
-                    ) : (
-                      row.sharex
-                    )}
-                  </td>
-                  <td className="p-4 text-zinc-600 dark:text-zinc-400">
-                    {typeof row.greenshot === 'boolean' ? (
-                      row.greenshot ? <CheckCircle2 className="w-4 h-4 text-emerald-600" /> : <XCircle className="w-4 h-4 text-red-500" />
-                    ) : (
-                      row.greenshot
-                    )}
-                  </td>
-                </tr>
-              ))}
+              <tr><th scope="row" className="p-4 font-medium">Region and full-screen capture</th><td className="p-4">Included</td><td className="p-4">Included</td></tr>
+              <tr><th scope="row" className="p-4 font-medium">Arrows, text, numbered steps, and redaction</th><td className="p-4">Included</td><td className="p-4">Included</td></tr>
+              <tr><th scope="row" className="p-4 font-medium">PNG, JPEG, and single-image PDF export</th><td className="p-4">Included, no watermark</td><td className="p-4">Included, no watermark</td></tr>
+              <tr><th scope="row" className="p-4 font-medium">Single-image projects</th><td className="p-4">Included</td><td className="p-4">Included</td></tr>
+              <tr><th scope="row" className="p-4 font-medium">Multi-image projects and batch export</th><td className="p-4">Requires Pro</td><td className="p-4">Included</td></tr>
+              <tr><th scope="row" className="p-4 font-medium">Merge images into one PDF; saved styles</th><td className="p-4">Requires Pro</td><td className="p-4">Included</td></tr>
             </tbody>
           </table>
         </div>
@@ -435,7 +362,7 @@ export default function CropmarkPage() {
           href="/apps/cropmark/how-to-permanently-redact-screenshots"
           className="flex items-center justify-between p-3.5 rounded-xl bg-white dark:bg-zinc-800/70 border border-zinc-200 dark:border-zinc-700/60 hover:border-rose-500 transition-colors text-xs font-semibold text-zinc-900 dark:text-zinc-100"
         >
-          <span>How to Permanently Redact Screenshots on Windows (Acropalypse-Safe) →</span>
+          <span>How to Permanently Redact Screenshots on Windows →</span>
           <ChevronRight className="w-4 h-4 text-zinc-400" />
         </Link>
       </section>
@@ -462,7 +389,7 @@ export default function CropmarkPage() {
         appName="Cropmark"
         url="https://tendercrafthq.com/apps/cropmark"
         wingetCommand="winget install 9NZR4D24CMM6"
-        tagline="Cropmark is a native Windows 11 & 10 desktop application."
+        tagline="Cropmark requires a 64-bit PC running Windows 11 (build 22000 or later)."
       />
 
       {/* Bottom CTA Card */}
@@ -471,7 +398,7 @@ export default function CropmarkPage() {
           Capture, Redact, and Export with Confidence
         </h2>
         <p className="text-rose-100 max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
-          Download Cropmark free on the Microsoft Store. Never leak confidential credentials or send unverified screenshots again.
+          Download Cropmark free on the Microsoft Store. Add clear instructions, cover sensitive details, and review the exported file before sharing. Original captures and editable projects may still contain the original content.
         </p>
         <div className="pt-2">
           <a

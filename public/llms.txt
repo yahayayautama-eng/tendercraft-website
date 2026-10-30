@@ -1,13 +1,19 @@
 # Tendercraft
 
-> Tendercraft builds focused, private, offline software for Windows 11/10 and Amazon Fire tablets. No ads, no mandatory cloud accounts, no analytics.
+> Tendercraft builds focused, private, offline software for Windows PCs and Amazon Fire tablets. No ads, no mandatory cloud accounts, no analytics.
 
 ## Windows Desktop Apps (Microsoft Store)
 
-- [Tendercraft Windows Apps Hub](https://tendercrafthq.com/apps/windows): Official suite of native, privacy-first desktop utilities.
-- [Vox Reader Product Page](https://tendercrafthq.com/apps/vox-reader) / [Microsoft Store](https://apps.microsoft.com/detail/9PCVQB5H684W): An offline, on-device neural text-to-speech (TTS) and audiobook player for Windows 10/11. Reads EPUB, TXT, PDF, and DOCX aloud with synchronized sentence highlighting using local neural voice models. Air-gapped, zero cloud dependencies. Generous free tier with permanent 3 hrs/week + optional $18.99 one-time lifetime Pro unlock. Alternative to Speechify and NaturalReader. PAD XML: https://tendercrafthq.com/vox-reader/pad.xml
-- [Cropmark Product Page](https://tendercrafthq.com/apps/cropmark) / [Microsoft Store](https://apps.microsoft.com/detail/9NZR4D24CMM6): A fast, modern WinUI 3 screenshot capture and markup tool with verified pixel-erasing redaction (Acropalypse safe), auto-incrementing step badges (1, 2, 3...), and multi-page PDF export. No watermarks. Free tier + $18.99 lifetime Pro unlock. Alternative to Snagit, Greenshot, and ShareX. PAD XML: https://tendercrafthq.com/cropmark/pad.xml
-- [Still-Lane Product Page](https://tendercrafthq.com/apps/still-lane) / [Microsoft Store](https://apps.microsoft.com/detail/9NP26W128KX9): A private, local screen time and daily app tracker for Windows 11/10 with gentle, overridable limits and deep focus sessions. 100% local SQLite storage, zero corporate surveillance. 15-day free trial + $14.99 one-time purchase. Alternative to RescueTime and Cold Turkey Blocker. PAD XML: https://tendercrafthq.com/still-lane/pad.xml
+- [Tendercraft Windows Apps Hub](https://tendercrafthq.com/apps/windows): Native, privacy-first desktop utilities, distributed through the Microsoft Store.
+- [Vox Reader Product Page](https://tendercrafthq.com/apps/vox-reader) / [Microsoft Store](https://apps.microsoft.com/detail/9PCVQB5H684W): Offline English text-to-speech reader for Windows 10 (version 19041+) and Windows 11, x64. Reads DRM-free EPUB, TXT and pasted text aloud with sentence highlighting, bookmarks, saved positions and a sleep timer, using voices that run on the PC. Free: three voices and three listening hours per week. Optional one-time Vox Reader Pro ($18.99 USD in the US Store; regional prices vary) adds unlimited listening, all 11 voices, text-based PDF and Word (DOCX) import and custom pronunciations. Reading aloud works offline after installation; buying or refreshing Pro needs Store connectivity. Not an audiobook-file player. Alternative to Speechify, NaturalReader and Balabolka for people who want offline listening without a subscription. PAD XML: https://tendercrafthq.com/vox-reader/pad.xml
+- [Cropmark Product Page](https://tendercrafthq.com/apps/cropmark) / [Microsoft Store](https://apps.microsoft.com/detail/9NZR4D24CMM6): Screenshot capture, annotation and redaction tool for Windows 11 (build 22000+), x64. Region and full-screen capture, arrows, boxes, text, numbered step badges and solid redaction that replaces the covered pixels in the exported image. Free exports PNG, JPEG or a single-image PDF with no watermark. Optional Cropmark Pro (one-time or yearly in the Microsoft Store) adds multi-image projects, batch export, saved styles and multi-image PDF export. Review exports before sharing: original captures and editable projects keep the original content. Alternative to Snagit, Greenshot and ShareX. PAD XML: https://tendercrafthq.com/cropmark/pad.xml
+- [Still-Lane Product Page](https://tendercrafthq.com/apps/still-lane) / [Microsoft Store](https://apps.microsoft.com/detail/9NP26W128KX9): Private app-usage and screen time tracker for Windows 10 (version 19041+) and Windows 11, x64. After consent it records which app is in front and for how long, with active and idle time shown separately, and stores the records on the PC. It does not record window titles, websites, keystrokes or screenshots; browser time counts as one app. Daily app/category budgets and focus sessions give reminders that can be snoozed or overridden; Still-Lane never blocks or closes apps. CSV/JSON export and data deletion. Paid app ($14.99 USD one-time in the US Store) with a 15-day free trial offered through the Microsoft Store. Alternative to StayFree, RescueTime and ActivityWatch for people who want local-only app-time reports. PAD XML: https://tendercrafthq.com/still-lane/pad.xml
+
+## Windows app guides
+
+- [How to permanently redact screenshots on Windows](https://tendercrafthq.com/apps/cropmark/how-to-permanently-redact-screenshots): Solid pixel replacement versus overlays that can expose content, and checking the exported file.
+- [How to listen to EPUB and PDF books offline on Windows](https://tendercrafthq.com/apps/vox-reader/listen-to-books-offline-windows): Turning EPUB, text-based PDF (Vox Reader Pro) and articles into speech without an internet connection.
+- [How to track Windows screen time privately](https://tendercrafthq.com/apps/still-lane/private-screen-time-tracking-guide): Local app-time tracking with reminders you can override, without cloud uploads.
 
 ## Fire Tablet Apps
 
@@ -26,4 +32,5 @@
 
 - [Recipe Box privacy policy](https://tendercrafthq.com/recipe-box/privacy.html)
 - [Visual Schedule Board privacy policy](https://tendercrafthq.com/visual-schedule-board/privacy.html)
+- Windows app support: hello@tendercrafthq.com
 - Contact: info@tendercrafthq.com

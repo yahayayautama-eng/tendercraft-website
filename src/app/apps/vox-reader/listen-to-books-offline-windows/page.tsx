@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getSiteUrl } from '@/lib/site';
-import { ChevronRight, ArrowUpRight, Cpu, BookOpen, Volume2, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { ChevronRight, ArrowUpRight, Cpu } from 'lucide-react';
 
 const baseUrl = getSiteUrl();
 const pageUrl = `${baseUrl}/apps/vox-reader/listen-to-books-offline-windows`;
@@ -68,7 +68,7 @@ export default function ListenToBooksOfflineGuide() {
           How to Listen to EPUB & PDF Books Offline on Windows
         </h1>
         <p className="text-lg text-zinc-600 dark:text-zinc-300 leading-relaxed">
-          Most audiobook and text-to-speech services charge $10 to $15 every month and transmit all your personal documents to remote cloud servers. Here is how to listen to your existing digital book library completely offline using local neural speech.
+          Listen to DRM-free EPUB and TXT books using English voices generated on your PC. Vox Reader reads aloud offline after installation; Pro adds text-based PDF and Word import.
         </p>
       </header>
 
@@ -76,15 +76,15 @@ export default function ListenToBooksOfflineGuide() {
       <div className="space-y-10 text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
         <section className="space-y-4">
           <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
-            The Problem with Cloud Text-to-Speech Services
+            Choose a Reader for Your Documents and Connection
           </h2>
           <p>
-            Mainstream reading applications like Speechify and NaturalReader rely entirely on cloud-hosted API pipelines. When you import an EPUB, PDF, or work report, the entire text is sent over the internet to their servers. This introduces three major drawbacks:
+            Before choosing a reader, check how it handles your documents and what remains available without an internet connection:
           </p>
           <ul className="list-disc pl-6 space-y-2 text-sm">
-            <li><strong>Recurring Subscription Fatigue:</strong> Paying $120 to $150 per year just to hear digital text read aloud.</li>
-            <li><strong>Zero Air-Gapped Privacy:</strong> Sensitive work contracts, confidential manuscripts, and personal reading habits are logged on remote infrastructure.</li>
-            <li><strong>Strict Internet Requirement:</strong> During airplane travel, train commutes, or unstable WiFi sessions, cloud readers fail or refuse to buffer.</li>
+            <li><strong>Pricing:</strong> Check the free allowance and whether paid access is a subscription or a one-time purchase.</li>
+            <li><strong>Document handling:</strong> Check whether speech is generated on your PC and whether documents are uploaded.</li>
+            <li><strong>Offline use:</strong> Verify that reading aloud works with your connection disabled after installation.</li>
           </ul>
         </section>
 
@@ -93,7 +93,7 @@ export default function ListenToBooksOfflineGuide() {
             The Solution: On-Device Neural Synthesis
           </h2>
           <p>
-            Recent advances in lightweight neural speech synthesis (such as Piper AI) allow modern PCs to generate realistic, natural English voices with human-like prosody using just ordinary CPU processing power.
+            Vox Reader uses packaged English voice models to generate speech on your CPU. Your documents stay on your PC. Loading a voice can take several seconds, and performance depends on the computer.
           </p>
           <p>
             By bundling optimized ONNX voice models directly inside the application installer, <strong>Vox Reader</strong> performs all phoneme processing and audio rendering entirely on your PC.
@@ -123,13 +123,13 @@ export default function ListenToBooksOfflineGuide() {
               <a href="https://apps.microsoft.com/detail/9PCVQB5H684W" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 underline font-medium">
                 Microsoft Store
               </a>{' '}
-              or via command line using <code className="px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 font-mono text-xs">winget install 9PCVQB5H684W</code>.
+              or via command line using <code className="px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 font-mono text-xs">winget install --id 9PCVQB5H684W --exact --source msstore</code>.
             </li>
             <li>
               <strong>Import Your DRM-Free EPUB or TXT:</strong> Drag and drop any .epub or .txt file directly into the Vox Reader library window.
             </li>
             <li>
-              <strong>Select a Neural Voice:</strong> Choose your preferred English voice profile (US or UK accents) and set your preferred playback rate (0.5× to 3.0×).
+              <strong>Select a Neural Voice:</strong> Choose an English voice with a US or UK accent and adjust the playback rate. Higher speeds can pause while your CPU generates more speech.
             </li>
             <li>
               <strong>Press Play:</strong> Listen aloud as the current sentence illuminates on-screen in real time. Your progress, chapters, and bookmarks are automatically saved to your local drive.
@@ -142,7 +142,7 @@ export default function ListenToBooksOfflineGuide() {
             Honest Pricing: Free Allowance & Lifetime Unlock
           </h2>
           <p>
-            Vox Reader comes with a permanent free tier that includes 3 hours of listening every week (resetting every Monday morning). For users who want unlimited listening and PDF/Word document imports, a single one-time payment of $18.99 permanently unlocks Pro with zero ongoing subscriptions.
+            Vox Reader Free includes 3 hours of listening each week, resetting on Monday. Pro is a one-time purchase that adds unlimited listening, all 11 English voices, custom pronunciations, and text-based PDF/Word import. The Microsoft Store shows the current regional price. Buying or refreshing Pro requires an internet connection; reading aloud works offline.
           </p>
         </section>
       </div>

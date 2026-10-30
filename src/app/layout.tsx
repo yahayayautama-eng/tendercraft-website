@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": "Organization",
   name: "Tendercraft",
   url: siteUrl,
   logo: `${siteUrl}/brand/tendercraft-logo-light.svg`,

@@ -87,12 +87,12 @@ export default function WindowsAppsPage() {
           <div className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium bg-amber-50 dark:bg-amber-950/40 text-amber-900 dark:text-amber-200 border border-amber-200 dark:border-amber-800/60 shadow-xs text-left">
             <span className="text-base">🎁</span>
             <span>
-              <strong>1-Month Launch Special:</strong> First 10 users per app can claim a free lifetime Pro license for early feedback. Email{' '}
+              <strong>Launch offer until 25 November 2026:</strong> the first 10 people per app who ask get a free Pro or Still-Lane code, redeemed in the Microsoft Store. Email{' '}
               <a
-                href="mailto:support@tendercrafthq.com?subject=Early%20Adopter%20Pro%20License%20Request"
+                href="mailto:hello@tendercrafthq.com?subject=Early%20Adopter%20Pro%20License%20Request"
                 className="underline font-semibold hover:text-amber-700 dark:hover:text-amber-100"
               >
-                support@tendercrafthq.com
+                hello@tendercrafthq.com
               </a>{' '}
               with your app of choice.
             </span>
@@ -188,7 +188,7 @@ export default function WindowsAppsPage() {
       <MobileReminderCard
         appName="Tendercraft Windows Suite"
         url="https://tendercrafthq.com/apps/windows"
-        tagline="Tendercraft apps (Vox Reader, Cropmark, and Still-Lane) run natively on Windows 11 & 10."
+        tagline="Vox Reader and Still-Lane run on Windows 10 and 11. Cropmark requires Windows 11."
       />
 
       {/* Philosophy Banner */}

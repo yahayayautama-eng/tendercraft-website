@@ -2,37 +2,21 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getSiteUrl } from '@/lib/site';
-import {
-  ShieldCheck,
-  Cpu,
-  Volume2,
-  Sparkles,
-  BookOpen,
-  Sliders,
-  CheckCircle2,
-  XCircle,
-  ArrowUpRight,
-  ChevronRight,
-  Clock,
-  Lock,
-  Download,
-  FileText,
-  FileCode,
-} from 'lucide-react';
+import { Cpu, Volume2, Sparkles, BookOpen, Sliders, CheckCircle2, XCircle, ArrowUpRight, ChevronRight, Lock, Download, FileCode } from 'lucide-react';
 import { MobileReminderCard } from '@/components/MobileReminderCard';
 
 const baseUrl = getSiteUrl();
 const pageUrl = `${baseUrl}/apps/vox-reader`;
 const ogImageUrl = `${baseUrl}/vox-reader/screenshot.png`;
 const description =
-  'Listen to EPUB, PDF, Word documents (DOCX), and articles in natural neural voices completely offline on Windows 11 & 10. Fast on-device synthesis with zero cloud uploads and no subscriptions.';
+  'Read EPUB and TXT aloud offline on Windows. Vox Reader Pro adds PDF and Word import, unlimited listening, and more English voices with a one-time purchase.';
 
 export const metadata: Metadata = {
-  title: 'Vox Reader — Offline Text to Speech & Audiobook Player for Windows',
+  title: 'Vox Reader — Offline Text to Speech for Windows',
   description,
   alternates: { canonical: pageUrl },
   openGraph: {
-    title: 'Vox Reader — Offline Text to Speech & Audiobook Player for Windows',
+    title: 'Vox Reader — Offline Text to Speech for Windows',
     description,
     url: pageUrl,
     type: 'website',
@@ -46,22 +30,12 @@ export const metadata: Metadata = {
   },
 };
 
-const comparisonData = [
-  { feature: 'Runs 100% Offline', vox: true, speechify: false, naturalReader: false, browserExt: false },
-  { feature: 'Personal Documents Never Uploaded', vox: true, speechify: false, naturalReader: false, browserExt: false },
-  { feature: 'No Account or Registration Required', vox: true, speechify: false, naturalReader: false, browserExt: true },
-  { feature: 'One-Time Payment Option ($18.99 Lifetime)', vox: true, speechify: false, naturalReader: false, browserExt: false },
-  { feature: 'Annual Cost', vox: '$0 (or $18.99 once)', speechify: '$139.00 / year', naturalReader: '$119.88 / year', browserExt: '$0 - $49 / yr' },
-  { feature: 'EPUB, TXT, PDF, & DOCX Support', vox: true, speechify: true, naturalReader: true, browserExt: false },
-  { feature: 'Synchronized Sentence Highlighting', vox: true, speechify: true, naturalReader: true, browserExt: true },
-  { feature: 'Zero Telemetry & Zero Ads', vox: true, speechify: false, naturalReader: false, browserExt: false },
-];
 
 const faqs = [
   {
     question: 'Does Vox Reader work completely without an internet connection?',
     answer:
-      'Yes. High-quality neural voice synthesis runs 100% locally on your computer’s CPU/GPU using packaged on-device neural models. Once installed from the Microsoft Store, you can use Vox Reader completely offline on flights, commutes, or in air-gapped environments.',
+      'Yes. English speech is generated locally on your PC’s CPU using packaged voice models. Reading aloud works offline after installation. Buying or refreshing Pro requires internet access and a Microsoft Store account. Performance depends on your PC; higher playback speeds may pause while more speech is generated.',
   },
   {
     question: 'How does the free tier work?',
@@ -71,7 +45,7 @@ const faqs = [
   {
     question: 'Is there a recurring monthly or yearly subscription?',
     answer:
-      'No. There is zero subscription fatigue. Unlike cloud services that charge $10 to $15 every month forever, Vox Reader Pro is a single one-time lifetime license fulfilled securely through the Microsoft Store.',
+      'No. Vox Reader Pro is a one-time purchase handled by the Microsoft Store. The Store displays the current price for your region.',
   },
   {
     question: 'Are my books or personal documents uploaded to any remote server?',
@@ -115,8 +89,8 @@ export default function VoxReaderPage() {
           'On-device neural speech synthesis',
           'Synchronized real-time sentence tracking',
           'EPUB, TXT, PDF, and DOCX playback',
-          '0.5x to 3.0x speed adjustment and sleep timer',
-          'Zero cloud telemetry and air-gapped privacy',
+          'Adjustable playback speed and sleep timer; performance depends on the PC',
+          'Zero cloud telemetry and local document storage',
         ],
       },
       {
@@ -183,7 +157,7 @@ export default function VoxReaderPage() {
           />
           <div className="space-y-2">
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-100">
-              Vox Reader
+              Vox Reader — Offline Text to Speech & EPUB Read Aloud
             </h1>
             <p className="text-lg text-zinc-600 dark:text-zinc-300 max-w-2xl font-medium">
               Listen to books and documents in natural neural voices without sending a single sentence to the cloud.
@@ -217,9 +191,9 @@ export default function VoxReaderPage() {
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-amber-50 dark:bg-amber-950/40 text-amber-900 dark:text-amber-200 border border-amber-200 dark:border-amber-800/60 text-xs font-medium">
             <span>🎁</span>
             <span>
-              <strong>1-Month Launch Special:</strong> First 10 users get a free lifetime Pro code. Email{' '}
-              <a href="mailto:support@tendercrafthq.com?subject=Vox%20Reader%20Pro%20Free%20License%20Request" className="underline font-semibold">
-                support@tendercrafthq.com
+              <strong>Launch offer until 25 November 2026:</strong> the first 10 people who ask get a free Vox Reader Pro code, redeemed in the Microsoft Store. Email{' '}
+              <a href="mailto:hello@tendercrafthq.com?subject=Vox%20Reader%20Pro%20Free%20License%20Request" className="underline font-semibold">
+                hello@tendercrafthq.com
               </a>
             </span>
           </div>
@@ -276,10 +250,10 @@ export default function VoxReaderPage() {
           <div className="p-6 rounded-2xl bg-red-50/50 dark:bg-red-950/20 border border-red-200/60 dark:border-red-900/40 space-y-3">
             <h3 className="font-semibold text-red-900 dark:text-red-200 flex items-center gap-2">
               <XCircle className="w-4 h-4 text-red-500" />
-              <span>The Cloud TTS Problem</span>
+              <span>Choose How Your Documents Are Read</span>
             </h3>
             <p className="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
-              Mainstream reading apps charge $10 to $15 every month ($120+ annually) and require constant internet connectivity. Every book chapter, personal document, or work contract you read aloud is transmitted to their remote servers for voice processing.
+              Before choosing a text-to-speech reader, check whether it uploads documents, which formats and voices work offline, and how paid access is licensed. These details vary by product and plan.
             </p>
           </div>
           <div className="p-6 rounded-2xl bg-emerald-50/50 dark:bg-emerald-950/20 border border-emerald-200/60 dark:border-emerald-900/40 space-y-3">
@@ -288,7 +262,7 @@ export default function VoxReaderPage() {
               <span>The Vox Reader Difference</span>
             </h3>
             <p className="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
-              Vox Reader runs modern lightweight neural TTS models directly on your Windows PC. Voice synthesis happens instantaneously without cloud lag, works completely offline, protects your confidential documents, and offers an honest lifetime purchase.
+              Vox Reader generates English speech on your CPU and keeps documents on your PC. Reading aloud works offline after installation. Voice loading can take several seconds, and playback performance depends on your PC.
             </p>
           </div>
         </div>
@@ -311,7 +285,7 @@ export default function VoxReaderPage() {
             <Sparkles className="w-5 h-5 text-blue-600 dark:text-blue-400" />
             <h3 className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">Synchronized Highlighting</h3>
             <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              Follow along effortlessly. Sentences illuminate in real time as the audio voice speaks, supporting reading focus and ADHD comprehension.
+              Follow the highlighted sentence as speech plays, and return to a passage using bookmarks or search.
             </p>
           </div>
           <div className="p-5 rounded-2xl bg-zinc-50 dark:bg-zinc-900/70 border border-zinc-200 dark:border-zinc-800 space-y-2.5">
@@ -325,12 +299,12 @@ export default function VoxReaderPage() {
             <Sliders className="w-5 h-5 text-blue-600 dark:text-blue-400" />
             <h3 className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">Playback & Speed Controls</h3>
             <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              Fine-tune reading speed from 0.5× up to 3.0×, set automatic sleep timers, skip 15 seconds backward or forward, and save bookmarks.
+              Adjust reading speed, set a sleep timer, skip approximately 15 seconds backward or forward, and save bookmarks. Higher speeds may pause while your CPU generates speech.
             </p>
           </div>
           <div className="p-5 rounded-2xl bg-zinc-50 dark:bg-zinc-900/70 border border-zinc-200 dark:border-zinc-800 space-y-2.5">
             <Lock className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-            <h3 className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">100% Air-Gapped Privacy</h3>
+            <h3 className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">Offline Reading, Local Library</h3>
             <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
               Zero cloud telemetry, no analytics, no accounts. Documents, bookmarks, and reading history remain entirely on your local machine.
             </p>
@@ -345,62 +319,22 @@ export default function VoxReaderPage() {
         </div>
       </section>
 
-      {/* Comparison Matrix Table */}
+      {/* Free and Pro capabilities */}
       <section className="space-y-6">
-        <div>
-          <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
-            Vox Reader vs. Mainstream Alternatives
-          </h2>
-          <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-1">
-            How Vox Reader stacks up against popular cloud text-to-speech services.
-          </p>
-        </div>
-
-        <div className="overflow-x-auto rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-xs">
+        <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">Vox Reader Free and Pro</h2>
+        <div className="overflow-x-auto rounded-2xl border border-zinc-200 dark:border-zinc-800">
           <table className="w-full text-left text-sm">
-            <thead className="bg-zinc-50 dark:bg-zinc-900/80 border-b border-zinc-200 dark:border-zinc-800 text-xs text-zinc-500 uppercase tracking-wider">
-              <tr>
-                <th className="p-4 font-semibold">Capability</th>
-                <th className="p-4 font-bold text-blue-600 dark:text-blue-400">Vox Reader</th>
-                <th className="p-4 font-medium text-zinc-600 dark:text-zinc-400">Speechify</th>
-                <th className="p-4 font-medium text-zinc-600 dark:text-zinc-400">NaturalReader</th>
-                <th className="p-4 font-medium text-zinc-600 dark:text-zinc-400">Browser Extensions</th>
-              </tr>
+            <caption className="sr-only">Features available in Vox Reader Free and Pro</caption>
+            <thead className="bg-zinc-50 dark:bg-zinc-900/80">
+              <tr><th scope="col" className="p-4">Feature</th><th scope="col" className="p-4">Free</th><th scope="col" className="p-4 text-blue-600 dark:text-blue-400">Pro</th></tr>
             </thead>
             <tbody className="divide-y divide-zinc-200 dark:divide-zinc-800">
-              {comparisonData.map((row, i) => (
-                <tr key={i} className="hover:bg-zinc-50/50 dark:hover:bg-zinc-900/40">
-                  <td className="p-4 font-medium text-zinc-900 dark:text-zinc-100">{row.feature}</td>
-                  <td className="p-4 font-bold text-blue-600 dark:text-blue-400">
-                    {typeof row.vox === 'boolean' ? (
-                      row.vox ? <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" /> : <XCircle className="w-4 h-4 text-red-500" />
-                    ) : (
-                      row.vox
-                    )}
-                  </td>
-                  <td className="p-4 text-zinc-600 dark:text-zinc-400">
-                    {typeof row.speechify === 'boolean' ? (
-                      row.speechify ? <CheckCircle2 className="w-4 h-4 text-emerald-600" /> : <XCircle className="w-4 h-4 text-red-500" />
-                    ) : (
-                      row.speechify
-                    )}
-                  </td>
-                  <td className="p-4 text-zinc-600 dark:text-zinc-400">
-                    {typeof row.naturalReader === 'boolean' ? (
-                      row.naturalReader ? <CheckCircle2 className="w-4 h-4 text-emerald-600" /> : <XCircle className="w-4 h-4 text-red-500" />
-                    ) : (
-                      row.naturalReader
-                    )}
-                  </td>
-                  <td className="p-4 text-zinc-600 dark:text-zinc-400">
-                    {typeof row.browserExt === 'boolean' ? (
-                      row.browserExt ? <CheckCircle2 className="w-4 h-4 text-emerald-600" /> : <XCircle className="w-4 h-4 text-red-500" />
-                    ) : (
-                      row.browserExt
-                    )}
-                  </td>
-                </tr>
-              ))}
+              <tr><th scope="row" className="p-4 font-medium">TXT, DRM-free EPUB, and pasted text</th><td className="p-4">Included</td><td className="p-4">Included</td></tr>
+              <tr><th scope="row" className="p-4 font-medium">Listening allowance</th><td className="p-4">3 hours each week, resetting Monday</td><td className="p-4">Unlimited</td></tr>
+              <tr><th scope="row" className="p-4 font-medium">English voices</th><td className="p-4">3</td><td className="p-4">11</td></tr>
+              <tr><th scope="row" className="p-4 font-medium">Text-based PDF and Word (DOCX) import</th><td className="p-4">Requires Pro</td><td className="p-4">Included</td></tr>
+              <tr><th scope="row" className="p-4 font-medium">Custom pronunciations</th><td className="p-4">Requires Pro</td><td className="p-4">Included</td></tr>
+              <tr><th scope="row" className="p-4 font-medium">Search, bookmarks, and local backup</th><td className="p-4">Included</td><td className="p-4">Included</td></tr>
             </tbody>
           </table>
         </div>

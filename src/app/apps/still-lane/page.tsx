@@ -2,22 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getSiteUrl } from '@/lib/site';
-import {
-  ShieldCheck,
-  Clock,
-  Database,
-  Sliders,
-  Sparkles,
-  CheckCircle2,
-  XCircle,
-  ArrowUpRight,
-  ChevronRight,
-  Lock,
-  Download,
-  FileCode,
-  PieChart,
-  Coffee,
-} from 'lucide-react';
+import { Clock, Database, Sliders, Sparkles, CheckCircle2, XCircle, ArrowUpRight, ChevronRight, Download, FileCode, PieChart, Coffee } from 'lucide-react';
 import { MobileReminderCard } from '@/components/MobileReminderCard';
 
 const baseUrl = getSiteUrl();
@@ -45,16 +30,6 @@ export const metadata: Metadata = {
   },
 };
 
-const comparisonData = [
-  { feature: '100% Local SQLite Storage (Zero Cloud)', stillLane: true, rescueTime: false, manicTime: 'Partial', coldTurkey: true, activityWatch: true },
-  { feature: 'Personal Computer Activity Sent to Remote Servers', stillLane: false, rescueTime: true, manicTime: false, coldTurkey: false, activityWatch: false },
-  { feature: 'No Account or Registration Required', stillLane: true, rescueTime: false, manicTime: false, coldTurkey: true, activityWatch: true },
-  { feature: 'Gentle, Overridable Limits (Never Force-Closes Apps)', stillLane: true, rescueTime: false, manicTime: false, coldTurkey: false, activityWatch: false },
-  { feature: 'Integrated Deep Work Focus Intervals', stillLane: true, rescueTime: true, manicTime: false, coldTurkey: true, activityWatch: false },
-  { feature: 'Annual / Lifetime Price', stillLane: '15-day trial · $14.99 once', rescueTime: '$78.00 / year', manicTime: '$67.00+ / license', coldTurkey: '$39.00 once', activityWatch: 'Free (Donation)' },
-  { feature: 'Smart Inactivity / Step-Away Detection', stillLane: true, rescueTime: true, manicTime: true, coldTurkey: false, activityWatch: true },
-  { feature: 'Export Your History to CSV or JSON', stillLane: true, rescueTime: true, manicTime: true, coldTurkey: false, activityWatch: true },
-];
 
 const faqs = [
   {
@@ -75,7 +50,7 @@ const faqs = [
   {
     question: 'What is the pricing model?',
     answer:
-      'Still-Lane includes a full-featured 15-day free trial directly through the Microsoft Store. After the trial, a single one-time payment of $14.99 grants permanent lifetime access with no monthly fees or subscriptions.',
+      'Still-Lane offers a 15-day free trial through Microsoft Store, followed by an optional one-time purchase with no subscription. Check the Store for the current price in your region.',
   },
   {
     question: 'Can I export or delete my usage data anytime?',
@@ -103,7 +78,7 @@ export default function StillLanePage() {
           '@type': 'Offer',
           price: '14.99',
           priceCurrency: 'USD',
-          description: '15-day free trial + $14.99 one-time lifetime license',
+          description: 'One-time purchase; regional price shown in Microsoft Store',
         },
         featureList: [
           'Automatic local application time tracking',
@@ -177,7 +152,7 @@ export default function StillLanePage() {
           />
           <div className="space-y-2">
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-100">
-              Still-Lane
+              Still-Lane — Screen Time & Focus Tracker for Windows
             </h1>
             <p className="text-lg text-zinc-600 dark:text-zinc-300 max-w-2xl font-medium">
               See where your computer time goes, protect deep focus, and set gentle daily limits without corporate tracking.
@@ -193,11 +168,11 @@ export default function StillLanePage() {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm bg-blue-600 hover:bg-blue-700 text-white shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
           >
-            <span>Start 15-Day Free Trial on Microsoft Store</span>
+            <span>Try Still-Lane free for 15 days</span>
             <ArrowUpRight className="w-4 h-4" />
           </a>
           <span className="text-xs text-zinc-500 dark:text-zinc-400">
-            15-day free trial · $14.99 one-time purchase (no subscriptions)
+            One-time purchase · $14.99 one-time purchase (no subscriptions)
           </span>
         </div>
 
@@ -211,9 +186,9 @@ export default function StillLanePage() {
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-amber-50 dark:bg-amber-950/40 text-amber-900 dark:text-amber-200 border border-amber-200 dark:border-amber-800/60 text-xs font-medium">
             <span>🎁</span>
             <span>
-              <strong>1-Month Launch Special:</strong> First 10 users get a free lifetime license code. Email{' '}
-              <a href="mailto:support@tendercrafthq.com?subject=Still-Lane%20Free%20License%20Request" className="underline font-semibold">
-                support@tendercrafthq.com
+              <strong>Launch offer until 25 November 2026:</strong> the first 10 people who ask get a free Still-Lane code, redeemed in the Microsoft Store. Email{' '}
+              <a href="mailto:hello@tendercrafthq.com?subject=Still-Lane%20Free%20License%20Request" className="underline font-semibold">
+                hello@tendercrafthq.com
               </a>
             </span>
           </div>
@@ -264,16 +239,16 @@ export default function StillLanePage() {
       {/* Why Still-Lane — Problem vs Solution */}
       <section className="space-y-6">
         <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
-          Why Gentle Self-Management Beats Surveillance
+          Understand your app time and choose your reminders
         </h2>
         <div className="grid md:grid-cols-2 gap-6">
           <div className="p-6 rounded-2xl bg-red-50/50 dark:bg-red-950/20 border border-red-200/60 dark:border-red-900/40 space-y-3">
             <h3 className="font-semibold text-red-900 dark:text-red-200 flex items-center gap-2">
               <XCircle className="w-4 h-4 text-red-500" />
-              <span>The Surveillance Tracker Problem</span>
+              <span>Decide what you want a tracker to record</span>
             </h3>
             <p className="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
-              Mainstream screen time trackers either upload your full application activity to remote cloud servers, or employ aggressive blockers that abruptly kill your programs and risk losing unsaved documents. You are treated like an employee under surveillance or a child in detention.
+              Before choosing a tracker, check what it records, where records are stored, and how limits behave. Still-Lane records foreground-app usage after consent and stores it on your PC. Browser time is counted as one app; individual websites and tasks are not identified.
             </p>
           </div>
           <div className="p-6 rounded-2xl bg-emerald-50/50 dark:bg-emerald-950/20 border border-emerald-200/60 dark:border-emerald-900/40 space-y-3">
@@ -282,7 +257,7 @@ export default function StillLanePage() {
               <span>The Still-Lane Philosophy</span>
             </h3>
             <p className="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
-              Still-Lane respects you as an autonomous professional. Tracking is 100% local in SQLite, limits are clear reminders that you can intentionally snooze or override, and deep focus sessions protect your attention without punitive drama.
+              Choose an app or category budget, then snooze or override a reminder when you need to continue. Still-Lane does not block or close apps. You can pause tracking whenever you want.
             </p>
           </div>
         </div>
@@ -291,14 +266,14 @@ export default function StillLanePage() {
       {/* Feature Deep-Dive Grid */}
       <section className="space-y-6">
         <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
-          Designed for Clarity and Digital Health
+          App reports, focus sessions and data controls
         </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="p-5 rounded-2xl bg-zinc-50 dark:bg-zinc-900/70 border border-zinc-200 dark:border-zinc-800 space-y-2.5">
             <Clock className="w-5 h-5 text-violet-600 dark:text-violet-400" />
             <h3 className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">Automatic Local Tracking</h3>
             <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              Tracks active application focus accurately in the background. Automatically filters idle away-time so reports reflect genuine work.
+              Records foreground-app time after consent and shows active and idle time separately. These estimates describe computer use; they do not measure completed work or productivity.
             </p>
           </div>
           <div className="p-5 rounded-2xl bg-zinc-50 dark:bg-zinc-900/70 border border-zinc-200 dark:border-zinc-800 space-y-2.5">
@@ -312,14 +287,14 @@ export default function StillLanePage() {
             <Sparkles className="w-5 h-5 text-violet-600 dark:text-violet-400" />
             <h3 className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">Deep Work Focus Intervals</h3>
             <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              Start dedicated focus blocks to protect attention on priority tasks. Distracting apps prompt for quick confirmation before opening.
+              Start a focus session and choose which apps should trigger reminders during use. Reminders can be overridden; they do not prevent apps from opening or close them.
             </p>
           </div>
           <div className="p-5 rounded-2xl bg-zinc-50 dark:bg-zinc-900/70 border border-zinc-200 dark:border-zinc-800 space-y-2.5">
             <Coffee className="w-5 h-5 text-violet-600 dark:text-violet-400" />
-            <h3 className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">Water & Rest Reminders</h3>
+            <h3 className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">Optional Water-Break Reminder</h3>
             <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              Gentle hydration and posture check-ins with an optional daily glass counter to protect physical wellbeing during long desk sessions.
+              Turn on a water-break reminder with a daily glass counter if you want one. It is off unless you choose it.
             </p>
           </div>
           <div className="p-5 rounded-2xl bg-zinc-50 dark:bg-zinc-900/70 border border-zinc-200 dark:border-zinc-800 space-y-2.5">
@@ -339,70 +314,18 @@ export default function StillLanePage() {
         </div>
       </section>
 
-      {/* Comparison Matrix Table */}
       <section className="space-y-6">
-        <div>
-          <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
-            Still-Lane vs. Common Time Trackers
-          </h2>
-          <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-1">
-            Compare Still-Lane with RescueTime, ManicTime, Cold Turkey, and ActivityWatch.
-          </p>
-        </div>
-
-        <div className="overflow-x-auto rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-xs">
+        <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">What Still-Lane Tracks and Controls</h2>
+        <div className="overflow-x-auto rounded-2xl border border-zinc-200 dark:border-zinc-800">
           <table className="w-full text-left text-sm">
-            <thead className="bg-zinc-50 dark:bg-zinc-900/80 border-b border-zinc-200 dark:border-zinc-800 text-xs text-zinc-500 uppercase tracking-wider">
-              <tr>
-                <th className="p-4 font-semibold">Capability</th>
-                <th className="p-4 font-bold text-violet-600 dark:text-violet-400">Still-Lane</th>
-                <th className="p-4 font-medium text-zinc-600 dark:text-zinc-400">RescueTime</th>
-                <th className="p-4 font-medium text-zinc-600 dark:text-zinc-400">ManicTime</th>
-                <th className="p-4 font-medium text-zinc-600 dark:text-zinc-400">Cold Turkey</th>
-                <th className="p-4 font-medium text-zinc-600 dark:text-zinc-400">ActivityWatch</th>
-              </tr>
-            </thead>
+            <caption className="sr-only">Still-Lane capabilities and limits</caption>
+            <thead className="bg-zinc-50 dark:bg-zinc-900/80"><tr><th scope="col" className="p-4">Capability</th><th scope="col" className="p-4">How it works</th></tr></thead>
             <tbody className="divide-y divide-zinc-200 dark:divide-zinc-800">
-              {comparisonData.map((row, i) => (
-                <tr key={i} className="hover:bg-zinc-50/50 dark:hover:bg-zinc-900/40">
-                  <td className="p-4 font-medium text-zinc-900 dark:text-zinc-100">{row.feature}</td>
-                  <td className="p-4 font-bold text-violet-600 dark:text-violet-400">
-                    {typeof row.stillLane === 'boolean' ? (
-                      row.stillLane ? <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" /> : <XCircle className="w-4 h-4 text-red-500" />
-                    ) : (
-                      row.stillLane
-                    )}
-                  </td>
-                  <td className="p-4 text-zinc-600 dark:text-zinc-400">
-                    {typeof row.rescueTime === 'boolean' ? (
-                      row.rescueTime ? <CheckCircle2 className="w-4 h-4 text-emerald-600" /> : <XCircle className="w-4 h-4 text-red-500" />
-                    ) : (
-                      row.rescueTime
-                    )}
-                  </td>
-                  <td className="p-4 text-zinc-600 dark:text-zinc-400">
-                    {typeof row.manicTime === 'boolean' ? (
-                      row.manicTime ? <CheckCircle2 className="w-4 h-4 text-emerald-600" /> : <XCircle className="w-4 h-4 text-red-500" />
-                    ) : (
-                      row.manicTime
-                    )}
-                  </td>
-                  <td className="p-4 text-zinc-600 dark:text-zinc-400">
-                    {typeof row.coldTurkey === 'boolean' ? (
-                      row.coldTurkey ? <CheckCircle2 className="w-4 h-4 text-emerald-600" /> : <XCircle className="w-4 h-4 text-red-500" />
-                    ) : (
-                      row.coldTurkey
-                    )}
-                  </td>
-                  <td className="p-4 text-zinc-600 dark:text-zinc-400">
-                    {typeof row.activityWatch === 'boolean' ? (
-                      row.activityWatch ? <CheckCircle2 className="w-4 h-4 text-emerald-600" /> : <XCircle className="w-4 h-4 text-red-500" />
-                    ) : (
-                      row.activityWatch
-                    )}
-                  </td>
-                </tr>
-              ))}
+              <tr><th scope="row" className="p-4">App usage reports</th><td className="p-4">Daily and weekly active and idle time; browser time is counted as one app.</td></tr>
+              <tr><th scope="row" className="p-4">Collection starts after consent</th><td className="p-4">Pause recording at any time. Window titles, web addresses, keystrokes, and screenshots are not recorded.</td></tr>
+              <tr><th scope="row" className="p-4">Daily budgets and focus sessions</th><td className="p-4">Reminders can be snoozed or overridden. Apps are never forcibly closed.</td></tr>
+              <tr><th scope="row" className="p-4">Your records</th><td className="p-4">Stored locally, with CSV/JSON export and deletion controls.</td></tr>
+              <tr><th scope="row" className="p-4">Trial and purchase</th><td className="p-4">15-day free trial through Microsoft Store, then an optional one-time purchase. Check the current price for your region.</td></tr>
             </tbody>
           </table>
         </div>
@@ -472,7 +395,7 @@ export default function StillLanePage() {
           Take Back Control of Your Computer Time
         </h2>
         <p className="text-violet-100 max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
-          Start your 15-day free trial on the Microsoft Store. Zero cloud lock-in, zero subscriptions, and complete peace of mind.
+          Try Still-Lane free for 15 days through Microsoft Store. A one-time purchase keeps access after the trial, with no subscription.
         </p>
         <div className="pt-2">
           <a
@@ -481,7 +404,7 @@ export default function StillLanePage() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-bold text-sm bg-white hover:bg-zinc-100 text-violet-700 shadow-md transition-colors"
           >
-            <span>Start Free Trial on Microsoft Store</span>
+            <span>View Still-Lane on Microsoft Store</span>
             <ArrowUpRight className="w-4 h-4" />
           </a>
         </div>

@@ -33,16 +33,16 @@ export const WINDOWS_APPS: WindowsApp[] = [
     iconPath: '/vox-reader/icon.png',
     badge: '100% Offline Neural Speech',
     features: [
-      ['On-Device Neural Synthesis', 'High-quality natural English voices running natively on your CPU/GPU without cloud lag.'],
+      ['On-Device Neural Synthesis', 'English voices generated on your CPU. Performance depends on your PC; higher speeds can pause while speech is generated.'],
       ['Synchronized Sentence Highlighting', 'Follow along as words and sentences illuminate in real time.'],
       ['Format Freedom', 'Read EPUB and TXT files free, with PDF and Microsoft Word (.docx) support in Pro.'],
-      ['Speed & Navigation Controls', 'Fine-tune playback speed from 0.5× up to 3.0×, set sleep timers, and jump chapters.'],
-      ['100% Air-Gapped Privacy', 'Zero accounts, zero analytics, zero document uploads. Everything stays on your PC.'],
+      ['Speed & Navigation Controls', 'Adjust playback speed, set sleep timers, and jump chapters. Higher speeds depend on your CPU’s speech-generation performance.'],
+      ['Offline Reading, Local Library', 'Zero accounts, zero analytics, zero document uploads. Everything stays on your PC.'],
     ],
     faqs: [
       {
         question: 'Does Vox Reader work completely offline?',
-        answer: 'Yes. Voice synthesis is performed 100% on your local computer using packaged neural models. No internet connection is ever required for reading or playback.',
+        answer: 'Reading aloud works offline after installation, with speech generated on your CPU. Buying or refreshing Pro requires internet access and a Microsoft Store account.',
       },
       {
         question: 'Is there a recurring monthly subscription?',
@@ -63,14 +63,14 @@ export const WINDOWS_APPS: WindowsApp[] = [
     summary:
       'Fast, modern screenshot capture and markup tool built natively with WinUI 3. Designed for technical writers, developers, and privacy-conscious professionals who need true data redaction.',
     category: 'UtilitiesApplication',
-    operatingSystem: 'Windows 10, Windows 11',
+    operatingSystem: 'Windows 11',
     storeId: '9NZR4D24CMM6',
     storeUrl: 'https://apps.microsoft.com/detail/9NZR4D24CMM6',
     pricingLabel: 'Free tier · $18.99 lifetime or $9.99/year Pro',
     iconPath: '/cropmark/icon.png',
-    badge: 'Acropalypse-Safe Redaction',
+    badge: 'Solid Screenshot Redaction',
     features: [
-      ['True Destructive Redaction', 'Overwrites and zeroes out underlying bitmap pixels before export, preventing data recovery.'],
+      ['True Destructive Redaction', 'Replaces covered pixels with a solid color in exported images and checks the result before saving.'],
       ['Numbered Step Badges', 'Auto-incrementing callouts (1, 2, 3...) to document workflows and bugs in seconds.'],
       ['Professional Canvas Styling', 'Add canvas padding, rounded corners, subtle drop shadows, and neutral borders.'],
       ['Multi-Format Export', 'Save to clipboard, PNG, JPEG, or paginated multi-page PDF documents without watermarks.'],
@@ -79,7 +79,7 @@ export const WINDOWS_APPS: WindowsApp[] = [
     faqs: [
       {
         question: 'How is Cropmark redaction different from normal screenshot tools?',
-        answer: 'Standard screenshot tools often just draw a colored rectangle on top of pixels, leaving sensitive data recoverable under contrast adjustment or file extraction. Cropmark permanently wipes and zeros out the covered bitmap pixels from memory before saving.',
+        answer: 'Cropmark replaces covered pixels in exported images and checks the result before saving. Review the exported file before sharing; separate originals and editable projects may retain the original content.',
       },
       {
         question: 'Are exports watermarked?',
@@ -103,7 +103,7 @@ export const WINDOWS_APPS: WindowsApp[] = [
     operatingSystem: 'Windows 10, Windows 11',
     storeId: '9NP26W128KX9',
     storeUrl: 'https://apps.microsoft.com/detail/9NP26W128KX9',
-    pricingLabel: '15-day free trial · $14.99 one-time purchase',
+    pricingLabel: '15-day free trial · One-time purchase through Microsoft Store',
     iconPath: '/still-lane/icon.png',
     badge: '100% Local SQLite Storage',
     features: [
@@ -124,7 +124,7 @@ export const WINDOWS_APPS: WindowsApp[] = [
       },
       {
         question: 'What is the pricing model?',
-        answer: 'Still-Lane includes a 15-day free trial directly through the Microsoft Store, followed by a single $14.99 one-time purchase with no subscription.',
+        answer: 'Still-Lane offers a 15-day free trial through Microsoft Store, then an optional one-time purchase with no subscription. Check its Store listing for the current regional price.',
       },
     ],
     privacyUrl: '/still-lane/privacy-policy.html',

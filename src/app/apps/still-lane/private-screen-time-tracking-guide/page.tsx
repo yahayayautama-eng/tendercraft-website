@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getSiteUrl } from '@/lib/site';
-import { ChevronRight, ArrowUpRight, Database, Clock, Lock, CheckCircle2, Sliders } from 'lucide-react';
+import { ChevronRight, ArrowUpRight, Database } from 'lucide-react';
 
 const baseUrl = getSiteUrl();
 const pageUrl = `${baseUrl}/apps/still-lane/private-screen-time-tracking-guide`;
@@ -76,17 +76,17 @@ export default function PrivateScreenTimeTrackingGuide() {
       <div className="space-y-10 text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
         <section className="space-y-4">
           <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
-            The Dark Side of Traditional Time Trackers
+            Choose What Your Tracker Records
           </h2>
           <p>
-            Most commercial screen time utilities fall into one of two extremes:
+            Before choosing a screen time tracker, check its data collection and how its limits behave:
           </p>
           <ul className="list-disc pl-6 space-y-2 text-sm">
             <li>
-              <strong>Corporate Surveillance Software:</strong> Tools like RescueTime continuously sync your active window titles, document filenames, and browsing timestamps to remote cloud databases. They are designed for employee surveillance, monthly SaaS revenue, and analytics profiling.
+              <strong>Collection and storage:</strong> Check whether a tool records app names, window titles, websites, or screenshots, and whether those records stay on your device or are uploaded. Still-Lane records application duration locally after consent; it does not record window titles, websites, keystrokes, or screenshots.
             </li>
             <li>
-              <strong>Punitive Digital Blockers:</strong> Aggressive app blockers abruptly terminate your active processes or freeze your screen when a daily timer expires, often destroying unsaved work in IDEs, spreadsheets, or design tools.
+              <strong>Limit behavior:</strong> Check whether a tool gives reminders or prevents access to an app. Still-Lane uses reminders that you can override and never closes your applications.
             </li>
           </ul>
         </section>
@@ -141,7 +141,7 @@ export default function PrivateScreenTimeTrackingGuide() {
           Understand your digital habits with total privacy
         </h3>
         <p className="text-sm text-zinc-600 dark:text-zinc-400">
-          Try Still-Lane with a 15-day free trial on the Microsoft Store. No subscriptions, no cloud accounts, and zero tracking.
+          View Still-Lane on the Microsoft Store for its current regional price. App usage is recorded locally after consent, with no account, telemetry, or document uploads.
         </p>
         <div className="flex flex-wrap items-center gap-4 pt-2">
           <a
@@ -150,7 +150,7 @@ export default function PrivateScreenTimeTrackingGuide() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl font-semibold text-xs bg-violet-600 hover:bg-violet-700 text-white shadow-xs transition-colors"
           >
-            <span>Start 15-Day Free Trial</span>
+            <span>View Still-Lane on Microsoft Store</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
           </a>
           <Link href="/apps/still-lane" className="text-xs font-semibold text-zinc-700 dark:text-zinc-300 hover:underline">
