@@ -11,7 +11,7 @@ const baseUrl = getSiteUrl();
 const pageUrl = `${baseUrl}/apps/windows`;
 const ogImageUrl = `${baseUrl}/brand/tendercraft-og.png`;
 const description =
-  'Discover native Windows 11 & 10 desktop utilities built for privacy and performance. Featuring Vox Reader (offline neural text-to-speech), Cropmark (secure screenshot redaction), and Still-Lane (private screen time & gentle focus).';
+  'Explore Tendercraft Windows apps: Vox Reader offline text to speech, Cropmark screenshot redaction, and Still-Lane private screen time and focus reminders.';
 
 export const metadata: Metadata = {
   title: 'Native Windows Apps for Privacy & Focus',

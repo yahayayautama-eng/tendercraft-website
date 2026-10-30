@@ -7,10 +7,10 @@ import { ChevronRight, ArrowUpRight, Cpu } from 'lucide-react';
 const baseUrl = getSiteUrl();
 const pageUrl = `${baseUrl}/apps/vox-reader/listen-to-books-offline-windows`;
 const description =
-  'A complete guide to turning EPUB ebooks, text-based PDFs, and articles into natural speech on Windows 11 & 10 completely offline. No subscriptions, no cloud uploads.';
+  'Read EPUB and TXT books aloud offline on Windows with local English voices. Vox Reader Pro adds text-based PDF and DOCX import through a one-time upgrade.';
 
 export const metadata: Metadata = {
-  title: 'How to Listen to EPUB & PDF Books Offline on Windows',
+  title: { absolute: 'Listen to EPUB and PDF Books Offline on Windows' },
   description,
   alternates: { canonical: pageUrl },
   openGraph: {

@@ -7,10 +7,10 @@ import { ChevronRight, ArrowUpRight, Database } from 'lucide-react';
 const baseUrl = getSiteUrl();
 const pageUrl = `${baseUrl}/apps/still-lane/private-screen-time-tracking-guide`;
 const description =
-  'How to track computer usage and set intentional daily focus limits on Windows 11 & 10 without cloud surveillance, employer monitoring, or punitive lockouts.';
+  'Track app time on Windows with local reports and focus reminders you can override. Learn what Still-Lane records and how to export or delete your data.';
 
 export const metadata: Metadata = {
-  title: 'How to Track Windows Screen Time Without Cloud Surveillance',
+  title: { absolute: 'Track Windows Screen Time Privately' },
   description,
   alternates: { canonical: pageUrl },
   openGraph: {

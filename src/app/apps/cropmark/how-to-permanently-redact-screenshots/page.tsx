@@ -7,7 +7,7 @@ import { ChevronRight, ArrowUpRight, EyeOff } from 'lucide-react';
 const baseUrl = getSiteUrl();
 const pageUrl = `${baseUrl}/apps/cropmark/how-to-permanently-redact-screenshots`;
 const description =
-  'Redact screenshots on Windows with solid pixel replacement. Learn when overlays can expose content, review the exported file, and keep sensitive originals private.';
+  'Redact screenshots on Windows with solid pixel replacement. Check the exported file before sharing and keep original captures and editable projects private.';
 
 export const metadata: Metadata = {
   title: 'How to Permanently Redact Screenshots on Windows',
