@@ -54,7 +54,7 @@ export function MotionEmailBadge({
 
   const buttonClasses = {
     default:
-      'text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white bg-white dark:bg-[#111726] border-black/[0.06] dark:border-white/[0.08]',
+      'text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white bg-white dark:bg-ink-2 border-black/[0.06] dark:border-white/[0.08]',
     dark: 'text-zinc-200 hover:text-white bg-white/10 border-white/15 hover:bg-white/20',
     glass:
       'text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white bg-white/80 dark:bg-white/10 border-black/[0.06] dark:border-white/[0.08]',

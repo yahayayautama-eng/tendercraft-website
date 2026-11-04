@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { SectionWrapper } from '@/components/SectionWrapper';
+import { PageHero } from '@/components/PageHero';
 import { MotionEmailBadge } from '@/components/MotionEmailBadge';
 import { getSiteUrl } from '@/lib/site';
 import { Globe, ArrowRight, ShieldCheck, Zap, Layers, Sparkles, ArrowUpRight } from 'lucide-react';
@@ -54,23 +55,14 @@ function LinkedinIcon(props: React.SVGProps<SVGSVGElement>) {
 
 export default function AboutPage() {
   return (
-    <div className="py-16 sm:py-24 space-y-20 sm:space-y-28 pb-24">
+    <div className="space-y-20 sm:space-y-28 pb-24">
       {/* Studio Header */}
-      <section>
-        <SectionWrapper size="lg">
-          <div className="max-w-3xl space-y-6">
-            <p className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 font-mono">
-              The Studio
-            </p>
-            <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-100 leading-[1.08]">
-              Built with purpose, restraint, and precision.
-            </h1>
-            <p className="text-xl sm:text-2xl text-zinc-600 dark:text-zinc-300 leading-relaxed font-normal">
-              Tendercraft is an independent product studio. We identify high-friction manual workflows in businesses and turn them into fast, reliable software products.
-            </p>
-          </div>
-        </SectionWrapper>
-      </section>
+      <PageHero
+        eyebrow="The studio"
+        title="Built with purpose, restraint &"
+        accent="precision."
+        description="Tendercraft is an independent product studio. We identify high-friction manual workflows in businesses and turn them into fast, reliable software products."
+      />
 
       {/* Philosophy Grid */}
       <section>
@@ -86,7 +78,7 @@ export default function AboutPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="p-8 rounded-2xl bg-zinc-50 dark:bg-[#111726] border border-black/[0.06] dark:border-white/[0.08] space-y-4">
+              <div className="p-8 rounded-2xl bg-zinc-50 dark:bg-ink-2 border border-black/[0.06] dark:border-white/[0.08] space-y-4">
                 <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/50 flex items-center justify-center text-blue-600 dark:text-blue-400">
                   <ShieldCheck className="w-5 h-5" aria-hidden="true" />
                 </div>
@@ -98,7 +90,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="p-8 rounded-2xl bg-zinc-50 dark:bg-[#111726] border border-black/[0.06] dark:border-white/[0.08] space-y-4">
+              <div className="p-8 rounded-2xl bg-zinc-50 dark:bg-ink-2 border border-black/[0.06] dark:border-white/[0.08] space-y-4">
                 <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/50 flex items-center justify-center text-blue-600 dark:text-blue-400">
                   <Zap className="w-5 h-5" aria-hidden="true" />
                 </div>
@@ -110,7 +102,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="p-8 rounded-2xl bg-zinc-50 dark:bg-[#111726] border border-black/[0.06] dark:border-white/[0.08] space-y-4">
+              <div className="p-8 rounded-2xl bg-zinc-50 dark:bg-ink-2 border border-black/[0.06] dark:border-white/[0.08] space-y-4">
                 <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/50 flex items-center justify-center text-blue-600 dark:text-blue-400">
                   <Sparkles className="w-5 h-5" aria-hidden="true" />
                 </div>
@@ -129,11 +121,11 @@ export default function AboutPage() {
       {/* Founder & Engineering Section */}
       <section aria-labelledby="founder-heading">
         <SectionWrapper size="lg">
-          <div className="p-8 sm:p-14 rounded-3xl bg-zinc-50 dark:bg-[#111726] border border-black/[0.06] dark:border-white/[0.08] space-y-10">
+          <div className="p-8 sm:p-14 rounded-3xl bg-zinc-50 dark:bg-ink-2 border border-black/[0.06] dark:border-white/[0.08] space-y-10">
             <div className="flex flex-col md:flex-row items-start gap-8 sm:gap-10">
               {/* Founder Avatar / Portrait */}
               <div className="shrink-0 relative">
-                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-3xl bg-gradient-to-br from-blue-600 to-[#0B101D] dark:from-blue-600 dark:to-[#070A11] p-1 shadow-md">
+                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-3xl bg-gradient-to-br from-blue-600 to-[#0B101D] dark:from-blue-600 dark:to-ink p-1 shadow-md">
                   <div className="w-full h-full rounded-[22px] bg-[#0B101D] flex flex-col items-center justify-center text-white relative overflow-hidden">
                     <span className="text-2xl sm:text-3xl font-black tracking-tight text-white font-mono">
                       YY

@@ -90,7 +90,7 @@ export function WorkGallery({ projects }: WorkGalleryProps) {
               {isSelected && (
                 <motion.div
                   layoutId="activeFilterTabBackground"
-                  className="absolute inset-0 bg-white dark:bg-[#111726] rounded-xl shadow-xs border border-black/[0.06] dark:border-white/[0.1]"
+                  className="absolute inset-0 bg-white dark:bg-ink-2 rounded-xl shadow-xs border border-black/[0.06] dark:border-white/[0.1]"
                   transition={
                     shouldReduceMotion
                       ? { duration: 0 }

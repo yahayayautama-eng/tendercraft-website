@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { accentForSlug, accentStyle } from '@/lib/accents';
 
 export interface ProjectCardData {
   slug: string;
@@ -23,18 +24,7 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, priority = false, className }: ProjectCardProps) {
-  const isBeadle = project.slug === 'beadle';
-  const projectStyle = isBeadle
-    ? ({
-        '--project-accent': '#1F4B3F',
-        '--project-accent-hover': '#16362D',
-        '--project-accent-fg-dark': '#A9C7BC',
-        '--project-accent-tint': '#E8F0ED',
-        '--project-accent-tint-dark': 'rgba(31, 75, 63, 0.4)',
-        '--project-accent-border': '#C7D9D1',
-        '--project-accent-border-dark': '#376B5D',
-      } as React.CSSProperties)
-    : undefined;
+  const projectStyle = accentStyle(accentForSlug(project.slug));
 
   return (
     <Link

@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { Reveal, SplitWords } from '@/components/motion/primitives';
+import { accentForSlug } from '@/lib/accents';
 
 export interface FeaturedProject {
   id: string;
@@ -18,11 +19,6 @@ export interface FeaturedProject {
   technology: string[];
 }
 
-const ACCENTS = [
-  { hex: '#7C5CFF', soft: 'rgba(124,92,255,0.35)' },
-  { hex: '#3DF2C0', soft: 'rgba(61,242,192,0.28)' },
-  { hex: '#FF6B57', soft: 'rgba(255,107,87,0.3)' },
-];
 
 export function FeaturedWork({ projects }: { projects: FeaturedProject[] }) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -88,7 +84,7 @@ function StackCard({
   progress: MotionValue<number>;
 }) {
   const reduce = useReducedMotion();
-  const accent = ACCENTS[index % ACCENTS.length];
+  const accent = accentForSlug(project.slug);
   const targetScale = 1 - (total - 1 - index) * 0.035;
   const scale = useTransform(progress, [index / total, 1], [1, targetScale]);
   const imgRef = useRef<HTMLDivElement>(null);

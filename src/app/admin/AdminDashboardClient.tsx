@@ -116,11 +116,11 @@ export function AdminDashboardClient({
       </div>
 
       {/* Projects Table */}
-      <div className="rounded-2xl border border-black/[0.08] dark:border-white/[0.08] overflow-hidden bg-white dark:bg-[#111726] shadow-sm">
+      <div className="rounded-2xl border border-black/[0.08] dark:border-white/[0.08] overflow-hidden bg-white dark:bg-ink-2 shadow-sm">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse text-sm">
             <thead>
-              <tr className="border-b border-black/[0.06] dark:border-white/[0.08] bg-zinc-50/70 dark:bg-[#161F33]/70 text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-semibold">
+              <tr className="border-b border-black/[0.06] dark:border-white/[0.08] bg-zinc-50/70 dark:bg-ink-3/70 text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-semibold">
                 <th className="py-3.5 px-4 sm:px-6">Project</th>
                 <th className="py-3.5 px-4">Status</th>
                 <th className="py-3.5 px-4 text-center">Published</th>
@@ -259,7 +259,7 @@ export function AdminDashboardClient({
       {/* Confirmed Deletion Modal */}
       {deleteModalProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
-          <div className="w-full max-w-md bg-white dark:bg-[#111726] rounded-2xl border border-red-200 dark:border-red-900/50 p-6 sm:p-7 shadow-2xl space-y-5">
+          <div className="w-full max-w-md bg-white dark:bg-ink-2 rounded-2xl border border-red-200 dark:border-red-900/50 p-6 sm:p-7 shadow-2xl space-y-5">
             <div className="flex items-start justify-between">
               <div className="flex items-center gap-3 text-red-600">
                 <div className="p-2 rounded-full bg-red-100 dark:bg-red-950/50">
@@ -295,7 +295,7 @@ export function AdminDashboardClient({
                 value={confirmInput}
                 onChange={(e) => setConfirmInput(e.target.value)}
                 placeholder={deleteModalProject.name}
-                className="w-full px-3.5 py-2.5 rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-[#161F33] text-sm text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-red-600 font-mono"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-ink-3 text-sm text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-red-600 font-mono"
               />
             </div>
 

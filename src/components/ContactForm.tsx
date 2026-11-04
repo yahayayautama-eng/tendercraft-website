@@ -103,7 +103,7 @@ export function ContactForm() {
   if (isSubmitted) {
     return (
       <div
-        className="p-8 sm:p-12 rounded-3xl bg-white dark:bg-[#111726] border border-emerald-500/20 dark:border-emerald-500/30 shadow-sm text-center space-y-6"
+        className="p-8 sm:p-12 rounded-3xl bg-white dark:bg-ink-2 border border-emerald-500/20 dark:border-emerald-500/30 shadow-sm text-center space-y-6"
         role="region"
         aria-live="polite"
       >
@@ -136,7 +136,7 @@ export function ContactForm() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="p-6 sm:p-12 rounded-3xl bg-white dark:bg-[#111726] border border-black/[0.08] dark:border-white/[0.08] shadow-sm space-y-8"
+      className="p-6 sm:p-12 rounded-3xl bg-white dark:bg-ink-2 border border-black/[0.08] dark:border-white/[0.08] shadow-sm space-y-8"
       aria-label="Project enquiry form"
     >
       <div className="space-y-2">
@@ -310,7 +310,7 @@ export function ContactForm() {
                 role="radio"
                 aria-checked={isSelected}
                 onClick={() => setFormData((prev) => ({ ...prev, budgetRange: option }))}
-                className={`min-h-[44px] px-4 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all duration-200 inline-flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#111726] ${
+                className={`min-h-[44px] px-4 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all duration-200 inline-flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-ink-2 ${
                   isSelected
                     ? 'bg-blue-600 text-white shadow-sm ring-1 ring-blue-600'
                     : 'bg-zinc-100 dark:bg-white/10 text-zinc-700 dark:text-zinc-200 hover:bg-zinc-200 dark:hover:bg-white/15'
@@ -342,7 +342,7 @@ export function ContactForm() {
                 role="radio"
                 aria-checked={isSelected}
                 onClick={() => setFormData((prev) => ({ ...prev, timeline: option }))}
-                className={`min-h-[44px] px-4 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all duration-200 inline-flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#111726] ${
+                className={`min-h-[44px] px-4 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all duration-200 inline-flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-ink-2 ${
                   isSelected
                     ? 'bg-blue-600 text-white shadow-sm ring-1 ring-blue-600'
                     : 'bg-zinc-100 dark:bg-white/10 text-zinc-700 dark:text-zinc-200 hover:bg-zinc-200 dark:hover:bg-white/15'
@@ -368,7 +368,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={isPending}
-          className="inline-flex items-center justify-center gap-2 min-h-[44px] px-8 py-3 rounded-full bg-[#0B101D] text-white hover:bg-blue-600 dark:bg-white dark:text-[#0B101D] dark:hover:bg-blue-500 dark:hover:text-white text-sm font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-sm shrink-0 w-full sm:w-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#111726]"
+          className="inline-flex items-center justify-center gap-2 min-h-[44px] px-8 py-3 rounded-full bg-[#0B101D] text-white hover:bg-blue-600 dark:bg-white dark:text-[#0B101D] dark:hover:bg-blue-500 dark:hover:text-white text-sm font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-sm shrink-0 w-full sm:w-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-ink-2"
         >
           {isPending ? (
             <>
