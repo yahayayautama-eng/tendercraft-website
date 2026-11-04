@@ -1,15 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { getSiteUrl } from "@/lib/site";
+import { AmbientEffects } from "@/components/motion/AmbientEffects";
 
 const siteUrl = getSiteUrl();
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+});
+
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
 });
 
 const geistMono = Geist_Mono({
@@ -92,8 +100,8 @@ export const metadata: Metadata = {
 
 export const viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#FFFFFF' },
-    { media: '(prefers-color-scheme: dark)', color: '#0B0F19' },
+    { media: '(prefers-color-scheme: light)', color: '#07070B' },
+    { media: '(prefers-color-scheme: dark)', color: '#07070B' },
   ],
   width: 'device-width',
   initialScale: 1,
@@ -107,7 +115,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`dark ${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} h-full antialiased`}
     >
       <head>
         <script
@@ -121,10 +129,11 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-white text-[#0B101D] dark:bg-[#0B0F19] dark:text-[#F8FAFC]">
+      <body className="grain min-h-full flex flex-col bg-ink text-[#F5F4FA]">
         <a href="#main-content" className="skip-to-content">
           Skip to main content
         </a>
+        <AmbientEffects />
         <Header />
         <main id="main-content" tabIndex={-1} className="flex-1 w-full outline-none">
           {children}

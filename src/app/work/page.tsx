@@ -3,6 +3,7 @@ import { getPublicProjects } from '@/lib/projects';
 import { SectionWrapper } from '@/components/SectionWrapper';
 import { WorkGallery } from '@/components/WorkGallery';
 import { getSiteUrl } from '@/lib/site';
+import { Reveal, SplitWords } from '@/components/motion/primitives';
 
 const siteUrl = getSiteUrl();
 
@@ -54,19 +55,29 @@ export default async function WorkPage() {
   }));
 
   return (
-    <div className="py-16 sm:py-24 space-y-16">
+    <div className="relative -mt-24 pt-36 sm:pt-44 pb-24 space-y-16">
       <SectionWrapper size="lg">
         {/* Page Heading */}
-        <div className="max-w-3xl space-y-4">
-          <p className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">
-            Portfolio & Systems
-          </p>
-          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-100">
-            Selected Work
+        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[520px] overflow-hidden">
+          <div className="absolute inset-0 bg-grid" />
+          <div className="absolute -top-40 left-[10%] h-[420px] w-[420px] rounded-full bg-violet/30 blur-[120px] animate-aurora" />
+          <div className="absolute -top-20 right-[10%] h-[360px] w-[360px] rounded-full bg-mint/20 blur-[120px] animate-aurora" style={{ animationDelay: '-7s' }} />
+        </div>
+        <div className="max-w-4xl space-y-6">
+          <Reveal>
+            <p className="font-mono text-xs uppercase tracking-[0.25em] text-mint">( Portfolio &amp; systems )</p>
+          </Reveal>
+          <h1 className="text-5xl sm:text-7xl lg:text-8xl font-semibold tracking-[-0.045em] text-white leading-[0.98]">
+            <SplitWords text="Selected" immediate />{' '}
+            <span className="font-display italic font-normal">
+              <SplitWords wordClassName="gradient-text gradient-shimmer pr-[0.06em]" text="work." immediate delay={0.12} />
+            </span>
           </h1>
-          <p className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-400 leading-relaxed font-normal">
-            Every project listed represents real repository code, verifiable delivery states, and authentic software engineering—including completed Chrome extensions live on the Chrome Web Store.
-          </p>
+          <Reveal delay={0.25}>
+            <p className="text-lg sm:text-xl text-zinc-400 leading-relaxed max-w-3xl">
+              Every project listed represents real repository code, verifiable delivery states, and authentic software engineering—including completed Chrome extensions live on the Chrome Web Store.
+            </p>
+          </Reveal>
         </div>
 
         {/* Projects Gallery with Category Filters */}
