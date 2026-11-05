@@ -121,7 +121,7 @@ export function AppsBento() {
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-white tracking-tight">{app.name}</h3>
-                        <p className="flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-widest text-zinc-500">
+                        <p className="flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-widest text-zinc-400">
                           {app.platform === 'Windows' ? <Monitor className="h-3 w-3" /> : <Tablet className="h-3 w-3" />}
                           {app.platform}
                         </p>

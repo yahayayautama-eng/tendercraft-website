@@ -58,7 +58,7 @@ export function Footer() {
 
           {COLUMNS.map((col, i) => (
             <div key={col.title} className={`${i === 0 ? 'lg:col-span-3' : 'lg:col-span-2'} space-y-4`}>
-              <h3 className="font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-500">{col.title}</h3>
+              <h3 className="font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-400">{col.title}</h3>
               <ul className="space-y-0.5 text-sm">
                 {col.links.map((l) => (
                   <li key={l.href}>
@@ -77,14 +77,14 @@ export function Footer() {
 
           {/* Contact */}
           <div className="md:col-span-2 lg:col-span-4 space-y-4">
-            <h3 className="font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-500">Direct Contact</h3>
+            <h3 className="font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-400">Direct Contact</h3>
             <div className="space-y-4 text-sm">
               <div>
-                <span className="block text-[11px] text-zinc-500 uppercase font-mono mb-1.5">General Enquiries</span>
+                <span className="block text-[11px] text-zinc-400 uppercase font-mono mb-1.5">General Enquiries</span>
                 <MotionEmailBadge email="hello@tendercrafthq.com" size="sm" />
               </div>
               <div>
-                <span className="block text-[11px] text-zinc-500 uppercase font-mono mb-1.5">Founder & Business</span>
+                <span className="block text-[11px] text-zinc-400 uppercase font-mono mb-1.5">Founder & Business</span>
                 <MotionEmailBadge email="yyautama@tendercrafthq.com" size="sm" />
               </div>
             </div>
@@ -98,7 +98,7 @@ export function Footer() {
           </p>
         </div>
 
-        <div className="relative border-t border-white/[0.06] py-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-zinc-500">
+        <div className="relative border-t border-white/[0.06] py-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-zinc-400">
           <p>© {currentYear} Tendercraft. All rights reserved.</p>
           <p className="flex items-center gap-4">
             <span>

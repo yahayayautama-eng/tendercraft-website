@@ -16,7 +16,32 @@ import { cn } from '@/lib/utils';
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 /* ------------------------------------------------------------------
-   Reveal — blur + rise into view once
+   FadeIn — CSS-only entrance for above-the-fold content.
+   Paints immediately with the HTML; never waits for JavaScript.
+------------------------------------------------------------------- */
+export function FadeIn({
+  delay = 0,
+  y = 18,
+  as: Tag = 'div',
+  className,
+  style,
+  children,
+  ...rest
+}: React.HTMLAttributes<HTMLElement> & { delay?: number; y?: number; as?: 'div' | 'span' | 'p' }) {
+  return (
+    <Tag
+      className={cn('fade-in', className)}
+      style={{ ...style, ['--d' as string]: `${delay}s`, ['--y' as string]: `${y}px` }}
+      {...rest}
+    >
+      {children}
+    </Tag>
+  );
+}
+
+/* ------------------------------------------------------------------
+   Reveal — rise into view once (below-the-fold content).
+   Marked data-reveal so it stays visible when JavaScript is off.
 ------------------------------------------------------------------- */
 interface RevealProps extends HTMLMotionProps<'div'> {
   delay?: number;
@@ -27,10 +52,11 @@ export function Reveal({ delay = 0, y = 28, className, children, ...rest }: Reve
   const reduce = useReducedMotion();
   return (
     <motion.div
-      initial={reduce ? false : { opacity: 0, y, filter: 'blur(8px)' }}
-      whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.9, delay, ease: EASE }}
+      data-reveal=""
+      initial={reduce ? false : { opacity: 0, y }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ duration: 0.85, delay, ease: EASE }}
       className={className}
       {...rest}
     >
@@ -40,7 +66,10 @@ export function Reveal({ delay = 0, y = 28, className, children, ...rest }: Reve
 }
 
 /* ------------------------------------------------------------------
-   SplitWords — kinetic headline, each word slides up from a mask
+   SplitWords — kinetic headline, each word slides up from a mask.
+   CSS-driven: `immediate` headlines animate on first paint; others
+   start when scrolled into view. Real text is exposed to screen
+   readers and crawlers via an sr-only copy.
 ------------------------------------------------------------------- */
 interface SplitWordsProps {
   text: string;
@@ -48,7 +77,7 @@ interface SplitWordsProps {
   wordClassName?: string;
   delay?: number;
   stagger?: number;
-  /** Animate on mount (hero) instead of when scrolled into view */
+  /** Animate on first paint (hero) instead of when scrolled into view */
   immediate?: boolean;
 }
 
@@ -60,33 +89,41 @@ export function SplitWords({
   stagger = 0.06,
   immediate = false,
 }: SplitWordsProps) {
-  const reduce = useReducedMotion();
+  const ref = useRef<HTMLSpanElement>(null);
+  const [inView, setInView] = useState(false);
   const words = text.split(' ');
-  const trigger = immediate ? { animate: 'show' } : { whileInView: 'show', viewport: { once: true, margin: '-60px' } };
+
+  useEffect(() => {
+    if (immediate || !ref.current) return;
+    const el = ref.current;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: '0px 0px -60px 0px' }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [immediate]);
 
   return (
-    <motion.span
-      className={cn('inline', className)}
-      initial={reduce ? false : 'hidden'}
-      {...trigger}
-      transition={{ staggerChildren: stagger, delayChildren: delay }}
-      aria-label={text}
-    >
+    <span ref={ref} className={cn('split inline', (immediate || inView) && 'in', className)}>
+      <span className="sr-only">{text}</span>
       {words.map((word, i) => (
         <span key={`${word}-${i}`} aria-hidden="true" className="inline-block overflow-hidden align-bottom pb-[0.12em] -mb-[0.12em]">
-          <motion.span
-            className={cn('inline-block will-change-transform', wordClassName)}
-            variants={{
-              hidden: { y: '110%', rotate: 4 },
-              show: { y: '0%', rotate: 0, transition: { duration: 0.9, ease: EASE } },
-            }}
+          <span
+            className={cn('split-word', wordClassName)}
+            style={{ ['--d' as string]: `${(delay + i * stagger).toFixed(2)}s` }}
           >
             {word}
-          </motion.span>
+          </span>
           {i < words.length - 1 ? ' ' : ''}
         </span>
       ))}
-    </motion.span>
+    </span>
   );
 }
 
@@ -183,9 +220,9 @@ export function Tilt({
 ------------------------------------------------------------------- */
 export function CountUp({ to, suffix = '', className }: { to: number; suffix?: string; className?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: '-40px' });
+  const inView = useInView(ref, { once: true, margin: '0px 0px 10% 0px' });
   const reduce = useReducedMotion();
-  const [value, setValue] = useState(reduce ? to : 0);
+  const [value, setValue] = useState(to);
 
   useEffect(() => {
     if (!inView || reduce) return;
@@ -272,8 +309,8 @@ export function RotatingWord({
           initial={false}
           animate={
             i === index
-              ? { y: '0%', opacity: 1, filter: 'blur(0px)' }
-              : { y: i === (index - 1 + words.length) % words.length ? '-100%' : '100%', opacity: 0, filter: 'blur(6px)' }
+              ? { y: '0%', opacity: 1 }
+              : { y: i === (index - 1 + words.length) % words.length ? '-100%' : '100%', opacity: 0 }
           }
           transition={{ duration: 0.7, ease: EASE }}
           aria-hidden={i !== index}

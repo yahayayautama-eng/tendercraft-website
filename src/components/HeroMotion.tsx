@@ -5,9 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion, useReducedMotion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
-import { Magnetic, RotatingWord, SplitWords } from '@/components/motion/primitives';
-
-const EASE = [0.16, 1, 0.3, 1] as const;
+import { FadeIn, Magnetic, RotatingWord, SplitWords } from '@/components/motion/primitives';
 
 const AUDIENCES = ['difficult workflows', 'IT teams', 'freight dispatchers', 'estate managers', 'risk officers', 'home cooks'];
 
@@ -22,24 +20,18 @@ export function HeroMotion() {
   const leftX = useTransform(scrollYProgress, [0, 1], ['8%', '0%']);
   const rightX = useTransform(scrollYProgress, [0, 1], ['-8%', '0%']);
 
-  const fade = (delay: number) => ({
-    initial: reduce ? false : { opacity: 0, y: 18, filter: 'blur(6px)' },
-    animate: { opacity: 1, y: 0, filter: 'blur(0px)' },
-    transition: { duration: 0.9, delay, ease: EASE },
-  });
-
   return (
     <section className="relative -mt-20 sm:-mt-24 pt-36 sm:pt-44 pb-10 overflow-hidden">
       {/* Aurora backdrop */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-grid" />
-        <div className="absolute -top-40 left-[8%] h-[520px] w-[520px] rounded-full bg-violet/40 blur-[120px] animate-aurora" />
+        <div className="absolute -top-56 left-[2%] h-[760px] w-[760px] orb bg-violet/45 animate-aurora" />
         <div
-          className="absolute top-10 right-[4%] h-[440px] w-[440px] rounded-full bg-mint/25 blur-[120px] animate-aurora"
+          className="absolute -top-10 -right-[4%] h-[680px] w-[680px] orb bg-mint/30 animate-aurora"
           style={{ animationDelay: '-6s' }}
         />
         <div
-          className="absolute top-[38%] left-[40%] h-[380px] w-[380px] rounded-full bg-coral/20 blur-[120px] animate-aurora"
+          className="absolute top-[30%] left-[32%] h-[600px] w-[600px] orb bg-coral/25 animate-aurora"
           style={{ animationDelay: '-11s' }}
         />
         <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-b from-transparent to-ink" />
@@ -48,7 +40,7 @@ export function HeroMotion() {
       <div className="w-full max-w-6xl mx-auto px-5 sm:px-8">
         <div className="max-w-4xl mx-auto text-center">
           {/* Studio pill */}
-          <motion.div {...fade(0)} className="inline-flex">
+          <FadeIn className="inline-flex">
             <span className="glass inline-flex items-center gap-2 rounded-full pl-1.5 pr-4 py-1.5 text-xs font-medium text-zinc-300">
               <span className="inline-flex items-center gap-1 rounded-full bg-mint/15 px-2 py-0.5 text-[11px] font-semibold text-mint">
                 <span className="relative flex h-1.5 w-1.5">
@@ -59,36 +51,32 @@ export function HeroMotion() {
               </span>
               Independent product studio · Remote worldwide
             </span>
-          </motion.div>
+          </FadeIn>
 
           {/* Headline */}
           <h1 className="mt-8 text-[2.75rem] leading-[1.02] sm:text-7xl lg:text-[5.75rem] font-semibold tracking-[-0.04em] text-white">
-            <SplitWords text="Focused software" immediate delay={0.15} />
+            <SplitWords text="Focused software" immediate delay={0.05} />
             <br />
-            <SplitWords text="crafted for" immediate delay={0.3} className="text-zinc-400" />{' '}
-            <motion.span
-              initial={reduce ? false : { opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.5, ease: EASE }}
-              className="inline-block"
-            >
+            <SplitWords text="crafted for" immediate delay={0.18} className="text-zinc-400" />{' '}
+            <FadeIn as="span" delay={0.35} y={30} className="inline-block">
               <span className="sr-only">difficult workflows.</span>
               <span aria-hidden="true" className="font-display italic font-normal tracking-[-0.02em]">
                 <RotatingWord words={AUDIENCES} wordClassName="gradient-text gradient-shimmer pr-[0.08em]" />
               </span>
-            </motion.span>
+            </FadeIn>
           </h1>
 
-          <motion.p
-            {...fade(0.7)}
+          <FadeIn
+            as="p"
+            delay={0.25}
             className="mt-7 text-base sm:text-xl text-zinc-400 leading-relaxed max-w-2xl mx-auto"
           >
             Tendercraft turns high-friction manual work into fast, reliable products — desktop agents,
             browser extensions, business platforms and apps people actually enjoy using.
-          </motion.p>
+          </FadeIn>
 
           {/* CTAs */}
-          <motion.div {...fade(0.85)} className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+          <FadeIn delay={0.4} className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <Magnetic>
               <Link
                 href="/work"
@@ -109,18 +97,11 @@ export function HeroMotion() {
                 Start a project
               </Link>
             </Magnetic>
-          </motion.div>
+          </FadeIn>
         </div>
 
         {/* 3D product stage */}
-        <motion.div
-          ref={stageRef}
-          initial={reduce ? false : { opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 0.6, ease: EASE }}
-          className="relative mt-16 sm:mt-24"
-          style={{ perspective: 1600 }}
-        >
+        <div ref={stageRef} className="fade-in relative mt-16 sm:mt-24" style={{ perspective: 1600, ['--d' as string]: '0.45s', ['--y' as string]: '60px' }}>
           <motion.div
             style={reduce ? undefined : { rotateX, scale, transformOrigin: 'center top' }}
             className="relative mx-auto max-w-5xl"
@@ -156,7 +137,7 @@ export function HeroMotion() {
                 <span className="h-2.5 w-2.5 rounded-full bg-coral/80" />
                 <span className="h-2.5 w-2.5 rounded-full bg-[#FFC857]/80" />
                 <span className="h-2.5 w-2.5 rounded-full bg-mint/80" />
-                <span className="ml-3 hidden sm:inline font-mono text-[11px] text-zinc-500">beadle — admin console</span>
+                <span className="ml-3 hidden sm:inline font-mono text-[11px] text-zinc-400">beadle — admin console</span>
               </div>
               <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-ink-2">
                 <Image
@@ -172,35 +153,28 @@ export function HeroMotion() {
             </div>
 
             {/* Floating chips */}
-            <motion.div
-              initial={reduce ? false : { opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1.3, duration: 0.6, ease: EASE }}
-              className="absolute z-20 hidden sm:block sm:left-[6%] bottom-[14%] animate-float"
-            >
+            <FadeIn delay={1.1} className="absolute z-20 hidden sm:block sm:left-[6%] bottom-[14%]">
+              <div className="animate-float">
               <div className="glass rounded-2xl px-3.5 py-2.5 text-left shadow-xl bg-ink/60">
-                <p className="text-[10px] uppercase tracking-widest text-zinc-500 font-mono">Chrome Web Store</p>
+                <p className="text-[10px] uppercase tracking-widest text-zinc-400 font-mono">Chrome Web Store</p>
                 <p className="mt-0.5 flex items-center gap-1.5 text-sm font-semibold text-white">
                   <span className="h-1.5 w-1.5 rounded-full bg-mint shadow-[0_0_8px_#3DF2C0]" />2 extensions live
                 </p>
               </div>
-            </motion.div>
-            <motion.div
-              initial={reduce ? false : { opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1.45, duration: 0.6, ease: EASE }}
-              className="absolute z-20 hidden sm:block sm:right-[6%] top-[6%] animate-float"
-              style={{ animationDelay: '-3s' }}
-            >
+              </div>
+            </FadeIn>
+            <FadeIn delay={1.25} className="absolute z-20 hidden sm:block sm:right-[6%] top-[6%]">
+              <div className="animate-float" style={{ animationDelay: '-3s' }}>
               <div className="glass rounded-2xl px-3.5 py-2.5 text-left shadow-xl bg-ink/60">
-                <p className="text-[10px] uppercase tracking-widest text-zinc-500 font-mono">Built with</p>
+                <p className="text-[10px] uppercase tracking-widest text-zinc-400 font-mono">Built with</p>
                 <p className="mt-0.5 text-sm font-semibold text-white">
                   .NET 8 · SignalR <span className="text-coral">·</span> WPF
                 </p>
               </div>
-            </motion.div>
+              </div>
+            </FadeIn>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

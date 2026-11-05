@@ -5,6 +5,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { getSiteUrl } from "@/lib/site";
 import { AmbientEffects } from "@/components/motion/AmbientEffects";
+import { SmoothScroll } from "@/components/motion/SmoothScroll";
 
 const siteUrl = getSiteUrl();
 
@@ -120,9 +121,9 @@ export default function RootLayout({
     >
       <head>
         <script
-          // Apply the saved theme before first paint to avoid a flash.
+          // Before first paint: flag JS for scroll reveals and apply the saved theme.
           dangerouslySetInnerHTML={{
-            __html: `try{if(localStorage.getItem('tc-theme')==='light'){document.documentElement.classList.remove('dark')}}catch(e){}`,
+            __html: `document.documentElement.classList.add('js');try{if(localStorage.getItem('tc-theme')==='light'){document.documentElement.classList.remove('dark')}}catch(e){}`,
           }}
         />
         <script
@@ -141,6 +142,7 @@ export default function RootLayout({
           Skip to main content
         </a>
         <AmbientEffects />
+        <SmoothScroll />
         <Header />
         <main id="main-content" tabIndex={-1} className="flex-1 w-full outline-none">
           {children}

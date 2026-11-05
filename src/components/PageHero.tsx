@@ -1,5 +1,5 @@
 import React from 'react';
-import { Reveal, SplitWords } from '@/components/motion/primitives';
+import { FadeIn, SplitWords } from '@/components/motion/primitives';
 import { cn } from '@/lib/utils';
 
 interface PageHeroProps {
@@ -22,18 +22,18 @@ export function PageHero({ eyebrow, title, accent, description, align = 'left', 
     <section className="tc-auto relative -mt-24 pt-36 sm:pt-44 pb-4">
       <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[620px] overflow-hidden">
         <div className="absolute inset-0 bg-grid" />
-        <div className="absolute -top-40 left-[8%] h-[440px] w-[440px] rounded-full blur-[120px] animate-aurora" style={{ background: a }} />
+        <div className="absolute -top-40 left-[8%] h-[638px] w-[638px] orb animate-aurora" style={{ background: a }} />
         <div
-          className="absolute -top-16 right-[8%] h-[380px] w-[380px] rounded-full blur-[120px] animate-aurora"
+          className="absolute -top-16 right-[8%] h-[551px] w-[551px] orb animate-aurora"
           style={{ background: b, animationDelay: '-7s' }}
         />
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-ink" />
       </div>
       <div className={cn('w-full max-w-6xl mx-auto px-5 sm:px-8', center && 'text-center')}>
         <div className={cn('max-w-4xl space-y-6', center && 'mx-auto')}>
-          <Reveal>
+          <FadeIn>
             <p className="font-mono text-xs uppercase tracking-[0.25em] text-mint">( {eyebrow} )</p>
-          </Reveal>
+          </FadeIn>
           <h1 className="text-[2.6rem] sm:text-7xl lg:text-[5.25rem] font-semibold tracking-[-0.045em] text-white leading-[1]">
             <SplitWords text={title} immediate />
             {accent && (
@@ -46,13 +46,13 @@ export function PageHero({ eyebrow, title, accent, description, align = 'left', 
             )}
           </h1>
           {description && (
-            <Reveal delay={0.25}>
+            <FadeIn delay={0.25}>
               <div className={cn('text-lg sm:text-xl text-zinc-400 leading-relaxed max-w-3xl', center && 'mx-auto')}>
                 {description}
               </div>
-            </Reveal>
+            </FadeIn>
           )}
-          {children && <Reveal delay={0.35}>{children}</Reveal>}
+          {children && <FadeIn delay={0.35}>{children}</FadeIn>}
         </div>
       </div>
     </section>
