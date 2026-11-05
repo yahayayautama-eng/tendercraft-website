@@ -111,7 +111,7 @@ function StackCard({
               />
               <div className="relative">
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-xs text-zinc-500">
+                  <span className="font-mono text-xs text-zinc-400">
                     {String(index + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
                   </span>
                   <span

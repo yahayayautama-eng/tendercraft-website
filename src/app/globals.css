@@ -427,3 +427,83 @@ html:not(.dark) .gradient-text {
   transform: none;
   filter: none;
 }
+
+/* ------------------------------------------------------------------
+   Render-safe motion
+   Above-the-fold entrances are pure CSS so content paints immediately
+   (no waiting for JavaScript). Scroll-triggered entrances only hide
+   content once <html> has the `js` class, so no-JS visitors and
+   crawlers always see everything.
+------------------------------------------------------------------- */
+/* Entrances start at 1% opacity (visually identical to 0) so the browser
+   counts the content as painted immediately — keeps LCP at first paint. */
+@keyframes tc-fade-up {
+  from {
+    opacity: 0.01;
+    transform: translate3d(0, var(--y, 18px), 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes tc-word-up {
+  from {
+    opacity: 0.01;
+    transform: translate3d(0, 100%, 0) rotate(3deg);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.fade-in {
+  animation: tc-fade-up 0.9s var(--ease-apple) var(--d, 0s) both;
+}
+
+/* Kinetic headline words */
+.split-word {
+  display: inline-block;
+}
+.split.in .split-word {
+  animation: tc-word-up 0.9s var(--ease-apple) var(--d, 0s) both;
+}
+.js .split:not(.in) .split-word {
+  transform: translate3d(0, 110%, 0) rotate(4deg);
+}
+
+/* Framer-driven reveals: never leave content hidden without JS */
+html:not(.js) [data-reveal] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Soft glow orbs: a radial mask instead of a huge blur filter keeps
+   the moving aurora on the GPU compositor (no per-frame blur). */
+.orb {
+  border-radius: 9999px;
+  -webkit-mask-image: radial-gradient(closest-side, #000 0%, rgba(0, 0, 0, 0.55) 45%, transparent 100%);
+  mask-image: radial-gradient(closest-side, #000 0%, rgba(0, 0, 0, 0.55) 45%, transparent 100%);
+  will-change: transform;
+}
+
+/* Smooth scrolling (Lenis) */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+/* Page transition on client-side navigation */
+.page-enter {
+  animation: tc-fade-up 0.6s var(--ease-apple) both;
+  --y: 14px;
+}

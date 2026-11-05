@@ -8,7 +8,7 @@ import { SectionWrapper } from '@/components/SectionWrapper';
 import { MotionEmailBadge } from '@/components/MotionEmailBadge';
 import { getSiteUrl } from '@/lib/site';
 import { ArrowLeft, ExternalLink, ArrowRight, ArrowUpRight } from 'lucide-react';
-import { Reveal, SplitWords } from '@/components/motion/primitives';
+import { FadeIn, Reveal, SplitWords } from '@/components/motion/primitives';
 import { CaseVisual } from '@/components/work/CaseVisual';
 import { accentForSlug, accentStyle } from '@/lib/accents';
 
@@ -90,13 +90,13 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       <section className="relative -mt-24 pt-32 sm:pt-40">
         <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[760px] overflow-hidden">
           <div className="absolute inset-0 bg-grid" />
-          <div className="absolute -top-48 left-[5%] h-[520px] w-[520px] rounded-full blur-[130px] animate-aurora" style={{ background: accent.soft }} />
-          <div className="absolute -top-10 right-[5%] h-[380px] w-[380px] rounded-full bg-violet/20 blur-[130px] animate-aurora" style={{ animationDelay: '-8s' }} />
+          <div className="absolute -top-48 left-[5%] h-[754px] w-[754px] orb animate-aurora" style={{ background: accent.soft }} />
+          <div className="absolute -top-10 right-[5%] h-[551px] w-[551px] orb bg-violet/20 animate-aurora" style={{ animationDelay: '-8s' }} />
           <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-b from-transparent to-ink" />
         </div>
 
         <SectionWrapper size="lg">
-          <Reveal>
+          <FadeIn>
             <Link
               href="/work"
               className="group inline-flex items-center gap-2 min-h-[44px] font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-md"
@@ -106,25 +106,25 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               </span>
               All work
             </Link>
-          </Reveal>
+          </FadeIn>
 
           <div className="mt-8 grid lg:grid-cols-[1.3fr_0.7fr] gap-10 lg:gap-16 items-end">
             <div className="space-y-6">
-              <Reveal delay={0.05}>
+              <FadeIn delay={0.05}>
                 <span className="glass inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs font-medium text-zinc-200">
                   <span className="h-1.5 w-1.5 rounded-full" style={{ background: accent.hex, boxShadow: `0 0 10px ${accent.hex}` }} />
                   {project.statusLabel}
                 </span>
-              </Reveal>
+              </FadeIn>
               <h1 className="text-6xl sm:text-8xl lg:text-[7.5rem] font-semibold tracking-[-0.055em] text-white leading-[0.92]">
                 <SplitWords text={project.name} immediate delay={0.1} />
               </h1>
-              <Reveal delay={0.3}>
+              <FadeIn delay={0.3}>
                 <p className="text-xl sm:text-2xl text-zinc-300 max-w-2xl leading-snug">{project.tagline}</p>
-              </Reveal>
+              </FadeIn>
             </div>
 
-            <Reveal delay={0.4} className="space-y-5">
+            <FadeIn delay={0.4} className="space-y-5">
               <div className="flex flex-wrap gap-1.5">
                 {project.technology.map((tech) => (
                   <span key={tech} className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-zinc-300">
@@ -156,7 +156,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                   )}
                 </div>
               )}
-            </Reveal>
+            </FadeIn>
           </div>
 
           <CaseVisual
@@ -188,7 +188,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                       <h2 className="font-mono text-[11px] uppercase tracking-[0.2em]" style={{ color: i === 0 ? 'var(--tc-coral-text)' : accent.light }}>
                         {b.k}
                       </h2>
-                      <span className="font-mono text-xs text-zinc-600">{b.n}</span>
+                      <span className="font-mono text-xs text-zinc-400">{b.n}</span>
                     </div>
                     <p className="mt-8 text-lg sm:text-xl text-zinc-200 leading-relaxed">{b.body}</p>
                   </div>
@@ -215,7 +215,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               </h2>
               <Reveal delay={0.15}>
                 <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
-                  <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-500">Current delivery state</p>
+                  <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-400">Current delivery state</p>
                   <p className="mt-2 flex items-center gap-2 text-sm font-semibold text-white">
                     <span className="h-1.5 w-1.5 rounded-full" style={{ background: accent.hex }} />
                     {project.statusLabel}
@@ -309,7 +309,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                 />
                 <div className="relative z-[3] flex flex-col sm:flex-row sm:items-end justify-between gap-8">
                   <div>
-                    <p className="font-mono text-xs uppercase tracking-[0.25em] text-zinc-500">Next case study</p>
+                    <p className="font-mono text-xs uppercase tracking-[0.25em] text-zinc-400">Next case study</p>
                     <p className="mt-4 text-5xl sm:text-7xl font-semibold tracking-[-0.05em] text-white transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-2">
                       {next.name}
                     </p>

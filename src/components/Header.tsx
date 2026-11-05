@@ -36,12 +36,10 @@ export function Header() {
 
   return (
     <header className="tc-auto sticky top-0 z-50 w-full px-3 sm:px-6 pt-3 sm:pt-4">
-      <motion.div
-        initial={reduce ? false : { y: -24, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      <div
+        style={{ ['--y' as string]: '-20px' }}
         className={cn(
-          'mx-auto max-w-6xl h-14 sm:h-16 rounded-2xl pl-3 pr-2 sm:pl-4 flex items-center justify-between transition-all duration-500',
+          'fade-in mx-auto max-w-6xl h-14 sm:h-16 rounded-2xl pl-3 pr-2 sm:pl-4 flex items-center justify-between transition-all duration-500',
           scrolled || mobileMenuOpen
             ? 'glass bg-ink/75 shadow-[0_8px_40px_-12px_rgba(124,92,255,0.35)]'
             : 'border border-transparent'
@@ -134,7 +132,7 @@ export function Header() {
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
         </div>
-      </motion.div>
+      </div>
 
       {/* Mobile drawer */}
       <AnimatePresence>
@@ -166,7 +164,7 @@ export function Header() {
                       )}
                     >
                       <span className="flex items-center gap-3">
-                        <span className="font-mono text-[11px] text-zinc-500">0{i + 1}</span>
+                        <span className="font-mono text-[11px] text-zinc-400">0{i + 1}</span>
                         {item.label}
                       </span>
                       {active ? (

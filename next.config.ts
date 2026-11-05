@@ -16,6 +16,10 @@ const cspHeader = `
 
 const nextConfig: NextConfig = {
   outputFileTracingRoot: path.join(__dirname),
+  experimental: {
+    // Inline the stylesheet into the HTML so first paint never waits on a CSS request.
+    inlineCss: true,
+  },
   images: {
     formats: ["image/avif", "image/webp"],
   },

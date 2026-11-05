@@ -136,7 +136,7 @@ export function Capabilities() {
                     >
                       <c.icon className="h-5 w-5" />
                     </div>
-                    <p className="mt-10 font-mono text-xs text-zinc-500">0{i + 1}</p>
+                    <p className="mt-10 font-mono text-xs text-zinc-400">0{i + 1}</p>
                     <h3 className="mt-1 text-2xl font-semibold tracking-tight text-white">{c.title}</h3>
                     <p className="mt-3 text-sm text-zinc-400 leading-relaxed">{c.body}</p>
                     <div className="mt-6 flex flex-wrap gap-1.5">
@@ -209,7 +209,7 @@ export function Process() {
                   <span className="absolute left-0 md:static flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-ink font-mono text-xs text-white shadow-[0_0_0_6px_var(--color-ink)]">
                     0{i + 1}
                   </span>
-                  <p className="md:mt-8 font-mono text-[11px] uppercase tracking-[0.25em] text-zinc-500">{s.k}</p>
+                  <p className="md:mt-8 font-mono text-[11px] uppercase tracking-[0.25em] text-zinc-400">{s.k}</p>
                   <h3 className="mt-2 text-xl font-semibold text-white tracking-tight">{s.title}</h3>
                   <p className="mt-2 text-sm text-zinc-400 leading-relaxed">{s.body}</p>
                 </div>
@@ -232,7 +232,7 @@ export function ClosingCta() {
         <Reveal>
           <div className="relative overflow-hidden rounded-[2.25rem] border border-white/10 bg-ink-2 px-6 py-16 sm:px-14 sm:py-24 text-center">
             <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-              <div className="absolute left-1/2 top-full h-[720px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[conic-gradient(from_0deg,#7C5CFF,#3DF2C0,#FF6B57,#7C5CFF)] opacity-40 blur-[90px] animate-spin-slow" />
+              <div className="absolute left-1/2 top-full h-[1044px] w-[1044px] -translate-x-1/2 -translate-y-1/2 orb bg-[conic-gradient(from_0deg,#7C5CFF,#3DF2C0,#FF6B57,#7C5CFF)] opacity-40 animate-spin-slow" />
               <div className="absolute inset-0 bg-grid opacity-60" />
             </div>
 
