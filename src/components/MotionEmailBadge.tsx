@@ -38,31 +38,31 @@ export function MotionEmailBadge({
 
   const containerClasses = {
     default:
-      'bg-zinc-100/90 dark:bg-white/[0.05] border-black/[0.08] dark:border-white/[0.1] hover:border-black/[0.15] dark:hover:border-white/[0.2]',
+      'bg-white/[0.05] border-white/[0.1] hover:border-white/[0.2]',
     dark: 'bg-white/10 border-white/15 hover:border-white/30 text-white',
     glass:
-      'bg-white/70 dark:bg-white/[0.04] backdrop-blur-md border-black/[0.06] dark:border-white/[0.08] hover:border-black/[0.12] dark:hover:border-white/[0.18]',
+      'bg-white/[0.04] backdrop-blur-md border-white/[0.08] hover:border-white/[0.18]',
   }[variant];
 
   const linkTextClasses = {
     default:
-      'text-zinc-900 dark:text-zinc-100 hover:text-blue-600 dark:hover:text-blue-400',
-    dark: 'text-white hover:text-blue-300',
+      'text-zinc-100 hover:text-[var(--tc-violet-text)]',
+    dark: 'text-white hover:text-[var(--tc-violet-text)]',
     glass:
-      'text-zinc-900 dark:text-zinc-100 hover:text-blue-600 dark:hover:text-blue-400',
+      'text-zinc-100 hover:text-[var(--tc-violet-text)]',
   }[variant];
 
   const buttonClasses = {
     default:
-      'text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white bg-white dark:bg-ink-2 border-black/[0.06] dark:border-white/[0.08]',
+      'text-zinc-300 hover:text-white bg-ink-2 border-white/[0.08]',
     dark: 'text-zinc-200 hover:text-white bg-white/10 border-white/15 hover:bg-white/20',
     glass:
-      'text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white bg-white/80 dark:bg-white/10 border-black/[0.06] dark:border-white/[0.08]',
+      'text-zinc-300 hover:text-white bg-white/10 border-white/[0.08]',
   }[variant];
 
   return (
     <div
-      className={`inline-flex items-center gap-2 p-1 sm:p-1.5 rounded-2xl border transition-all ${containerClasses} ${className}`}
+      className={`tc-auto inline-flex items-center gap-2 p-1 sm:p-1.5 rounded-2xl border transition-all ${containerClasses} ${className}`}
     >
       <a
         href={`mailto:${email}`}
@@ -72,8 +72,8 @@ export function MotionEmailBadge({
         <Mail
           className={`shrink-0 ${isSmall ? 'w-3.5 h-3.5' : 'w-4 h-4'} ${
             variant === 'dark'
-              ? 'text-blue-400'
-              : 'text-blue-600 dark:text-blue-400'
+              ? 'text-[var(--tc-violet-text)]'
+              : 'text-[var(--tc-violet-text)]'
           }`}
           aria-hidden="true"
         />
@@ -110,7 +110,7 @@ export function MotionEmailBadge({
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.15 }}
-                className="inline-flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-sans font-medium"
+                className="inline-flex items-center gap-1 text-emerald-400 font-sans font-medium"
               >
                 <Check className="w-3.5 h-3.5 shrink-0 stroke-[2.5]" />
                 <span className="text-[11px] hidden sm:inline">Copied</span>

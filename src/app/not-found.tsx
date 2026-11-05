@@ -5,7 +5,7 @@ import { Reveal } from '@/components/motion/primitives';
 
 export default function NotFound() {
   return (
-    <div className="relative -mt-24 min-h-[92vh] flex items-center justify-center overflow-hidden pt-32 pb-24">
+    <div className="tc-auto relative -mt-24 min-h-[92vh] flex items-center justify-center overflow-hidden pt-32 pb-24">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-grid" />
         <div className="absolute left-1/2 top-1/2 h-[560px] w-[560px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[conic-gradient(from_0deg,#7C5CFF,#3DF2C0,#FF6B57,#7C5CFF)] opacity-25 blur-[110px] animate-spin-slow" />

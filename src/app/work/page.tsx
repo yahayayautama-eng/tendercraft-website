@@ -55,7 +55,7 @@ export default async function WorkPage() {
   }));
 
   return (
-    <div className="relative -mt-24 pt-36 sm:pt-44 pb-24 space-y-16">
+    <div className="tc-auto relative -mt-24 pt-36 sm:pt-44 pb-24 space-y-16">
       <SectionWrapper size="lg">
         {/* Page Heading */}
         <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[520px] overflow-hidden">

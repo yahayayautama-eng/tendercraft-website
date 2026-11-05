@@ -26,7 +26,7 @@ export default async function HomePage() {
   ).filter((t) => t !== 'Chrome Web Store');
 
   return (
-    <div className="space-y-28 sm:space-y-40 pb-28">
+    <div className="tc-auto space-y-28 sm:space-y-40 pb-28">
       <HeroMotion />
 
       <StatsTicker technologies={technologies} caseStudies={allProjects.length} />

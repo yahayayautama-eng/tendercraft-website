@@ -19,7 +19,7 @@ export function PageHero({ eyebrow, title, accent, description, align = 'left', 
   const [a, b] = glow ?? ['rgba(124,92,255,0.32)', 'rgba(61,242,192,0.2)'];
   const center = align === 'center';
   return (
-    <section className="relative -mt-24 pt-36 sm:pt-44 pb-4">
+    <section className="tc-auto relative -mt-24 pt-36 sm:pt-44 pb-4">
       <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[620px] overflow-hidden">
         <div className="absolute inset-0 bg-grid" />
         <div className="absolute -top-40 left-[8%] h-[440px] w-[440px] rounded-full blur-[120px] animate-aurora" style={{ background: a }} />

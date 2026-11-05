@@ -25,12 +25,12 @@
   --color-blue-900: #3A2690;
   --color-blue-950: #1D1452;
 
-  --color-violet: #7C5CFF;
-  --color-mint: #3DF2C0;
-  --color-coral: #FF6B57;
-  --color-ink: #07070B;
-  --color-ink-2: #0E0E15;
-  --color-ink-3: #15151F;
+  --color-violet: var(--tc-violet);
+  --color-mint: var(--tc-mint);
+  --color-coral: var(--tc-coral);
+  --color-ink: var(--tc-ink);
+  --color-ink-2: var(--tc-ink-2);
+  --color-ink-3: var(--tc-ink-3);
 
   --font-display: var(--font-instrument-serif), ui-serif, Georgia, serif;
 
@@ -66,7 +66,7 @@
 
 :root {
   /* Tendercraft Design Tokens (Light First) */
-  --background: #FFFFFF;
+  --background: #F7F6F2;
   --foreground: #0B101D;
   
   --accent-blue: #7C5CFF;
@@ -112,6 +112,61 @@
   --duration-card: 250ms;
   --ease-apple: cubic-bezier(0.16, 1, 0.3, 1);
   --transition-apple: all var(--duration-standard) var(--ease-apple);
+}
+
+/* ------------------------------------------------------------------
+   Theme tokens. Dark is the signature look; light is opt-in via the
+   header toggle (persisted in localStorage as "tc-theme").
+------------------------------------------------------------------- */
+:root {
+  --tc-violet: #6B4BF5;
+  --tc-mint: #0C9C79;
+  --tc-coral: #E5543F;
+  --tc-violet-text: #5B3ED9;
+  --tc-mint-text: #0A8566;
+  --tc-coral-text: #CF432E;
+  --tc-ink: #F7F6F2;
+  --tc-ink-2: #FFFFFF;
+  --tc-ink-3: #EFEEF3;
+  --tc-grid-line: rgba(11, 11, 18, 0.06);
+  --tc-glass-from: rgba(255, 255, 255, 0.82);
+  --tc-glass-to: rgba(255, 255, 255, 0.6);
+  --tc-glass-border: rgba(11, 11, 18, 0.08);
+  --tc-grain: 0.035;
+}
+html.dark {
+  --tc-violet: #7C5CFF;
+  --tc-mint: #3DF2C0;
+  --tc-coral: #FF6B57;
+  --tc-violet-text: #A08AFF;
+  --tc-mint-text: #7DF7D6;
+  --tc-coral-text: #FF9A8B;
+  --tc-ink: #07070B;
+  --tc-ink-2: #0E0E15;
+  --tc-ink-3: #15151F;
+  --tc-grid-line: rgba(255, 255, 255, 0.045);
+  --tc-glass-from: rgba(255, 255, 255, 0.06);
+  --tc-glass-to: rgba(255, 255, 255, 0.02);
+  --tc-glass-border: rgba(255, 255, 255, 0.09);
+  --tc-grain: 0.05;
+}
+
+/* Components marked .tc-auto are authored dark-first. In light mode their
+   neutral scale is mirrored so the same classes produce a light design. */
+html:not(.dark) .tc-auto {
+  --color-white: #0B0B12;
+  --color-black: #FFFFFF;
+  --color-zinc-50: oklch(14.1% 0.005 285.823);
+  --color-zinc-100: oklch(21% 0.006 285.885);
+  --color-zinc-200: oklch(27.4% 0.006 286.033);
+  --color-zinc-300: oklch(34% 0.013 285.805);
+  --color-zinc-400: oklch(44.2% 0.017 285.786);
+  --color-zinc-500: oklch(52% 0.016 285.938);
+  --color-zinc-600: oklch(70.5% 0.015 286.067);
+  --color-zinc-700: oklch(87.1% 0.006 286.286);
+  --color-zinc-800: oklch(92% 0.004 286.32);
+  --color-zinc-900: oklch(96.7% 0.001 286.375);
+  --color-zinc-950: oklch(98.5% 0 none);
 }
 
 html.dark {
@@ -249,7 +304,7 @@ body {
   inset: -50%;
   z-index: 60;
   pointer-events: none;
-  opacity: 0.05;
+  opacity: var(--tc-grain);
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
 }
 
@@ -269,8 +324,8 @@ body {
 /* Hairline grid used behind hero sections */
 .bg-grid {
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+    linear-gradient(to right, var(--tc-grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--tc-grid-line) 1px, transparent 1px);
   background-size: 64px 64px;
   mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 30%, transparent 100%);
 }
@@ -278,8 +333,8 @@ body {
 /* Glass panels (layered so utilities like bg-ink/75 can override) */
 @layer components {
 .glass {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: linear-gradient(180deg, var(--tc-glass-from), var(--tc-glass-to));
+  border: 1px solid var(--tc-glass-border);
   backdrop-filter: blur(18px) saturate(140%);
   -webkit-backdrop-filter: blur(18px) saturate(140%);
 }
@@ -346,6 +401,10 @@ body {
 
 .mask-fade-x {
   mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+}
+
+html:not(.dark) .gradient-text {
+  background-image: linear-gradient(100deg, #6B4BF5 0%, #0C9C79 45%, #E5543F 90%, #6B4BF5 130%);
 }
 
 .text-outline {

@@ -31,7 +31,7 @@ export function ProjectCard({ project, priority = false, className }: ProjectCar
       href={`/work/${project.slug}`}
       style={projectStyle}
       className={cn(
-        'spotlight group relative flex h-full flex-col rounded-[1.75rem] bg-ink-2 border border-white/10 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:shadow-[0_30px_80px_-30px_rgba(124,92,255,0.55)] motion-reduce:hover:translate-y-0 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint focus-visible:ring-offset-2 focus-visible:ring-offset-ink',
+        'tc-auto spotlight group relative flex h-full flex-col rounded-[1.75rem] bg-ink-2 border border-white/10 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:shadow-[0_30px_80px_-30px_rgba(124,92,255,0.55)] motion-reduce:hover:translate-y-0 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint focus-visible:ring-offset-2 focus-visible:ring-offset-ink',
         className
       )}
     >
@@ -50,7 +50,7 @@ export function ProjectCard({ project, priority = false, className }: ProjectCar
         {/* Status Chip */}
         <div className="absolute top-3.5 left-3.5 sm:top-4 sm:left-4">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wide bg-ink/70 text-zinc-100 backdrop-blur-md border border-white/15">
-            <span className="w-1.5 h-1.5 rounded-full bg-[var(--project-accent)] dark:bg-[var(--project-accent-fg-dark)] shrink-0" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[var(--project-accent-fg-dark)] shrink-0" />
             <span>{project.statusLabel}</span>
           </span>
         </div>
@@ -60,24 +60,24 @@ export function ProjectCard({ project, priority = false, className }: ProjectCar
       <div className="relative z-[3] p-6 sm:p-7 flex flex-col flex-1 justify-between gap-5">
         <div className="space-y-2">
           <div className="flex items-center justify-between gap-2">
-            <span className="text-xs font-semibold uppercase tracking-wider text-[var(--project-accent)] dark:text-[var(--project-accent-fg-dark)] font-mono">
+            <span className="text-xs font-semibold uppercase tracking-wider text-[var(--project-accent-fg-dark)] font-mono">
               {project.category}
             </span>
             <div className="w-9 h-9 rounded-full flex items-center justify-center border border-white/10 text-zinc-300 group-hover:bg-white group-hover:text-ink group-hover:rotate-45 transition-all duration-500 shrink-0">
               <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transform-none" />
             </div>
           </div>
-          <h3 className="text-2xl sm:text-[1.75rem] font-semibold tracking-[-0.03em] text-zinc-900 dark:text-zinc-100 group-hover:text-[var(--project-accent)] dark:group-hover:text-[var(--project-accent-fg-dark)] transition-colors duration-200">
+          <h3 className="text-2xl sm:text-[1.75rem] font-semibold tracking-[-0.03em] text-zinc-100 group-hover:text-[var(--project-accent-fg-dark)] transition-colors duration-200">
             {project.name}
           </h3>
-          <p className="text-sm text-zinc-600 dark:text-zinc-300 line-clamp-2 leading-relaxed">
+          <p className="text-sm text-zinc-300 line-clamp-2 leading-relaxed">
             {project.tagline}
           </p>
         </div>
 
         {/* Capabilities */}
         {project.capabilities && project.capabilities.length > 0 && (
-          <div className="flex flex-wrap gap-1.5 pt-3 border-t border-black/[0.04] dark:border-white/[0.07]">
+          <div className="flex flex-wrap gap-1.5 pt-3 border-t border-white/[0.07]">
             {project.capabilities.slice(0, 3).map((cap, i) => (
               <span
                 key={i}

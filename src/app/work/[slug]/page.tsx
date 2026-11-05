@@ -85,7 +85,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
     'group inline-flex items-center gap-2 min-h-[48px] rounded-full text-sm font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-ink';
 
   return (
-    <div style={accentStyle(accent)} className="pb-28 space-y-24 sm:space-y-36">
+    <div style={accentStyle(accent)} className="tc-auto pb-28 space-y-24 sm:space-y-36">
       {/* Hero */}
       <section className="relative -mt-24 pt-32 sm:pt-40">
         <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[760px] overflow-hidden">
@@ -185,7 +185,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                   />
                   <div className="relative z-[3]">
                     <div className="flex items-center justify-between">
-                      <h2 className="font-mono text-[11px] uppercase tracking-[0.2em]" style={{ color: i === 0 ? '#FF9A8B' : accent.light }}>
+                      <h2 className="font-mono text-[11px] uppercase tracking-[0.2em]" style={{ color: i === 0 ? 'var(--tc-coral-text)' : accent.light }}>
                         {b.k}
                       </h2>
                       <span className="font-mono text-xs text-zinc-600">{b.n}</span>
@@ -231,7 +231,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                     <div className="spotlight group relative flex gap-5 overflow-hidden rounded-2xl border border-white/10 bg-ink-2 p-5 sm:p-6">
                       <span
                         className="relative z-[3] flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/10 font-mono text-xs transition-transform duration-500 group-hover:scale-110"
-                        style={{ color: accent.light, background: accent.soft.replace(/0\.\d+\)$/, '0.12)') }}
+                        style={{ color: accent.light, background: accent.tint }}
                       >
                         {String(i + 1).padStart(2, '0')}
                       </span>

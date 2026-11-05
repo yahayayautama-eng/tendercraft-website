@@ -100,7 +100,7 @@ export const metadata: Metadata = {
 
 export const viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#07070B' },
+    { media: '(prefers-color-scheme: light)', color: '#F7F6F2' },
     { media: '(prefers-color-scheme: dark)', color: '#07070B' },
   ],
   width: 'device-width',
@@ -115,9 +115,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`dark ${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} h-full antialiased`}
     >
       <head>
+        <script
+          // Apply the saved theme before first paint to avoid a flash.
+          dangerouslySetInnerHTML={{
+            __html: `try{if(localStorage.getItem('tc-theme')==='light'){document.documentElement.classList.remove('dark')}}catch(e){}`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -129,7 +136,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="grain min-h-full flex flex-col bg-ink text-[#F5F4FA]">
+      <body className="grain min-h-full flex flex-col bg-ink text-[var(--foreground)]">
         <a href="#main-content" className="skip-to-content">
           Skip to main content
         </a>

@@ -74,7 +74,7 @@ export function WorkGallery({ projects }: WorkGalleryProps) {
       <div
         role="tablist"
         aria-label="Filter projects by category"
-        className="flex flex-wrap items-center gap-1.5 sm:gap-2 p-1.5 rounded-2xl bg-zinc-100/80 dark:bg-white/[0.04] border border-black/[0.04] dark:border-white/[0.06] max-w-fit"
+        className="flex flex-wrap items-center gap-1.5 sm:gap-2 p-1.5 rounded-2xl bg-white/[0.04] border border-white/[0.06] max-w-fit"
       >
         {CATEGORIES.map((cat) => {
           const isSelected = selectedCategory === cat.id;
@@ -90,7 +90,7 @@ export function WorkGallery({ projects }: WorkGalleryProps) {
               {isSelected && (
                 <motion.div
                   layoutId="activeFilterTabBackground"
-                  className="absolute inset-0 bg-white dark:bg-ink-2 rounded-xl shadow-xs border border-black/[0.06] dark:border-white/[0.1]"
+                  className="absolute inset-0 bg-ink-2 rounded-xl shadow-xs border border-white/[0.1]"
                   transition={
                     shouldReduceMotion
                       ? { duration: 0 }
@@ -101,8 +101,8 @@ export function WorkGallery({ projects }: WorkGalleryProps) {
               <span
                 className={`relative z-10 transition-colors ${
                   isSelected
-                    ? 'text-blue-600 dark:text-blue-400 font-bold'
-                    : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white'
+                    ? 'text-[var(--tc-violet-text)] font-bold'
+                    : 'text-zinc-400 hover:text-white'
                 }`}
               >
                 {cat.label}
@@ -110,8 +110,8 @@ export function WorkGallery({ projects }: WorkGalleryProps) {
               <span
                 className={`relative z-10 text-[11px] font-mono px-1.5 py-0.5 rounded-full transition-colors ${
                   isSelected
-                    ? 'bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400'
-                    : 'bg-black/[0.05] dark:bg-white/[0.08] text-zinc-500 dark:text-zinc-400'
+                    ? 'bg-violet/15 text-[var(--tc-violet-text)]'
+                    : 'bg-white/[0.08] text-zinc-400'
                 }`}
               >
                 {count}
@@ -129,11 +129,11 @@ export function WorkGallery({ projects }: WorkGalleryProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={shouldReduceMotion ? undefined : { opacity: 0, y: -6 }}
             transition={{ duration: 0.2 }}
-            className="p-4 sm:p-5 rounded-2xl bg-blue-50/70 dark:bg-blue-950/20 border border-blue-200/60 dark:border-blue-900/40 flex items-start gap-3"
+            className="p-4 sm:p-5 rounded-2xl bg-violet/10 border border-violet/30 flex items-start gap-3"
           >
-            <Sparkles className="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
-            <div className="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
-              <span className="font-semibold text-zinc-900 dark:text-zinc-100">
+            <Sparkles className="w-5 h-5 text-[var(--tc-violet-text)] shrink-0 mt-0.5" />
+            <div className="text-sm text-zinc-300 leading-relaxed">
+              <span className="font-semibold text-zinc-100">
                 Completed & Shipped Chrome Extensions:
               </span>{' '}
               These browser extensions are published and active in the official

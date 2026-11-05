@@ -72,28 +72,28 @@ const CAPABILITIES = [
     icon: Layers,
     title: 'Business web apps',
     body: 'Single-purpose platforms for complex operational flows, compliance registers and multi-tenant ledgers.',
-    color: '#7C5CFF',
+    color: 'var(--tc-violet)',
     tags: ['React 19', 'Next.js', 'PostgreSQL'],
   },
   {
     icon: Terminal,
     title: 'Browser extensions',
     body: 'Contextual overlays injected straight into load boards, dashboards and e-commerce checkouts.',
-    color: '#3DF2C0',
+    color: 'var(--tc-mint)',
     tags: ['Manifest V3', 'TypeScript'],
   },
   {
     icon: Cpu,
     title: 'Desktop tools',
     body: 'Native Windows services, tray daemons and GPO-deployable MSI packages built on .NET and WinUI.',
-    color: '#FF6B57',
+    color: 'var(--tc-coral)',
     tags: ['.NET 8', 'WPF', 'WinUI 3'],
   },
   {
     icon: ShieldCheck,
     title: 'Continuous automation',
     body: 'Extraction pipelines, event webhooks and reconciliation jobs that keep running when nobody is watching.',
-    color: '#A08AFF',
+    color: 'var(--tc-violet-text)',
     tags: ['Webhooks', 'Pipelines'],
   },
 ];
@@ -132,7 +132,7 @@ export function Capabilities() {
                   <div className="relative z-[3]">
                     <div
                       className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110"
-                      style={{ background: `${c.color}1f`, color: c.color }}
+                      style={{ background: `color-mix(in oklab, ${c.color} 12%, transparent)`, color: c.color }}
                     >
                       <c.icon className="h-5 w-5" />
                     </div>
@@ -206,7 +206,7 @@ export function Process() {
             {STEPS.map((s, i) => (
               <Reveal key={s.k} delay={i * 0.12} className="relative pl-14 md:pl-0" role="listitem">
                 <div>
-                  <span className="absolute left-0 md:static flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-ink font-mono text-xs text-white shadow-[0_0_0_6px_#07070B]">
+                  <span className="absolute left-0 md:static flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-ink font-mono text-xs text-white shadow-[0_0_0_6px_var(--color-ink)]">
                     0{i + 1}
                   </span>
                   <p className="md:mt-8 font-mono text-[11px] uppercase tracking-[0.25em] text-zinc-500">{s.k}</p>

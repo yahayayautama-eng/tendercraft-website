@@ -31,7 +31,7 @@ export function Footer() {
   const currentYear = 2026;
 
   return (
-    <footer className="relative w-full overflow-hidden border-t border-white/[0.08] bg-ink">
+    <footer className="tc-auto relative w-full overflow-hidden border-t border-white/[0.08] bg-ink">
       <div aria-hidden="true" className="pointer-events-none absolute -bottom-40 left-1/2 h-80 w-[90%] -translate-x-1/2 rounded-full bg-gradient-to-r from-violet/30 via-mint/15 to-coral/25 blur-[100px]" />
 
       <div className="relative max-w-6xl mx-auto px-5 sm:px-8 pt-20 sm:pt-24">
@@ -43,7 +43,8 @@ export function Footer() {
               className="inline-flex items-center relative h-8 w-44 min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet rounded-lg"
               aria-label="Tendercraft Home"
             >
-              <Image src="/brand/tendercraft-logo-dark.svg" alt="Tendercraft" fill className="object-contain object-left" />
+              <Image src="/brand/tendercraft-logo-light.svg" alt="Tendercraft" fill className="object-contain object-left dark:hidden" />
+              <Image src="/brand/tendercraft-logo-dark.svg" alt="Tendercraft" fill className="object-contain object-left hidden dark:block" />
             </Link>
             <p className="text-sm sm:text-base text-zinc-400 max-w-sm leading-relaxed">
               Focused software that turns difficult workflows into useful products. Native desktop tools, browser

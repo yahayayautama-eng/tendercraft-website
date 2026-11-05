@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 const NAV_ITEMS = [
   { href: '/work', label: 'Work' },
@@ -34,7 +35,7 @@ export function Header() {
   const isActive = (href: string) => pathname === href || (href !== '/' && pathname.startsWith(href));
 
   return (
-    <header className="sticky top-0 z-50 w-full px-3 sm:px-6 pt-3 sm:pt-4">
+    <header className="tc-auto sticky top-0 z-50 w-full px-3 sm:px-6 pt-3 sm:pt-4">
       <motion.div
         initial={reduce ? false : { y: -24, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -54,11 +55,18 @@ export function Header() {
         >
           <div className="relative h-7 w-36 sm:w-44 flex items-center">
             <Image
+              src="/brand/tendercraft-logo-light.svg"
+              alt="Tendercraft"
+              fill
+              priority
+              className="object-contain object-left dark:hidden"
+            />
+            <Image
               src="/brand/tendercraft-logo-dark.svg"
               alt="Tendercraft"
               fill
               priority
-              className="object-contain object-left"
+              className="object-contain object-left hidden dark:block"
             />
           </div>
         </Link>
@@ -100,7 +108,8 @@ export function Header() {
         </nav>
 
         {/* CTA */}
-        <div className="hidden lg:flex items-center">
+        <div className="hidden lg:flex items-center gap-2">
+          <ThemeToggle />
           <Link
             href="/contact"
             className="conic-border group rounded-xl p-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet"
@@ -112,16 +121,19 @@ export function Header() {
           </Link>
         </div>
 
-        {/* Mobile toggle */}
+        {/* Mobile toggles */}
+        <div className="lg:hidden flex items-center">
+        <ThemeToggle />
         <button
           type="button"
           onClick={() => setMobileMenuOpen((v) => !v)}
-          className="lg:hidden min-w-[44px] min-h-[44px] rounded-xl text-zinc-200 hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet inline-flex items-center justify-center transition-colors"
+          className="min-w-[44px] min-h-[44px] rounded-xl text-zinc-200 hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet inline-flex items-center justify-center transition-colors"
           aria-expanded={mobileMenuOpen}
           aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
+        </div>
       </motion.div>
 
       {/* Mobile drawer */}

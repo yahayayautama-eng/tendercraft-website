@@ -2,9 +2,9 @@ import type React from 'react';
 
 /** The three signature colours, cycled across projects so each case study has its own identity. */
 export const ACCENTS = [
-  { name: 'violet', hex: '#7C5CFF', light: '#A08AFF', soft: 'rgba(124,92,255,0.35)' },
-  { name: 'mint', hex: '#3DF2C0', light: '#7DF7D6', soft: 'rgba(61,242,192,0.28)' },
-  { name: 'coral', hex: '#FF6B57', light: '#FF9A8B', soft: 'rgba(255,107,87,0.3)' },
+  { name: 'violet', hex: 'var(--tc-violet)', light: 'var(--tc-violet-text)', soft: 'rgba(124,92,255,0.35)', tint: 'rgba(124,92,255,0.12)' },
+  { name: 'mint', hex: 'var(--tc-mint)', light: 'var(--tc-mint-text)', soft: 'rgba(61,242,192,0.28)', tint: 'rgba(61,242,192,0.12)' },
+  { name: 'coral', hex: 'var(--tc-coral)', light: 'var(--tc-coral-text)', soft: 'rgba(255,107,87,0.3)', tint: 'rgba(255,107,87,0.12)' },
 ] as const;
 
 export type Accent = (typeof ACCENTS)[number];
