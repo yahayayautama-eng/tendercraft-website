@@ -54,7 +54,7 @@ function LoginForm() {
   }
 
   return (
-    <div className="w-full max-w-md space-y-8 bg-white dark:bg-[#111726] p-8 sm:p-10 rounded-2xl border border-black/[0.08] dark:border-white/[0.08] shadow-xl">
+    <div className="w-full max-w-md space-y-8 bg-white dark:bg-ink-2 p-8 sm:p-10 rounded-2xl border border-black/[0.08] dark:border-white/[0.08] shadow-xl">
       <div className="text-center space-y-3">
         <div className="inline-flex relative h-8 w-44 mx-auto mb-2">
           <Image
@@ -101,7 +101,7 @@ function LoginForm() {
               required
               autoComplete="email"
               placeholder="yyautama@tendercrafthq.com"
-              className="w-full pl-10 pr-4 py-2.5 text-sm rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-[#161F33] text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all"
+              className="w-full pl-10 pr-4 py-2.5 text-sm rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-ink-3 text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all"
             />
             <Mail className="w-4 h-4 text-zinc-400 absolute left-3.5 top-3.5" />
           </div>
@@ -122,7 +122,7 @@ function LoginForm() {
               required
               autoComplete="current-password"
               placeholder="••••••••••••"
-              className="w-full pl-10 pr-4 py-2.5 text-sm rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-[#161F33] text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all"
+              className="w-full pl-10 pr-4 py-2.5 text-sm rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-ink-3 text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all"
             />
             <Lock className="w-4 h-4 text-zinc-400 absolute left-3.5 top-3.5" />
           </div>

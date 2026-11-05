@@ -135,7 +135,7 @@ export default async function AdminPreviewPage({ params }: PreviewPageProps) {
 
             {/* Sidebar Metadata */}
             <div className="lg:col-span-4 space-y-8">
-              <div className="p-6 rounded-2xl bg-zinc-50 dark:bg-[#111726] border border-black/[0.06] dark:border-white/[0.08] space-y-6">
+              <div className="p-6 rounded-2xl bg-zinc-50 dark:bg-ink-2 border border-black/[0.06] dark:border-white/[0.08] space-y-6">
                 <div>
                   <h3 className="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-3">
                     Technology & Systems
@@ -181,7 +181,7 @@ export default async function AdminPreviewPage({ params }: PreviewPageProps) {
                 {project.gallery.map((asset) => (
                   <div
                     key={asset.id}
-                    className="rounded-2xl overflow-hidden border border-black/[0.08] dark:border-white/[0.08] bg-zinc-50 dark:bg-[#111726] space-y-3 p-3 shadow-sm"
+                    className="rounded-2xl overflow-hidden border border-black/[0.08] dark:border-white/[0.08] bg-zinc-50 dark:bg-ink-2 space-y-3 p-3 shadow-sm"
                   >
                     <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-zinc-200 dark:bg-zinc-800">
                       <Image

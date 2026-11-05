@@ -1,5 +1,6 @@
 import React from 'react';
 import { SectionWrapper } from '@/components/SectionWrapper';
+import { PageHero } from '@/components/PageHero';
 import { ContactForm } from '@/components/ContactForm';
 import { MotionEmailBadge } from '@/components/MotionEmailBadge';
 import { getSiteUrl } from '@/lib/site';
@@ -34,29 +35,24 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="py-16 sm:py-24 space-y-16 sm:space-y-20 pb-24">
+    <div className="space-y-6 pb-24">
+      <PageHero
+        eyebrow="Get in touch"
+        title="Let's build something"
+        accent="focused."
+        description="Whether you have a specific workflow bottleneck or need a specialized business tool built from the ground up, we are ready to discuss your project."
+        glow={['rgba(255,107,87,0.28)', 'rgba(124,92,255,0.3)']}
+      />
       <SectionWrapper size="lg">
-        <div className="max-w-3xl space-y-6">
-          <p className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 font-mono">
-            Get in Touch
-          </p>
-          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-100 leading-[1.08]">
-            Let&apos;s build something focused.
-          </h1>
-          <p className="text-xl sm:text-2xl text-zinc-600 dark:text-zinc-400 leading-relaxed font-normal">
-            Whether you have a specific workflow bottleneck or need a specialized business tool built from the ground up, we are ready to discuss your project.
-          </p>
-        </div>
-
         {/* Contact Form Section */}
-        <div className="mt-12 max-w-4xl">
+        <div className="mt-6 max-w-4xl">
           <ContactForm />
         </div>
 
         {/* Direct Email Cards Grid */}
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
           {/* Card 1: General Studio */}
-          <div className="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#111726] border border-black/[0.08] dark:border-white/[0.08] shadow-sm flex flex-col justify-between gap-8">
+          <div className="p-8 sm:p-10 rounded-3xl bg-white dark:bg-ink-2 border border-black/[0.08] dark:border-white/[0.08] shadow-sm flex flex-col justify-between gap-8">
             <div className="space-y-4">
               <div className="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-blue-950/50 flex items-center justify-center text-blue-600 dark:text-blue-400">
                 <MessageSquare className="w-6 h-6" />
@@ -80,7 +76,7 @@ export default function ContactPage() {
           </div>
 
           {/* Card 2: Founder Direct */}
-          <div className="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#111726] border border-black/[0.08] dark:border-white/[0.08] shadow-sm flex flex-col justify-between gap-8">
+          <div className="p-8 sm:p-10 rounded-3xl bg-white dark:bg-ink-2 border border-black/[0.08] dark:border-white/[0.08] shadow-sm flex flex-col justify-between gap-8">
             <div className="space-y-4">
               <div className="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-blue-950/50 flex items-center justify-center text-blue-600 dark:text-blue-400">
                 <Mail className="w-6 h-6" />
@@ -105,7 +101,7 @@ export default function ContactPage() {
         </div>
 
         {/* What to Expect Callout */}
-        <div className="mt-14 p-8 rounded-3xl bg-zinc-50 dark:bg-[#111726] border border-black/[0.06] dark:border-white/[0.08] grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl">
+        <div className="mt-14 p-8 rounded-3xl bg-zinc-50 dark:bg-ink-2 border border-black/[0.06] dark:border-white/[0.08] grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl">
           <div className="flex items-start gap-4">
             <Clock className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
             <div className="space-y-1">

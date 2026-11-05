@@ -186,7 +186,7 @@ export function ProjectForm({ initialData, isNew = false }: ProjectFormProps) {
       )}
 
       {/* Core Details Card */}
-      <div className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-[#111726] border border-black/[0.08] dark:border-white/[0.08] space-y-6">
+      <div className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-ink-2 border border-black/[0.08] dark:border-white/[0.08] space-y-6">
         <h2 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">
           General Information
         </h2>
@@ -202,7 +202,7 @@ export function ProjectForm({ initialData, isNew = false }: ProjectFormProps) {
               value={name}
               onChange={(e) => handleNameChange(e.target.value)}
               placeholder="e.g. Beadle"
-              className="w-full px-3.5 py-2.5 rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-[#161F33] text-sm text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-600"
+              className="w-full px-3.5 py-2.5 rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-ink-3 text-sm text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
           </div>
 
@@ -219,7 +219,7 @@ export function ProjectForm({ initialData, isNew = false }: ProjectFormProps) {
                 {autoSlug ? 'Lock Slug' : 'Auto from Name'}
               </button>
             </div>
-            <div className="flex items-center rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-[#161F33] overflow-hidden focus-within:ring-2 focus-within:ring-blue-600">
+            <div className="flex items-center rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-ink-3 overflow-hidden focus-within:ring-2 focus-within:ring-blue-600">
               <span className="pl-3.5 pr-1 text-xs text-zinc-400 font-mono">/work/</span>
               <input
                 type="text"
@@ -244,7 +244,7 @@ export function ProjectForm({ initialData, isNew = false }: ProjectFormProps) {
             value={tagline}
             onChange={(e) => setTagline(e.target.value)}
             placeholder="e.g. Urgent Windows desktop alerts with delivery tracking."
-            className="w-full px-3.5 py-2.5 rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-[#161F33] text-sm text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-600"
+            className="w-full px-3.5 py-2.5 rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-ink-3 text-sm text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-600"
           />
         </div>
 
@@ -256,7 +256,7 @@ export function ProjectForm({ initialData, isNew = false }: ProjectFormProps) {
             <select
               value={status}
               onChange={(e) => setStatus(e.target.value as Project['status'])}
-              className="w-full px-3.5 py-2.5 rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-[#161F33] text-sm text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-600"
+              className="w-full px-3.5 py-2.5 rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-ink-3 text-sm text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-600"
             >
               <option value="prototype">prototype</option>
               <option value="build">build</option>
@@ -276,7 +276,7 @@ export function ProjectForm({ initialData, isNew = false }: ProjectFormProps) {
               value={statusLabel}
               onChange={(e) => setStatusLabel(e.target.value)}
               placeholder="e.g. On-Premise Build, Deployed Web App"
-              className="w-full px-3.5 py-2.5 rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-[#161F33] text-sm text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-600"
+              className="w-full px-3.5 py-2.5 rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-ink-3 text-sm text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
           </div>
         </div>
@@ -291,7 +291,7 @@ export function ProjectForm({ initialData, isNew = false }: ProjectFormProps) {
             value={coverImagePath}
             onChange={(e) => setCoverImagePath(e.target.value)}
             placeholder="/projects/beadle/beadle-hero.webp"
-            className="w-full px-3.5 py-2.5 rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-[#161F33] text-sm text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-600 font-mono"
+            className="w-full px-3.5 py-2.5 rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-ink-3 text-sm text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-600 font-mono"
           />
         </div>
 
@@ -319,7 +319,7 @@ export function ProjectForm({ initialData, isNew = false }: ProjectFormProps) {
       </div>
 
       {/* Case Study Editorial Content Card */}
-      <div className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-[#111726] border border-black/[0.08] dark:border-white/[0.08] space-y-6">
+      <div className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-ink-2 border border-black/[0.08] dark:border-white/[0.08] space-y-6">
         <h2 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">
           Case Study Copy
         </h2>
@@ -333,7 +333,7 @@ export function ProjectForm({ initialData, isNew = false }: ProjectFormProps) {
             rows={3}
             value={summary}
             onChange={(e) => setSummary(e.target.value)}
-            className="w-full px-3.5 py-2.5 rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-[#161F33] text-sm text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-600 leading-relaxed"
+            className="w-full px-3.5 py-2.5 rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-ink-3 text-sm text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-600 leading-relaxed"
           />
         </div>
 
@@ -346,7 +346,7 @@ export function ProjectForm({ initialData, isNew = false }: ProjectFormProps) {
             rows={3}
             value={problem}
             onChange={(e) => setProblem(e.target.value)}
-            className="w-full px-3.5 py-2.5 rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-[#161F33] text-sm text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-600 leading-relaxed"
+            className="w-full px-3.5 py-2.5 rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-ink-3 text-sm text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-600 leading-relaxed"
           />
         </div>
 
@@ -359,14 +359,14 @@ export function ProjectForm({ initialData, isNew = false }: ProjectFormProps) {
             rows={3}
             value={solution}
             onChange={(e) => setSolution(e.target.value)}
-            className="w-full px-3.5 py-2.5 rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-[#161F33] text-sm text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-600 leading-relaxed"
+            className="w-full px-3.5 py-2.5 rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-ink-3 text-sm text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-600 leading-relaxed"
           />
         </div>
       </div>
 
       {/* Verified Capabilities & Tech Stack */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-[#111726] border border-black/[0.08] dark:border-white/[0.08] space-y-4">
+        <div className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-ink-2 border border-black/[0.08] dark:border-white/[0.08] space-y-4">
           <div className="flex items-center justify-between">
             <h2 className="text-base font-bold text-zinc-900 dark:text-zinc-100">
               Key Capabilities
@@ -388,7 +388,7 @@ export function ProjectForm({ initialData, isNew = false }: ProjectFormProps) {
                   value={cap}
                   onChange={(e) => handleUpdateCapability(index, e.target.value)}
                   placeholder="e.g. Active Directory & LDAP targeting"
-                  className="w-full px-3 py-2 text-xs rounded-lg border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-[#161F33] text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  className="w-full px-3 py-2 text-xs rounded-lg border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-ink-3 text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-600"
                 />
                 <button
                   type="button"
@@ -402,7 +402,7 @@ export function ProjectForm({ initialData, isNew = false }: ProjectFormProps) {
           </div>
         </div>
 
-        <div className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-[#111726] border border-black/[0.08] dark:border-white/[0.08] space-y-4">
+        <div className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-ink-2 border border-black/[0.08] dark:border-white/[0.08] space-y-4">
           <div className="flex items-center justify-between">
             <h2 className="text-base font-bold text-zinc-900 dark:text-zinc-100">
               Technology Stack
@@ -424,7 +424,7 @@ export function ProjectForm({ initialData, isNew = false }: ProjectFormProps) {
                   value={tech}
                   onChange={(e) => handleUpdateTech(index, e.target.value)}
                   placeholder="e.g. .NET 8, SignalR"
-                  className="w-full px-3 py-2 text-xs rounded-lg border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-[#161F33] text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  className="w-full px-3 py-2 text-xs rounded-lg border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-ink-3 text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-600"
                 />
                 <button
                   type="button"
@@ -440,7 +440,7 @@ export function ProjectForm({ initialData, isNew = false }: ProjectFormProps) {
       </div>
 
       {/* External Verified Links */}
-      <div className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-[#111726] border border-black/[0.08] dark:border-white/[0.08] space-y-4">
+      <div className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-ink-2 border border-black/[0.08] dark:border-white/[0.08] space-y-4">
         <h2 className="text-base font-bold text-zinc-900 dark:text-zinc-100">
           Verified External Links
         </h2>
@@ -458,7 +458,7 @@ export function ProjectForm({ initialData, isNew = false }: ProjectFormProps) {
               value={liveUrl}
               onChange={(e) => setLiveUrl(e.target.value)}
               placeholder="https://..."
-              className="w-full px-3.5 py-2 text-xs rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-[#161F33] text-zinc-900 dark:text-zinc-100"
+              className="w-full px-3.5 py-2 text-xs rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-ink-3 text-zinc-900 dark:text-zinc-100"
             />
           </div>
 
@@ -471,7 +471,7 @@ export function ProjectForm({ initialData, isNew = false }: ProjectFormProps) {
               value={storeUrl}
               onChange={(e) => setStoreUrl(e.target.value)}
               placeholder="https://..."
-              className="w-full px-3.5 py-2 text-xs rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-[#161F33] text-zinc-900 dark:text-zinc-100"
+              className="w-full px-3.5 py-2 text-xs rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-ink-3 text-zinc-900 dark:text-zinc-100"
             />
           </div>
 
@@ -484,14 +484,14 @@ export function ProjectForm({ initialData, isNew = false }: ProjectFormProps) {
               value={repositoryUrl}
               onChange={(e) => setRepositoryUrl(e.target.value)}
               placeholder="https://github.com/..."
-              className="w-full px-3.5 py-2 text-xs rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-[#161F33] text-zinc-900 dark:text-zinc-100"
+              className="w-full px-3.5 py-2 text-xs rounded-xl border border-black/[0.1] dark:border-white/[0.15] bg-zinc-50 dark:bg-ink-3 text-zinc-900 dark:text-zinc-100"
             />
           </div>
         </div>
       </div>
 
       {/* Gallery Media Management Card */}
-      <div className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-[#111726] border border-black/[0.08] dark:border-white/[0.08] space-y-6">
+      <div className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-ink-2 border border-black/[0.08] dark:border-white/[0.08] space-y-6">
         <div className="flex items-center justify-between">
           <div>
             <h2 className="text-base font-bold text-zinc-900 dark:text-zinc-100">
@@ -515,7 +515,7 @@ export function ProjectForm({ initialData, isNew = false }: ProjectFormProps) {
           {gallery.map((item, index) => (
             <div
               key={item.id || index}
-              className="p-4 rounded-xl border border-black/[0.06] dark:border-white/[0.08] bg-zinc-50 dark:bg-[#161F33] grid grid-cols-1 sm:grid-cols-12 gap-4 items-center"
+              className="p-4 rounded-xl border border-black/[0.06] dark:border-white/[0.08] bg-zinc-50 dark:bg-ink-3 grid grid-cols-1 sm:grid-cols-12 gap-4 items-center"
             >
               <div className="sm:col-span-2 relative aspect-video rounded-lg overflow-hidden bg-zinc-200 dark:bg-zinc-800 border border-black/[0.08]">
                 {item.storagePath ? (
@@ -541,7 +541,7 @@ export function ProjectForm({ initialData, isNew = false }: ProjectFormProps) {
                   value={item.storagePath}
                   onChange={(e) => handleUpdateGalleryItem(index, 'storagePath', e.target.value)}
                   placeholder="/projects/..."
-                  className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-black/[0.1] dark:border-white/[0.15] bg-white dark:bg-[#111726] font-mono"
+                  className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-black/[0.1] dark:border-white/[0.15] bg-white dark:bg-ink-2 font-mono"
                 />
               </div>
 
@@ -554,7 +554,7 @@ export function ProjectForm({ initialData, isNew = false }: ProjectFormProps) {
                   value={item.altText}
                   onChange={(e) => handleUpdateGalleryItem(index, 'altText', e.target.value)}
                   placeholder="Descriptive alt text"
-                  className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-black/[0.1] dark:border-white/[0.15] bg-white dark:bg-[#111726]"
+                  className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-black/[0.1] dark:border-white/[0.15] bg-white dark:bg-ink-2"
                 />
               </div>
 
@@ -567,7 +567,7 @@ export function ProjectForm({ initialData, isNew = false }: ProjectFormProps) {
                   value={item.caption || ''}
                   onChange={(e) => handleUpdateGalleryItem(index, 'caption', e.target.value)}
                   placeholder="Optional caption"
-                  className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-black/[0.1] dark:border-white/[0.15] bg-white dark:bg-[#111726]"
+                  className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-black/[0.1] dark:border-white/[0.15] bg-white dark:bg-ink-2"
                 />
               </div>
 

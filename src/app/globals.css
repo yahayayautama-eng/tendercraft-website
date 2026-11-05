@@ -1,23 +1,87 @@
 @import "tailwindcss";
 
+/* The site is designed dark-first: every `dark:` utility applies whenever
+   <html> carries the `dark` class (set in the root layout). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ------------------------------------------------------------------
+   Tendercraft 2026 palette — three signature colors on deep ink
+   · Ultraviolet  #7C5CFF  (primary / brand)
+   · Mint         #3DF2C0  (secondary / success / live)
+   · Coral        #FF6B57  (tertiary / heat / highlights)
+   The legacy `blue-*` scale is remapped to Ultraviolet so every
+   existing page adopts the new identity automatically.
+------------------------------------------------------------------- */
+@theme {
+  --color-blue-50: #F4F1FF;
+  --color-blue-100: #EAE4FF;
+  --color-blue-200: #D6CBFF;
+  --color-blue-300: #BBA8FF;
+  --color-blue-400: #A08AFF;
+  --color-blue-500: #8B70FF;
+  --color-blue-600: #7C5CFF;
+  --color-blue-700: #6544F0;
+  --color-blue-800: #4F33C4;
+  --color-blue-900: #3A2690;
+  --color-blue-950: #1D1452;
+
+  --color-violet: var(--tc-violet);
+  --color-mint: var(--tc-mint);
+  --color-coral: var(--tc-coral);
+  --color-ink: var(--tc-ink);
+  --color-ink-2: var(--tc-ink-2);
+  --color-ink-3: var(--tc-ink-3);
+
+  --font-display: var(--font-instrument-serif), ui-serif, Georgia, serif;
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-marquee-reverse: marquee-reverse 40s linear infinite;
+  --animate-aurora: aurora 18s ease-in-out infinite alternate;
+  --animate-spin-slow: spin 12s linear infinite;
+  --animate-shimmer: shimmer 3.5s linear infinite;
+  --animate-float: float 7s ease-in-out infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes marquee-reverse {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+  }
+  @keyframes aurora {
+    0% { transform: translate3d(0, 0, 0) scale(1) rotate(0deg); }
+    50% { transform: translate3d(6%, -4%, 0) scale(1.15) rotate(8deg); }
+    100% { transform: translate3d(-5%, 5%, 0) scale(0.95) rotate(-6deg); }
+  }
+  @keyframes shimmer {
+    from { background-position: 0% 50%; }
+    to { background-position: 200% 50%; }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+}
+
 :root {
   /* Tendercraft Design Tokens (Light First) */
-  --background: #FFFFFF;
+  --background: #F7F6F2;
   --foreground: #0B101D;
   
-  --accent-blue: #0052FF;
-  --accent-blue-hover: #0042D9;
-  --accent-blue-active: #0036B3;
-  --accent-blue-tint: rgba(0, 82, 255, 0.08);
+  --accent-blue: #7C5CFF;
+  --accent-blue-hover: #6544F0;
+  --accent-blue-active: #4F33C4;
+  --accent-blue-tint: rgba(124, 92, 255, 0.08);
 
   /* Product pages inherit the studio blue unless a product overrides these. */
-  --project-accent: #2563EB;
-  --project-accent-hover: #1D4ED8;
-  --project-accent-fg-dark: #60A5FA;
-  --project-accent-tint: #EFF6FF;
-  --project-accent-tint-dark: rgba(30, 58, 138, 0.4);
-  --project-accent-border: #BFDBFE;
-  --project-accent-border-dark: #1E3A8A;
+  --project-accent: #7C5CFF;
+  --project-accent-hover: #6544F0;
+  --project-accent-fg-dark: #A08AFF;
+  --project-accent-tint: #F4F1FF;
+  --project-accent-tint-dark: rgba(58, 38, 144, 0.35);
+  --project-accent-border: #D6CBFF;
+  --project-accent-border-dark: #4F33C4;
 
   --surface-primary: #FFFFFF;
   --surface-secondary: #F8FAFC;
@@ -50,28 +114,82 @@
   --transition-apple: all var(--duration-standard) var(--ease-apple);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0B0F19;
-    --foreground: #F8FAFC;
+/* ------------------------------------------------------------------
+   Theme tokens. Dark is the signature look; light is opt-in via the
+   header toggle (persisted in localStorage as "tc-theme").
+------------------------------------------------------------------- */
+:root {
+  --tc-violet: #6B4BF5;
+  --tc-mint: #0C9C79;
+  --tc-coral: #E5543F;
+  --tc-violet-text: #5B3ED9;
+  --tc-mint-text: #0A8566;
+  --tc-coral-text: #CF432E;
+  --tc-ink: #F7F6F2;
+  --tc-ink-2: #FFFFFF;
+  --tc-ink-3: #EFEEF3;
+  --tc-grid-line: rgba(11, 11, 18, 0.06);
+  --tc-glass-from: rgba(255, 255, 255, 0.82);
+  --tc-glass-to: rgba(255, 255, 255, 0.6);
+  --tc-glass-border: rgba(11, 11, 18, 0.08);
+  --tc-grain: 0.035;
+}
+html.dark {
+  --tc-violet: #7C5CFF;
+  --tc-mint: #3DF2C0;
+  --tc-coral: #FF6B57;
+  --tc-violet-text: #A08AFF;
+  --tc-mint-text: #7DF7D6;
+  --tc-coral-text: #FF9A8B;
+  --tc-ink: #07070B;
+  --tc-ink-2: #0E0E15;
+  --tc-ink-3: #15151F;
+  --tc-grid-line: rgba(255, 255, 255, 0.045);
+  --tc-glass-from: rgba(255, 255, 255, 0.06);
+  --tc-glass-to: rgba(255, 255, 255, 0.02);
+  --tc-glass-border: rgba(255, 255, 255, 0.09);
+  --tc-grain: 0.05;
+}
 
-    --accent-blue: #2575FC;
-    --accent-blue-hover: #4B8EFF;
-    --accent-blue-active: #0052FF;
-    --accent-blue-tint: rgba(37, 117, 252, 0.15);
+/* Components marked .tc-auto are authored dark-first. In light mode their
+   neutral scale is mirrored so the same classes produce a light design. */
+html:not(.dark) .tc-auto {
+  --color-white: #0B0B12;
+  --color-black: #FFFFFF;
+  --color-zinc-50: oklch(14.1% 0.005 285.823);
+  --color-zinc-100: oklch(21% 0.006 285.885);
+  --color-zinc-200: oklch(27.4% 0.006 286.033);
+  --color-zinc-300: oklch(34% 0.013 285.805);
+  --color-zinc-400: oklch(44.2% 0.017 285.786);
+  --color-zinc-500: oklch(52% 0.016 285.938);
+  --color-zinc-600: oklch(70.5% 0.015 286.067);
+  --color-zinc-700: oklch(87.1% 0.006 286.286);
+  --color-zinc-800: oklch(92% 0.004 286.32);
+  --color-zinc-900: oklch(96.7% 0.001 286.375);
+  --color-zinc-950: oklch(98.5% 0 none);
+}
 
-    --surface-primary: #111726;
-    --surface-secondary: #172033;
-    --surface-tertiary: #1E293B;
+html.dark {
+  color-scheme: dark;
+  --background: #07070B;
+  --foreground: #F5F4FA;
 
-    /* Contrast checked: >=4.5:1 against dark surface #111726 & #0B0F19 */
-    --text-primary: #F8FAFC;
-    --text-secondary: #CBD5E1;
-    --text-muted: #94A3B8;
+  --accent-blue: #7C5CFF;
+  --accent-blue-hover: #9479FF;
+  --accent-blue-active: #6544F0;
+  --accent-blue-tint: rgba(124, 92, 255, 0.14);
 
-    --border-primary: rgba(248, 250, 252, 0.12);
-    --border-secondary: rgba(248, 250, 252, 0.07);
-  }
+  --surface-primary: #0E0E15;
+  --surface-secondary: #15151F;
+  --surface-tertiary: #1C1C28;
+
+  /* Contrast checked: >=4.5:1 against #07070B and #0E0E15 */
+  --text-primary: #F5F4FA;
+  --text-secondary: #C9C7D6;
+  --text-muted: #9592A8;
+
+  --border-primary: rgba(255, 255, 255, 0.1);
+  --border-secondary: rgba(255, 255, 255, 0.06);
 }
 
 @theme inline {
@@ -167,6 +285,145 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
-    transform: none !important;
   }
+}
+
+::selection {
+  background: rgba(124, 92, 255, 0.45);
+  color: #FFFFFF;
+}
+
+/* ------------------------------------------------------------------
+   Premium surface utilities
+------------------------------------------------------------------- */
+
+/* Film grain overlay — adds tactile depth to flat dark surfaces */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: -50%;
+  z-index: 60;
+  pointer-events: none;
+  opacity: var(--tc-grain);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* Signature tri-color gradient text */
+.gradient-text {
+  background-image: linear-gradient(100deg, #A08AFF 0%, #3DF2C0 45%, #FF6B57 90%, #A08AFF 130%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.gradient-shimmer {
+  animation: var(--animate-shimmer);
+  animation-duration: 6s;
+}
+
+/* Hairline grid used behind hero sections */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, var(--tc-grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--tc-grid-line) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 30%, transparent 100%);
+}
+
+/* Glass panels (layered so utilities like bg-ink/75 can override) */
+@layer components {
+.glass {
+  background: linear-gradient(180deg, var(--tc-glass-from), var(--tc-glass-to));
+  border: 1px solid var(--tc-glass-border);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+}
+}
+
+/* Spotlight card — follows the pointer via --mx / --my set in JS */
+.spotlight {
+  position: relative;
+  isolation: isolate;
+}
+.spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(160, 138, 255, 0.85), rgba(61, 242, 192, 0.35) 35%, transparent 65%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 300ms var(--ease-apple);
+  pointer-events: none;
+  z-index: 2;
+}
+.spotlight::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(520px circle at var(--mx, 50%) var(--my, 50%), rgba(124, 92, 255, 0.12), transparent 55%);
+  opacity: 0;
+  transition: opacity 300ms var(--ease-apple);
+  pointer-events: none;
+  z-index: 1;
+}
+.spotlight:hover::before,
+.spotlight:hover::after {
+  opacity: 1;
+}
+
+/* Rotating conic border for primary CTAs */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.conic-border {
+  position: relative;
+  isolation: isolate;
+}
+.conic-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: conic-gradient(from var(--angle), #7C5CFF, #3DF2C0, #FF6B57, #7C5CFF);
+  animation: conic-spin 5s linear infinite;
+  z-index: -1;
+}
+@keyframes conic-spin {
+  to { --angle: 360deg; }
+}
+
+.mask-fade-x {
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+}
+
+html:not(.dark) .gradient-text {
+  background-image: linear-gradient(100deg, #6B4BF5 0%, #0C9C79 45%, #E5543F 90%, #6B4BF5 130%);
+}
+
+.text-outline {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.14);
+  color: transparent;
+}
+
+/* Progressive scroll reveal (see AutoReveal) */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(28px);
+  filter: blur(6px);
+  transition:
+    opacity 900ms var(--ease-apple),
+    transform 900ms var(--ease-apple),
+    filter 900ms var(--ease-apple);
+}
+.reveal-init.reveal-in {
+  opacity: 1;
+  transform: none;
+  filter: none;
 }
