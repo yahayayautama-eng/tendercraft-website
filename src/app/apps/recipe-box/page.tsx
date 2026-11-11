@@ -65,6 +65,14 @@ export default function RecipeBoxPage() {
         '@type': 'FAQPage',
         mainEntity: recipeBoxFaq.map((f) => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })),
       },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: baseUrl },
+          { '@type': 'ListItem', position: 2, name: 'Apps', item: `${baseUrl}/work` },
+          { '@type': 'ListItem', position: 3, name: recipeBox.name, item: pageUrl },
+        ],
+      },
     ],
   };
 

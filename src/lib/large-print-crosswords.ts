@@ -11,7 +11,10 @@ export const largePrintCrosswords = {
   publishedAt: '2026-10-15',
   supportEmail: 'hello@tendercrafthq.com',
   privacyUrl: '/large-print-crosswords/privacy.html',
-  updatedAt: '2026-10-25',
+  updatedAt: '2026-11-16',
+  /** Version 1.2.0 (submitted 2026-11-11) made the app free with one optional one-time unlock. */
+  unlockPriceUsd: '2.99',
+  freePerLevel: 10,
   libraryPuzzles: 120,
   dailyRotationPuzzles: 30,
 } as const;

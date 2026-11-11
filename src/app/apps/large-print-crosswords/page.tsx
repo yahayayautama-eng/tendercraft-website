@@ -37,15 +37,15 @@ const faq = [
   { question: 'Will it work on my Kindle or Fire tablet?', answer: 'This is an app for compatible Fire tablets. Kindle e-readers such as Paperwhite are a different device family. Check Amazon Appstore on your tablet for device compatibility, or email us with your tablet model. VoiceView compatibility has not been independently verified.' },
   { question: 'Is it available to buy now?', answer: largePrintCrosswords.availability === 'published' ? 'Large Print Crosswords has been published on Amazon Appstore since October 15, 2026. Search for Large Print Crosswords by Tendercraft in the Appstore on your Fire tablet and check the current price and device availability before buying.' : 'The Amazon listing is still being prepared. Email us to ask about launch status or compatibility with your tablet.' },
   { question: 'Is this a printed puzzle book or an app?', answer: 'It is an English-language crossword app by Tendercraft, with compact word grids and on-screen controls. It is not a printed book or a Kindle e-book.' },
-  { question: 'Does the app have a subscription or cloud sync?', answer: 'No. It is a paid app with all 150 puzzles included, without a subscription or in-app purchases. Progress is stored locally; there is no account sync or cloud backup.' },
+  { question: 'Is it free?', answer: `Yes, it is free to download. The daily puzzles and the first ${largePrintCrosswords.freePerLevel} library puzzles at each level are free. A single one-time purchase (US$${largePrintCrosswords.unlockPriceUsd} in the US) unlocks the whole library. There are no subscriptions or ads.` },
+  { question: 'Does the app have a subscription or cloud sync?', answer: 'No. There is no subscription. Progress is stored locally; there is no account sync or cloud backup. The optional unlock is tied to your Amazon account, so it can be restored on your other Fire tablets.' },
 ];
 
 export default function LargePrintCrosswordsPage() {
   const isAvailable = largePrintCrosswords.availability === 'published' && Boolean(largePrintCrosswords.amazonUrl);
   const primaryUrl = isAvailable ? largePrintCrosswords.amazonUrl! : crosswordContactUrl();
   const primaryLabel = isAvailable ? 'View on Amazon Appstore (US)' : 'Ask about your tablet';
-  const pageSchema = {
-    '@context': 'https://schema.org',
+  const webPage = {
     '@type': 'WebPage',
     name: 'Large Print Crosswords for Fire Tablets',
     url: pageUrl,
@@ -60,8 +60,24 @@ export default function LargePrintCrosswordsPage() {
       publisher: { '@type': 'Organization', name: 'Tendercraft', url: baseUrl },
       featureList: ['150 puzzles: 120 library and 30 in a repeating daily rotation', 'Three text sizes', 'Two colour themes', 'Offline play', 'No timer, ads or account'],
       ...(largePrintCrosswords.amazonUrl ? { installUrl: largePrintCrosswords.amazonUrl, sameAs: largePrintCrosswords.amazonUrl } : {}),
+      ...(isAvailable ? { offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } } : {}),
     },
     publisher: { '@type': 'Organization', name: 'Tendercraft', url: baseUrl },
+  };
+  const pageSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      webPage,
+      { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })) },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: baseUrl },
+          { '@type': 'ListItem', position: 2, name: 'Apps', item: `${baseUrl}/work` },
+          { '@type': 'ListItem', position: 3, name: largePrintCrosswords.name, item: pageUrl },
+        ],
+      },
+    ],
   };
 
   return (
@@ -103,7 +119,7 @@ export default function LargePrintCrosswordsPage() {
         <section className="pb-16" aria-labelledby="puzzles-heading">
           <div className="rounded-3xl bg-[#30251c] text-white p-8 sm:p-12 grid md:grid-cols-[auto_1fr] gap-6 items-center">
             <p className="text-7xl sm:text-8xl font-black text-[#ffcf74]">150</p>
-            <div><h2 id="puzzles-heading" className="text-2xl sm:text-3xl font-bold">Original compact crosswords included</h2><p className="mt-3 text-lg leading-relaxed text-[#f3e8da]">120 puzzles are in the library. Another 30 appear in a daily rotation that repeats after 30 days. All 150 are included with the paid app.</p></div>
+            <div><h2 id="puzzles-heading" className="text-2xl sm:text-3xl font-bold">Original compact crosswords included</h2><p className="mt-3 text-lg leading-relaxed text-[#f3e8da]">120 puzzles are in the library. Another 30 appear in a daily rotation that repeats after 30 days. The daily puzzles and the first {largePrintCrosswords.freePerLevel} library puzzles at each level are free; a one-time unlock opens all 150.</p></div>
           </div>
         </section>
 
@@ -119,7 +135,7 @@ export default function LargePrintCrosswordsPage() {
         <section className="pb-16" aria-labelledby="facts-heading"><h2 id="facts-heading" className="text-3xl font-bold">App facts at a glance</h2><dl className="mt-6 grid sm:grid-cols-2 gap-5">{[
           ['Developer', 'Tendercraft'], ['Platform', 'Compatible Amazon Fire tablets'],
           ['Puzzles', '150 total: 120 library + 30 in a repeating daily rotation'], ['Language', 'English'],
-          ['Reading options', 'Large, Larger and Largest text; two colour themes'], ['Purchase model', 'Paid app, no subscription or in-app purchases'],
+          ['Reading options', 'Large, Larger and Largest text; two colour themes'], ['Purchase model', `Free to try; one-time US$${largePrintCrosswords.unlockPriceUsd} unlock for the full library; no subscription`],
           ['Internet while playing', 'Not required'], ['Saved progress', 'On your tablet; no account or cloud sync'],
         ].map(([term, value]) => <div key={term} className="border-b border-[#d8c9b7] dark:border-white/15 pb-4"><dt className="font-bold">{term}</dt><dd className="mt-1">{value}</dd></div>)}</dl><p className="mt-4 text-sm">Product information updated by Tendercraft on October 25, 2026. Store price and compatibility can vary by marketplace and device.</p></section>
         <section className="pb-16" aria-labelledby="faq-heading"><h2 id="faq-heading" className="text-3xl sm:text-4xl font-bold">Good to know</h2><div className="mt-6 divide-y divide-[#d8c9b7] dark:divide-white/15">{faq.map((item) => <div key={item.question} className="py-5"><h3 className="text-lg font-bold">{item.question}</h3><p className="mt-2 max-w-3xl leading-relaxed">{item.answer}</p></div>)}</div></section>
