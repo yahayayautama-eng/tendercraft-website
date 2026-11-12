@@ -32,6 +32,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
     },
     {
+      url: `${baseUrl}${largePrintCrosswords.path}/free-crossword-app-for-seniors`,
+      lastModified: new Date(`${largePrintCrosswords.updatedAt}T00:00:00Z`),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
       url: `${baseUrl}${recipeBox.path}`,
       lastModified: new Date(`${recipeBox.updatedAt}T00:00:00Z`),
       changeFrequency: 'monthly',
@@ -49,7 +55,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
-    ...['printable-morning-routine-chart', 'first-then-board-guide', 'visual-schedule-for-classroom', 'bedtime-routine-pictures', 'visual-schedule-app-fire-tablet'].map((slug) => ({
+    ...['printable-morning-routine-chart', 'first-then-board-guide', 'visual-schedule-for-classroom', 'bedtime-routine-pictures', 'visual-schedule-app-fire-tablet', 'visual-schedule-app-for-autism'].map((slug) => ({
       url: `${baseUrl}${visualScheduleBoard.path}/${slug}`,
       lastModified: new Date(`${visualScheduleBoard.updatedAt}T00:00:00Z`),
       changeFrequency: 'monthly' as const,

@@ -19,6 +19,7 @@ export const recipeBoxGuides = [
   { slug: 'offline-recipe-app', title: 'An offline recipe app that works without Wi-Fi' },
   { slug: 'grocery-list-from-recipes', title: 'Turn recipes into a grocery list on a Fire tablet' },
   { slug: 'recipe-box-vs-paprika-pinterest-notes', title: 'Recipe Box vs Paprika, Pinterest and a notes app' },
+  { slug: 'recipe-app-without-subscription', title: 'A recipe app without a subscription' },
 ] as const;
 
 export function recipeBoxContactUrl(subject = 'Recipe Box question') {
