@@ -144,7 +144,7 @@ export function ContactForm() {
           Send a Project Enquiry
         </h2>
         <p className="text-sm text-zinc-600 dark:text-zinc-300">
-          Fill in your project context below. Every brief is reviewed directly by the founder and engineer, with responses provided within 1 to 2 business days.
+          Fill in your project context below. Every brief is reviewed directly by the lead engineer, with responses provided within 1 to 2 business days.
         </p>
       </div>
 

@@ -30,15 +30,28 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Tendercraft",
+  legalName: "Tendercraft Technologies Limited",
+  foundingDate: "2026-11-11",
+  identifier: {
+    "@type": "PropertyValue",
+    propertyID: "CAC RC Number",
+    value: "10003239",
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Abuja",
+    addressCountry: "NG",
+  },
   url: siteUrl,
   logo: `${siteUrl}/brand/tendercraft-logo-light.svg`,
   image: `${siteUrl}/brand/tendercraft-og.png`,
   description:
     "Tendercraft builds focused software that turns difficult workflows into useful products. Business software, browser tools, and continuous automation.",
   email: "hello@tendercrafthq.com",
-  founder: {
+  employee: {
     "@type": "Person",
     name: "Yahaya Yautama",
+    jobTitle: "Lead Engineer",
     email: "yyautama@tendercrafthq.com",
   },
   sameAs: ["https://github.com/yahayayautama-eng/tendercraft-website"],

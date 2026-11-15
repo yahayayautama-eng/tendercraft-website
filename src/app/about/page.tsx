@@ -144,18 +144,18 @@ export default function AboutPage() {
               <div className="space-y-4 flex-1">
                 <div className="space-y-1.5">
                   <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400 font-mono">
-                    <span>Founder & Engineering</span>
+                    <span>Engineering</span>
                   </div>
                   <h2 id="founder-heading" className="text-2xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-100">
                     Yahaya Yautama
                   </h2>
                   <p className="text-sm font-semibold text-zinc-700 dark:text-zinc-300 font-mono">
-                    Founder & Principal Systems Engineer
+                    Lead Engineer
                   </p>
                 </div>
 
                 <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-3xl">
-                  When you partner with Tendercraft, you don&apos;t talk to account managers or junior contractors. You collaborate directly with the founder and engineer who designs, implements, and verifies every system. Yahaya designs and ships production software across Windows desktop engines (.NET/WPF), high-concurrency web platforms (Next.js/PostgreSQL), and browser workflow tools.
+                  When you partner with Tendercraft, you don&apos;t talk to account managers or junior contractors. You collaborate directly with the lead engineer who designs, implements, and verifies every system. Yahaya designs and ships production software across Windows desktop engines (.NET/WPF), high-concurrency web platforms (Next.js/PostgreSQL), and browser workflow tools.
                 </p>
 
                 <div className="flex items-center gap-2 text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 pt-1 font-medium">
@@ -201,6 +201,31 @@ export default function AboutPage() {
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
             </div>
+          </div>
+        </SectionWrapper>
+      </section>
+
+      {/* Registered company details */}
+      <section aria-labelledby="company-heading">
+        <SectionWrapper size="lg">
+          <div className="border-t border-black/[0.08] dark:border-white/[0.08] pt-14 space-y-6">
+            <h2 id="company-heading" className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+              Company
+            </h2>
+            <dl className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm">
+              <div>
+                <dt className="font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">Legal name</dt>
+                <dd className="mt-1.5 text-zinc-900 dark:text-zinc-100 font-semibold">Tendercraft Technologies Limited</dd>
+              </div>
+              <div>
+                <dt className="font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">Registration</dt>
+                <dd className="mt-1.5 text-zinc-900 dark:text-zinc-100 font-semibold">RC 10003239, Corporate Affairs Commission</dd>
+              </div>
+              <div>
+                <dt className="font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">Incorporated</dt>
+                <dd className="mt-1.5 text-zinc-900 dark:text-zinc-100 font-semibold">11 November 2026, Abuja, Nigeria</dd>
+              </div>
+            </dl>
           </div>
         </SectionWrapper>
       </section>

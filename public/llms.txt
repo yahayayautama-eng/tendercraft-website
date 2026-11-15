@@ -34,8 +34,9 @@
 - [Recipe Box privacy policy](https://tendercrafthq.com/recipe-box/privacy.html)
 - [Visual Schedule Board privacy policy](https://tendercrafthq.com/visual-schedule-board/privacy.html)
 - [Large Print Crosswords privacy policy](https://tendercrafthq.com/large-print-crosswords/privacy.html)
-- Windows app support: hello@tendercrafthq.com
-- Contact: info@tendercrafthq.com
+- [Terms of sale and use](https://tendercrafthq.com/terms)
+- Publisher: Tendercraft Technologies Limited, RC 10003239, registered in Nigeria (Corporate Affairs Commission), incorporated 11 November 2026.
+- Contact and app support: hello@tendercrafthq.com
 
 ## Windows app comparisons
 

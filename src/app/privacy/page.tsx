@@ -40,7 +40,7 @@ export default function PrivacyPage() {
               Privacy Notice
             </h1>
             <p className="text-sm text-zinc-500 font-mono">
-              Last updated: September 19, 2026
+              Last updated: November 15, 2026
             </p>
           </div>
 
@@ -50,7 +50,7 @@ export default function PrivacyPage() {
                 1. Our Commitment
               </h2>
               <p>
-                Tendercraft believes in minimal data collection and respectful software design. We do not track you across the web, use behavioral advertising networks, or monetize personal data.
+                This website is operated by Tendercraft Technologies Limited (RC 10003239), a private company registered in Nigeria, which is the data controller for the information described here. We handle personal data in line with the Nigeria Data Protection Act 2023. We believe in minimal data collection: we do not use advertising networks or sell personal data.
               </p>
             </section>
 
@@ -73,10 +73,14 @@ export default function PrivacyPage() {
 
             <section className="space-y-3">
               <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-100">
-                3. Cookies and Session Storage
+                3. Cookies and Analytics
               </h2>
               <p>
-                Public visitors to <code className="font-mono">tendercrafthq.com</code> receive no tracking cookies or cross-site fingerprinting tokens. Cookies are strictly utilized for authenticated administrative sessions in the private studio portal (<code className="font-mono">/admin</code>).
+                This website uses Microsoft Clarity to understand how pages are used so we can improve them. Clarity sets cookies and records how visitors interact with the site, such as pages viewed, clicks, scrolling, device and browser type, and approximate location. This data is processed by Microsoft; see the{' '}
+                <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Microsoft Privacy Statement</a>. You can stop it by blocking cookies or scripts from <code className="font-mono">clarity.ms</code> in your browser.
+              </p>
+              <p>
+                We also use cookies for authenticated administrative sessions in the private studio portal (<code className="font-mono">/admin</code>). Our apps are separate from this website and have their own privacy policies.
               </p>
             </section>
 
@@ -94,7 +98,7 @@ export default function PrivacyPage() {
                 5. Questions and Contact
               </h2>
               <p>
-                For any questions regarding this privacy notice or to request the deletion of past correspondence, please contact us directly at <a href="mailto:hello@tendercrafthq.com" className="text-blue-600 hover:underline font-mono tracking-tight font-semibold">hello@tendercrafthq.com</a>.
+                For any questions regarding this privacy notice or to access, correct or delete your personal data, please contact us directly at <a href="mailto:hello@tendercrafthq.com" className="text-blue-600 hover:underline font-mono tracking-tight font-semibold">hello@tendercrafthq.com</a>.
               </p>
             </section>
           </div>

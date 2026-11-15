@@ -20,15 +20,18 @@ const COLUMNS = [
       { href: '/apps/recipe-box', label: 'Recipe Box' },
       { href: '/apps/visual-schedule-board', label: 'Visual Schedule Board' },
       { href: '/apps/large-print-crosswords', label: 'Crosswords' },
+      { href: '/apps/template-delivery-kit', label: 'Template Delivery Kit' },
       { href: '/work', label: 'Featured Work' },
       { href: '/about', label: 'About' },
+      { href: '/contact', label: 'Contact' },
       { href: '/privacy', label: 'Privacy' },
+      { href: '/terms', label: 'Terms' },
     ],
   },
 ];
 
 export function Footer() {
-  const currentYear = 2026;
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="tc-auto relative w-full overflow-hidden border-t border-white/[0.08] bg-ink">
@@ -84,7 +87,7 @@ export function Footer() {
                 <MotionEmailBadge email="hello@tendercrafthq.com" size="sm" />
               </div>
               <div>
-                <span className="block text-[11px] text-zinc-400 uppercase font-mono mb-1.5">Founder & Business</span>
+                <span className="block text-[11px] text-zinc-400 uppercase font-mono mb-1.5">Lead Engineer</span>
                 <MotionEmailBadge email="yyautama@tendercrafthq.com" size="sm" />
               </div>
             </div>
@@ -99,13 +102,16 @@ export function Footer() {
         </div>
 
         <div className="relative border-t border-white/[0.06] py-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-zinc-400">
-          <p>© {currentYear} Tendercraft. All rights reserved.</p>
+          <p>© {currentYear} Tendercraft Technologies Limited. RC 10003239. Registered in Nigeria.</p>
           <p className="flex items-center gap-4">
             <span>
               Built with <span className="font-display italic text-zinc-300 text-sm">precision</span> &amp; restraint.
             </span>
             <Link href="/privacy" className="hover:text-white min-h-[44px] inline-flex items-center">
               Privacy
+            </Link>
+            <Link href="/terms" className="hover:text-white min-h-[44px] inline-flex items-center">
+              Terms
             </Link>
           </p>
         </div>

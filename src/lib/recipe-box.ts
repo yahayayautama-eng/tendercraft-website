@@ -5,7 +5,7 @@ export const recipeBox = {
   path: '/apps/recipe-box',
   availability: 'available' as 'coming-soon' | 'available',
   amazonUrl: 'https://www.amazon.com/dp/B0HMPLF4MM' as string | null,
-  supportEmail: 'info@tendercrafthq.com',
+  supportEmail: 'hello@tendercrafthq.com',
   privacyUrl: '/recipe-box/privacy.html',
   updatedAt: '2026-10-25',
   freeRecipeLimit: 20,

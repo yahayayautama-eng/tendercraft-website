@@ -82,7 +82,7 @@ export default function ContactPage() {
                 <Mail className="w-6 h-6" />
               </div>
               <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100">
-                Founder & Direct Line
+                Lead Engineer Direct Line
               </h2>
               <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
                 For strategic engagements, architecture inquiries, or direct confidential discussions.
@@ -133,11 +133,15 @@ export default function ContactPage() {
                 Direct Communication
               </h3>
               <p className="text-xs text-zinc-500 leading-relaxed">
-                No intermediaries. Every conversation is with the founder and engineer designing and building your tools.
+                No intermediaries. Every conversation is with the lead engineer designing and building your tools.
               </p>
             </div>
           </div>
         </div>
+
+        <p className="mt-10 max-w-4xl text-xs text-zinc-500 dark:text-zinc-400">
+          Tendercraft is a trading name of Tendercraft Technologies Limited (RC 10003239), a private company registered in Nigeria.
+        </p>
       </SectionWrapper>
     </div>
   );
