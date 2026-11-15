@@ -107,7 +107,7 @@ export const VERIFIED_PROJECTS: Project[] = [
     status: 'build',
     statusLabel: 'Working Application',
     coverImagePath: '/projects/compoundos/compoundos-hero.png',
-    liveUrl: null,
+    liveUrl: 'https://compoundos.ng',
     storeUrl: null,
     repositoryUrl: null,
     featured: true,
