@@ -54,7 +54,11 @@ const jsonLd = {
     jobTitle: "Lead Engineer",
     email: "yyautama@tendercrafthq.com",
   },
-  sameAs: ["https://github.com/yahayayautama-eng/tendercraft-website"],
+  sameAs: [
+    "https://www.linkedin.com/company/tendercrafthq/",
+    "https://apps.microsoft.com/search/publisher?name=Tendercraft",
+    "https://github.com/yahayayautama-eng/tendercraft-website",
+  ],
   knowsAbout: [
     "Business Software",
     "Workflow Tools",
