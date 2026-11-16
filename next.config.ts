@@ -24,12 +24,20 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
   },
   async redirects() {
-    return [{
-      source: '/:path*',
-      has: [{ type: 'host', value: 'www.tendercrafthq.com' }],
-      destination: 'https://tendercrafthq.com/:path*',
-      permanent: true,
-    }];
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.tendercrafthq.com' }],
+        destination: 'https://tendercrafthq.com/:path*',
+        permanent: true,
+      },
+      // Old URL Google still requests (404 in Search Console)
+      {
+        source: '/printables/bedtime-routine-cards',
+        destination: '/apps/visual-schedule-board/bedtime-routine-pictures',
+        permanent: true,
+      },
+    ];
   },
   async headers() {
     return [
