@@ -104,8 +104,8 @@ export const VERIFIED_PROJECTS: Project[] = [
       'Staff and security guard interface optimized for high-throughput gate operations.'
     ],
     technology: ['TypeScript', 'React', 'Vite', 'Express.js', 'Prisma ORM', 'Tailwind CSS'],
-    status: 'build',
-    statusLabel: 'Working Application',
+    status: 'deployed',
+    statusLabel: 'Live at compoundos.ng',
     coverImagePath: '/projects/compoundos/compoundos-hero.png',
     liveUrl: 'https://compoundos.ng',
     storeUrl: null,

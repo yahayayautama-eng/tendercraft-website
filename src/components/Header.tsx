@@ -11,9 +11,7 @@ import { ThemeToggle } from '@/components/ThemeToggle';
 
 const NAV_ITEMS = [
   { href: '/work', label: 'Work' },
-  { href: '/apps/windows', label: 'Windows Apps' },
-  { href: '/apps/recipe-box', label: 'Recipe Box' },
-  { href: '/apps/large-print-crosswords', label: 'Crosswords' },
+  { href: '/apps', label: 'Apps' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
 ];

@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { getSiteUrl } from "@/lib/site";
 import { AmbientEffects } from "@/components/motion/AmbientEffects";
 import { SmoothScroll } from "@/components/motion/SmoothScroll";
+import { ConsentBanner } from '@/components/ConsentBanner';
 
 const siteUrl = getSiteUrl();
 
@@ -112,7 +113,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/icon.svg",
-    apple: "/icon.svg",
+    apple: "/apple-touch-icon.png",
   },
 };
 
@@ -147,12 +148,6 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <script
-          type="text/javascript"
-          dangerouslySetInnerHTML={{
-            __html: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "z2ykutmshc");`,
-          }}
-        />
       </head>
       <body className="grain min-h-full flex flex-col bg-ink text-[var(--foreground)]">
         <a href="#main-content" className="skip-to-content">
@@ -161,6 +156,7 @@ export default function RootLayout({
         <AmbientEffects />
         <SmoothScroll />
         <Header />
+        <ConsentBanner />
         <main id="main-content" tabIndex={-1} className="flex-1 w-full outline-none">
           {children}
         </main>

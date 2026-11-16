@@ -76,8 +76,8 @@ export default function PrivacyPage() {
                 3. Cookies and Analytics
               </h2>
               <p>
-                This website uses Microsoft Clarity to understand how pages are used so we can improve them. Clarity sets cookies and records how visitors interact with the site, such as pages viewed, clicks, scrolling, device and browser type, and approximate location. This data is processed by Microsoft; see the{' '}
-                <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Microsoft Privacy Statement</a>. You can stop it by blocking cookies or scripts from <code className="font-mono">clarity.ms</code> in your browser.
+                If you accept analytics cookies in the banner shown on your first visit, this website uses Microsoft Clarity to understand how pages are used so we can improve them. Nothing is loaded if you decline. Clarity sets cookies and records how visitors interact with the site, such as pages viewed, clicks, scrolling, device and browser type, and approximate location. This data is processed by Microsoft; see the{' '}
+                <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Microsoft Privacy Statement</a>. To change your choice, clear this site&apos;s data in your browser and the banner will ask again, or block cookies and scripts from <code className="font-mono">clarity.ms</code>.
               </p>
               <p>
                 We also use cookies for authenticated administrative sessions in the private studio portal (<code className="font-mono">/admin</code>). Our apps are separate from this website and have their own privacy policies.
