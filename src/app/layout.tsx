@@ -57,6 +57,7 @@ const jsonLd = {
   },
   sameAs: [
     "https://www.linkedin.com/company/tendercrafthq/",
+    "https://x.com/Tendercrafthq",
     "https://apps.microsoft.com/search/publisher?name=Tendercraft",
     "https://github.com/yahayayautama-eng/tendercraft-website",
   ],

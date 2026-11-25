@@ -57,6 +57,23 @@ export function Footer() {
               <Globe className="w-3.5 h-3.5 text-mint shrink-0" />
               Remote · Worldwide
             </div>
+            <div className="flex flex-wrap gap-2">
+              {[
+                { href: 'https://x.com/Tendercrafthq', label: 'X (Twitter)' },
+                { href: 'https://www.linkedin.com/company/tendercrafthq/', label: 'LinkedIn' },
+              ].map((s) => (
+                <a
+                  key={s.href}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer me"
+                  className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-white/10 px-4 text-xs text-zinc-300 hover:text-white hover:bg-white/[0.06] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet"
+                >
+                  {s.label}
+                  <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
+                </a>
+              ))}
+            </div>
           </div>
 
           {COLUMNS.map((col, i) => (
