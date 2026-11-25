@@ -21,7 +21,7 @@ What the account check found:
    - Parents and teachers (Visual Schedule Board)
    - Seniors and their carers (Large Print Crosswords)
    - Home cooks (Recipe Box)
-3. **Nigerian tech and business.** CompoundOS for estates, plus the "made in Abuja" story. This is the strongest local angle, with little competition.
+3. **Nigerian tech and business.** CompoundOS for estates, plus the "made in Nigeria" story. This is the strongest local angle, with little competition.
 
 ## 2. Content pillars (in rotation)
 
@@ -49,7 +49,7 @@ Follow 50–100 accounts:
 - Windows and Microsoft Store developers
 - Amazon Appstore and Fire tablet developers
 - the autism and special-education community, for Visual Schedule Board
-- Nigerian tech: founders, Techpoint, TechCabal, Lagos and Abuja dev communities
+- Nigerian tech: founders, Techpoint, TechCabal, Nigerian dev communities
 - proptech and real estate in Nigeria
 
 ## 5. Funnel
@@ -71,7 +71,7 @@ Follow 50–100 accounts:
 ## 7. First week, ready to post
 
 1. **Mon:** pin the launch post (`README.md`).
-2. **Tue:** "We're a one-person software studio in Abuja with 8 apps across Windows, Fire tablets and Chrome. Here's how we pick what to build" (thread).
+2. **Tue:** "We're a one-person software studio in Nigeria with 8 apps across Windows, Fire tablets and Chrome. Here's how we pick what to build" (thread).
 3. **Wed:** a 20 s Cropmark redaction video.
 4. **Thu:** "Why we made Large Print Crosswords free with a one-time unlock", with honest numbers.
 5. **Fri:** CompoundOS: "Most estates in Nigeria still run gate access on paper logbooks. We built compoundos.ng to fix that."
