@@ -107,6 +107,14 @@ export function Footer() {
                 <span className="block text-[11px] text-zinc-400 uppercase font-mono mb-1.5">Lead Engineer</span>
                 <MotionEmailBadge email="yyautama@tendercrafthq.com" size="sm" />
               </div>
+              <div>
+                <span className="block text-[11px] text-zinc-400 uppercase font-mono mb-1.5">Registered Office</span>
+                <address className="not-italic text-zinc-300 leading-relaxed">
+                  Lot 12 Flat 2, Belham Estate,
+                  <br />
+                  Karsana, FCT, Nigeria
+                </address>
+              </div>
             </div>
           </div>
         </div>

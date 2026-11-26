@@ -140,7 +140,7 @@ export default function ContactPage() {
         </div>
 
         <p className="mt-10 max-w-4xl text-xs text-zinc-500 dark:text-zinc-400">
-          Tendercraft is a trading name of Tendercraft Technologies Limited (RC 10003239), a private company registered in Nigeria.
+          Tendercraft is a trading name of Tendercraft Technologies Limited (RC 10003239), a private company registered in Nigeria. Registered office: Lot 12 Flat 2, Belham Estate, Karsana, FCT, Nigeria.
         </p>
       </SectionWrapper>
     </div>
